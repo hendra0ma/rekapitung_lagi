@@ -244,7 +244,11 @@ let myModal = new bootstrap.Modal(document.getElementById('modallockdown'), {
 <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
 <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
 <script src="../../assets/js/circle-progress.min.js"></script>
+@livewireScripts
 <script>
+
+
+
     var cities = L.layerGroup();
 
 

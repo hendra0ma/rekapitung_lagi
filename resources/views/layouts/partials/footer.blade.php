@@ -79,7 +79,7 @@
 <!-- Modal -->
 
 <div class="chat-popup" style="z-index: 1070;" id="myForm">
-    <form class="form-container">
+    <div class="form-container">
         <h1>Chat</h1>
 
         <div class="main-content-app pt-0">
@@ -89,23 +89,16 @@
                         <h6>Live Chat Support Sistem</h6>
                     </div>
                 </div><!-- main-chat-header -->
-                <livewire:chat-group-component />
-                <livewire:chat-component />
+                <livewire:chat-person />
+              
+                <livewire:chat-input-person />
                 <button onclick="closeForm()" class="btn btn-danger">TUTUP</button>
             </div>
         </div>
-    </form>
+</div>
 </div>
 
-<script>
-    function openForm() {
-        document.getElementById("myForm").style.display = "block";
-    }
 
-    function closeForm() {
-        document.getElementById("myForm").style.display = "none";
-    }
-</script>
 
 <script>
     var chat = document.getElementById('chat');

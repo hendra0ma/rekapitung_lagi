@@ -4,7 +4,6 @@ namespace App\Http\Livewire;
 
 use App\Models\ChatApp;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class ChatGroupComponent extends Component
