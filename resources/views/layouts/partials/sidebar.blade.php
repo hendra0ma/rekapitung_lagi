@@ -277,14 +277,14 @@ $tps = 2963;
                 <li>
                     <a class="side-menu__item modal-action" href="#modalCommander" data-bs-toggle="modal"
                         data-jenis="setting" data-izin="multi_admin" data-title="Multi Admin"
-                        data-deskripsi="Multi Administrator Adalah fitur dimana Administrator dapat login di beberapa device pada saat bersamaan">
+                        data-deskripsi="Anda membutuhkan izin commander untuk mengakses halaman ini.">
                         <i class="side-menu__icon mdi mdi-account-multiple-outline"></i><span
                             class="side-menu__label">Mode Multi Admin</span></a>
                 </li>
                 <li>
                     <a class="side-menu__item modal-action" href="#modalCommander" data-bs-toggle="modal"
                         data-jenis="setting" data-izin="otonom" data-title="Mode Otonom"
-                        data-deskripsi="Otonom mode adalah sistem rekapitung yang berjalan tanpa admin dan hanya menampilkan perolehan suara yang dikirim oleh saksi.">
+                        data-deskripsi="Anda membutuhkan izin commander untuk mengakses halaman ini.">
                         <i class="side-menu__icon fa fa-magic"></i><span class="side-menu__label">Mode Otonom</span></a>
                 </li>
                 <li class="slide">
@@ -294,42 +294,43 @@ $tps = 2963;
                     <ul class="slide-menu">
                         <li><a href="#modalCommander" data-bs-toggle="modal" data-jenis="redirect"
                                 data-izin="{{url('')}}/administrator/patroli_mode" data-title="Patroli Mode"
-                                data-deskripsi="ini patroli" class="slide-item modal-action">Patroli Mode</a></li>
+                                data-deskripsi="Anda membutuhkan izin commander untuk mengakses halaman ini." class="slide-item modal-action">Patroli Mode</a></li>
                         <li><a href="#modalCommander" data-bs-toggle="modal" data-jenis="redirect"
                                 data-izin="{{url('')}}/administrator/patroli_mode/tracking/maps"
-                                data-title="Lacak Admin" data-deskripsi="ini Lacak Admin"
+                                data-title="Lacak Admin" data-deskripsi="Anda membutuhkan izin commander untuk mengakses halaman ini."
                                 class="slide-item modal-action" class="slide-item">Lacak Admin</a></li>
                     </ul>
                 </li>
                 <li>
                     <a class="side-menu__item modal-action" href="#modalCommander" data-bs-toggle="modal"
                         data-jenis="setting" data-izin="lockdown" data-title="Mode Lockdown"
-                        data-deskripsi="Lockdown Adalah Penutupan sementara seluruh admin. Status lockdown terjadi biasanya karena ada serangan hacker dan atau proses perhitungan yang telah dinyatakan selesai.">
+                        data-deskripsi="Anda membutuhkan izin commander untuk mengakses halaman ini.">
                         <i class="side-menu__icon mdi mdi-lock"></i>
                         <span class="side-menu__label">Mode Lockdown</span></a>
                 </li>
                 <li>
                     <a class="side-menu__item modal-action" href="#modalCommander" data-bs-toggle="modal"
                         data-jenis="setting" data-izin="show_terverifikasi" data-title="Mode Verifikasi Publik"
-                        data-deskripsi="Mode Verifikasi Publik Adalah Publikasi Data Terverifikasi untuk dilihat pada publik. Hasil suara terverifikasi bisa lebih rendah, lebih tinggi ataupun sama dengan suara masuk.">
+                        data-deskripsi="Anda membutuhkan izin commander untuk mengakses halaman ini.">
                         <i class="side-menu__icon mdi mdi-account-check"></i><span class="side-menu__label">Mode
                             Verifikasi</span></a>
                 </li>
                 <li>
                     <a class="side-menu__item modal-action" href="#modalCommander" data-bs-toggle="modal"
                         data-jenis="setting" data-izin="show_public" data-title="Mode C1 Publik"
-                        data-deskripsi="Mode C1 Publik adalah mode untuk menampilkan lampiran C1 kepada publik atau masyarakat melalui Rekapitung.id">
+                        data-deskripsi="Anda membutuhkan izin commander untuk mengakses halaman ini.">
                         <i class="side-menu__icon mdi mdi-image"></i><span class="side-menu__label">Mode Publikasi C1</span></a>
                 </li>
                 <li>
-                    <a class="side-menu__item" href="/v2l_security/{{encrypt(29)}}?title=Mode Data Recorder">
+                    <a class="side-menu__item" href="/v2l_security/{{encrypt(29)}}?title=Mode Data Recorder"
+                    data-deskripsi="Anda membutuhkan izin commander untuk mengakses halaman ini.">
                         <i class="side-menu__icon mdi mdi-record"></i><span class="side-menu__label">Mode Data
                             Recorder</span></a>
                 </li>
                 <li>
                     <a class="side-menu__item modal-action" href="#modalCommander" data-bs-toggle="modal"
                         data-jenis="setting" data-izin="master_data_tps" data-title="Mode Data TPS"
-                        data-deskripsi="Mode Data TPS adalah mode untuk menampilkan Data rekapitung berdasarkan klasifikasinya, seperti : Rekam C1, TPS terverifikasi, TPS teraudit dan sebagainya">
+                        data-deskripsi="Anda membutuhkan izin commander untuk mengakses halaman ini.">
                         <i class="side-menu__icon mdi mdi-file"></i><span class="side-menu__label">Mode Data C1</span></a>
                 </li>
           
@@ -391,13 +392,13 @@ $tps = 2963;
                 background-size: cover;" id="modalCommander" tabindex="-1" aria-labelledby="modalCommanderLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content bg-dark">
+                <div class="modal-content" style="background-color: black;">
                     <div class="modal-header">
                         <div class="row w-100 justify-content-end  align-items-center">
                             <div class="col-md">
                                 <!--<h5 class="modal-title text-white my-auto" id="modalCommanderLabel"></h5>-->
-                                <span><img src="{{url('')}}/public/storage/alien.png" style="width:100px" alt=""> <b
-                                        class="text-white fs-3" style="margin-left: -20px;">COMMANDER CODE</b></span>
+                                <span><img src="{{url('')}}/images/logo/rekapitung_gold.png" style="width:100px" alt=""> <b
+                                        class="text-white fs-3">COMMANDER MODE</b></span>
                             </div>
                             <div class="col-md-5">
                                 <b class="text-white fs-5 d-flex justify-content-end align-items-center my-auto align-self-center"

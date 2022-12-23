@@ -241,6 +241,8 @@ let myModal = new bootstrap.Modal(document.getElementById('modallockdown'), {
      <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
 <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
 <!-- CHART-CIRCLE JS-->
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
 <script src="../../assets/js/circle-progress.min.js"></script>
 <script>
     var cities = L.layerGroup();
@@ -276,8 +278,16 @@ let myModal = new bootstrap.Modal(document.getElementById('modallockdown'), {
     var map = L.map('map', {
         center: [-6.289576896901706, 106.71141255004683],
         zoom: 10,
-        layers: [streets, cities]
+        layers: [streets, cities],
+      
     });
+
+    $('#ikon-map-full').on('click',function(){
+        map.toggleFullscreen();
+    });
+
+
+
     fetch("{{url('/')}}/geojson/tangsel.json").then(response => response.json())
         .then(json => {
             console.log(json.features)
