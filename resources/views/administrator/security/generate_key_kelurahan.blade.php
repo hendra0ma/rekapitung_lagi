@@ -60,7 +60,7 @@
 					</div>
 					<div class="card-footer pt-0">
 						<div class="d-flex justify-content-center my-3">
-                            <h2 class="fw-bold mb-0">Pilpres 2024</h2>
+                            <h5 class="fw-bold mb-0">www.rekapitung.id</h5>
 							{{-- <a href="" class="social-login  text-center me-4">
 								<i class="fa fa-google"></i>
 							</a>
