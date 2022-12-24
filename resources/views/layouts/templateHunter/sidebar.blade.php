@@ -66,7 +66,7 @@
                         </a>
                         <ul class="slide-menu">
                             <li><a href="" class="slide-item">C1 Saksi</a></li>
-                            <li><a href="" class="slide-item">C1 Saksi(Pending)</a></li>
+                            <li><a href="" class="slide-item">C1 Saksi (Pending)</a></li>
                             <li><a href="" class="slide-item">C1 Relawan</a></li>
                             <li><a href="" class="slide-item">C1 Relawan (Banding)</a></li>
                             <li><a href="" class="slide-item">Pengajuan koreksi</a></li>

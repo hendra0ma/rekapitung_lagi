@@ -33,6 +33,7 @@
 
     <link href="{{url('/')}}/assets/plugins/datatable/css/dataTables.bootstrap5.css" rel="stylesheet" />
     <link href="{{url('/')}}/assets/plugins/datatable/responsive.bootstrap5.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet" />
 
     <link id="theme" rel="stylesheet" type="text/css" media="all" href="{{url('/')}}/assets/colors/color1.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqU

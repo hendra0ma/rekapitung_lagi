@@ -189,6 +189,10 @@ $tps = 2963;
                     <a class="side-menu__item" href="/v2l_security/{{encrypt(13)}}?title=Verifikasi Suara Overtime"><i
                             class="side-menu__icon mdi mdi-speedometer"></i><span class="side-menu__label">Verifikasi Suara Overtime</span></a>
                 </li>
+                <li>
+                    <a class="side-menu__item" href="/v2l_security/{{encrypt(13)}}?title=Verifikasi Suara Overtime"><i
+                            class="side-menu__icon mdi mdi-dropbox"></i><span class="side-menu__label">Verifikasi Suara Saksi Partai</span></a>
+                </li>
 
                 <li>
                     <h3>Audit</h3>

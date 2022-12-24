@@ -30,14 +30,14 @@
 
     /* Add styles to the form container */
     .form-container {
-        max-width: 300px;
+        width: 400px;
         padding: 10px;
         background-color: white;
     }
 
     /* Full-width textarea */
     .form-container textarea {
-        width: 100%;
+        width: 500px;
         padding: 15px;
         margin: 5px 0 22px 0;
         border: none;
@@ -51,30 +51,6 @@
         background-color: #ddd;
         outline: none;
     }
-
-    /* Set a style for the submit/send button */
-    .form-container .btn {
-        background-color: #04AA6D;
-        color: white;
-        padding: 16px 20px;
-        border: none;
-        cursor: pointer;
-        width: 100%;
-        margin-bottom: 10px;
-        opacity: 0.8;
-    }
-
-    /* Add a red background color to the cancel button */
-    .form-container .cancel {
-        background-color: red;
-    }
-
-    /* Add some hover effects to buttons */
-    .form-container .btn:hover,
-    .open-button:hover {
-        opacity: 1;
-    }
-
 </style>
 
 <!-- Modal -->
@@ -104,16 +80,13 @@
 </div>
 
 <div class="chat-popup" style="z-index: 1070;" id="myForm">
-    <div class="form-container">
-        <h1>Chat</h1>
+    <div class="form-container text-center">
+        <h1 class="mb-0 mt-2 mb-2"><img src="{{url('/')}}/images/logo/rekapitung_gold.png" style="width:75px;height:auto"></h1>
+        <h5 class="fw-bold">Live Chat Support Sistem</h5>
 
         <div class="main-content-app pt-0">
             <div class="main-content-body main-content-body-chat">
-                <div class="main-chat-header pt-3">
-                    <div class="main-chat-msg-name mt-2">
-                        <h6>Live Chat Support Sistem</h6>
-                    </div>
-                </div><!-- main-chat-header -->
+                <hr>
                 <livewire:chat-person />
 
                 <livewire:chat-input-person />
