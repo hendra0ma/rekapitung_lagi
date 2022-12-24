@@ -31,6 +31,7 @@ use App\Models\History;
 use App\Models\Village;
 use App\Models\Relawan;
 use App\Models\SolutionFraud;
+use App\Models\Province;
 use Facade\FlareClient\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
@@ -310,6 +311,7 @@ class AdminController extends Controller
         $data['config'] = Config::first();
         $config = $data['config'];
         $data['kota'] = Regency::where('id', $config['regencies_id'])->first();
+        $data['provinsi'] = Province::where('id', $data['kota']['province_id'])->first();
         $data['paslon'] = Paslon::get();
         $data['kecamatan'] = District::where('regency_id', $config['regencies_id'])->get();
         foreach ($data['paslon'] as $ps) {
@@ -323,6 +325,7 @@ class AdminController extends Controller
         $data['config'] = Config::first();
         $config = $data['config'];
         $data['kota'] = Regency::where('id', $config['regencies_id'])->first();
+        $data['provinsi'] = Province::where('id', $data['kota']['province_id'])->first();
         $data['paslon'] = Paslon::get();
         $data['kecamatan'] = District::where('regency_id', $config['regencies_id'])->get();
         foreach ($data['paslon'] as $ps) {
@@ -336,6 +339,7 @@ class AdminController extends Controller
         $data['config'] = Config::first();
         $config = $data['config'];
         $data['kota'] = Regency::where('id', $config['regencies_id'])->first();
+        $data['provinsi'] = Province::where('id', $data['kota']['province_id'])->first();
         $data['paslon'] = Paslon::get();
         $data['kecamatan'] = District::where('regency_id', $config['regencies_id'])->get();
         foreach ($data['paslon'] as $ps) {

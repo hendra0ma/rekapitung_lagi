@@ -133,8 +133,9 @@ use App\Models\Paslon;
             
             <div class="row">
                 <div class="col-md text-center">
-                    <h3 class="fw-bold">Map Count
-                        <br>Pilkada Tangsel 2020
+                    <h3 class="fw-bold pb-5">Maps Count
+                    <h3 class="fw-bold">PILPRES 2024 {{$provinsi->name}}
+                    <h3 class="fw-bold">{{$kota->name}}
                     </h3>
                 </div>
             </div>
@@ -149,81 +150,80 @@ use App\Models\Paslon;
                 <div class="row">
                     <div class="col">
                         <div class="card">
+                            <div class="card-header p-0">
+                                <a class="ms-auto nav-link icon full-screen-link nav-link-bg" style="margin-right: 10px !important;" id="ikon-map-full">
+                                    <i class="fe fe-minimize"></i>
+                                </a>
+                            </div>
                             <div class="card-body">
-                                <div class="ht-300" id="mapid" style="height: 500px"></div>
+                                <div class="ht-300" id="mapid" style="height: 500px;"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="row mb-5">
-                <div class="col-md-12">
-                    <div id="carousel-controls" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <?php $count = 1; ?>
-                            @foreach ($kecamatan as $item)
-                            <?php
+            <div class="container-fluid">
+                <div class="row mb-5">
+                    <div class="col-md-12">
+                        <div id="carousel-controls" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <?php $count = 1; ?>
+                                @foreach ($kecamatan as $item)
+                                <?php
 
 
-                            // $jumlah =  SaksiData::where('district_id', $item['id'])->sum('voice');
-                            ?>
-                            <div class="carousel-item <?php if ($count++ == 1) : ?><?= 'active' ?><?php endif; ?>">
-                                <img class="d-block" style="opacity: 0" src="../../assets/images/media/4.jpg" data-bs-holder-rendered="true">
-                                <div class="carousel-caption d-none d-md-block" style="top:0">
-                                    <h3 class="text-dark fw-bold">KECAMATAN <br> {{$item['name']}} </h3>
-                                    <div class="row">
+                                // $jumlah =  SaksiData::where('district_id', $item['id'])->sum('voice');
+                                ?>
+                                <div class="carousel-item <?php if ($count++ == 1) : ?><?= 'active' ?><?php endif; ?>">
+                                    <img class="d-block" style="opacity: 0" src="../../assets/images/media/4.jpg" data-bs-holder-rendered="true">
+                                    <div class="carousel-caption d-none d-md-block" style="top:0">
+                                        <h3 class="text-dark fw-bold">KECAMATAN <br> {{$item['name']}} </h3>
+                                        <div class="row">
 
-                                        @foreach ($paslon as $psl)
-                                        <?php
-                                        $pasln = SaksiData::join('districts', 'districts.id', '=', 'saksi_data.district_id')->where('saksi_data.district_id', $item['id'])->where('saksi_data.paslon_id', $psl->id)->get();
-                                        $jumlah = 0;
-                                        foreach ($pasln as $pas) {
-                                            $jumlah += $pas->voice;
-                                        }
+                                            @foreach ($paslon as $psl)
+                                            <?php
+                                            $pasln = SaksiData::join('districts', 'districts.id', '=', 'saksi_data.district_id')->where('saksi_data.district_id', $item['id'])->where('saksi_data.paslon_id', $psl->id)->get();
+                                            $jumlah = 0;
+                                            foreach ($pasln as $pas) {
+                                                $jumlah += $pas->voice;
+                                            }
 
-                                        $persen = substr($jumlah / $item->dpt * 100, 0, 3);
+                                            $persen = substr($jumlah / $item->dpt * 100, 0, 3);
 
-                                        ?>
-                                        <div class="col-md">
-                                            <div class="card" style="background-color: {{$psl->color}};">
-                                                <div class="card-body">
-                                                    <p class="card-text">
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <img style="width: 100px;" src="{{asset('storage/'. $psl['picture'])}}">
+                                            ?>
+                                            <div class="col-md">
+                                                <div class="card" style="background-color: {{$psl->color}};">
+                                                    <div class="card-body">
+                                                        <p class="card-text">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <img style="width: 100px;" src="{{asset('storage/'. $psl['picture'])}}">
+                                                            </div>
+                                                            <div class="col">
+                                                                <p class="fw-bolder fs-3">{{$persen}}%</p>
+                                                                Jumlah Suara : {{$jumlah}}
+                                                            </div>
                                                         </div>
-                                                        <div class="col">
-                                                            <p class="fw-bolder fs-3">{{$persen}}%</p>
-                                                            Jumlah Suara : {{$jumlah}}
-                                                        </div>
+                                                        </p>
                                                     </div>
-                                                    </p>
                                                 </div>
                                             </div>
+                                            <?php
+                                            $jumlah = 0;
+                                            ?>
+                                            @endforeach
+
+
                                         </div>
-                                        <?php
-                                        $jumlah = 0;
-                                        ?>
-                                        @endforeach
-
-
                                     </div>
                                 </div>
-                            </div>
-                            @endforeach
+                                @endforeach
 
+                            </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel-controls" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carousel-controls" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div><!-- COL-END -->
+                    </div><!-- COL-END -->
+                </div>
             </div>
 
         </div>
@@ -263,7 +263,10 @@ use App\Models\Paslon;
 
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
     <script src="https://devlama.rekapitung.id/assets/js/geojson.ajax.js"></script>
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
     @include('layouts.templateCommander.script-command')
+    
     <script>
         // Adding a Popup
         var mymap = L.map('mapid').setView([-6.297308926250658, 106.71285789150006], 12);
@@ -313,6 +316,12 @@ use App\Models\Paslon;
             },
             onEachFeature: popUp,
         }).addTo(mymap);
+    </script>
+
+    <script>
+        $('#ikon-map-full').on('click',function(){
+            mymap.toggleFullscreen();
+        });
     </script>
 
 </body>
