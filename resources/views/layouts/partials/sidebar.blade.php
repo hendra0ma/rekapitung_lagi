@@ -532,7 +532,3 @@ $tps = 2963;
             });
 
         </script>
-
-
-
-        <!--/APP-SIDEBAR-->

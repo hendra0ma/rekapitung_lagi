@@ -74,9 +74,34 @@
     .open-button:hover {
         opacity: 1;
     }
+
 </style>
 
 <!-- Modal -->
+<div class="modal fade" id="chat" tabindex="-1" role="dialog" aria-labelledby="chatMessage" aria-hidden="true">
+    <div class="modal-dialog " role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Chat Message</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="message-menu" style="overflow-y:scroll;height:500px">
+                        <?php
+
+ $allUser = App\Models\User::where('id',"!=",Auth::user()->id)->where('role_id','!=',8)->where('role_id','!=',0)->where('role_id','!=',14)->get(); ?>
+                        @foreach($allUser as $usr)
+                        <button class="btn btn-primary rounded-0 w-100 mb-2" data-bs-dismiss="modal" type="button"
+                            onclick="openForm('{{$usr->id}}')">{{$usr->name}}</button>
+                        @endforeach
+                    </div>
+                </div>
+             </div>
+               
+        </div>
+    </div>
+</div>
 
 <div class="chat-popup" style="z-index: 1070;" id="myForm">
     <div class="form-container">
@@ -90,20 +115,21 @@
                     </div>
                 </div><!-- main-chat-header -->
                 <livewire:chat-person />
-              
+
                 <livewire:chat-input-person />
                 <button onclick="closeForm()" class="btn btn-danger">TUTUP</button>
             </div>
         </div>
+    </div>
 </div>
-</div>
+
 
 
 
 <script>
     var chat = document.getElementById('chat');
 
-    chat.addEventListener('show.bs.modal', function(event) {
+    chat.addEventListener('show.bs.modal', function (event) {
         // Button that triggered the modal
         let button = event.relatedTarget;
         // Extract info from data-bs-* attributes
@@ -111,6 +137,7 @@
 
         // Use above variables to manipulate the DOM
     });
+
 </script>
 
 
@@ -120,21 +147,25 @@
         <div class="tab-menu-heading border-0 d-flex p-3">
             <div class="card-title mb-0">Notifications</div>
             <div class="card-options ms-auto">
-                <a href="#" class="sidebar-icon text-end float-end me-1" data-bs-toggle="sidebar-right" data-target=".sidebar-right"><i class="fe fe-x text-white"></i></a>
+                <a href="#" class="sidebar-icon text-end float-end me-1" data-bs-toggle="sidebar-right"
+                    data-target=".sidebar-right"><i class="fe fe-x text-white"></i></a>
             </div>
         </div>
         <div class="panel-body tabs-menu-body latest-tasks p-0 border-0">
             <div class="tab-content">
-                
+
                 <div class="tab-pane active" id="side1">
                     <div class="card-body text-center">
                         <div class="dropdown user-pro-body">
                             <div class="">
-                                <img alt="user-img" class="avatar avatar-xl brround mx-auto text-center" src="{{ Auth::user()->profile_photo_url }}"><span class="avatar-status profile-status bg-green"></span>
+                                <img alt="user-img" class="avatar avatar-xl brround mx-auto text-center"
+                                    src="{{ Auth::user()->profile_photo_url }}"><span
+                                    class="avatar-status profile-status bg-green"></span>
                             </div>
                             <div class="user-info mg-t-20">
                                 <h6 class="fw-semibold  mt-2 mb-0">{{ Auth::user()->name }}</h6>
-                                <span class="mb-0 text-muted fs-12">{{ Auth::user()->role_id == 1 ?"Administrator":"uwon luyi"; }}</span>
+                                <span
+                                    class="mb-0 text-muted fs-12">{{ Auth::user()->role_id == 1 ?"Administrator":"uwon luyi"; }}</span>
                             </div>
                         </div>
                     </div>
@@ -149,7 +180,8 @@
                     <form action="{{ route('logout') }}" method="post">
                         @csrf
 
-                        <a class="dropdown-item d-flex border-bottom" style="cursor: pointer" onclick="$($(this).parent()).submit()">
+                        <a class="dropdown-item d-flex border-bottom" style="cursor: pointer"
+                            onclick="$($(this).parent()).submit()">
                             <div class="d-flex"><i class="fe fe-power me-3 tx-20 text-muted"></i>
                                 <div class="pt-1">
                                     <h6 class="mb-0">Sign Out</h6>
@@ -164,7 +196,9 @@
                     <div class="list-group list-group-flush ">
                         <div class="list-group-item d-flex  align-items-center">
                             <div class="me-2">
-                                <span class="avatar avatar-md brround cover-image" data-bs-image-src="../../assets/images/faces/9.jpg"><span class="avatar-status bg-success"></span></span>
+                                <span class="avatar avatar-md brround cover-image"
+                                    data-bs-image-src="../../assets/images/faces/9.jpg"><span
+                                        class="avatar-status bg-success"></span></span>
                             </div>
                             <div class="">
                                 <div class="fw-semibold" data-bs-toggle="modal" data-target="#chatmodel">
@@ -175,7 +209,8 @@
                         </div>
                         <div class="list-group-item d-flex  align-items-center">
                             <div class="me-2">
-                                <span class="avatar avatar-md brround cover-image" data-bs-image-src="../../assets/images/faces/11.jpg"></span>
+                                <span class="avatar avatar-md brround cover-image"
+                                    data-bs-image-src="../../assets/images/faces/11.jpg"></span>
                             </div>
                             <div class="">
                                 <div class="fw-semibold" data-bs-toggle="modal" data-target="#chatmodel">
@@ -185,7 +220,9 @@
                         </div>
                         <div class="list-group-item d-flex  align-items-center">
                             <div class="me-2">
-                                <span class="avatar avatar-md brround cover-image" data-bs-image-src="../../assets/images/faces/10.jpg"><span class="avatar-status bg-success"></span></span>
+                                <span class="avatar avatar-md brround cover-image"
+                                    data-bs-image-src="../../assets/images/faces/10.jpg"><span
+                                        class="avatar-status bg-success"></span></span>
                             </div>
                             <div class="">
                                 <div class="fw-semibold" data-bs-toggle="modal" data-target="#chatmodel">
@@ -196,7 +233,9 @@
                         </div>
                         <div class="list-group-item d-flex  align-items-center">
                             <div class="me-2">
-                                <span class="avatar avatar-md brround cover-image" data-bs-image-src="../../assets/images/faces/2.jpg"><span class="avatar-status bg-success"></span></span>
+                                <span class="avatar avatar-md brround cover-image"
+                                    data-bs-image-src="../../assets/images/faces/2.jpg"><span
+                                        class="avatar-status bg-success"></span></span>
                             </div>
                             <div class="">
                                 <div class="fw-semibold" data-bs-toggle="modal" data-target="#chatmodel">
@@ -207,7 +246,8 @@
                         </div>
                         <div class="list-group-item d-flex  align-items-center">
                             <div class="me-2">
-                                <span class="avatar avatar-md brround cover-image" data-bs-image-src="../../assets/images/faces/13.jpg"></span>
+                                <span class="avatar avatar-md brround cover-image"
+                                    data-bs-image-src="../../assets/images/faces/13.jpg"></span>
                             </div>
                             <div class="">
                                 <div class="fw-semibold" data-bs-toggle="modal" data-target="#chatmodel">
@@ -218,7 +258,9 @@
                         </div>
                         <div class="list-group-item d-flex  align-items-center">
                             <div class="me-2">
-                                <span class="avatar avatar-md brround cover-image" data-bs-image-src="../../assets/images/faces/12.jpg"><span class="avatar-status bg-success"></span></span>
+                                <span class="avatar avatar-md brround cover-image"
+                                    data-bs-image-src="../../assets/images/faces/12.jpg"><span
+                                        class="avatar-status bg-success"></span></span>
                             </div>
                             <div class="">
                                 <div class="fw-semibold" data-bs-toggle="modal" data-target="#chatmodel">
@@ -229,7 +271,8 @@
                         </div>
                         <div class="list-group-item d-flex  align-items-center">
                             <div class="me-2">
-                                <span class="avatar avatar-md brround cover-image" data-bs-image-src="../../assets/images/faces/4.jpg"></span>
+                                <span class="avatar avatar-md brround cover-image"
+                                    data-bs-image-src="../../assets/images/faces/4.jpg"></span>
                             </div>
                             <div class="">
                                 <div class="fw-semibold" data-bs-toggle="modal" data-target="#chatmodel">
@@ -239,7 +282,8 @@
                         </div>
                         <div class="list-group-item d-flex  align-items-center">
                             <div class="me-2">
-                                <span class="avatar avatar-md brround cover-image" data-bs-image-src="../../assets/images/faces/7.jpg"></span>
+                                <span class="avatar avatar-md brround cover-image"
+                                    data-bs-image-src="../../assets/images/faces/7.jpg"></span>
                             </div>
                             <div class="">
                                 <div class="fw-semibold" data-bs-toggle="modal" data-target="#chatmodel">
@@ -250,7 +294,8 @@
                         </div>
                         <div class="list-group-item d-flex  align-items-center">
                             <div class="me-2">
-                                <span class="avatar avatar-md brround cover-image" data-bs-image-src="../../assets/images/faces/2.jpg"></span>
+                                <span class="avatar avatar-md brround cover-image"
+                                    data-bs-image-src="../../assets/images/faces/2.jpg"></span>
                             </div>
                             <div class="">
                                 <div class="fw-semibold" data-bs-toggle="modal" data-target="#chatmodel">
@@ -261,7 +306,9 @@
                         </div>
                         <div class="list-group-item d-flex  align-items-center">
                             <div class="me-2">
-                                <span class="avatar avatar-md brround cover-image" data-bs-image-src="../../assets/images/faces/14.jpg"><span class="avatar-status bg-success"></span></span>
+                                <span class="avatar avatar-md brround cover-image"
+                                    data-bs-image-src="../../assets/images/faces/14.jpg"><span
+                                        class="avatar-status bg-success"></span></span>
                             </div>
                             <div class="">
                                 <div class="fw-semibold" data-bs-toggle="modal" data-target="#chatmodel">
@@ -272,7 +319,8 @@
                         </div>
                         <div class="list-group-item d-flex  align-items-center">
                             <div class="me-2">
-                                <span class="avatar avatar-md brround cover-image" data-bs-image-src="../../assets/images/faces/11.jpg"></span>
+                                <span class="avatar avatar-md brround cover-image"
+                                    data-bs-image-src="../../assets/images/faces/11.jpg"></span>
                             </div>
                             <div class="">
                                 <div class="fw-semibold" data-bs-toggle="modal" data-target="#chatmodel">
@@ -282,7 +330,8 @@
                         </div>
                         <div class="list-group-item d-flex  align-items-center">
                             <div class="me-2">
-                                <span class="avatar avatar-md brround cover-image" data-bs-image-src="../../assets/images/faces/9.jpg"></span>
+                                <span class="avatar avatar-md brround cover-image"
+                                    data-bs-image-src="../../assets/images/faces/9.jpg"></span>
                             </div>
                             <div class="">
                                 <div class="fw-semibold" data-bs-toggle="modal" data-target="#chatmodel">
@@ -293,7 +342,9 @@
                         </div>
                         <div class="list-group-item d-flex  align-items-center">
                             <div class="me-2">
-                                <span class="avatar avatar-md brround cover-image" data-bs-image-src="../../assets/images/faces/15.jpg"><span class="avatar-status bg-success"></span></span>
+                                <span class="avatar avatar-md brround cover-image"
+                                    data-bs-image-src="../../assets/images/faces/15.jpg"><span
+                                        class="avatar-status bg-success"></span></span>
                             </div>
                             <div class="">
                                 <div class="fw-semibold" data-bs-toggle="modal" data-target="#chatmodel">
@@ -304,7 +355,8 @@
                         </div>
                         <div class="list-group-item d-flex  align-items-center">
                             <div class="me-2">
-                                <span class="avatar avatar-md brround cover-image" data-bs-image-src="../../assets/images/faces/4.jpg"></span>
+                                <span class="avatar avatar-md brround cover-image"
+                                    data-bs-image-src="../../assets/images/faces/4.jpg"></span>
                             </div>
                             <div class="">
                                 <div class="fw-semibold" data-bs-toggle="modal" data-target="#chatmodel">
@@ -322,7 +374,8 @@
                     <div class="card-body">
                         <div class="form-group mg-b-10">
                             <label class="custom-switch ps-0">
-                                <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" checked>
+                                <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
+                                    checked>
                                 <span class="custom-switch-indicator"></span>
                                 <span class="custom-switch-description mg-l-10">Updates Automatically</span>
                             </label>
@@ -336,14 +389,16 @@
                         </div>
                         <div class="form-group mg-b-10">
                             <label class="custom-switch ps-0">
-                                <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" checked>
+                                <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
+                                    checked>
                                 <span class="custom-switch-indicator"></span>
                                 <span class="custom-switch-description mg-l-10">Show Contacts</span>
                             </label>
                         </div>
                         <div class="form-group mg-b-10">
                             <label class="custom-switch ps-0">
-                                <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" checked>
+                                <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
+                                    checked>
                                 <span class="custom-switch-indicator"></span>
                                 <span class="custom-switch-description mg-l-10">Show Notication</span>
                             </label>
@@ -357,7 +412,8 @@
                         </div>
                         <div class="form-group mg-b-10">
                             <label class="custom-switch ps-0">
-                                <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" checked>
+                                <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
+                                    checked>
                                 <span class="custom-switch-indicator"></span>
                                 <span class="custom-switch-description mg-l-10">Show Email
                                     Notification</span>
@@ -370,7 +426,8 @@
                     <div class="card-body">
                         <div class="form-group mg-b-10">
                             <label class="custom-switch ps-0">
-                                <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" checked>
+                                <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
+                                    checked>
                                 <span class="custom-switch-indicator"></span>
                                 <span class="custom-switch-description mg-l-10">Show User Online</span>
                             </label>
@@ -398,7 +455,8 @@
                         </div>
                         <div class="form-group mg-b-10">
                             <label class="custom-switch ps-0">
-                                <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" checked>
+                                <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
+                                    checked>
                                 <span class="custom-switch-indicator"></span>
                                 <span class="custom-switch-description mg-l-10">Aloow All
                                     Notifications</span>
@@ -417,7 +475,8 @@
     <div class="container">
         <div class="row align-items-center flex-row-reverse">
             <div class="col-md-12 col-sm-12 text-center">
-                Copyright © 2024 <a href="#">Mahadaya Swara Teknologi</a>. Designed with <span class="fa fa-heart text-danger"></span>
+                Copyright © 2024 <a href="#">Mahadaya Swara Teknologi</a>. Designed with <span
+                    class="fa fa-heart text-danger"></span>
                 by <a href="https://yudicp.com"> Yudi C Prawira </a> All rights reserved
             </div>
         </div>
