@@ -112,7 +112,9 @@
 							@csrf
 							<div class="text-center mb-4">
 								<img src="{{url('/')}}/assets/images/brand/logo-2.png" alt="lockscreen image" style="width: 75px" class="mb-2">
-								<h4 class="fw-bold">{{ $judul }}</h4>
+								<h4 class="fw-bold"style="line-height: 1.3">
+                                PILPRES 2024 <br>    
+                                {{ $judul }}</h4>
 																
     @if($judul == "Fraud Data Print (FDP)")
      <img src="https://t4.ftcdn.net/jpg/02/94/39/47/360_F_294394705_O7dz4ofzsaioltW7rkXkFyRa6Vj4ZIco.jpg" class="img-fluid">
@@ -161,7 +163,7 @@
 					</div>
 					<div class="card-footer pt-0">
 						<div class="d-flex justify-content-center my-3">
-                            <h2 class="fw-bold mb-0">Pilpres 2024</h2>
+                            <h2 class="fw-bold mb-0">Rekapitung.id</h2>
 							{{-- <a href="" class="social-login  text-center me-4">
 								<i class="fa fa-google"></i>
 							</a>

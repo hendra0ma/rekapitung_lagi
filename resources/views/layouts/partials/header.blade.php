@@ -201,7 +201,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="message-menu"style="overflow-y:scroll;height:300px">
+                    <div class="message-menu">
                     <?php
 $allUser = App\Models\User::where('id',"!=",Auth::user()->id)->where('role_id','!=',8)->where('role_id','!=',0)->where('role_id','!=',14)->get(); ?>
                            @foreach($allUser as $usr)

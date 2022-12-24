@@ -47,10 +47,10 @@
 							@csrf
 							<div class="text-center mb-4">
 								<img src="{{url('/')}}/assets/images/brand/logo-2.png" alt="lockscreen image" style="width: 75px" class="mb-2">
-								<h4 class="fw-bold">{{ $judul }}
-
-
- Kec. {{ $kecamatan['name'] }}</h4>
+								<h4 class="fw-bold"style="line-height: 1.3">
+								Pilpres 2024 <br>	
+								{{ $judul }} <br>
+									Kec. {{ $kecamatan['name'] }}</h4>
 							</div>
 							@if ($message = Session::get('success'))
 							<div class="alert alert-success alert-block">
@@ -81,7 +81,7 @@
 					</div>
 					<div class="card-footer pt-0">
 						<div class="d-flex justify-content-center my-3">
-                            <h2 class="fw-bold mb-0">Pilpres 2024</h2>
+                            <h2 class="fw-bold mb-0">Rekapitung.id</h2>
 							{{-- <a href="" class="social-login  text-center me-4">
 								<i class="fa fa-google"></i>
 							</a>
