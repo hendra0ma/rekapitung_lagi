@@ -18,11 +18,11 @@ use App\Models\Koreksi;
         </h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Verifikasi Koreksi
+            <li class="breadcrumb-item active" aria-current="page">Otentifikasi Koreksi
                 <!-- Kota -->
             </li>
         </ol>
-        <h4 class="fs-4 mt-2 fw-bold">Administrator Verifikasi Koreksi</h4> <!-- This Dummy Data -->
+        <h4 class="fs-4 mt-2 fw-bold">Otentifikasi Koreksi</h4> <!-- This Dummy Data -->
     </div>
 </div>
 <!-- PAGE-HEADER END -->
@@ -36,8 +36,8 @@ use App\Models\Koreksi;
                 <div class="table-responsive export-table">
                     <table id="file-datatable"
                         class="table table-bordered text-nowrap key-buttons border-bottom  w-100">
-                        <p style="font-size: 15px;">*Anda Dapat Menyetujui Atau MemBlokir Akun Saksi
-                            Yang Tidak Di Kenal</p>
+                        <p style="font-size: 15px;">*Anda dapat menyetujui atau memblokir akun saksi
+                            yang tidak di kenal</p>
 
                         <thead>
                             <tr>
@@ -96,16 +96,16 @@ use App\Models\Koreksi;
                 <ul class="b">
                     <li>
                         <b class="text-success">Disetujui</b> adalah status koreksi yang Disetujui
-                        oleh admin Hover
+                        oleh Admin Otentifikasi
                     </li>
                     <li>
                         <b class="text-warning">Pending</b> adalah status koreksi yang masih di
-                        proses oleh admin Hover
+                        proses oleh Admin Otentifikasi
                     </li>
                     <li>
                         <b class="text-danger">Ditolak</b> adalah status saksi tidak dikenal
                         dan di
-                        blokir oleh admin Hover
+                        blokir oleh Admin Otentifikasi
                     </li>
                 </ul>
             </div>

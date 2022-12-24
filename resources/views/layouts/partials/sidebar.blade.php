@@ -131,11 +131,11 @@ $tps = 2963;
                             class="angle fa fa-angle-right"></i></a>
                     <ul class="slide-menu">
                         <li><a href="{{url('')}}/administrator/absensi" class="slide-item">Absensi Saksi</a></li>
-                        <li><a href="/v2l_security/{{encrypt(7)}}?title=Verifikasi Saksi"
+                        <li><a href="/v2l_security/{{encrypt(7)}}?title=Otentifikasi Saksi"
                                 class="slide-item">Otentifikasi Saksi</a></li>
-                        <li><a href="/v2l_security/{{encrypt(8)}}?title=Verifikasi Admin"
+                        <li><a href="/v2l_security/{{encrypt(8)}}?title=Otentifikasi Admin"
                                 class="slide-item">Otentifikasi Admin</a></li>
-                        <li><a href="/v2l_security/{{encrypt(9)}}?title=Verifikasi Koreksi"
+                        <li><a href="/v2l_security/{{encrypt(9)}}?title=Otentifikasi Koreksi"
                                 class="slide-item">Otentifikasi Koreksi</a></li>
                     </ul>
                 </li>

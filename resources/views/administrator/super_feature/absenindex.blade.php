@@ -53,8 +53,33 @@ text/x-generic absensi.blade.php ( HTML document, ASCII text, with CRLF line ter
     </div>
 </div>
 
+<style>
+    .tooltip-inner {
+        background-color: rgb(248, 38, 73);
+        box-shadow: 0px 0px 4px black;
+        opacity: 1 !important;
+    }
+    .tooltip.bs-tooltip-right .tooltip-arrow::before {
+        border-right-color: rgb(248, 38, 73) !important;
+    }
+    .tooltip.bs-tooltip-left .tooltip-arrow::before {
+        border-left-color: rgb(248, 38, 73) !important;
+    }
+    .tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+        border-bottom-color: rgb(248, 38, 73) !important;
+    }
+    .tooltip.bs-tooltip-top .tooltip-arrow::before {
+        border-top-color: rgb(248, 38, 73) !important;
+    }
+</style>
+
 <h4 class="fw-bold fs-4 mt-5">
-    {{$title}}
+    
+    @if((string)Request::segment(3) != "tidak_hadir") 
+        {{$title}} &nbsp; <i class="fa fa-question-circle"  data-bs-placement="right" data-bs-toggle="tooltip" title="" data-bs-customClass="custom-tooltip" data-bs-original-title="Saksi yang terdaftar pada halaman ini merupakan saksi yang telah didaftarkan oleh tim sukses kandidat sebelum perhitungan dilakukan untuk menghindari saksi ilegal yang menyusup."></i>
+    @else
+        {{$title}} 
+    @endif
 </h4>
 <hr style="border: 1px solid">
 
