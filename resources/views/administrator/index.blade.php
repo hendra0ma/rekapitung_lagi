@@ -368,7 +368,9 @@ $tps = Tps::count();
     <div class="{{($config->otonom == 'yes')?'col-lg-12 col-md-12':'col-lg-6 col-md-12'}}">
         <div class="card">
             <div class="card-header">
-                <h5 class="card-title">Suara TPS Masuk (Seluruh Kecamatan)</h5>
+                <h5 class="card-title">Suara TPS Masuk (
+                    
+                    Seluruh Kecamatan)</h5>
             </div>
             <div class="card-body">
                 <table class="table table-bordered table-hover">
@@ -396,7 +398,7 @@ $tps = Tps::count();
 
                     <script>
                         let check = function(id) {
-                            window.location = `public/kecamatan/${id}`;
+                            window.location = `{{url('/')}}/administrator/perhitungan_kecamatan/${id}`;
                         }
                     </script>
                 </table>
