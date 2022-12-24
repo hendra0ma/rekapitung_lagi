@@ -183,28 +183,36 @@ use App\Models\Paslon;
             
             <div class="text-center bg-success">
                 <div class="pt-7">
-                    <h1 class="fw-bolder text-white display-4" style="margin-bottom: 10px;">Quick Count</h1>
+                    <h1 class="fw-bolder text-white display-4" style="margin-bottom: 30px;">Quick Count</h1>
                 </div>
-                <div class="pb-5">
-                    <div class="btn-group mt-2 mb-2">
-                        <button type="button" class="btn btn-light dropdown-toggle " data-bs-toggle="dropdown">
-                            Pilih Mode Perhitungan <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" role="menu">
-                            <li class="dropdown-plus-title">
-                                Pilih Mode Perhitungan
-                                <b class="fa fa-angle-up" aria-hidden="true"></b>
-                            </li>
-                            <li><a href="/real_count">Real Count</a></li>
-                            <li><a href="/quick_count">Quick Count</a></li>
-                            <li><a href="/map_count">Map Count</a></li>
-                        </ul>
-                    </div>
+                <div class="pb-2">
+                    <h2 class="fw-bolder text-white mb-1">PILPRES 2024</h2>
                 </div>
             </div>
 
             <div class="container text-center">
-                <div class="mt-5 fs-4 fw-bold">PILKADA KOTA TANGERANG SELATAN 2020</div>
+
+                <div class="row mt-2">
+
+                    <div class="col-4">
+                        
+                    </div>
+
+                    <div class="col-4">
+                        <div class="fs-4 fw-bold">BANTEN</div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="dropdown d-md-flex">
+                            <a class="nav-link icon ms-auto m-0">
+                                <i class="fe fe-minimize fullscreen-button"></i>
+                            </a>
+                        </div><!-- FULL-SCREEN -->
+                    </div>
+                </div>
+
+                <div class="mt-1 fs-4 fw-bold">KOTA TANGERANG SELATAN</div>
+                
                 <div class="progress bg-white mt-2">
                     <div class="progress-bar bg-danger" role="progressbar" aria-label="Example with label"
                         style="width:  9.3%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">9.3%</div>

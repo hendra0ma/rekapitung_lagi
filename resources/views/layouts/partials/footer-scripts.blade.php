@@ -244,8 +244,15 @@ let myModal = new bootstrap.Modal(document.getElementById('modallockdown'), {
 <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
 <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
 <script src="../../assets/js/circle-progress.min.js"></script>
+<!-- CHART-CIRCLE JS-->
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
 @livewireScripts
 <script>
+
+    $('#ikon-map-full').on('click',function(){
+        map.toggleFullscreen();
+    });
 
 
 
