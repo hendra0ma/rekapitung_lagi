@@ -55,111 +55,9 @@ use App\Models\Paslon;
     <!-- COLOR SKIN CSS -->
     <link id="theme" rel="stylesheet" type="text/css" media="all" href="../../assets/colors/color1.css" />
     <style>
-        /*body {*/
-        /*    overflow: hidden;*/
-        /*    line-height: 30px;*/
-        /*    font-size: 16px;*/
-        /*    font-style: normal;*/
-        /*    font-weight: 400;*/
-        /*    visibility: visible;*/
-        /*    color: #fff;*/
-        /*    letter-spacing: 0.02em;*/
-        /*    background-size: cover; */
-        /*    background-image: url(https://i.pinimg.com/originals/f7/8d/47/f78d47177cd1f8e1f2047c3f5e735365.jpg);*/
-        /*    background-repeat: no-repeat;*/
-        /*}*/
-
-        /*.main {*/
-        /*    display: flex;*/
-        /*    padding-top: 50px;*/
-        /*    --s: 350px;*/
-            /* size  */
-        /*    --m: 4px;*/
-            /* margin */
-        /*    --f: calc(1.732 * var(--s) + 4 * var(--m) - 1px);*/
-        /*}*/
-
-        /*.container-image {*/
-        /*    font-size: 10px;*/
-        /*    margin: 0 auto;*/
-            /*disable white space between inline block element */
-        /*}*/
-
-        /*.container-image div {*/
-        /*    width: var(--s);*/
-        /*    margin: var(--m);*/
-        /*    height: calc(var(--s)*1.1547);*/
-        /*    display: inline-block;*/
-        /*    font-size: initial;*/
-        /*    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);*/
-        /*    background: white;*/
-        /*    margin-bottom: calc(var(--m) - var(--s)*0.2885);*/
-        /*}*/
-
-        /*.container-image div:nth-child(odd) {*/
-        /*    background: white;*/
-        /*}*/
-        
-        /*@media (min-width: 768px) {*/
-        /*    .col-md-2 {*/
-        /*        -ms-flex: 0 0 25%;*/
-        /*        flex: 0 0 25%;*/
-        /*        max-width: 18% !important;*/
-        /*    }*/
-        /*}*/
-
-        /*@media (min-width: 768px) {*/
-        /*    .col-md-3 {*/
-        /*        -ms-flex: 0 0 25%;*/
-        /*        flex: 0 0 25%;*/
-        /*        max-width: 19% !important;*/
-        /*    }*/
-        /*}*/
-
-        /*.carousel-caption {*/
-        /*    position: absolute;*/
-        /*    right: -1%;*/
-        /*    top: 0%;*/
-        /*    left: 0%;*/
-        /*    z-index: 10;*/
-        /*    padding-top: 10px;*/
-        /*    padding-bottom: 20px;*/
-        /*    color: #fff;*/
-        /*    text-align: center;*/
-        /*}*/
-
-        /*h1.h1 {*/
-        /*    margin-top: 0.25em !important;*/
-        /*    margin-bottom: 0.25em !important;*/
-        /*}*/
-
         .carousel-inner .carousel-item {
             transition: transform 1s ease;
         }
-        
-        /*.open-desktop{*/
-        /*        display: block;*/
-        /*}*/
-        
-        /*.open-mobile{*/
-        /*        display: none;*/
-        /*}*/
-        
-        /*@media (max-width: 575.98px) { */
-            
-        /*    .open-desktop{*/
-        /*        display: none;*/
-        /*    }*/
-            
-        /*    .open-mobile{*/
-        /*        display: block;*/
-        /*    }*/
-            
-        /*    body {*/
-        /*        overflow: scroll;*/
-        /*    }*/
-
-        /*}*/
     </style>
 </head>
 
@@ -183,28 +81,36 @@ use App\Models\Paslon;
             
             <div class="text-center" style="background-color: #B40D1A;">
                 <div class="pt-7">
-                    <h1 class="fw-bolder text-white display-4" style="margin-bottom: 10px;">Real Count</h1>
+                    <h1 class="fw-bolder text-white display-4" style="margin-bottom: 30px;">Real Count</h1>
                 </div>
-                <div class="pb-5">
-                    <div class="btn-group mt-2 mb-2">
-                        <button type="button" class="btn btn-light dropdown-toggle " data-bs-toggle="dropdown">
-                            Pilih Mode Perhitungan <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" role="menu">
-                            <li class="dropdown-plus-title">
-                                Pilih Mode Perhitungan
-                                <b class="fa fa-angle-up" aria-hidden="true"></b>
-                            </li>
-                            <li><a href="/administrator/real_count">Real Count</a></li>
-                            <li><a href="/administrator/quick_count">Quick Count</a></li>
-                            <li><a href="/administrator/map_count">Map Count</a></li>
-                        </ul>
-                    </div>
+                <div class="pb-2">
+                    <h2 class="fw-bolder text-white mb-1">PILPRES 2024</h2>
                 </div>
             </div>
 
             <div class="container text-center">
-                <div class="mt-5 fs-4 fw-bold">PILKADA KOTA TANGERANG SELATAN 2020</div>
+
+                <div class="row mt-2">
+
+                    <div class="col-4">
+                        
+                    </div>
+
+                    <div class="col-4">
+                        <div class="fs-4 fw-bold">BANTEN</div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="dropdown d-md-flex">
+                            <a class="nav-link icon ms-auto m-0">
+                                <i class="fe fe-minimize fullscreen-button"></i>
+                            </a>
+                        </div><!-- FULL-SCREEN -->
+                    </div>
+                </div>
+                
+                <div class="mt-1 fs-4 fw-bold">KOTA TANGERANG SELATAN</div>
+                    
                 <div class="progress bg-white mt-2">
                     <div class="progress-bar bg-success" role="progressbar" aria-label="Example with label"
                         style="width:  9.3%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">9.3%</div>

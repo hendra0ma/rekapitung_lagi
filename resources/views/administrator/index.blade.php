@@ -69,6 +69,7 @@ $tps = Tps::count();
                 <!-- Kota -->
             </li>
         </ol>
+    
         @if($config->multi_admin == "yes")
         <?php
         $userOnline = User::where('role_id',1)->count();
@@ -266,8 +267,8 @@ $tps = Tps::count();
                     <div class="col-xxl-6">
                         <div class="container" style="margin-left: 3%; margin-top: 10%;">
                             <div class="text-center">Progress {{substr($realcount,0,5)}}% dari 100%</div>
+                            <div class="text-center mt-2 mb-2"><span class="badge bg-success">{{$total_incoming_vote}} / {{$dpt}}</span></div>
                             <div id="chart-pie" class="chartsh h-100 w-100"></div>
-                            <div class="text-center mt-5"><span class="badge bg-success">{{$total_incoming_vote}} / {{$dpt}}</span></div>
                         </div>
                     </div>
                     <div class="col-xxl-6">
@@ -319,8 +320,8 @@ $tps = Tps::count();
                     <div class="col-xxl-6">
                         <div class="container" style="margin-left: 3%; margin-top: 10%;">
                             <div class="text-center">Terverifikasi {{$saksi_terverifikasi}} TPS dari {{$saksi_masuk}} TPS Masuk</div>
+                            <div class="text-center mt-2 mb-2"><span class="badge bg-success">{{$total_verification_voice}} / {{$dpt}}</span></div>
                             <div id="chart-donut" class="chartsh h-100 w-100"></div>
-                            <div class="text-center mt-5"><span class="badge bg-success">{{$total_verification_voice}} / {{$dpt}}</span></div>
                         </div>
                     </div>
                     <div class="col-xxl-6">
@@ -498,9 +499,9 @@ $tps = Tps::count();
         <div class="card-title">Admin Demography Tracking</div>
 
         <div class="ms-auto">
-        <a class="nav-link icon full-screen-link nav-link-bg"id="ikon-map-full">
-                        <i class="fe fe-minimize"></i>
-                    </a>
+            <a class="nav-link icon full-screen-link nav-link-bg"id="ikon-map-full">
+                <i class="fe fe-minimize"></i>
+            </a>
         </div>
     </div>
     <div class="card-body">

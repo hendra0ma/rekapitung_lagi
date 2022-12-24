@@ -14,30 +14,17 @@
             </div>
         </div>
         <div class="panel-body tabs-menu-body latest-tasks p-0 border-0">
-            <div class="tabs-menu border-bottom">
-                <!-- Tabs -->
-                <ul class="nav panel-tabs">
-                    <li class=""><a href="#side1" class="active" data-bs-toggle="tab"><i class="fe fe-user me-1"></i>
-                            Profile</a></li>
-                    <li><a href="#side2" data-bs-toggle="tab"><i class="fe fe-users me-1"></i> Contacts</a>
-                    </li>
-                    <li><a href="#side3" data-bs-toggle="tab"><i class="fe fe-settings me-1"></i>
-                            Settings</a>
-                    </li>
-                </ul>
-            </div>
             <div class="tab-content">
+                
                 <div class="tab-pane active" id="side1">
                     <div class="card-body text-center">
                         <div class="dropdown user-pro-body">
                             <div class="">
-                                <img alt="user-img" class="avatar avatar-xl brround mx-auto text-center"
-                                    src="../../assets/images/faces/6.jpg"><span
-                                    class="avatar-status profile-status bg-green"></span>
+                                <img alt="user-img" class="avatar avatar-xl brround mx-auto text-center" src="{{ Auth::user()->profile_photo_url }}"><span class="avatar-status profile-status bg-green"></span>
                             </div>
                             <div class="user-info mg-t-20">
-                                <h6 class="fw-semibold  mt-2 mb-0">Mintrona Pechon</h6>
-                                <span class="mb-0 text-muted fs-12">Premium Member</span>
+                                <h6 class="fw-semibold  mt-2 mb-0">{{ Auth::user()->name }}</h6>
+                                <span class="mb-0 text-muted fs-12">{{ Auth::user()->role_id == 1 ?"Administrator":"uwon luyi"; }}</span>
                             </div>
                         </div>
                     </div>
@@ -49,38 +36,18 @@
                             </div>
                         </div>
                     </a>
-                    <a class="dropdown-item d-flex border-bottom" href="chat.html">
-                        <div class="d-flex"><i class="fe fe-message-square me-3 tx-20 text-muted"></i>
-                            <div class="pt-1">
-                                <h6 class="mb-0">My Messages</h6>
-                                <p class="tx-12 mb-0 text-muted">Person message information</p>
+                    <form action="{{ route('logout') }}" method="post">
+                        @csrf
+
+                        <a class="dropdown-item d-flex border-bottom" style="cursor: pointer" onclick="$($(this).parent()).submit()">
+                            <div class="d-flex"><i class="fe fe-power me-3 tx-20 text-muted"></i>
+                                <div class="pt-1">
+                                    <h6 class="mb-0">Sign Out</h6>
+                                    <p class="tx-12 mb-0 text-muted">Account Signout</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                    <a class="dropdown-item d-flex border-bottom" href="emailservices.html">
-                        <div class="d-flex"><i class="fe fe-mail me-3 tx-20 text-muted"></i>
-                            <div class="pt-1">
-                                <h6 class="mb-0">My Mails</h6>
-                                <p class="tx-12 mb-0 text-muted">Persons mail information</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="dropdown-item d-flex border-bottom" href="editprofile.html">
-                        <div class="d-flex"><i class="fe fe-settings me-3 tx-20 text-muted"></i>
-                            <div class="pt-1">
-                                <h6 class="mb-0">Account Settings</h6>
-                                <p class="tx-12 mb-0 text-muted">Settings Information</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="dropdown-item d-flex border-bottom" href="login.html">
-                        <div class="d-flex"><i class="fe fe-power me-3 tx-20 text-muted"></i>
-                            <div class="pt-1">
-                                <h6 class="mb-0">Sign Out</h6>
-                                <p class="tx-12 mb-0 text-muted">Account Signout</p>
-                            </div>
-                        </div>
-                    </a>
+                        </a>
+                    </form>
                 </div>
                 <div class="tab-pane" id="side2">
                     <div class="list-group list-group-flush ">

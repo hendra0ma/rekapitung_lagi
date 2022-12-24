@@ -347,17 +347,6 @@ $tps = 2963;
                     <a class="side-menu__item" href="#">
                         <i class="side-menu__icon mdi mdi-arrow-right-drop-circle-outline"></i><span class="side-menu__label">Total TPS {{$tps}}</span></a>
                 </li>
-
-    <!-- 
-                <li class="slide is-expanded">
-                    <a class="side-menu__item" data-bs-toggle="slide" href="index"><i class="side-menu__icon  mdi mdi-format-list-bulleted"></i><span class="side-menu__label">DPT/TPS
-                            2020</span><i class="angle fa fa-angle-right"></i></a>
-                    <ul class="slide-menu open">
-                        <li><a class="slide-item" style="font-size: 17px;">Total DPT {{$dpt}}</a></li>
-                        <li><a class="slide-item" style="font-size: 17px;">Total TPS {{$tps}}</a></li>
-                    </ul>
-                </li>
-                 -->
                 <li>
                     <h3>Bantuan</h3>
                 </li>
@@ -374,6 +363,11 @@ $tps = 2963;
                 </li>
 
                 <hr>
+                <li>
+                    <a class="side-menu__item" href="#">
+                        <i class="side-menu__icon mdi mdi-settings"></i><span class="side-menu__label">Data Setup</span></a>
+                </li>
+
                 <li>
                     <!-- <a class="side-menu__item" href="#"><i class="side-menu__icon mdi mdi-logout"></i><span class="side-menu__label">Logout</span></a> -->
                     <form action="{{ route('logout') }}" method="post">
