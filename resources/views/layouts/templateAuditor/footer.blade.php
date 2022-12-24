@@ -1,5 +1,26 @@
 </div>
 </div>
+
+<div class="chat-popup" style="z-index: 1070;" id="myForm">
+    <div class="form-container">
+        <h1>Chat</h1>
+
+        <div class="main-content-app pt-0">
+            <div class="main-content-body main-content-body-chat">
+                <div class="main-chat-header pt-3">
+                    <div class="main-chat-msg-name mt-2">
+                        <h6>Live Chat Support Sistem</h6>
+                    </div>
+                </div><!-- main-chat-header -->
+                <livewire:chat-person />
+
+                <livewire:chat-input-person />
+                <button onclick="closeForm()" class="btn btn-danger">TUTUP</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- CONTAINER END -->
 </div>
 
