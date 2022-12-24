@@ -32,7 +32,7 @@
                             @csrf
 							<div class="text-center mb-4">
 								<img src="{{url('/')}}/assets/images/brand/logo-2.png" alt="lockscreen image" style="width: 75px" class="mb-2">
-								<h4 class="fw-bold"style="line-height: 1.3">
+								<h4 class="fw-bold text-uppercase"style="line-height: 1.3">
 								Pilpres 2024
 								</h4>
 								<h4 class="fw-bold">Kecamatan {{$kecamatan['name']}}</h4>

@@ -55,16 +55,9 @@
                         </form>
                     </div>
                     <div class="card-footer">
-                        <div class="d-flex justify-content-center my-3">
-                            <a href="" class="social-login  text-center me-4">
-                                <i class="fa fa-google"></i>
-                            </a>
-                            <a href="" class="social-login  text-center me-4">
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                            <a href="" class="social-login  text-center">
-                                <i class="fa fa-twitter"></i>
-                            </a>
+                            <h5 class="fw-semibold text-center">
+                                www.rekapitung.id
+                            </h5>
                         </div>
                     </div>
                 </div>
