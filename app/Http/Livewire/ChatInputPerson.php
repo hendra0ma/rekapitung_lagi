@@ -1,12 +1,8 @@
 <?php
 
 namespace App\Http\Livewire;
-
-use App\Events\ChatEvent;
-use App\Models\ChatApp;
 use App\Models\ChatPerson;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class ChatInputPerson extends Component
