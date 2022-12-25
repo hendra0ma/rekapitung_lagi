@@ -1,5 +1,5 @@
 @include('layouts.partials.head')
-@include('layouts.partials.sidebar')
+@include('layouts.partials.sidebar-log')
 @include('layouts.partials.header')
 
 <div class="row mt-3">
