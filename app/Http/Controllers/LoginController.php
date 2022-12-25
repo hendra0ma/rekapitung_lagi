@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Acakey;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\District;
@@ -17,6 +18,9 @@ class LoginController extends Controller
 {
     public function index(Request $request)
     {
+
+        
+ 
         $result = $this->validate(
             $request,
             ['geetest_challenge' => 'geetest',],

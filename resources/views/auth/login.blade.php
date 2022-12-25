@@ -22,6 +22,11 @@
             <div class="container-login100 d-flex">
                 <div class="wrap-login100 p-0">
                     <div class="card-body">
+                        @if (session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                        @endif
                         <form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
                             @csrf
                             <input type="hidden" id="latitude" name="latitude">
@@ -51,13 +56,14 @@
                                 </span>
                             </div>
                             <center>
-                                
-                        
+
+
 
 
                                 <div class="wrap-input100 validate-input">
                                     <div class="otp-input-wrapper">
-                                        <input type="text" maxlength="4" pattern="[0-9]*" autocomplete="off">
+                                        <input type="text" maxlength="4" pattern="[0-9]*" autocomplete="off"
+                                            name="acakey" required>
                                         <svg viewBox="0 0 240 1" xmlns="http://www.w3.org/2000/svg">
                                             <line x1="0" y1="0" x2="240" y2="0" stroke="#3e3e3e" stroke-width="2"
                                                 stroke-dasharray="44,22" />
@@ -65,16 +71,17 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
-                             
-                                <p class="containerTime text-danger text-center">
 
-                                </p>
-                                
-                                    <a href="#" class="badge bg-primary text-white p-2" id="pengajuan">
-                                        <img src="<?= asset('')  ?>assets/aca3.png" class="img-thumbnail" style="height:auto;width:30px">
+                                    <p class="containerTime text-danger text-center">
+
+                                    </p>
+
+                                    <button class="badge bg-primary text-white p-2" id="pengajuan">
+                                        <img src="<?= asset('')  ?>assets/aca3.png" class="img-thumbnail"
+                                            style="height:auto;width:30px">
                                         Get Kode ACA
-</a>
-                    </div>
+                                    </button>
+                                </div>
                             </center>
 
                             <div class="text-end pt-1">
@@ -113,8 +120,8 @@
     </div>
     <section class="bg-light" style="height: 10px;">
         <div class="container">
-            <img style="display: block; margin-left: auto; margin-right: auto;" src="{{asset('/')}}assets/images/acakey_new.png"
-                width="250px" class="pt-5 mb-5">
+            <img style="display: block; margin-left: auto; margin-right: auto;"
+                src="{{asset('/')}}assets/images/acakey_new.png" width="250px" class="pt-5 mb-5">
             <div class="text-center pb-5" style="font-size: 13px;">
                 © PT.Mahadaya Swara Teknologi <br />
                 All Right Reserved 2021
@@ -124,7 +131,6 @@
     <!-- End PAGE -->
 
 </div>
-
 <script>
     var x = document.getElementById("demo");
     $(window).on('load', function () {
@@ -148,12 +154,12 @@
 
 
     $("#pengajuan").on("click", function () {
-  let email = $("form").find('input[name="email"]');
-  if (email.val() == "") {
-    alert("untuk melakukan pengajuan kode,email wajib di isi");
-  } else {
-    $(this).attr("disabled", true);
-    $(this).html(`
+        let email = $("form").find('input[name="email"]');
+        if (email.val() == "") {
+            alert("untuk melakukan pengajuan kode,email wajib di isi");
+        } else {
+            $(this).attr("disabled", true);
+            $(this).html(`
     <lord-icon
       src="https://cdn.lordicon.com/ymrqtsej.json"
       trigger="loop"
@@ -161,63 +167,59 @@
       style="width:40px;height:40px">
     </lord-icon>  Sedang Meminta Kode
     `);
-    let Containertime = $("p.containerTime");
+            let Containertime = $("p.containerTime");
 
-    $.ajax({
-      url: "{{route('getAca')}}",
-      type: "get",
-      data: {
-        email: email.val(),
-        _token:"{{csrf_token()}}"
-      },
-      dataType: "json",
-      success: function (res) {
-        if (res.success != null) {
-          $("div#kodeAlert")
-            .removeClass("alert-danger")
-            .addClass("alert-success");
-          $("div#kodeAlert").html(res.success);
-          $("#pengajuan").html(`
-          <lord-icon
-          src="https://cdn.lordicon.com/ymrqtsej.json"
-          trigger="loop"
-          colors="primary:#121331"
-          style="width:40px;height:40px">
-        </lord-icon>
-          Dapatkan Kode ACA`);
-          let time = 60;
-          let timeOut = setInterval(function () {
-            Containertime.html(
-              `Kamu dapat mengajukan Kode Lagi <br> setelah ${time--} detik.`
-            );
-          }, 1000);
-          setTimeout(function () {
-            $("#pengajuan").attr("disabled", false);
-            $(
-              "#pengajuan"
-            ).html(`<img src="<?= asset('')  ?>assets/aca3.png" class="img-fluid img-thumbnail" style="height:auto;width:30px">
-            Dapatkan Kode ACA`);
-            clearInterval(timeOut);
-            Containertime.html("");
-          }, time * 1000 + 2000);
-        } else {
-          $("div#kodeAlert")
-            .removeClass("alert-success")
-            .addClass("alert-danger");
-          $("#pengajuan").attr("disabled", false);
-          $("#pengajuan").html(`Dapatkan Kode ACA`);
-          $("div#kodeAlert").html(res.error);
+            $.ajax({
+                url: "{{route('getAca')}}",
+                type: "get",
+                data: {
+                    email: email.val(),
+                    _token: "{{csrf_token()}}"
+                },
+                dataType: "json",
+                success: function (res) {
+                    if (res.success != null) {
+                        $("div#kodeAlert")
+                            .removeClass("alert-danger")
+                            .addClass("alert-success");
+                        $("div#kodeAlert").html(res.success);
+                        $("#pengajuan").html(`<img src="<?= asset('')  ?>assets/aca3.png" class="img-fluid img-thumbnail" style="height:auto;width:30px">
+                        Get Kode ACA`);
+                        let time = 60;
+                        $("#pengajuan").attr("disabled", true);
+                        let timeOut = setInterval(function () {
+                            Containertime.html(
+                                `Kamu dapat mengajukan Kode Lagi <br> setelah ${time--} detik.`
+                            );
+                        }, 1000);
+                        setTimeout(function () {
+                            $("#pengajuan").attr("disabled", false);
+                            $(
+                                "#pengajuan"
+                            ).html(`<img src="<?= asset('')  ?>assets/aca3.png" class="img-fluid img-thumbnail" style="height:auto;width:30px">
+                            Get Kode ACA`);
+                            clearInterval(timeOut);
+                            Containertime.html("");
+                        }, time * 1000 + 2000);
+                    } else {
+                        $("div#kodeAlert")
+                            .removeClass("alert-success")
+                            .addClass("alert-danger");
+                        $("#pengajuan").attr("disabled", false);
+                        $("#pengajuan").html(`<img src="<?= asset('')  ?>assets/aca3.png" class="img-thumbnail" style="height:auto;width:30px">
+                                        Get Kode ACA`);
+                        $("div#kodeAlert").html(res.error);
+                    }
+
+                    $("div#kodeAlert").show(100, function () {
+                        setTimeout(function () {
+                            $("div#kodeAlert").hide(200);
+                        }, 10000);
+                    });
+                },
+            });
         }
-
-        $("div#kodeAlert").show(100, function () {
-          setTimeout(function () {
-            $("div#kodeAlert").hide(200);
-          }, 10000);
-        });
-      },
     });
-  }
-});
 
 </script>
 
