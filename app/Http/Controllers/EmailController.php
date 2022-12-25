@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Mail;
 class EmailController extends Controller
 {
     public function getAca(Request $request){
-        $kode = rand(1000,9999);
+        $kode = rand(100000,999999);
         $details = [
         'title' => 'Mail from Acakey.com',
         'kode' => $kode

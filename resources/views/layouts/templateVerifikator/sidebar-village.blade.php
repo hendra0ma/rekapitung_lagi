@@ -89,7 +89,7 @@ $title = '';
                             <button class="btn tablink w-100 rounded-0  slide-item" onclick="openPage('C1-Partai', this)">C1 Partai</button>
                         </li>
                         <li>
-                            <button class="btn tablink w-100 rounded-0  slide-item" onclick="openPage('C1-Relawan', this)">C1 Relawan</button>
+                            <button class="btn tablink w-100 rounded-0  slide-item" onclick="openPage('C1-Relawan', this)">C1 Relawan Partai</button>
                         </li>
                         <li>
                             <button class="btn tablink w-100 rounded-0  slide-item" onclick="openPage('C1-Saksi-Pending', this)" style="background-color: rgb(98, 89, 202);">C1
@@ -111,8 +111,8 @@ $title = '';
                         <li><a href="#" class="slide-item c1saksi">C1 Saksi</a></li>
                         <li><a href="#" class="slide-item c1partai">C1 Partai</a></li>
                         <li><a href="#" class="slide-item c1saksipend">C1 Saksi (Pending)</a></li>
-                        <li><a href="#" class="slide-item c1relawan">C1 Relawan</a></li>
-                        <li><a href="#" class="slide-item c1relawanband">C1 Relawan (Banding)</a></li>
+                        <li><a href="#" class="slide-item c1relawan">C1 Relawan Partai</a></li>
+                        <li><a href="#" class="slide-item c1relawanband">C1 Relawan Partai (Banding)</a></li>
                         <li><a href="#" class="slide-item pengajuankoreksi">Pengajuan koreksi</a></li>
                         <li><a href="#" class="slide-item tpsdibatalkan">TPS Dibatalkan</a></li>
                         <li><a href="#" class="slide-item koreksiditolak">Koreksi Ditolak</a></li>

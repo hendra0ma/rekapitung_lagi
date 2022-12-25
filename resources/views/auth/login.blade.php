@@ -5,7 +5,7 @@
 
     <!-- GLOABAL LOADER -->
     <div id="global-loader">
-        <img src="../../assets/images/loader.svg" class="loader-img" alt="Loader">
+        <img src="{{asset('')}}assets/images/loader.svg" class="loader-img" alt="Loader">
     </div>
     <!-- /GLOABAL LOADER -->
 
@@ -15,7 +15,7 @@
             <!-- CONTAINER OPEN -->
             <div class="col col-login mx-auto">
                 <div class="text-center">
-                    <img src="../../assets/images/brand/logo.png" class="img-fluid" style="width:100px;height:auto;"
+                    <img src="{{asset('')}}assets/images/brand/logo.png" class="img-fluid" style="width:100px;height:auto;"
                         alt="">
                 </div>
             </div>
@@ -62,11 +62,11 @@
 
                                 <div class="wrap-input100 validate-input">
                                     <div class="otp-input-wrapper">
-                                        <input type="text" maxlength="4" pattern="[0-9]*" autocomplete="off"
+                                        <input type="text" maxlength="6" pattern="[0-9]*" autocomplete="off"
                                             name="acakey" required>
-                                        <svg viewBox="0 0 240 1" xmlns="http://www.w3.org/2000/svg">
-                                            <line x1="0" y1="0" x2="240" y2="0" stroke="#3e3e3e" stroke-width="2"
-                                                stroke-dasharray="44,22" />
+                                        <svg viewBox="0 0 240 2" xmlns="http://www.w3.org/2000/svg">
+                                            <line x1="0" y1="0" x2="400" y2="1" stroke="#3e3e3e" stroke-width="2"
+                                                stroke-dasharray="20" />
                                         </svg>
                                     </div>
                                 </div>

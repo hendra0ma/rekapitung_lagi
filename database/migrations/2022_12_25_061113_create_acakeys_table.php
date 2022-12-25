@@ -15,7 +15,7 @@ class CreateAcakeysTable extends Migration
     {
         Schema::create('acakeys', function (Blueprint $table) {
             $table->id();
-            $table->string('kode',4);
+            $table->string('kode',10);
             $table->string('user_id');
             $table->timestamps();
         });

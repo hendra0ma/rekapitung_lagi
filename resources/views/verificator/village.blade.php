@@ -81,17 +81,16 @@
             ?>
             <button class="btn tablink w-100 rounded-0 c1saksi" onclick="openPage('C1-Saksi', this, '#45aaf2 ')" id="defaultOpen">C1 Saksi <span class="badge rounded-pill bg-danger">{{$count_suara}}</span></button>
         </div>
-        <div class="col-md">
+        <!-- <div class="col-md">
             <button class="btn tablink w-100 rounded-0 c1partai" onclick="openPage('C1-Partai', this, '#f7b731')">C1 Partai</button>
-        </div>
+        </div> -->
         <div class="col-md">
-            <button class="btn tablink w-100 rounded-0 c1relawan" onclick="openPage('C1-Relawan', this, '#f82649')">C1 Relawan</button>
+            <button class="btn tablink w-100 rounded-0 c1relawan" onclick="openPage('C1-Relawan', this, '#f82649')">C1 Relawan Partai</button>
         </div>
         <div class="col-md">
             <button class="btn tablink w-100 rounded-0 c1saksipend" onclick="openPage('C1-Saksi-Pending', this, '#6259ca ')" style="background-color: rgb(98, 89, 202);">C1
                 Saksi (Pending)</button>
         </div>
-
         <div class="col-md">
             <button class="btn tablink w-100 rounded-0 kecurangan" onclick="openPage('Kecurangan', this, '#09ad95')">Kecurangan <span class="badge rounded-pill bg-danger">{{$count_kecurangan}}</span></button>
         </div>
@@ -292,8 +291,8 @@ setTimeout(function() {
     $('.c1relawan').click(function() {
         $('body').removeClass('timer-alert');
         swal({
-            title: "C1 Relawan",
-            text: "C1 Relawan adalah hasil perhitungan suara di TPS yang dikirimkan oleh relawan.",
+            title: "C1 Relawan Partai",
+            text: "C1 Relawan Partai adalah hasil perhitungan suara di TPS yang dikirimkan oleh relawan.",
             type: "warning",
             confirmButtonText: 'Ok',
         });
@@ -316,7 +315,7 @@ setTimeout(function() {
     $('.c1relawanband').click(function() {
         $('body').removeClass('timer-alert');
         swal({
-            title: "C1 Relawan (Banding)",
+            title: "C1 Relawan Partai (Banding)",
             text: "C1 Banding adalah data C1 yang berbeda di TPS yang sama. Kiriman C1 Banding berasal dari masyarakat / relawan untuk dibandingkan dengan C1 Saksi.",
             type: "warning",
             confirmButtonText: 'Ok',

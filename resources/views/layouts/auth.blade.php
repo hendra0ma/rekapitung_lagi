@@ -60,13 +60,13 @@
 .otp-input-wrapper input {
   padding: 0;
   width: 264px;
-  font-size: 32px;
+  font-size: 20px;
   font-weight: 600;
   color: #3e3e3e;
   background-color: transparent;
   border: 0;
-  margin-left: 12px;
-  letter-spacing: 48px;
+  margin-left: 2px;
+  letter-spacing: 30px;
   font-family: sans-serif !important;
 }
 .otp-input-wrapper input:focus {
