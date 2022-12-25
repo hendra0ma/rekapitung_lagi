@@ -221,8 +221,8 @@ $tps = 2963;
                             Kecurangan</span></a>
                 </li>
                 <li>
-                    <a class="side-menu__item" href="/v2l_security/{{encrypt(26)}}?title=Indikasi Kecurangan DPT"><i
-                            class="side-menu__icon mdi mdi-google-analytics"></i><span class="side-menu__label">Indikasi Kecurangan DPT</span></a>
+                    <a class="side-menu__item" href="/v2l_security/{{encrypt(26)}}?title=Indikasi Realisasi DPT"><i
+                            class="side-menu__icon mdi mdi-google-analytics"></i><span class="side-menu__label">Indikasi Realisasi DPT</span></a>
                 </li>
 
             
