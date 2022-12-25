@@ -10,14 +10,14 @@
         </h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Analisa DPT
+            <li class="breadcrumb-item active" aria-current="page">Analisa Realisasi DPT
                 <!-- Kota -->
             </li>
 
         </ol>
 
     </div>
-    <h3 class="page-title mt-2">Hasil Analisa DPT KPU Tingkat Kabupaten / Kota</h2>
+    <h3 class="page-title mt-2">Hasil Analisa Realisasi DPT KPU Tingkat Kabupaten / Kota</h2>
 </div>
 
 <hr style="border: 1px solid; margin-top: 50px">
@@ -28,7 +28,7 @@
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/KPU_Logo.svg/925px-KPU_Logo.svg.png" class="hadow-4 mb-3"
             style="width: 100px;" alt="Avatar" />
            </center>
-           <b><center>Hasil Analisa DPT KPU</center>
+           <b><center>Hasil Analisa Realisasi DPT KPU</center>
             <center>Pilkada Tanggerang Selatan 2020</center></b>
           <table class="table table-bordered table-hover mt-2">
               <thead class="bg-primary text-white">
