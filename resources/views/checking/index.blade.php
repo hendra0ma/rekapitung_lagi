@@ -9,7 +9,7 @@
         </h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Overlimit
+            <li class="breadcrumb-item active" aria-current="page">Verifikator Overtime
                 <!-- Kota -->
             </li>
         </ol>
@@ -104,7 +104,7 @@
                 <div class="main-content-app pt-0">
                     <div class="main-content-body main-content-body-chat">
                         <div class="main-chat-header pt-3">
-                            <div class="main-chat-msg-name mt-2">
+                            <div class="main-chat-msg-name mt-2 mx-auto">
                                 <h6><i class="fa-solid fa-user"></i> &nbsp;Live Chat (Sesama Verifikator)</h6>
                             </div>
                         </div><!-- main-chat-header -->
