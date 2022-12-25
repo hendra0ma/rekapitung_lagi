@@ -9,12 +9,12 @@
         </h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Hukum
+            <li class="breadcrumb-item active" aria-current="page">Validator Kecurangan
                 <!-- Kota -->
             </li>
         </ol>
         <?php $usertotal = App\Models\User::where('role_id',7)->count(); ?>
-        <h4 class="fs-4 mt-2 fw-bold">Validator Hukum ({{$usertotal}})</h4>
+        <h4 class="fs-4 mt-2 fw-bold">Validator Kecurangan ({{$usertotal}})</h4>
     </div>
     <div class="col-lg-8 mt-2">
         <div class="row">
@@ -59,7 +59,7 @@
     <div class="col-lg-6 col-md-12">
         <div class="card">
             <div class="card-header">
-                <h5 class="card-title">Tim Admin Hukum</h5>
+                <h5 class="card-title">Tim Validasi Kecurangan</h5>
             </div>
             <div class="card-body">
                 <div class="row">
@@ -112,8 +112,8 @@
             <div class="main-content-app pt-0">
                 <div class="main-content-body main-content-body-chat">
                     <div class="main-chat-header pt-3">
-                        <div class="main-chat-msg-name mt-2">
-                            <h6>Live Chat (Sesama Admin Hukum)</h6>
+                        <div class="main-chat-msg-name mt-2 mx-auto">
+                            <h6><i class="fa-solid fa-user"></i> &nbsp;Live Chat (Sesama Validator Kecurangan)</h6>
                         </div>
                     </div><!-- main-chat-header -->
                     <livewire:chat-group-component />

@@ -9,11 +9,11 @@
         </h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Fraud Barcode Report
+            <li class="breadcrumb-item active" aria-current="page">Barcode Data Kecurangan
                 <!-- Kota -->
             </li>
         </ol>
-        <h4 class="fs-4 mt-2 fw-bold">Administrator Election Fraud Barcode Report (EFBR)</h4>
+        <h4 class="fs-4 mt-2 fw-bold">Barcode Data Kecurangan (EFBR)</h4>
     </div>
     
      <div class="col-lg-3 mt-4">

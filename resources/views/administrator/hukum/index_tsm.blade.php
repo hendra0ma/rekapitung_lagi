@@ -8,11 +8,11 @@
         </h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">TSM Pemilu
+            <li class="breadcrumb-item active" aria-current="page">Indikator Data TSM
                 <!-- Kota -->
             </li>
         </ol>
-        <h4 class="fs-4 mt-2 fw-bold">Administrator Election TSM Indicator (ETSMI)</h4>
+        <h4 class="fs-4 mt-2 fw-bold">Indikator Data TSM (ETSMI)</h4>
     </div>
     <!-- <div class="col-lg-8 mt-2">
         <div class="row">

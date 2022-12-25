@@ -15,7 +15,7 @@
                 <!-- Kota -->
             </li>
         </ol>
-        <h4 class="fs-4 mt-2 fw-bold">Administrator Auditor (2)</h4> <!-- This Dummy Data -->
+        <h4 class="fs-4 mt-2 fw-bold">Audit Suara Masuk (2)</h4> <!-- This Dummy Data -->
     </div>
     <div class="col-lg-8">
         <div class="row">
