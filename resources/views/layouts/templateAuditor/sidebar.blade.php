@@ -23,30 +23,23 @@ $tps = Tps::where('district_id',(string)$district->id)->count();
             <aside class="app-sidebar">
                 <div class="side-header">
                     <a class="header-brand1" href="{{url('')}}/administrator/index">
-                        <!-- <img src="{{url('/')}}/assets/images/brand/logo.png" class="header-brand-img desktop-logo" alt="logo">
-                        <img src="{{url('/')}}/assets/images/brand/logo-1.png" class="header-brand-img toggle-logo" alt="logo">
-                        <img src="{{url('/')}}/assets/images/brand/logo-2.png" class="header-brand-img light-logo" alt="logo">
-                        <img src="{{url('/')}}/assets/images/brand/logo-3.png" class="header-brand-img light-logo1" alt="logo"> -->
-                    </a><!-- LOGO -->
+
+                        <h3 class="text-dark">
+                            <b>
+                                PILPRES 2024
+                            </b>
+                        </h3>
+                    </a>
                 </div>
                 <ul class="side-menu">
+
                     <li class="my-2">
                         &nbsp;
                     </li>
                     <li class="mt-5">
                         <center>
-                            <img src="{{asset('storage').'/'.$config['regencies_logo']}}" style="width:120px;height:auto">
+                            <img src="{{asset('images/logo')}}/rekapitung_gold.png" style="width:120px;height:auto">
                         </center>
-                    </li>
-                    <li class="mt-3">
-                        <span>
-                            <a href="#" class="text-dark">
-                                <center>
-                                    <b>{{$kota['name']}} <br>
-                                        KECAMATAN {{$district['name']}}</b>
-                                </center>
-                            </a>
-                        </span>
                     </li>
                     <li>
                         <h3>Main</h3>
