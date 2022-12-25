@@ -26,10 +26,11 @@ $tps = 2963;
         <aside class="app-sidebar">
             <div class="side-header">
                 <a class="header-brand1" href="{{url('')}}/administrator/index">
-                    <!-- <img src="{{url('/')}}/assets/images/brand/logo.png" class="header-brand-img desktop-logo" alt="logo">
-                    <img src="{{url('/')}}/assets/images/brand/logo-1.png" class="header-brand-img toggle-logo" alt="logo">
-                    <img src="{{url('/')}}/assets/images/brand/logo-2.png" class="header-brand-img light-logo" alt="logo">
-                    <img src="{{url('/')}}/assets/images/brand/logo-3.png" class="header-brand-img light-logo1" alt="logo"> -->
+                <h3 class="text-dark">
+                        <b>
+                            PILPRES 2024
+                        </b>
+                    </h3>
                 </a><!-- LOGO -->
             </div>
             <ul class="side-menu">

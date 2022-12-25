@@ -31,15 +31,15 @@ $tps = 2963;
                 </a>
             </div>
             <ul class="side-menu">
-                <!-- <li class="my-2">
+                <li class="my-2">
                     &nbsp;
                 </li>
                 <li class="mt-5">
-                    <center>
+                <center>
                         <img src="{{asset('storage').'/'.$config['regencies_logo']}}" style="width:120px;height:auto">
                     </center>
                 </li>
-                <li class="mt-3">
+                <!-- <li class="mt-3">
                     <span>
                         <a href="#" class="text-dark">
                             <center>
