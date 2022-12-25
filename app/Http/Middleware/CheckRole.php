@@ -7,6 +7,9 @@ use Closure;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
+use App\Models\Acakey;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class CheckRole
 {
@@ -21,14 +24,13 @@ class CheckRole
     public function handle(Request $request, Closure $next, string $role)
     {
         $role_id = auth()->user()->role_id;
-
-
         $config = Config::first();
         //lockdown
         if($config->lockdown == "yes" && $role_id !=1){
              return redirect()->route('config.lockdown');
-        }   
-
+        }
+      
+    
 
         if ($role == 'administrator' && $role_id != 1 && $role_id != 25 && $role_id !=  26) {
             abort(403);
