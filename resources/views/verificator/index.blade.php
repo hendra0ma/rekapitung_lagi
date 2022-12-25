@@ -20,7 +20,7 @@
         </ol>
         <?php $ver = App\Models\User::where('role_id',2)->count();
          $ver2 = App\Models\User::where('role_id',2)->get()?>
-        <h4 class="fs-4 mt-2 fw-bold">Administrator Verifikator ({{$ver}})</h4>
+        <h4 class="fs-4 mt-2 fw-bold">Verifikator Suara Saksi ({{$ver}})</h4>
     </div>
     <div class="col-lg-1">
         <div class="ms-auto pageheader-btn mt-5">
@@ -57,7 +57,7 @@
         <div class="col-xl-7">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="card-title">Tim Admin Verifikasi</h5>
+                    <h5 class="card-title">Tim Verifikasi Suara Saksi</h5>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -111,8 +111,8 @@
                 <div class="main-content-app pt-0">
                     <div class="main-content-body main-content-body-chat">
                         <div class="main-chat-header pt-3">
-                            <div class="main-chat-msg-name mt-2">
-                                <h6>Live Chat (Sesama Verifikator)</h6>
+                            <div class="main-chat-msg-name mt-2 mx-auto">
+                                <h6><i class="fa-solid fa-user"></i> &nbsp;Live Chat (Sesama Verifikator)</h6>
                             </div>
                         </div><!-- main-chat-header -->
                         <livewire:chat-group-component />

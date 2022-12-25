@@ -113,7 +113,7 @@ $tps = Tps::where('district_id',(string)$district->id)->count();
                     <ul class="slide-menu">
                         <li><a href="#" class="slide-item c1saksi">C1 Saksi</a></li>
                         <li><a href="#" class="slide-item c1partai">C1 Partai</a></li>
-                        <li><a href="#" class="slide-item c1saksipend">C1 Saksi(Pending)</a></li>
+                        <li><a href="#" class="slide-item c1saksipend">C1 Saksi (Pending)</a></li>
                         <li><a href="#" class="slide-item c1relawan">C1 Relawan</a></li>
                         <li><a href="#" class="slide-item c1relawanband">C1 Relawan (Banding)</a></li>
                         <li><a href="#" class="slide-item pengajuankoreksi">Pengajuan koreksi</a></li>

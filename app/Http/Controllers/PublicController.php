@@ -19,6 +19,7 @@ use App\Models\Saksi;
 use App\Models\History;
 use App\Models\Listkecurangan;
 use App\Models\Tracking;
+use App\Models\Province;
 use BuktiDeskirpsiCurang;
 use BuktiFoto;
 use Illuminate\Http\Request;
@@ -227,6 +228,7 @@ class PublicController extends Controller
         $data['config'] = Config::first();
         $config = $data['config'];
         $data['kota'] = Regency::where('id', $config['regencies_id'])->first();
+        $data['provinsi'] = Province::where('id', $data['kota']['province_id'])->first();
         $data['paslon'] = Paslon::get();
         $data['kecamatan'] = District::where('regency_id', $config['regencies_id'])->get();
         foreach ($data['paslon'] as $ps) {
@@ -241,6 +243,7 @@ class PublicController extends Controller
         $data['config'] = Config::first();
         $config = $data['config'];
         $data['kota'] = Regency::where('id', $config['regencies_id'])->first();
+        $data['provinsi'] = Province::where('id', $data['kota']['province_id'])->first();
         $data['paslon'] = Paslon::get();
         $data['kecamatan'] = District::where('regency_id', $config['regencies_id'])->get();
         foreach ($data['paslon'] as $ps) {
@@ -255,6 +258,7 @@ class PublicController extends Controller
         $data['config'] = Config::first();
         $config = $data['config'];
         $data['kota'] = Regency::where('id', $config['regencies_id'])->first();
+        $data['provinsi'] = Province::where('id', $data['kota']['province_id'])->first();
         $data['paslon'] = Paslon::get();
         $data['kecamatan'] = District::where('regency_id', $config['regencies_id'])->get();
         foreach ($data['paslon'] as $ps) {

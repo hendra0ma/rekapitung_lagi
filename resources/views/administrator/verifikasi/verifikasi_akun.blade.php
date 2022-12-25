@@ -16,11 +16,11 @@ use App\Models\TPS;
         </h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Verifikasi Admin
+            <li class="breadcrumb-item active" aria-current="page">Otentifikasi Admin
                 <!-- Kota -->
             </li>
         </ol>
-        <h4 class="fs-4 mt-2 fw-bold">Verifikasi Admin</h4> <!-- This Dummy Data -->
+        <h4 class="fs-4 mt-2 fw-bold">Otentifikasi Admin</h4> <!-- This Dummy Data -->
     </div>
 </div>
 <!-- PAGE-HEADER END -->
@@ -33,8 +33,8 @@ use App\Models\TPS;
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered text-nowrap border-bottom table-hover w-100" id="basic-datatable">
-                        <p style="font-size: 15px;">*Anda Dapat Menyetujui Atau MemBlokir Akun Saksi
-                            Yang Tidak Di Kenal</p>
+                        <p style="font-size: 15px;">*Anda dapat menyetujui stau memblokir akun saksi
+                            yang tidak di kenal</p>
                         <thead>
                             <tr>
                                 <th class="border-bottom-0">Foto</th>
@@ -94,7 +94,7 @@ use App\Models\TPS;
                     <li>
                         <b class="text-warning">Pending</b> adalah status admin yang terdaftar
                         sesuai dengan data yang di berikan oleh pasangan calon tetapi hanya memiliki
-                        1 kecocokan indikator berupa Nomor NIK atau email sehingga admin Huver dapat
+                        1 kecocokan indikator berupa Nomor NIK atau email sehingga Admin Otentifikasi dapat
                         memverifikasi ulang admin tersebut melalui telepon atau WhatsApp
                     </li>
                     <li>
@@ -104,7 +104,7 @@ use App\Models\TPS;
                     </li>
                     <li>
                         <b class="text-danger">Ditolak</b> adalah status admin tidak dikenal dan di
-                        blokir oleh admin Hover
+                        blokir oleh Admin Otentifikasi
                     </li>
                 </ul>
             </div>

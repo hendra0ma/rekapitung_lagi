@@ -21,7 +21,7 @@
                 <!-- Kota -->
             </li>
         </ol>
-        <h4 class="fs-4 mt-2 fw-bold">Administrator Verifikator (2)</h4> <!-- This Dummy Data -->
+        <h4 class="fs-4 mt-2 fw-bold">Verifikasi Suara Saksi (2)</h4> <!-- This Dummy Data -->
     </div>
     <div class="col-lg-8">
         <div class="row">
@@ -145,7 +145,7 @@
                 <div class="container-md">
                     <h5 class="modal-title fw-bold fs-1" id="periksakecuranganLabel">Proses Verifikasi Data Kecurangan</h5>
                 </div>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                <button type="button" class="me-auto btn-close my-auto bg-danger btn-sm text-white" data-bs-dismiss="modal" aria-label="Close">X</button>
             </div>
             <div class="modal-body">
                 <div class="row" id="container-view-modal-kecurangan">

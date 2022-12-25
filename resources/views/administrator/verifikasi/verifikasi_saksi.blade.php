@@ -16,11 +16,11 @@ use App\Models\Tps;
         </h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Verifikasi Saksi
+            <li class="breadcrumb-item active" aria-current="page">Otentifikasi Saksi
                 <!-- Kota -->
             </li>
         </ol>
-        <h4 class="fs-4 mt-2 fw-bold">Administrator Verifikasi Saksi</h4> <!-- This Dummy Data -->
+        <h4 class="fs-4 mt-2 fw-bold">Otentifikasi Saksi</h4> <!-- This Dummy Data -->
     </div>
 </div>
 <!-- PAGE-HEADER END -->
@@ -34,9 +34,9 @@ use App\Models\Tps;
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered text-nowrap border-bottom table-hover w-100" id="basic-datatable">
-                        <p style="font-size: 15px;">*Anda Dapat
-                            Menyetujui Atau MemBlokir Akun Saksi
-                            Yang Tidak Di Kenal</p>
+                        <p style="font-size: 15px;">*Anda dapat
+                            menyetujui atau memblokir akun saksi
+                            yang tidak di kenal</p>
                         <thead>
                             <tr>
                                 <th class="border-bottom-0">Foto</th>
@@ -105,7 +105,7 @@ use App\Models\Tps;
                     <li>
                         <b class="text-warning">Pending</b> adalah status saksi yang terdaftar
                         sesuai dengan data yang di berikan oleh pasangan calon tetapi hanya memiliki
-                        1 kecocokan indikator berupa Nomor NIK atau email sehingga admin Huver dapat
+                        1 kecocokan indikator berupa Nomor NIK atau email sehingga Admin Otentifikasi dapat
                         memverifikasi ulang saksi tersebut melalui telepon atau WhatsApp
                     </li>
                     <li>
@@ -115,17 +115,9 @@ use App\Models\Tps;
                     </li>
                     <li>
                         <b class="text-danger">Ditolak</b> adalah status saksi tidak dikenal dan di
-                        blokir oleh admin Hover
+                        blokir oleh Admin Otentifikasi
                     </li>
                 </ul>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header">
-                <h5 class="card-title">Import Database Saksi</h5>
-            </div>
-            <div class="card-body">
-                <input type="file" class="form-control" id="exampleInputname" placeholder="Import Data">
             </div>
         </div>
     </div>

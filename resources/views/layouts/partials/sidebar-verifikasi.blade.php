@@ -26,11 +26,12 @@ $tps = 2963;
         <aside class="app-sidebar">
             <div class="side-header">
                 <a class="header-brand1" href="{{url('')}}/administrator/index">
-                    <!-- <img src="{{url('/')}}/assets/images/brand/logo.png" class="header-brand-img desktop-logo" alt="logo">
-                    <img src="{{url('/')}}/assets/images/brand/logo-1.png" class="header-brand-img toggle-logo" alt="logo">
-                    <img src="{{url('/')}}/assets/images/brand/logo-2.png" class="header-brand-img light-logo" alt="logo">
-                    <img src="{{url('/')}}/assets/images/brand/logo-3.png" class="header-brand-img light-logo1" alt="logo"> -->
-                </a><!-- LOGO -->
+                    <h3 class="text-dark">
+                        <b>
+                            PILPRES 2024
+                        </b>
+                    </h3>
+                </a>
             </div>
             <ul class="side-menu">
                 <!-- <li class="my-2">
@@ -60,15 +61,15 @@ $tps = 2963;
                 </li>
                 <li>
                     <a class="side-menu__item modal-action" href="{{url('')}}/administrator/verifikasi_saksi">
-                        <i class="side-menu__icon mdi mdi-home"></i><span class="side-menu__label">Verifikasi Saksi</span></a>
+                        <i class="side-menu__icon mdi mdi-home"></i><span class="side-menu__label">Otentifikasi Saksi</span></a>
                 </li>
                 <li>
                     <a class="side-menu__item modal-action" href="{{url('')}}/administrator/verifikasi_akun">
-                        <i class="side-menu__icon mdi mdi-home"></i><span class="side-menu__label">Verifikasi Admin</span></a>
+                        <i class="side-menu__icon mdi mdi-home"></i><span class="side-menu__label">Otentifikasi Admin</span></a>
                 </li>
                 <li>
                     <a class="side-menu__item modal-action" href="{{url('')}}/administrator/verifikasi_koreksi">
-                        <i class="side-menu__icon mdi mdi-home"></i><span class="side-menu__label">Verifikasi Koreksi</span></a>
+                        <i class="side-menu__icon mdi mdi-home"></i><span class="side-menu__label">Otentifikasi Koreksi</span></a>
                 </li>
 
                 <hr>

@@ -28,20 +28,12 @@ $tps = 2963;
             <div class="side-header">
                 <a class="header-brand1" href="{{url('')}}/administrator/index">
 
-                  <h3 class="text-dark">
-                    <b>
-                    PILPRES 2024
-                  </b>
-                </h3>
-                    <!-- <img src="{{url('/')}}/assets/images/brand/logo.png" class="header-brand-img desktop-logo"
-                        alt="logo">
-                    <img src="{{url('/')}}/assets/images/brand/logo-1.png" class="header-brand-img toggle-logo"
-                        alt="logo">
-                    <img src="{{url('/')}}/assets/images/brand/logo-2.png" class="header-brand-img light-logo"
-                        alt="logo">
-                    <img src="{{url('/')}}/assets/images/brand/logo-3.png" class="header-brand-img light-logo1"
-                        alt="logo"> -->
-                </a><!-- LOGO -->
+                    <h3 class="text-dark">
+                        <b>
+                            PILPRES 2024
+                        </b>
+                    </h3>
+                </a>
             </div>
             <ul class="side-menu">
                 <!-- <li class="my-2">
@@ -131,11 +123,11 @@ $tps = 2963;
                             class="angle fa fa-angle-right"></i></a>
                     <ul class="slide-menu">
                         <li><a href="{{url('')}}/administrator/absensi" class="slide-item">Absensi Saksi</a></li>
-                        <li><a href="/v2l_security/{{encrypt(7)}}?title=Verifikasi Saksi"
+                        <li><a href="/v2l_security/{{encrypt(7)}}?title=Otentifikasi Saksi"
                                 class="slide-item">Otentifikasi Saksi</a></li>
-                        <li><a href="/v2l_security/{{encrypt(8)}}?title=Verifikasi Admin"
+                        <li><a href="/v2l_security/{{encrypt(8)}}?title=Otentifikasi Admin"
                                 class="slide-item">Otentifikasi Admin</a></li>
-                        <li><a href="/v2l_security/{{encrypt(9)}}?title=Verifikasi Koreksi"
+                        <li><a href="/v2l_security/{{encrypt(9)}}?title=Otentifikasi Koreksi"
                                 class="slide-item">Otentifikasi Koreksi</a></li>
                     </ul>
                 </li>
@@ -196,6 +188,10 @@ $tps = 2963;
                 <li>
                     <a class="side-menu__item" href="/v2l_security/{{encrypt(13)}}?title=Verifikasi Suara Overtime"><i
                             class="side-menu__icon mdi mdi-speedometer"></i><span class="side-menu__label">Verifikasi Suara Overtime</span></a>
+                </li>
+                <li>
+                    <a class="side-menu__item" href="/v2l_security/{{encrypt(13)}}?title=Verifikasi Suara Overtime"><i
+                            class="side-menu__icon mdi mdi-dropbox"></i><span class="side-menu__label">Verifikasi Suara Saksi Partai</span></a>
                 </li>
 
                 <li>

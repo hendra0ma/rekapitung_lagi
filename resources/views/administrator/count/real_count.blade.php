@@ -79,28 +79,23 @@ use App\Models\Paslon;
     <div class="page">
         <div class="page-main">
             
-            <div class="text-center" style="background-color: #B40D1A;">
-                <div class="pt-7">
-                    <h1 class="fw-bolder text-white display-4" style="margin-bottom: 30px;">Real Count</h1>
-                </div>
-                <div class="pb-2">
-                    <h2 class="fw-bolder text-white mb-1">PILPRES 2024</h2>
-                </div>
+            <div class="text-center">
+                <h1 class="fw-bolder display-4 pt-5 mb-0">Real Count</h1>
             </div>
 
-            <div class="container text-center">
+            <div class="container">
 
-                <div class="row mt-2">
+                <div class="row align-items-center">
 
-                    <div class="col-4">
-                        
+                    <div class="col-2">
+                        <img style="width: 75px" src="{{url('/')}}/images/logo/rekapitung_gold.png" alt="">
                     </div>
-
-                    <div class="col-4">
-                        <div class="fs-4 fw-bold">BANTEN</div>
+                    
+                    <div class="col-8">
+                        <div class="fs-4 fw-bold mx-auto text-center">PILPRES 2024 / PROVINSI {{$provinsi->name}} / {{$kota->name}}</div>
                     </div>
-
-                    <div class="col-4">
+                    
+                    <div class="col-2">
                         <div class="dropdown d-md-flex">
                             <a class="nav-link icon ms-auto m-0">
                                 <i class="fe fe-minimize fullscreen-button"></i>
@@ -108,15 +103,13 @@ use App\Models\Paslon;
                         </div><!-- FULL-SCREEN -->
                     </div>
                 </div>
-                
-                <div class="mt-1 fs-4 fw-bold">KOTA TANGERANG SELATAN</div>
                     
-                <div class="progress bg-white mt-2">
+                <div class="progress bg-white mt-3">
                     <div class="progress-bar bg-success" role="progressbar" aria-label="Example with label"
                         style="width:  9.3%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">9.3%</div>
                 </div>
 
-                <div class="row mt-5">
+                <div class="row mt-3">
                     @foreach ($paslon as $ps)
                     <div class="col-md">
                         <div class="card">
@@ -159,11 +152,9 @@ use App\Models\Paslon;
                     
                 </div>
             </div>
-            <hr>
-
            <div class="container">
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
+                    <div class="carousel-inner text-center">
                         <?php $count = 1; ?>
                         @foreach ($kecamatan as $item)
                         <div class="carousel-item <?php if ($count++ == 1) : ?><?= 'active' ?><?php endif; ?>">
@@ -292,7 +283,7 @@ use App\Models\Paslon;
         </div>
 
         <!-- FOOTER -->
-        <footer class="footer" style="height: 65px; background-color: #000">
+        <footer class="footer" style="height: 50px; background-color: #000">
             <div class="row flex-row-reverse">
                 <div class="col-md-12 col-xs-12 text-center text-white">
                     <marquee>Data Baru Masuk</marquee>
