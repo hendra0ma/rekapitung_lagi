@@ -23,31 +23,23 @@ $tps = Tps::where('district_id',(string)$district->id)->count();
             <aside class="app-sidebar">
                 <div class="side-header">
                     <a class="header-brand1" href="{{url('')}}/administrator/index">
-                    <h3 class="text-dark">
-                        <b>
-                            PILPRES 2024
-                        </b>
-                    </h3>
-                    </a><!-- LOGO -->
+
+                        <h3 class="text-dark">
+                            <b>
+                                PILPRES 2024
+                            </b>
+                        </h3>
+                    </a>
                 </div>
                 <ul class="side-menu">
+
                     <li class="my-2">
                         &nbsp;
                     </li>
                     <li class="mt-5">
                         <center>
-                            <img src="{{asset('storage').'/'.$config['regencies_logo']}}" style="width:120px;height:auto">
+                            <img src="{{asset('images/logo')}}/rekapitung_gold.png" style="width:120px;height:auto">
                         </center>
-                    </li>
-                    <li class="mt-3">
-                        <span>
-                            <a href="#" class="text-dark">
-                                <center>
-                                    <b>{{$kota['name']}} <br>
-                                        KECAMATAN {{$district['name']}}</b>
-                                </center>
-                            </a>
-                        </span>
                     </li>
                     <li>
                         <h3>Main</h3>

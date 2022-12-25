@@ -10,11 +10,11 @@
         </h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Hukum
+            <li class="breadcrumb-item active" aria-current="page">Validator Kecurangan
                 <!-- Kota -->
             </li>
         </ol>
-        <h4 class="fs-4 mt-2 fw-bold">Validator Hukum (2)</h4>
+        <h4 class="fs-4 mt-2 fw-bold">Validator Kecurangan (2)</h4>
     </div>
     <div class="col-lg-8 mt-2">
         <div class="row">

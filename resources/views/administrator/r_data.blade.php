@@ -9,11 +9,11 @@
         </h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">R Data Black Box
+            <li class="breadcrumb-item active" aria-current="page">Log Histori
                 <!-- Kota -->
             </li>
         </ol>
-        <h4 class="fs-4 mt-2 fw-bold">Log History Admin</h4>
+        <h4 class="fs-4 mt-2 fw-bold">Log Histori</h4>
     </div>
 </div>
 

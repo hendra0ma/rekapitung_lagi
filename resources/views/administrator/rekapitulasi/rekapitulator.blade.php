@@ -14,11 +14,11 @@ use App\Models\Rekapitulator;
         </h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Komparasi KPU
+            <li class="breadcrumb-item active" aria-current="page"> Komparasi Data Perhitungan
                 <!-- Kota -->
             </li>
         </ol>
-        <h4 class="fs-4 mt-2 fw-bold">Administrator Election Results Comparison (ERC) (2)</h4>
+        <h4 class="fs-4 mt-2 fw-bold"> Komparasi Data Perhitungan (ERC) (2)</h4>
     </div>
     <div class="col-lg-2">
         <div class="ms-auto pageheader-btn mt-5">

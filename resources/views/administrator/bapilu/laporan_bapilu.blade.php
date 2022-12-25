@@ -17,7 +17,7 @@ $solution = \App\Models\SolutionFraud::get();
                 <!-- Kota -->
             </li>
         </ol>
-        <h4 class="fs-4 mt-2 fw-bold">Akun Bawaslu RI</h4>
+        <h4 class="fs-4 mt-2 fw-bold">Akun Bawaslu</h4>
     </div>
 
     <div class="col-lg-4 text-center">
