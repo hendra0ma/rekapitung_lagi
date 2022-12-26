@@ -13,7 +13,7 @@
                 <!-- Kota -->
             </li>
         </ol>
-        <h4 class="fs-4 mt-2 fw-bold">Percetakan Data Kecurangan (EFDP)</h4>
+        <h4 class="fs-4 mt-2 fw-bold">Percetakan Data Kecurangan</h4>
     </div>
     <div class="col-lg-8 mt-2">
         <div class="row">
@@ -45,7 +45,9 @@
     </div>
 </div>
 
-<h4 class="fs-4 mt-5 fw-bold">{{$title}}  <div>Paten 1 (Teknologi Cetak Kecurangan Pemilu)</div> </h4>
+<h4 class="fs-4 mt-5 fw-bold">{{$title}} 
+     <div>Dilindungi Paten Rekapitung</div>
+ </h4>
 <hr style="border: 1px solid;">
 
 <div class="row" style="margin-top: 30px;">

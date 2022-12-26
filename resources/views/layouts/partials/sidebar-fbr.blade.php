@@ -37,11 +37,11 @@ $tps = 2963;
                 <li class="my-2">
                     &nbsp;
                 </li>
-                <li class="mt-5">
+                <!-- <li class="mt-5">
                      <center>
                         <img src="{{asset('storage').'/'.$config['regencies_logo']}}" style="width:120px;height:auto">
                     </center>
-                </li>
+                </li> -->
                 <!-- <li class="mt-3">
                     <span>
                         <a href="#" class="text-dark">
