@@ -182,7 +182,7 @@ $tps = 2963;
                     </ul>
                 </li>
                 <li>
-                    <a class="side-menu__item" href="/v2l_security/{{encrypt(14)}}?title=Verifikasi Suara Relawan"><i
+                    <a class="side-menu__item" href="/v2l_security/{{encrypt(14)}}?title=Verifikasi Suara Relawan Partai"><i
                             class="side-menu__icon mdi mdi-account-multiple"></i><span class="side-menu__label">Verifikasi Suara Relawan Partai</span></a>
                 </li>
                 <li>

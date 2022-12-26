@@ -71,26 +71,25 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
-
                                     <p class="containerTime text-danger text-center">
 
                                     </p>
-
-                                    <button class="badge bg-primary text-white p-2" id="pengajuan">
-                                        <img src="<?= asset('')  ?>assets/aca3.png" class="img-thumbnail"
-                                            style="height:auto;width:30px">
-                                        Get Kode ACA
-                                    </button>
+                                </div>
+                                <div class="container-login100-form-btn">
+                                <button class="login100-form-btn btn-danger text-white p-1 mt-2" id="pengajuan">
+                                    <img src="<?= asset('')  ?>assets/acakey_new_icon_key.png" style="width:20px;height:auto;">&nbsp;
+                                    Get Kode ACA
+                                </button>
                                 </div>
                             </center>
 
                             <div class="text-end pt-1">
-                                <p class="mb-0"><a href="forgot-password.html" class="text-primary ms-1">Forgot
+                                <p class="mb-0"><a href="#" class="text-primary ms-1">Forgot
                                         Password?</a></p>
                             </div>
 
                             <div class="container-login100-form-btn">
-                                <button type="submit" class="login100-form-btn btn-primary">
+                                <button type="submit" class="login100-form-btn"style="background-color: #6c757d!important;color:white">
                                     Login
                                 </button>
                             </div>
@@ -101,17 +100,9 @@
                         </form>
                     </div>
                     <div class="card-footer">
-                        <div class="d-flex justify-content-center my-3">
-                            <a href="" class="social-login  text-center me-4">
-                                <i class="fa fa-google"></i>
-                            </a>
-                            <a href="" class="social-login  text-center me-4">
-                                <i class="fa fa-twitter"></i>
-                            </a>
-                            <a href="" class="social-login  text-center">
-                                <i class="fa fa-whatsapp"></i>
-                            </a>
-                        </div>
+                      <h5 class="fw-semibold text-center">
+                        www.rekapitung.id
+                      </h5>
                     </div>
                 </div>
             </div>
@@ -183,8 +174,8 @@
                             .removeClass("alert-danger")
                             .addClass("alert-success");
                         $("div#kodeAlert").html(res.success);
-                        $("#pengajuan").html(`<img src="<?= asset('')  ?>assets/aca3.png" class="img-fluid img-thumbnail" style="height:auto;width:30px">
-                        Get Kode ACA`);
+                        $("#pengajuan").html(`   <img src="<?= asset('')  ?>assets/acakey_new_icon_key.png" style="width:20px;height:auto;">&nbsp;
+                                    Get Kode ACA`);
                         let time = 60;
                         $("#pengajuan").attr("disabled", true);
                         let timeOut = setInterval(function () {
@@ -194,10 +185,8 @@
                         }, 1000);
                         setTimeout(function () {
                             $("#pengajuan").attr("disabled", false);
-                            $(
-                                "#pengajuan"
-                            ).html(`<img src="<?= asset('')  ?>assets/aca3.png" class="img-fluid img-thumbnail" style="height:auto;width:30px">
-                            Get Kode ACA`);
+                            $("#pengajuan").html(`   <img src="<?= asset('')  ?>assets/acakey_new_icon_key.png" style="width:20px;height:auto;">&nbsp;
+                                    Get Kode ACA`);
                             clearInterval(timeOut);
                             Containertime.html("");
                         }, time * 1000 + 2000);
@@ -206,8 +195,8 @@
                             .removeClass("alert-success")
                             .addClass("alert-danger");
                         $("#pengajuan").attr("disabled", false);
-                        $("#pengajuan").html(`<img src="<?= asset('')  ?>assets/aca3.png" class="img-thumbnail" style="height:auto;width:30px">
-                                        Get Kode ACA`);
+                        $("#pengajuan").html(`   <img src="<?= asset('')  ?>assets/acakey_new_icon_key.png" style="width:20px;height:auto;">&nbsp;
+                                    Get Kode ACA`);
                         $("div#kodeAlert").html(res.error);
                     }
 
