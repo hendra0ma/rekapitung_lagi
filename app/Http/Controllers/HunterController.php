@@ -20,7 +20,8 @@ class HunterController extends Controller
     public function index()
     {
         $data['team'] = User::where('id', '!=', Auth::user()->id)->where('role_id', Auth::user()->role_id)->get();
-
+        $data['team_count'] = User::where('role_id', Auth::user()->role_id)->count();
+        
         return view('hunter.index', $data);
     }
     public function getSaksiData(Request $req)

@@ -13,7 +13,7 @@
                 <!-- Kota -->
             </li>
         </ol>
-        <h4 class="fs-4 mt-2 fw-bold">Verifikator Suara Relawan (2)</h4>
+        <h4 class="fs-4 mt-2 fw-bold">Verifikator Suara Relawan Partai ({{$team_count}})</h4>
     </div>
     <div class="col-lg-1">
         <div class="ms-auto pageheader-btn mt-5">
@@ -25,9 +25,7 @@
                         <i class="fe fe-log-out"></i>
                     </span> Logout
                 </a>
-
             </form>
-
         </div>
     </div>
 </div>
@@ -71,7 +69,7 @@
                                     <p class="card-text">
                                     <div class="d-flex">
                                         <div class="flex-shrink-0">
-                                            <img class="rounded" width="80px" src="https://randomuser.me/api/portraits/women/17.jpg" alt="" width="">
+                                            <img class="rounded" style="width:80px;height:80px;object-fit:cover" src="{{ $people->profile_photo_url }}" alt="" width="">
                                         </div>
                                         <div class="flex-grow-1 ms-3">
                                             <h5 class="mt-0">{{$people->name}}</h5>

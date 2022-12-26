@@ -16,7 +16,7 @@
         <div class="page-main">
 
             <!--APP-SIDEBAR-->
-            <div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
+            <!-- <div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
             <aside class="app-sidebar">
                 <div class="side-header">
                     <a class="header-brand1" href="{{url('')}}/administrator/index">
@@ -25,9 +25,9 @@
                             PILPRES 2024
                         </b>
                     </h3>
-                    </a><!-- LOGO -->
+                    </a>
                 </div>
-                <ul class="side-menu">
+                <ul class="side-menu"> -->
                     <!-- <li class="my-2">
                         &nbsp;
                     </li>
@@ -46,7 +46,7 @@
                             </a>
                         </span>
                     </li> -->
-                    <li class="mt-5">
+                    <!-- <li class="mt-5">
                     <center>
                         <img src="{{asset('images/logo')}}/rekapitung_gold.png" style="width:120px;height:auto">
                     </center>
@@ -62,5 +62,5 @@
                     @endif
                     
                 </ul>
-            </aside>
+            </aside> -->
             <!--/APP-SIDEBAR-->

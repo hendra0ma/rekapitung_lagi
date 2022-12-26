@@ -2,7 +2,7 @@
 <div class="app-header header">
     <div class="container-fluid">
         <div class="d-flex">
-            <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-bs-toggle="sidebar" href="#"></a>
+            <!-- <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-bs-toggle="sidebar" href="#"></a> -->
             <!-- sidebar-toggle-->
             <!-- <a class="header-brand1 d-flex d-md-none">
                 <img src="{{url('/')}}/assets/images/brand/logo.png" class="header-brand-img desktop-logo" alt="logo">
