@@ -22,7 +22,7 @@ $solution = \App\Models\SolutionFraud::get();
 
     <div class="col-lg-4 text-center">
         <h4><img style="width: 150px"
-                src="https://jombang.bawaslu.go.id/wp-content/uploads/2019/04/Logo-Bawaslu-2018-Icon-PNG-HD.png" alt="">
+                src="data:image/png;base64,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" alt="">
         </h4>
     </div>
 
@@ -47,12 +47,24 @@ $solution = \App\Models\SolutionFraud::get();
 </div>
 
 <hr>
-<h2 class="fw-bold">
-    Data 1 <br> Index TSM Pemilu
+<h2 class="fw-bold mb-0 tugel" data-bs-toggle="collapse" href="#collapse1" role="button"
+    aria-expanded="false" aria-controls="multiCollapseExample1">
+    <div class="row">
+        <div class="col-6">
+            Data 1
+        </div>
+        <div class="col-6 text-end">
+            <i class="fa-solid fa-chevron-down"></i>
+            <i class="fa-solid fa-chevron-right" style="display: none"></i>
+        </div>
+    </div>
 </h2>
 <hr>
+
 <!-- PAGE-HEADER END -->
-<div class="row mt-3">
+<div class="row mt-3 collapse multi-collapse show chevron-logic" id="collapse1">
+
+    <h2 class="fw-bold">Index TSM Pemilu</h2>
     <div class="col-lg-6">
         <div class="row justify-content-center">
             <div class="col-lg-12 ">
@@ -115,6 +127,7 @@ $solution = \App\Models\SolutionFraud::get();
         </div>
 
     </div>
+
     <div class="col-lg-6">
       <div class="row justify-content-center">
           <div class="col-lg-12">
@@ -176,7 +189,7 @@ $solution = \App\Models\SolutionFraud::get();
               </div>
           </div>
       </div>
-  </div>
+    </div>
     <div class="col-lg-12">
         <div class="row justify-content-center">
             <div class="col-lg-12">
@@ -265,12 +278,27 @@ $solution = \App\Models\SolutionFraud::get();
             </div>
         </div>
     </div>
-    <hr>
-    <h2 class="fw-bold">
-        Data 2 <br> Rekomendasi Tindakan
-    </h2>
-    <hr>
+</div>
 
+<hr>
+<h2 class="fw-bold mb-0 tugel" data-bs-toggle="collapse" href="#collapse2" role="button"
+    aria-expanded="false" aria-controls="multiCollapseExample2">
+    <div class="row">
+        <div class="col-6">
+            Data 2
+        </div>
+        <div class="col-6 text-end">
+            <i class="fa-solid fa-chevron-down" style="display: none"></i>
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+    </div>
+</h2>
+<hr>
+
+<div class="row collapse multi-collapse chevron-logic" id="collapse2">
+    <h2 class="fw-bold">
+        Rekomendasi Tindakan
+    </h2>
     <div class="col-lg-12">
         <div class="card">
             <div class="card-header">
@@ -330,13 +358,27 @@ $solution = \App\Models\SolutionFraud::get();
             </div>
         </div>
     </div>
+</div>
 
-    <hr>
+<hr>
+<h2 class="fw-bold mb-0 tugel" data-bs-toggle="collapse" href="#collapse3" role="button"
+    aria-expanded="false" aria-controls="multiCollapseExample2">
+    <div class="row">
+        <div class="col-6">
+            Data 3
+        </div>
+        <div class="col-6 text-end">
+            <i class="fa-solid fa-chevron-down" style="display: none"></i>
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+    </div>
+</h2>
+<hr>
+
+<div class="row collapse multi-collapse chevron-logic" id="collapse3">
     <h2 class="fw-bold">
-        Data 3 <br> Fraud Barcode Report (FBR)
+        Fraud Barcode Report (FBR)
     </h2>
-    <hr>
-
     <div class="col-lg-12">
         <div class="card mt-5">
             <div class="card-header">
@@ -364,12 +406,27 @@ $solution = \App\Models\SolutionFraud::get();
             </div>
         </div>
     </div>
+</div>
 
     <hr>
+<h2 class="fw-bold mb-0 tugel" data-bs-toggle="collapse" href="#collapse4" role="button"
+    aria-expanded="false" aria-controls="multiCollapseExample2">
+    <div class="row">
+        <div class="col-6">
+            Data 4
+        </div>
+        <div class="col-6 text-end">
+            <i class="fa-solid fa-chevron-down" style="display: none"></i>
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+    </div>
+</h2>
+<hr>
+
+<div class="row collapse multi-collapse chevron-logic" id="collapse4">
     <h2 class="fw-bold">
-        Data 4 <br> Fraud Data Print (FDP)
+        Fraud Data Print (FDP)
     </h2>
-    <hr>
     <div class="col-lg-12">
         <div class="row">
             @foreach($list_suara as $ls)
@@ -425,7 +482,6 @@ $solution = \App\Models\SolutionFraud::get();
 
         </div>
     </div>
-
 </div>
 
 
@@ -446,6 +502,26 @@ $solution = \App\Models\SolutionFraud::get();
         </div>
     </div>
 </div>
+
+<script>
+    $('h2.tugel').on('click', function () {
+        let koleps = $(this).attr('href');
+        let down = $(this).find('i.fa-chevron-down')
+        let right = $(this).find('i.fa-chevron-right')
+        setTimeout(() => {
+            if ($(koleps).hasClass('show')) {
+                $(down).show();
+                $(right).hide();
+               
+            } else {
+                $(down).hide();
+                $(right).show();
+            }
+        }, 10);
+    });
+
+</script>
+
 
 
 <script>

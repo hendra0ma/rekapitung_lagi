@@ -7,6 +7,7 @@ $solution = \App\Models\SolutionFraud::get();
 <!--/APP-SIDEBAR-->
 @include('layouts.partials.header')
 
+
 <div class="row mt-3">
     <div class="col-lg-4">
         <h1 class="page-title fs-1 mt-2">Dashboard Rekapitung
@@ -23,8 +24,8 @@ $solution = \App\Models\SolutionFraud::get();
 
     <div class="col-lg-4 text-center">
         <h4><a class="header-brand1">
-                <img src="{{url('/')}}/assets/images/brand/logo-1.png" style="width: 150px"
-                    class="img-fluid" alt="logo">
+                <img src="{{url('/')}}/assets/images/brand/logo-1.png" style="width: 150px" class="img-fluid"
+                    alt="logo">
             </a>
         </h4>
     </div>
@@ -48,13 +49,26 @@ $solution = \App\Models\SolutionFraud::get();
         <h2 class="fw-bold text-center mx-auto"> Pilkada Kota Tangerang Selatan Tahun 2020</h2>
     </div>
 </div>
+
 <hr>
-<h2 class="fw-bold" data-bs-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
-    Data 1 <br> Index TSM Pemilu
+<h2 class="fw-bold mb-0 tugel" data-bs-toggle="collapse" href="#collapse1" role="button"
+    aria-expanded="false" aria-controls="multiCollapseExample1">
+    <div class="row">
+        <div class="col-6">
+            Data 1
+        </div>
+        <div class="col-6 text-end">
+            <i class="fa-solid fa-chevron-down"></i>
+            <i class="fa-solid fa-chevron-right" style="display: none"></i>
+        </div>
+    </div>
 </h2>
 <hr>
+
 <!-- PAGE-HEADER END -->
-<div class="row mt-3 collapse multi-collapse show" id="collapse1">
+<div class="row mt-3 collapse multi-collapse show chevron-logic" id="collapse1">
+
+    <h2 class="fw-bold">Index TSM Pemilu</h2>
     <div class="col-lg-6">
         <div class="row justify-content-center">
             <div class="col-lg-12 ">
@@ -267,16 +281,28 @@ $solution = \App\Models\SolutionFraud::get();
             </div>
         </div>
     </div>
-    
+
 </div>
-    <hr>
 
+<hr>
+<h2 class="fw-bold mb-0 tugel" data-bs-toggle="collapse" href="#collapse2" role="button"
+    aria-expanded="false" aria-controls="multiCollapseExample2">
+    <div class="row">
+        <div class="col-6">
+            Data 2
+        </div>
+        <div class="col-6 text-end">
+            <i class="fa-solid fa-chevron-down" style="display: none"></i>
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+    </div>
+</h2>
+<hr>
 
-
+<div class="row collapse multi-collapse chevron-logic" id="collapse2">
     <h2 class="fw-bold">
-        Data 2 <br> Rekomendasi Tindakan
+        Rekomendasi Tindakan
     </h2>
-    <hr>
     <div class="col-lg-12">
         <div class="card">
             <div class="card-header">
@@ -306,26 +332,39 @@ $solution = \App\Models\SolutionFraud::get();
                                         <b class="fs-4 mx-auto">{{$jmlh_kecurangan}} </b>
                                     </div>
                                     <div class="col my-auto text-end">
-                                        <a href="{{route('superadmin.solution',encrypt($solut->id))}}"
-                                            class="my-auto">Lihat <i class="mdi mdi-eye"></i></a>
+                                        <a href="{{route('superadmin.solution',encrypt($solut->id))}}" class="my-auto">Lihat
+                                            <i class="mdi mdi-eye"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     @endforeach
-
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <hr>
+<hr>
+<h2 class="fw-bold mb-0 tugel" data-bs-toggle="collapse" href="#collapse3" role="button"
+    aria-expanded="false" aria-controls="multiCollapseExample2">
+    <div class="row">
+        <div class="col-6">
+            Data 3
+        </div>
+        <div class="col-6 text-end">
+            <i class="fa-solid fa-chevron-down" style="display: none"></i>
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+    </div>
+</h2>
+<hr>
+
+<div class="row collapse multi-collapse chevron-logic" id="collapse3">
     <h2 class="fw-bold">
-        Data 3 <br> Fraud Barcode Report (FBR)
+        Fraud Barcode Report (FBR)
     </h2>
-    <hr>
-
     <div class="col-lg-12">
         <div class="card mt-5">
             <div class="card-header">
@@ -363,247 +402,274 @@ $solution = \App\Models\SolutionFraud::get();
             </div>
         </div>
     </div>
-    <hr>
-    <h2 class="fw-bold">
-        Data 4 <br> Fraud Data Print (FDP)
-    </h2>
-    <hr>
+</div>
 
+<hr>
+<h2 class="fw-bold mb-0 tugel" data-bs-toggle="collapse" href="#collapse4" role="button"
+    aria-expanded="false" aria-controls="multiCollapseExample2">
     <div class="row">
-        @foreach($list_suara as $ls)
-        <div class="col-lg-4">
-            <div class="card">
-                <div class="card-header bg-primary">
-                    <div class="card-title text-white">DATA SAKSI</div>
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md">
-                            @if ($ls->profile_photo_path == NULL)
-                            <img class="" style="width: 250px;"
-                                src="https://ui-avatars.com/api/?name={{ $ls->name }}&color=7F9CF5&background=EBF4FF"
-                                alt="img">
-                            @else
-                            <img class="" style="width: 250px;"
-                                src="{{url("/storage/profile-photos/".$ls->profile_photo_path) }}">
-                            @endif
-                        </div>
-                        <div class="col-md">
-                            <div class="row mb-2">
-                                <div class="col-md-4 fw-bold">NIK</div>
-                                <div class="col-md">{{$ls->nik}}</div>
-                            </div>
-                            <div class="row mb-2">
-                                <div class="col-md-4 fw-bold">Nama</div>
-                                <div class="col-md">{{$ls->name}}</div>
-                            </div>
-                            <div class="row mb-2">
-                                <div class="col-md-4 fw-bold">No Wa</div>
-                                <div class="col-md">{{$ls->no_hp}}</div>
-                            </div>
-                            <div class="row mb-5">
-                                <div class="col-md-4 fw-bold">Date</div>
-                                <div class="col-md">{{$ls->date}}</div>
-                            </div>
-                            <div class="row mb-2">
-                                <div class="col-md fw-bold">
-                                    <a href="fotomasalah"
-                                        class="btn btn-secondary w-90 fotoKecuranganterverifikasi mt-2 rounded-0"
-                                        id="Cek" data-bs-toggle="modal" id=""
-                                        data-bs-target="#fotoKecuranganterverifikasi" data-id="{{$ls->tps_id}}">
-                                        Arsip Kecurangan</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="col-6">
+            Data 4
         </div>
-        @endforeach
-
-
-
-        <div class="col-lg-12">
-            <div class="row justify-content-end">
-                <div class="col-lg-2">
-                    <a href="{{url('')}}/administrator/fraud-data-print" class="btn btn-dark btn-block">Selengkapnya</a>
-                </div>
-            </div>
-        </div>
-
-
-
-
-    </div>
-    <div id="fotoKecuranganterverifikasi" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Bukti</h5>
-                    <button aria-label="Close" class="btn-close" data-bs-dismiss="modal">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-
-                <div class="modal-body">
-                    <div id="container-hukum-verifikasi"></div>
-                </div>
-            </div>
+        <div class="col-6 text-end">
+            <i class="fa-solid fa-chevron-down" style="display: none"></i>
+            <i class="fa-solid fa-chevron-right"></i>
         </div>
     </div>
+</h2>
+<hr>
 
-
-    <script>
-        $('a.fotoKecuranganterverifikasi').on('click', function () {
-            let id = $(this).data('id');
-            $.ajax({
-                url: `{{route('superadmin.ajaxKecuranganTerverifikasi')}}`,
-                type: "GET",
-                data: {
-                    id
-                },
-                success: function (response) {
-                    if (response) {
-                        $('#container-hukum-verifikasi').html(response);
-                    }
-                }
-            });
-        });
-
-    </script>
-
-
-
-
-
-    <hr>
+<div class="row collapse multi-collapse chevron-logic" id="collapse4">
     <h2 class="fw-bold">
-        Data 5 <br> Peserta Sidang MK
+        Fraud Data Print (FDP)
     </h2>
-    <hr>
-
-    <div class="row" style="margin-top: 30px;">
-
-        @foreach($list_sidang as $ls)
-        <?php $scan_url = "" . url('/') . "/scanning/" . Crypt::encrypt($ls['nomor_berkas']) . ""; ?>
-        <div class="col-md-6 col-xl-4">
-            <div class="card">
-                <div class="card-header bg-primary">
-                    <div class="card-title text-white">DATA LAPORAN KECURANGAN SAKSI</div>
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md">
-                            @if ($ls->profile_photo_path == NULL)
-                            <img class="" style="width: 250px;"
-                                src="https://ui-avatars.com/api/?name={{ $ls->name }}&color=7F9CF5&background=EBF4FF"
-                                alt="img">
-                            @else
-                            <img class="" style="width: 250px;"
-                                src="{{url("/storage/profile-photos/".$ls->profile_photo_path) }}">
-                            @endif
+    @foreach($list_suara as $ls)
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header bg-primary">
+                <div class="card-title text-white">DATA SAKSI</div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md">
+                        @if ($ls->profile_photo_path == NULL)
+                        <img class="" style="width: 250px;"
+                            src="https://ui-avatars.com/api/?name={{ $ls->name }}&color=7F9CF5&background=EBF4FF"
+                            alt="img">
+                        @else
+                        <img class="" style="width: 250px;"
+                            src="{{url("/storage/profile-photos/".$ls->profile_photo_path) }}">
+                        @endif
+                    </div>
+                    <div class="col-md">
+                        <div class="row mb-2">
+                            <div class="col-md-4 fw-bold">NIK</div>
+                            <div class="col-md">{{$ls->nik}}</div>
                         </div>
-                        <div class="col-md">
-                            <a id="Cek" data-bs-toggle="modal" onclick="qrsidang(this)" data-bs-target="#modalQrCode"
-                                data-id="{{$ls->tps_id}}" href="#">
-                                {!! QrCode::size(200)->generate($scan_url); !!}
-                            </a>
+                        <div class="row mb-2">
+                            <div class="col-md-4 fw-bold">Nama</div>
+                            <div class="col-md">{{$ls->name}}</div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-md-4 fw-bold">No Wa</div>
+                            <div class="col-md">{{$ls->no_hp}}</div>
+                        </div>
+                        <div class="row mb-5">
+                            <div class="col-md-4 fw-bold">Date</div>
+                            <div class="col-md">{{$ls->date}}</div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-md fw-bold">
+                                <a href="fotomasalah"
+                                    class="btn btn-secondary w-90 fotoKecuranganterverifikasi mt-2 rounded-0" id="Cek"
+                                    data-bs-toggle="modal" id="" data-bs-target="#fotoKecuranganterverifikasi"
+                                    data-id="{{$ls->tps_id}}">
+                                    Arsip Kecurangan</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        @endforeach
+    </div>
+    @endforeach
 
 
 
-        <div class="col-lg-12">
-            <div class="row justify-content-end">
-                <div class="col-lg-2">
-                    <a href="{{url('')}}/administrator/sidang_online" class="btn btn-dark btn-block">Selengkapnya</a>
-                </div>
+    <div class="col-lg-12">
+        <div class="row justify-content-end">
+            <div class="col-lg-2">
+                <a href="{{url('')}}/administrator/fraud-data-print" class="btn btn-dark btn-block">Selengkapnya</a>
             </div>
         </div>
+    </div>
 
-        <script>
-            let qrsidang = function (ini) {
-                let id_tps = $(ini).data('id');
-                $.ajax({
-                    url: "{{url('')}}/administrator/get_qrsidang",
-                    data: {
-                        id_tps,
-                    },
-                    type: 'GET',
-                    success: function (response) {
-                        document.querySelector('div#qrSidang').innerHTML = response;
-                    }
-                })
+
+
+
+</div>
+
+<div id="fotoKecuranganterverifikasi" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Bukti</h5>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div id="container-hukum-verifikasi"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $('a.fotoKecuranganterverifikasi').on('click', function () {
+        let id = $(this).data('id');
+        $.ajax({
+            url: `{{route('superadmin.ajaxKecuranganTerverifikasi')}}`,
+            type: "GET",
+            data: {
+                id
+            },
+            success: function (response) {
+                if (response) {
+                    $('#container-hukum-verifikasi').html(response);
+                }
             }
+        });
+    });
 
-        </script>
+</script>
+
+
+
+
+
+<hr>
+<h2 class="fw-bold mb-0 tugel" data-bs-toggle="collapse" href="#collapse5" role="button"
+    aria-expanded="false" aria-controls="multiCollapseExample2">
+    <div class="row">
+        <div class="col-6">
+            Data 5
+        </div>
+        <div class="col-6 text-end">
+            <i class="fa-solid fa-chevron-down" style="display: none"></i>
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
     </div>
+</h2>
+<hr>
 
+<div class="row collapse multi-collapse chevron-logic" id="collapse5" style="margin-top: 30px;">
+    <h2 class="fw-bold">
+        Peserta Sidang MK
+    </h2>
 
-
-    <div id="fotoKecuranganterverifikasi" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Bukti</h5>
-                    <button aria-label="Close" class="btn-close" data-bs-dismiss="modal">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-
-                <div class="modal-body">
-                    <div id="container-hukum-verifikasi"></div>
+    @foreach($list_sidang as $ls)
+    <?php $scan_url = "" . url('/') . "/scanning/" . Crypt::encrypt($ls['nomor_berkas']) . ""; ?>
+    <div class="col-md-6 col-xl-4">
+        <div class="card">
+            <div class="card-header bg-primary">
+                <div class="card-title text-white">DATA LAPORAN KECURANGAN SAKSI</div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md">
+                        @if ($ls->profile_photo_path == NULL)
+                        <img class="" style="width: 250px;"
+                            src="https://ui-avatars.com/api/?name={{ $ls->name }}&color=7F9CF5&background=EBF4FF"
+                            alt="img">
+                        @else
+                        <img class="" style="width: 250px;"
+                            src="{{url("/storage/profile-photos/".$ls->profile_photo_path) }}">
+                        @endif
+                    </div>
+                    <div class="col-md">
+                        <a id="Cek" data-bs-toggle="modal" onclick="qrsidang(this)" data-bs-target="#modalQrCode"
+                            data-id="{{$ls->tps_id}}" href="#">
+                            {!! QrCode::size(200)->generate($scan_url); !!}
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    @endforeach
 
 
-    <div id="modalQrCode" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Scan</h5>
-                    <button aria-label="Close" class="btn-close" data-bs-dismiss="modal">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
 
-                <div class="modal-body" id="qrSidang">
-                </div>
-                <div class="modal-footer">
-                    <!--<button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#fotoKecuranganterverifikasi">-->
-                    <!--    Launch-->
-                    <!--</button>-->
-                </div>
-
+    <div class="col-lg-12">
+        <div class="row justify-content-end">
+            <div class="col-lg-2">
+                <a href="{{url('')}}/administrator/sidang_online" class="btn btn-dark btn-block">Selengkapnya</a>
             </div>
         </div>
     </div>
-
 
     <script>
-        $('a.fotoKecuranganterverifikasi').on('click', function () {
-            let id = $(this).data('id');
+        let qrsidang = function (ini) {
+            let id_tps = $(ini).data('id');
             $.ajax({
-                url: `{{route('superadmin.ajaxKecuranganTerverifikasi')}}`,
-                type: "GET",
+                url: "{{url('')}}/administrator/get_qrsidang",
                 data: {
-                    id
+                    id_tps,
                 },
+                type: 'GET',
                 success: function (response) {
-                    if (response) {
-                        $('#container-hukum-verifikasi').html(response);
-                    }
+                    document.querySelector('div#qrSidang').innerHTML = response;
                 }
-            });
-        });
+            })
+        }
 
     </script>
+</div>
+
+
+
+<div id="fotoKecuranganterverifikasi" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Bukti</h5>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div id="container-hukum-verifikasi"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="modalQrCode" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Scan</h5>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+
+            <div class="modal-body" id="qrSidang">
+            </div>
+            <div class="modal-footer">
+                <!--<button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#fotoKecuranganterverifikasi">-->
+                <!--    Launch-->
+                <!--</button>-->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $('a.fotoKecuranganterverifikasi').on('click', function () {
+        let id = $(this).data('id');
+        $.ajax({
+            url: `{{route('superadmin.ajaxKecuranganTerverifikasi')}}`,
+            type: "GET",
+            data: {
+                id
+            },
+            success: function (response) {
+                if (response) {
+                    $('#container-hukum-verifikasi').html(response);
+                }
+            }
+        });
+    });
+
+</script>
 
 </div>
 <script>
@@ -614,5 +680,25 @@ $solution = \App\Models\SolutionFraud::get();
     });
 
 </script>
+
+<script>
+    $('h2.tugel').on('click', function () {
+        let koleps = $(this).attr('href');
+        let down = $(this).find('i.fa-chevron-down')
+        let right = $(this).find('i.fa-chevron-right')
+        setTimeout(() => {
+            if ($(koleps).hasClass('show')) {
+                $(down).show();
+                $(right).hide();
+               
+            } else {
+                $(down).hide();
+                $(right).show();
+            }
+        }, 10);
+    });
+
+</script>
+
 @include('layouts.partials.footer')
 @include('layouts.partials.scripts-bapilu')
