@@ -378,11 +378,10 @@ $tps = 2963;
 
             </ul>
         </aside>
-        <div class="modal fade" style="background-image: url({{url('')}}/storage/satelit.jpg); background-repeat: no-repeat;
-                background-size: cover;" id="modalCommander" tabindex="-1" aria-labelledby="modalCommanderLabel"
+        <div class="modal fade" style="background-color: rgba(0, 0, 0, 0.5)" id="modalCommander" tabindex="-1" aria-labelledby="modalCommanderLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content" style="background-color: black;">
+                <div class="modal-content" style="background-color: black; border-radius: 25px">
                     <div class="modal-header">
                         <div class="row w-100 justify-content-end  align-items-center">
                             <div class="col-md">
@@ -414,14 +413,14 @@ $tps = 2963;
                             <input type="hidden" name="order" value="{{Auth::user()->id}}">
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-danger">Commander Permission</button>
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn text-white" style="background-color: red;">Commander Permission</button>
+                            <button type="button" class="btn text-white" style="background-color: brown" data-bs-dismiss="modal">Close</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-        <div class="modal fade" style="background-image: url({{url('')}}/storage/satelit.jpg); background-repeat: no-repeat;
+        <div class="modal fade" style="background-repeat: no-repeat;
                 background-size: cover;" id="modalMap" tabindex="-1" aria-labelledby="modalCommanderLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -456,7 +455,7 @@ $tps = 2963;
                             <input type="hidden" name="order" value="{{Auth::user()->id}}">
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-danger">Commander Permission</button>
+                            <button type="submit" class="btn">Commander Permission</button>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         </div>
                     </form>
