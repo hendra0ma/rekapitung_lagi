@@ -23,11 +23,10 @@ $solution = \App\Models\SolutionFraud::get();
 
     <div class="col-lg-4 text-center">
         <h4><a class="header-brand1">
-
-                <img src="https://paslon1.pilwalkot.rekapitung.id/assets/images/brand/logo-1.png" style="width: 150px"
+                <img src="{{url('/')}}/assets/images/brand/logo-1.png" style="width: 150px"
                     class="img-fluid" alt="logo">
-
-            </a></h4>
+            </a>
+        </h4>
     </div>
 
     <div class="col-lg-4">
@@ -50,12 +49,12 @@ $solution = \App\Models\SolutionFraud::get();
     </div>
 </div>
 <hr>
-<h2 class="fw-bold">
+<h2 class="fw-bold" data-bs-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
     Data 1 <br> Index TSM Pemilu
 </h2>
 <hr>
 <!-- PAGE-HEADER END -->
-<div class="row mt-3">
+<div class="row mt-3 collapse multi-collapse show" id="collapse1">
     <div class="col-lg-6">
         <div class="row justify-content-center">
             <div class="col-lg-12 ">
@@ -268,6 +267,8 @@ $solution = \App\Models\SolutionFraud::get();
             </div>
         </div>
     </div>
+    
+</div>
     <hr>
 
 
