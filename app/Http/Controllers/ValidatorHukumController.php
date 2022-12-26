@@ -175,7 +175,7 @@ class ValidatorHukumController extends Controller
         $bulan = date('m');
         $tahun = date('y');
         $tps = Tps::where('id',Crypt::decrypt($id))->first();
-        $no_berkas = "H/".Crypt::decrypt($id)."/HKM-".$tps['number']."/".$bulan."/".$tahun."";
+        $no_berkas = "P1/".Crypt::decrypt($id)."/LK-".$tps['number']."/".$bulan."/".$tahun."";
         $save = Qrcode::create([
             'token'  => $crypt,
             'tps_id' => Crypt::decrypt($id),

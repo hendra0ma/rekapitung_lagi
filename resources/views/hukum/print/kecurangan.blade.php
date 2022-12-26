@@ -100,16 +100,15 @@
             <h1 class="mt-2 text-danger">DOKUMEN REKAPITUNG</h1>
             <center>
                 <h2 style="margin-top : -5px;text-transform:uppercase;">Berkas Laporan Kecurangan</h2>
-                <h3 style="margin-top : -10px;text-transform:uppercase;">Pilkada Tangsel 2020</h3>
+                <h3 style="margin-top : -10px;text-transform:uppercase;">Pilpres 2024</h3>
             </center>
         </center>
-        <div style="margin-left: 10px;">
+        <div class="text-center">
             NO BERKAS : {{ $qrcode->nomor_berkas }}
         </div>
         <center>
 
             <hr />
-
             <center>
                 <h4>
                     Kota Tanggerang Selatan - Kecamatan
