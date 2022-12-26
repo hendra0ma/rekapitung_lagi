@@ -122,44 +122,43 @@
 
             <table class="table table-bordered">
                 <tr>
-                    <td colspan="4" class="font-weight-bold">
+                    <td  class="font-weight-bold">
                         <center>Data Saksi</center>
                     </td>
-                    <td colspan="4" class="font-weight-bold">
-                        <center>Data Verivikator</center>
+                    <td  class="font-weight-bold">
+                        <center>Data Verifikator</center>
                     </td>
-                    <td colspan="4" class="font-weight-bold">
+                    <td  class="font-weight-bold">
                         <center>Data Admin Hukum</center>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2">Nama</td>
-                    {{$user->name}}
-                    <td colspan="2">Nama</td>
-                    {{ $verifikator->name }}
-                    <td colspan="2">Nama</td>
-                    {{ $hukum->name }}
+                    <td>   {{$user->name}}</td>
+                 
+                    <td>   {{ $verifikator->name }}</td>
+                 
+                    <td>       {{ $hukum->name }}</td>
+             
                 </tr>
 
                 <tr>
-                    <td colspan="2">No wa</td>
-                    {{$user->no_hp}}
-                    <td colspan="2">No wa</td>
-                    {{ $verifikator->no_hp}}
-                    <td colspan="2">No wa</td>
-                    {{ $hukum->no_hp }}
-                </tr>
-
-                <tr>
-                    <td colspan="2">Kecamatan</td>
-                    {{$kecamatan->no_hp}}
-                    <td colspan="2">Tanggal Input</td>
-                    {{ $qrcode->created_at }}
-                    <td colspan="2">Tanggal Print</td>
-                    <td colspan="2  "> {{ date("d - M - Y") }}</td>
+                    <td> {{$user->no_hp}}</td>
+                   
+                    <td>    {{ $verifikator->no_hp}}</td>
+                
+                    <td>   {{ $hukum->no_hp }}</td>
+                 
                 </tr>
             </table>
+            <table class="table table-bordered">
+                
+            <tr>
+                                    <td>Tanggal Dokumen</td>
+                                    <td>{{ $qrcode->created_at }}</td>
+                                </tr>
+            </table>
             <table class="table">
+                
                 <tr>
                     <td class="font-weight-bold text-center bg-dark text-light">
                         Daftar Kecurangan

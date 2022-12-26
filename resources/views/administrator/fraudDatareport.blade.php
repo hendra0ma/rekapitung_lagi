@@ -13,7 +13,7 @@
                 <!-- Kota -->
             </li>
         </ol>
-        <h4 class="fs-4 mt-2 fw-bold">Barcode Data Kecurangan (EFBR)</h4>
+        <h4 class="fs-4 mt-2 fw-bold">Barcode Data Kecurangan</h4>
     </div>
     
      <div class="col-lg-3 mt-4">
@@ -27,7 +27,7 @@
     </div>
 </div>
 
-<h4 class="fs-4 mt-5 fw-bold">Election Fraud Barcode Report (EFBR)  <div>Paten 2 (Teknologi Barcode Kecurangan Pemilu)</div> </h4>
+<h4 class="fs-4 mt-5 fw-bold">Election Fraud Barcode Report (EFBR)  <div>Dilindungi Paten Rekapitung</div> </h4>
 <hr style="border: 1px solid;">
 
 <div class="col-lg-12">
