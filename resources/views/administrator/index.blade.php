@@ -102,7 +102,7 @@ $tps = Tps::count();
                             <div class="card-header text-center" style="padding: 0px; padding-bottom: 10px">
                                 <div class="card-title mx-auto">
                                     
-                                    Mode Sistem <i class="fa fa-question-circle"  data-bs-placement="top" data-bs-toggle="tooltip" title="" data-bs-original-title="Mode sistem adalah status sistem Rekapitung yang dibagi menjadi tiga bagian, yaitu : mode saksi, mode relawan dan mode hacker. Ketiga mode ini berjalan pada hari yang sama dengan pembagian waktu yang telah di tetapkan."></i>
+                                    Mode Sistem <i class="fa fa-question-circle"  data-bs-placement="top" data-bs-toggle="tooltip" title="" data-bs-original-title="Mode sistem adalah status sistem Rekapitung yang dibagi menjadi tiga bagian, yaitu : mode saksi, mode relawan dan mode overtime (Antisipasi Hacker). Ketiga mode ini berjalan pada hari yang sama dengan pembagian waktu yang telah di tetapkan."></i>
                                 </div>
                             </div>
                             <div class="row mx-auto text-center">
@@ -156,9 +156,9 @@ $tps = Tps::count();
                                                 </div>
                                                 <div class="card-footer text-center" style="color: black; padding: 0px">
                                                         @if ($jam >= 21)
-                                                        <div class="badge bg-success">Hacker : Aktif</div>
+                                                        <div class="badge bg-success">Overtime : Aktif</div>
                                                         @else
-                                                        <div class="badge bg-danger">Hacker : Nonaktif</div>
+                                                        <div class="badge bg-danger">Overtime : Nonaktif</div>
                                                         @endif
                                                 </div>
                                             </div>

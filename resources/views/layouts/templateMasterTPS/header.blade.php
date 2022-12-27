@@ -25,52 +25,6 @@
                         <i class="fe fe-minimize fullscreen-button"></i>
                     </a>
                 </div><!-- FULL-SCREEN -->
-                <div class="dropdown d-none d-md-flex notifications">
-                    <a class="nav-link icon" data-bs-toggle="dropdown"><i class="fe fe-bell"></i><span class=" pulse"></span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow ">
-                        <div class="drop-heading border-bottom">
-                            <div class="d-flex">
-                                <h6 class="mt-1 mb-0 fs-16 fw-semibold">You have Notification</h6>
-                                <div class="ms-auto">
-                                    <span class="badge bg-success rounded-pill">3</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="notifications-menu">
-                            <a class="dropdown-item d-flex" href="chat.html">
-                                <div class="me-3 notifyimg  bg-primary-gradient brround box-shadow-primary">
-                                    <i class="fe fe-message-square"></i>
-                                </div>
-                                <div class="mt-1">
-                                    <h5 class="notification-label mb-1">New review received</h5>
-                                    <span class="notification-subtext">2 hours ago</span>
-                                </div>
-                            </a>
-                            <a class="dropdown-item d-flex" href="chat.html">
-                                <div class="me-3 notifyimg  bg-secondary-gradient brround box-shadow-primary">
-                                    <i class="fe fe-mail"></i>
-                                </div>
-                                <div class="mt-1">
-                                    <h5 class="notification-label mb-1">New Mails Received</h5>
-                                    <span class="notification-subtext">1 week ago</span>
-                                </div>
-                            </a>
-                            <a class="dropdown-item d-flex" href="cart.html">
-                                <div class="me-3 notifyimg  bg-success-gradient brround box-shadow-primary">
-                                    <i class="fe fe-shopping-cart"></i>
-                                </div>
-                                <div class="mt-1">
-                                    <h5 class="notification-label mb-1">New Order Received</h5>
-                                    <span class="notification-subtext">1 day ago</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="dropdown-divider m-0"></div>
-                        <a href="#" class="dropdown-item text-center p-3 text-muted">View all
-                            Notification</a>
-                    </div>
-                </div><!-- NOTIFICATIONS -->
                 <div class="dropdown  d-none d-md-flex message">
                     <a class="nav-link icon text-center" data-bs-toggle="dropdown">
                         <i class="fe fe-message-square"></i><span class=" pulse-danger"></span>
