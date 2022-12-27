@@ -65,7 +65,7 @@ $solution = \App\Models\SolutionFraud::get();
 <div class="row mt-3 collapse multi-collapse show chevron-logic" id="collapse1">
 
     <h2 class="fw-bold">Index TSM Pemilu</h2>
-    <div class="col-lg-6">
+    <div class="col-lg-12">
         <div class="row justify-content-center">
             <div class="col-lg-12 ">
                 <div class="card">
@@ -82,7 +82,7 @@ $solution = \App\Models\SolutionFraud::get();
                             <div id="chart-pie"></div>
                         </center>
                         <table
-                            class="table table-bordered text-nowrap border-bottom dataTable no-footer table-striped table-hover"
+                            class="table table-bordered text-nowrap border-bottom dataTable no-footer table-striped table-hover w-100"
                             id="basic-datatable" role="grid" aria-describedby="basic-datatable_info">
                             <thead class="bg-primary">
                                 <tr>
@@ -128,7 +128,7 @@ $solution = \App\Models\SolutionFraud::get();
 
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-lg-12">
       <div class="row justify-content-center">
           <div class="col-lg-12">
               <div class="card">

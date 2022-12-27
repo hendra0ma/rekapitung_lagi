@@ -60,7 +60,7 @@ use App\Models\Rekapitulator;
                     <div class="col-md-12 mt-2">
                         <h5 class="card-title mx-auto">
                             <center>
-                                Election Results Comparison (ERC)
+                                Hasil Rekapitulasi Rekapitung
                             </center>
                         </h5>
                     </div>
