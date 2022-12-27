@@ -19,7 +19,8 @@ use App\Models\Paslon;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Zanex – Bootstrap  Admin & Dashboard Template">
     <meta name="author" content="Spruko Technologies Private Limited">
-    <meta name="keywords" content="admin, dashboard, dashboard ui, admin dashboard template, admin panel dashboard, admin panel html, admin panel html template, admin panel template, admin ui templates, administrative templates, best admin dashboard, best admin templates, bootstrap 4 admin template, bootstrap admin dashboard, bootstrap admin panel, html css admin templates, html5 admin template, premium bootstrap templates, responsive admin template, template admin bootstrap 4, themeforest html">
+    <meta name="keywords"
+        content="admin, dashboard, dashboard ui, admin dashboard template, admin panel dashboard, admin panel html, admin panel html template, admin panel template, admin ui templates, administrative templates, best admin dashboard, best admin templates, bootstrap 4 admin template, bootstrap admin dashboard, bootstrap admin panel, html css admin templates, html5 admin template, premium bootstrap templates, responsive admin template, template admin bootstrap 4, themeforest html">
 
     <!-- FAVICON -->
     <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/brand/favicon.ico" />
@@ -56,7 +57,9 @@ use App\Models\Paslon;
     <!-- COLOR SKIN CSS -->
     <link id="theme" rel="stylesheet" type="text/css" media="all" href="../../assets/colors/color1.css" />
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
 
     <style>
         body {
@@ -83,6 +86,7 @@ use App\Models\Paslon;
                 height: 700px;
             }
         }
+
     </style>
 </head>
 
@@ -107,7 +111,8 @@ use App\Models\Paslon;
 
             <div class="row align-items-center flex-row-reverse bg-white">
                 <div class="col-md-12 col-sm-12 text-center">
-                    <marquee class="mt-3" behavior="" direction="">Data Baru telah masuk dari Nastasha Velandra TPS 67 Kel.
+                    <marquee class="mt-3" behavior="" direction="">Data Baru telah masuk dari Nastasha Velandra TPS 67
+                        Kel.
                         Ciputat Kec. Ciputat</marquee>
                 </div>
             </div>
@@ -116,30 +121,32 @@ use App\Models\Paslon;
                 <div class="col-md-12">
                     <div class="dropdown">
                         <a class="nav-link icon theme-layout nav-link-bg layout-setting">
-                            <span class="dark-layout" data-bs-placement="top" data-bs-toggle="tooltip" title="Dark Theme"><i class="fe fe-moon"></i></span>
-                            <span class="light-layout" data-bs-placement="top" data-bs-toggle="tooltip" title="Light Theme"><i class="fe fe-sun"></i></span>
+                            <span class="dark-layout" data-bs-placement="top" data-bs-toggle="tooltip"
+                                title="Dark Theme"><i class="fe fe-moon"></i></span>
+                            <span class="light-layout" data-bs-placement="top" data-bs-toggle="tooltip"
+                                title="Light Theme"><i class="fe fe-sun"></i></span>
                         </a>
                     </div>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="col-md text-center mt-5 ">
                     <h4 class="text-uppercase fw-bold">
-                        <img style="width: 100px;" src="{{asset('storage').'/'.$config['regencies_logo']}}" alt="">
+                        <img style="width: 100px;" src="{{url('/')}}/images/logo/rekapitung_gold.png" alt="">
                     </h4>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="col-md text-center">
                     <h3 class="fw-bold pb-5">Maps Count
-                    <h3 class="fw-bold">PILPRES 2024 {{$provinsi->name}}
-                    <h3 class="fw-bold">{{$kota->name}}
-                    </h3>
+                        <h3 class="fw-bold">PILPRES 2024 {{$provinsi->name}}
+                            <h3 class="fw-bold">{{$kota->name}}
+                            </h3>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="badge bg-primary">PROGRESS : {{substr($data_masuk, 0, 3)}}% DARI 100%</div>
@@ -151,7 +158,8 @@ use App\Models\Paslon;
                     <div class="col">
                         <div class="card">
                             <div class="card-header p-0">
-                                <a class="ms-auto nav-link icon full-screen-link nav-link-bg" style="margin-right: 10px !important;" id="ikon-map-full">
+                                <a class="ms-auto nav-link icon full-screen-link nav-link-bg"
+                                    style="margin-right: 10px !important;" id="ikon-map-full">
                                     <i class="fe fe-minimize"></i>
                                 </a>
                             </div>
@@ -163,68 +171,73 @@ use App\Models\Paslon;
                 </div>
             </div>
 
-            <div class="container-fluid">
-                <div class="row mb-5">
-                    <div class="col-md-12">
-                        <div id="carousel-controls" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <?php $count = 1; ?>
-                                @foreach ($kecamatan as $item)
+            <div class="container">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner text-center">
+                        <?php $count = 1; ?>
+                        @foreach ($kecamatan as $item)
+                        <div class="carousel-item <?php if ($count++ == 1) : ?><?= 'active' ?><?php endif; ?>">
+                            <div class="fw-bold fs-3 mb-3">
+                                KECAMATAN {{$item['name']}}
+                            </div>
+
+                            <div class="row">
+                                <?php $i = 1; ?>
+                                @foreach ($paslon as $psl)
                                 <?php
+                                $pasln = SaksiData::join('districts', 'districts.id', '=', 'saksi_data.district_id')->where('saksi_data.district_id', $item['id'])->where('saksi_data.paslon_id', $psl->id)->get();
+                                $jumlah = 0;
+                                foreach ($pasln as $pas) {
+                                    $jumlah += $pas->voice;
+                                }
 
+                                $persen = substr($jumlah / $item->dpt * 100, 0, 3);
 
-                                // $jumlah =  SaksiData::where('district_id', $item['id'])->sum('voice');
                                 ?>
-                                <div class="carousel-item <?php if ($count++ == 1) : ?><?= 'active' ?><?php endif; ?>">
-                                    <img class="d-block" style="opacity: 0" src="../../assets/images/media/4.jpg" data-bs-holder-rendered="true">
-                                    <div class="carousel-caption d-none d-md-block" style="top:0">
-                                        <h3 class="text-dark fw-bold">KECAMATAN <br> {{$item['name']}} </h3>
-                                        <div class="row">
-
-                                            @foreach ($paslon as $psl)
-                                            <?php
-                                            $pasln = SaksiData::join('districts', 'districts.id', '=', 'saksi_data.district_id')->where('saksi_data.district_id', $item['id'])->where('saksi_data.paslon_id', $psl->id)->get();
-                                            $jumlah = 0;
-                                            foreach ($pasln as $pas) {
-                                                $jumlah += $pas->voice;
-                                            }
-
-                                            $persen = substr($jumlah / $item->dpt * 100, 0, 3);
-
-                                            ?>
-                                            <div class="col-md">
-                                                <div class="card" style="background-color: {{$psl->color}};">
-                                                    <div class="card-body">
-                                                        <p class="card-text">
-                                                        <div class="row">
-                                                            <div class="col">
-                                                                <img style="width: 100px;" src="{{asset('storage/'. $psl['picture'])}}">
-                                                            </div>
-                                                            <div class="col">
-                                                                <p class="fw-bolder fs-3">{{$persen}}%</p>
-                                                                Jumlah Suara : {{$jumlah}}
-                                                            </div>
-                                                        </div>
-                                                        </p>
-                                                    </div>
+                                <div class="col-md">
+                                    <div class="card">
+                                        <div class="card-header justify-content-center"
+                                            style="background-color:{{$psl->color}}">
+                                            <h3 style="margin-bottom: 0;" class="fw-bold text-white">{{$psl->candidate}}
+                                                - <br> {{$psl->deputy_candidate}}</h3>
+                                        </div>
+                                        <div class="card-body" style="padding: 10px;">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <img src="{{asset('storage/'. $psl['picture'])}}" width="125px"
+                                                        height="125px" style="object-fit: cover;" alt="">
+                                                </div>
+                                                <div class="col text-center my-auto fs-1 fw-bold">
+                                                    {{$persen}}%
                                                 </div>
                                             </div>
-                                            <?php
-                                            $jumlah = 0;
-                                            ?>
-                                            @endforeach
-
-
                                         </div>
                                     </div>
                                 </div>
+
+                                <?php
+                                $jumlah = 0;
+                                ?>
                                 @endforeach
+                                <?php $i = 1; ?>
 
                             </div>
                         </div>
-                    </div><!-- COL-END -->
+
+                        @endforeach
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-            </div>
+            </div
 
         </div>
 
@@ -261,12 +274,15 @@ use App\Models\Paslon;
     <!-- CUSTOM JS-->
     <script src="../../assets/js/custom.js"></script>
 
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
     <script src="https://devlama.rekapitung.id/assets/js/geojson.ajax.js"></script>
     <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
-<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'
+        rel='stylesheet' />
     @include('layouts.templateCommander.script-command')
-    
+
     <script>
         // Adding a Popup
         var mymap = L.map('mapid').setView([-6.297308926250658, 106.71285789150006], 12);
@@ -281,17 +297,17 @@ use App\Models\Paslon;
         }).addTo(mymap);
 
 
-                
+
 
         function getColor(d) {
             return d == 'Serpong' ? '#0e0e0e' :
-            d == 'Serpong Utara' ? '#0e0e0e' :
-            d == 'Pondokaren' ? '#0e0e0e' :
-            d == 'Ciputat' ? '#f00' :
-            d == 'Ciputat Timur' ? '#0e0e0e' :
-            d == 'Pamulang' ? '#0e0e0e' :
-            d == 'Setu' ? '#0e0e0e' :
-             '#59FD02';
+                d == 'Serpong Utara' ? '#0e0e0e' :
+                d == 'Pondokaren' ? '#0e0e0e' :
+                d == 'Ciputat' ? '#f00' :
+                d == 'Ciputat Timur' ? '#0e0e0e' :
+                d == 'Pamulang' ? '#0e0e0e' :
+                d == 'Setu' ? '#0e0e0e' :
+                '#59FD02';
         }
 
         function popUp(f, l) {
@@ -303,7 +319,7 @@ use App\Models\Paslon;
         }
 
         var jsonTest = new L.GeoJSON.AJAX(["{{url('/')}}/assets/tangsel1.geojson"], {
-            style: function(feature) {
+            style: function (feature) {
                 kec = feature.properties['WADMKC'];
                 return {
                     fillColor: getColor(kec),
@@ -316,12 +332,14 @@ use App\Models\Paslon;
             },
             onEachFeature: popUp,
         }).addTo(mymap);
+
     </script>
 
     <script>
-        $('#ikon-map-full').on('click',function(){
+        $('#ikon-map-full').on('click', function () {
             mymap.toggleFullscreen();
         });
+
     </script>
 
 </body>

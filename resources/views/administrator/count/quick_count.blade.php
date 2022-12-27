@@ -104,9 +104,9 @@ use App\Models\Paslon;
                     </div>
                 </div>
                     
-                <div class="progress bg-white mt-3">
+                <div class="progress bg-white mt-3"style="height:25px">
                     <div class="progress-bar bg-success" role="progressbar" aria-label="Example with label"
-                        style="width:  9.3%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">9.3%</div>
+                        style="width:  9.3%;height:25px" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">9.3%</div>
                 </div>
 
                 <div class="row mt-3">
@@ -159,7 +159,7 @@ use App\Models\Paslon;
                         @foreach ($kecamatan as $item)
                         <div class="carousel-item <?php if ($count++ == 1) : ?><?= 'active' ?><?php endif; ?>">
                             <div class="fw-bold fs-3 mb-3">
-                                {{$item['name']}} (35%)
+                               KECAMATAN {{$item['name']}}
                             </div>
 
                             <div class="row">

@@ -18,7 +18,8 @@ use App\Models\Paslon;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Zanex – Bootstrap  Admin & Dashboard Template">
     <meta name="author" content="Spruko Technologies Private Limited">
-    <meta name="keywords" content="admin, dashboard, dashboard ui, admin dashboard template, admin panel dashboard, admin panel html, admin panel html template, admin panel template, admin ui templates, administrative templates, best admin dashboard, best admin templates, bootstrap 4 admin template, bootstrap admin dashboard, bootstrap admin panel, html css admin templates, html5 admin template, premium bootstrap templates, responsive admin template, template admin bootstrap 4, themeforest html">
+    <meta name="keywords"
+        content="admin, dashboard, dashboard ui, admin dashboard template, admin panel dashboard, admin panel html, admin panel html template, admin panel template, admin ui templates, administrative templates, best admin dashboard, best admin templates, bootstrap 4 admin template, bootstrap admin dashboard, bootstrap admin panel, html css admin templates, html5 admin template, premium bootstrap templates, responsive admin template, template admin bootstrap 4, themeforest html">
 
     <!-- FAVICON -->
     <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/brand/favicon.ico" />
@@ -58,6 +59,7 @@ use App\Models\Paslon;
         .carousel-inner .carousel-item {
             transition: transform 1s ease;
         }
+
     </style>
 </head>
 
@@ -78,7 +80,7 @@ use App\Models\Paslon;
     <!-- PAGE -->
     <div class="page">
         <div class="page-main">
-            
+
             <div class="text-center">
                 <h1 class="fw-bolder display-4 pt-5 mb-0">Real Count</h1>
             </div>
@@ -90,11 +92,12 @@ use App\Models\Paslon;
                     <div class="col-2">
                         <img style="width: 75px" src="{{url('/')}}/images/logo/rekapitung_gold.png" alt="">
                     </div>
-                    
+
                     <div class="col-8">
-                        <div class="fs-4 fw-bold mx-auto text-center">PILPRES 2024 / PROVINSI {{$provinsi->name}} / {{$kota->name}}</div>
+                        <div class="fs-4 fw-bold mx-auto text-center">PILPRES 2024 / PROVINSI {{$provinsi->name}} /
+                            {{$kota->name}}</div>
                     </div>
-                    
+
                     <div class="col-2">
                         <div class="dropdown d-md-flex">
                             <a class="nav-link icon ms-auto m-0">
@@ -103,10 +106,11 @@ use App\Models\Paslon;
                         </div><!-- FULL-SCREEN -->
                     </div>
                 </div>
-                    
-                <div class="progress bg-white mt-3"style="height:25px">
+
+                <div class="progress bg-white mt-3" style="height:25px">
                     <div class="progress-bar bg-success" role="progressbar" aria-label="Example with label"
-                        style="width:  9.3%;height:25px" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">9.3%</div>
+                        style="width:  9.3%;height:25px" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">9.3%
+                    </div>
                 </div>
 
                 <div class="row mt-3">
@@ -114,10 +118,11 @@ use App\Models\Paslon;
                     <div class="col-md">
                         <div class="card">
                             <div class="card-body">
-                                <img src="{{asset('storage/'. $ps['picture'])}}"
-                                    width="500px" height="300px" style="object-fit: cover;" alt="">
+                                <img src="{{asset('storage/'. $ps['picture'])}}" width="500px" height="300px"
+                                    style="object-fit: cover;" alt="">
                                 <hr>
-                                <div class="fs-3 mt-2 fw-bold " style="color:{{$ps->color}}">{{$ps->candidate}} <br> - {{$ps->deputy_candidate}}</div>
+                                <div class="fs-3 mt-2 fw-bold " style="color:{{$ps->color}}">{{$ps->candidate}} <br> -
+                                    {{$ps->deputy_candidate}}</div>
                                 <hr>
                                 <div class="fs-3 mt-2">
                                     <div class="progress mt-2">
@@ -136,9 +141,10 @@ use App\Models\Paslon;
                         
                                         $persen = substr($jumlah / $dpt * 100, 0, 3);
                                         ?>
-                                        <div class="progress-bar" style="background-color:{{$ps->color}}" role="progressbar"
-                                            aria-label="Example with label" style="width:  {{$persen}}%;" aria-valuenow="25"
-                                            aria-valuemin="0" aria-valuemax="100">{{$jumlah1}}</div>
+                                        <div class="progress-bar" style="background-color:{{$ps->color}}"
+                                            role="progressbar" aria-label="Example with label"
+                                            style="width:  {{$persen}}%;" aria-valuenow="25" aria-valuemin="0"
+                                            aria-valuemax="100">{{$jumlah1}}</div>
                                         <?php
                                         $jumlah = 0;
                                         $dpt = 0;
@@ -149,17 +155,17 @@ use App\Models\Paslon;
                         </div>
                     </div>
                     @endforeach
-                    
+
                 </div>
             </div>
-           <div class="container">
+            <div class="container">
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner text-center">
                         <?php $count = 1; ?>
                         @foreach ($kecamatan as $item)
                         <div class="carousel-item <?php if ($count++ == 1) : ?><?= 'active' ?><?php endif; ?>">
                             <div class="fw-bold fs-3 mb-3">
-                              KECAMATAN {{$item['name']}} 
+                                KECAMATAN {{$item['name']}}
                             </div>
 
                             <div class="row">
@@ -177,14 +183,16 @@ use App\Models\Paslon;
                                 ?>
                                 <div class="col-md">
                                     <div class="card">
-                                        <div class="card-header justify-content-center" style="background-color:{{$psl->color}}">
-                                            <h3 style="margin-bottom: 0;" class="fw-bold text-white">{{$psl->candidate}} - <br> {{$psl->deputy_candidate}}</h3>
+                                        <div class="card-header justify-content-center"
+                                            style="background-color:{{$psl->color}}">
+                                            <h3 style="margin-bottom: 0;" class="fw-bold text-white">{{$psl->candidate}}
+                                                - <br> {{$psl->deputy_candidate}}</h3>
                                         </div>
                                         <div class="card-body" style="padding: 10px;">
                                             <div class="row">
                                                 <div class="col">
-                                                    <img src="{{asset('storage/'. $psl['picture'])}}"
-                                                        width="125px" height="125px" style="object-fit: cover;" alt="">
+                                                    <img src="{{asset('storage/'. $psl['picture'])}}" width="125px"
+                                                        height="125px" style="object-fit: cover;" alt="">
                                                 </div>
                                                 <div class="col text-center my-auto fs-1 fw-bold">
                                                     {{$persen}}%
@@ -193,16 +201,16 @@ use App\Models\Paslon;
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <?php
                                 $jumlah = 0;
                                 ?>
                                 @endforeach
                                 <?php $i = 1; ?>
-                                
+
                             </div>
                         </div>
-                        
+
                         @endforeach
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
@@ -222,10 +230,11 @@ use App\Models\Paslon;
 
                 <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner" role="listbox">
-                        
+
 
                         <div class="carousel-item  <?php if ($count++ == 1) : ?><?= 'active' ?><?php endif; ?>">
-                            <div style="min-width:150px; min-height:100px; max-width:200px; max-height:100px; overflow:hidden;">
+                            <div
+                                style="min-width:150px; min-height:100px; max-width:200px; max-height:100px; overflow:hidden;">
                             </div>
                             <div class="carousel-caption d-none d-md-block">
                                 <div class="col-md-12">
@@ -252,29 +261,36 @@ use App\Models\Paslon;
                                         $persen = substr($jumlah / $item->dpt * 100, 0, 3);
 
                                         ?>
-                                        <div class="col-md-2 position-relative" style="background-color: white; height: 75px; overflow: hidden; color: #ced4da; border-right: 1px solid">
+                                        <div class="col-md-2 position-relative"
+                                            style="background-color: white; height: 75px; overflow: hidden; color: #ced4da; border-right: 1px solid">
                                             <h1 class="fw-bolder" style="position: absolute; bottom: 8px; left: 16px;">
                                                 0{{$i++}}</h1>
-                                            <img style="height: 100px; margin-bottom: 0.65em; margin-left: -100px;" src="{{asset('storage/'. $psl['picture'])}}" alt="">
-                                            <h1 style="position: absolute; top: 10%; right: 20px; font-size: 35px; color: #1a1a1ac4" class="fw-bold">{{$persen}}%</h1>
-                                            <h1 style="position: absolute; top: 75%; right: 20px; font-size: 9px; color: #1a1a1ac4" class="fw-bold">{{$psl->candidate}} | {{$psl->deputy_candidate}}</h1>
+                                            <img style="height: 100px; margin-bottom: 0.65em; margin-left: -100px;"
+                                                src="{{asset('storage/'. $psl['picture'])}}" alt="">
+                                            <h1 style="position: absolute; top: 10%; right: 20px; font-size: 35px; color: #1a1a1ac4"
+                                                class="fw-bold">{{$persen}}%</h1>
+                                            <h1 style="position: absolute; top: 75%; right: 20px; font-size: 9px; color: #1a1a1ac4"
+                                                class="fw-bold">{{$psl->candidate}} | {{$psl->deputy_candidate}}</h1>
                                         </div>
                                         <?php
                                         $jumlah = 0;
                                         ?>
                                         @endforeach
                                         <?php $i = 1; ?>
-                                        <div class="col-md-3 position-relative" style="background-color: black; height: 75px; overflow: hidden; color: #ced4da;">
+                                        <div class="col-md-3 position-relative"
+                                            style="background-color: black; height: 75px; overflow: hidden; color: #ced4da;">
 
-                                            <h1 style="position: absolute; top: 9%; left: 20px; font-size: 20px; color: white" class="fw-bold">Data Masuk</h1>
-                                            <h1 style="position: absolute; top: 37%; left: 20px; font-size: 40px; color: white" class="fw-bold">65,70%</h1>
+                                            <h1 style="position: absolute; top: 9%; left: 20px; font-size: 20px; color: white"
+                                                class="fw-bold">Data Masuk</h1>
+                                            <h1 style="position: absolute; top: 37%; left: 20px; font-size: 40px; color: white"
+                                                class="fw-bold">65,70%</h1>
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
                         </div>
-                        
+
 
                     </div>
                 </div>
