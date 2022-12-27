@@ -11,11 +11,11 @@
                 </a>
                 <div class="postcard__text">
                     <h1 class="postcard__title blue"><a href="#"> Pembayaran Saksi</a></h1>
-                    <div class="postcard__subtitle small">
+                    <!-- <div class="postcard__subtitle small">
                         <time datetime="2024-05-25 12:00:00">
                             <i class="fas fa-calendar-alt mr-2"></i>May 25th 2024
                         </time>
-                    </div>
+                    </div> -->
                     <div class="postcard__bar"></div>
                     <div class="postcard__preview-txt">pembayaran saksi akan menggunakan dashboard dari third party
                         seperti midtrans dan xendit dan atau lainnya yang akan terhubung via API Rekapitung. </div>

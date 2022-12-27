@@ -85,9 +85,7 @@ $title = '';
                         <li>
                             <button class="btn tablink w-100 rounded-0  slide-item" onclick="openPage('C1-Saksi', this)">C1 Saksi <span class="badge rounded-pill bg-danger">{{$count_suara}}</span></button>
                         </li>
-                        <li>
-                            <button class="btn tablink w-100 rounded-0  slide-item" onclick="openPage('C1-Partai', this)">C1 Partai</button>
-                        </li>
+                      
                         <li>
                             <button class="btn tablink w-100 rounded-0  slide-item" onclick="openPage('C1-Relawan', this)">C1 Relawan Partai</button>
                         </li>
@@ -109,11 +107,11 @@ $title = '';
                     </a>
                     <ul class="slide-menu">
                         <li><a href="#" class="slide-item c1saksi">C1 Saksi</a></li>
-                        <li><a href="#" class="slide-item c1partai">C1 Partai</a></li>
+                    
                         <li><a href="#" class="slide-item c1saksipend">C1 Saksi (Pending)</a></li>
                         <li><a href="#" class="slide-item c1relawan">C1 Relawan Partai</a></li>
-                        <li><a href="#" class="slide-item c1relawanband">C1 Relawan Partai (Banding)</a></li>
-                        <li><a href="#" class="slide-item pengajuankoreksi">Pengajuan koreksi</a></li>
+                        <!-- <li><a href="#" class="slide-item c1relawanband">C1 Relawan Partai (Banding)</a></li> -->
+                        <li><a href="#" class="slide-item pengajuankoreksi">Pengajuan Koreksi</a></li>
                         <li><a href="#" class="slide-item tpsdibatalkan">TPS Dibatalkan</a></li>
                         <li><a href="#" class="slide-item koreksiditolak">Koreksi Ditolak</a></li>
                         <li><a href="#" class="slide-item kecurangan">Kecurangan</a></li>
