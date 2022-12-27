@@ -83,9 +83,13 @@
                                 </div>
                             </center>
 
-                            <div class="text-end pt-1">
-                                <p class="mb-0"><a href="#" class="text-primary ms-1">Forgot
-                                        Password?</a></p>
+                            <div class="row">
+                                <div class="col-6">
+                                    <a href="https://www.acakey.com/info" class="text-primary ms-1">Apa Itu Acakey?</a>
+                                </div>
+                                <div class="col-6 text-end">
+                                    <a href="#" class="text-primary ms-1">Forgot Password?</a>
+                                </div>
                             </div>
 
                             <div class="container-login100-form-btn">
