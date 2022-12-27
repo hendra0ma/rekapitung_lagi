@@ -208,11 +208,6 @@ $tps = 2963;
                     </ul>
                 </li>
                 <li>
-                    <a class="side-menu__item" href="{{url('')}}/administrator/r-data-record"><i
-                            class="side-menu__icon mdi mdi-scale-balance"></i><span class="side-menu__label">Log
-                            Histori</span></a>
-                </li>
-                <li>
                     <h3>Kecurangan</h3>
                 </li>
                 <li>
@@ -414,7 +409,7 @@ $tps = 2963;
                         </div>
                         <div class="modal-footer">
                             <button type="submit" class="btn text-white" style="background-color: red;">Commander Permission</button>
-                            <button type="button" class="btn text-white" style="background-color: brown" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn" style="background-color: white" data-bs-dismiss="modal">Close</button>
                         </div>
                     </form>
                 </div>
