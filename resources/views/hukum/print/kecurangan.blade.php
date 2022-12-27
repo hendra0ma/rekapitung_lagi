@@ -22,6 +22,14 @@
     <link href="../../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
     <style>
+      .page-break{
+ 
+        page-break-before: always;
+        page-break-after: always;
+        page-break-inside: avoid;
+
+      }
+
         @media screen {
             div.divFooter {
                 display: none;
@@ -38,10 +46,10 @@
         @media print {
             section.vendorListHeading {
                 background-color: #fff !important;
-                -webkit-print-color-adjust: exact; 
+                -webkit-print-color-adjust: exact;
             }
         }
-        
+
         @media print {
             .vendorListHeading p {
                 color: white !important;
@@ -54,7 +62,7 @@
 <body>
 
     <div class="asdf"
-        style="position: relative;width:100%;height:100%;page-break-before: auto;page-break-after: auto;page-break-inside: avoid;">
+        style="position: relative;width:100%;height:100%;">
 
         <div class="row">
             <div class="col-12">
@@ -66,23 +74,22 @@
                     </h3>
 
                     <img style="width: 350px; height: auto; margin-top:75px"
-                        src="{{url('/')}}/images/logo/rekapitung_gold.png"
-                        alt="">
+                        src="{{url('/')}}/images/logo/rekapitung_gold.png" alt="">
 
-                <center>
+                    <center>
             </div>
         </div>
 
-
+     
         <div class="row justify-content-center border border-dark"
             style="align-items:center;height:100%;margin-top:75px">
-          <?php $scan_url = url('') . "/scanning/" . (string)Crypt::encrypt($qrcode->nomor_berkas); ?>
+            <?php $scan_url = url('') . "/scanning/" . (string)Crypt::encrypt($qrcode->nomor_berkas); ?>
             <div class="col-6">
                 {!! QrCode::size(200)->generate( $scan_url); !!}
             </div>
             <div class="col-6">
 
-                 <h3>
+                <h3>
                     {{$kota->name }}<br>
                     kec
                     {{$kecamatan->name}} / Kel
@@ -92,10 +99,11 @@
 
             </div>
         </div>
-        
+
     </div>
-    
-    <div style="width:100%;height:100%;page-break-before: auto;page-break-after: auto;page-break-inside: avoid;">
+   
+
+    <div style="width:100%;height:100%;"class="page-break">
         <center>
             <h1 class="mt-2 text-danger">DOKUMEN REKAPITUNG</h1>
             <center>
@@ -122,45 +130,38 @@
 
             <table class="table table-bordered">
                 <tr>
-                    <td  class="font-weight-bold">
-                        <center>Data Saksi</center>
+                    <td class="font-weight-bold">
+                        <div class="text-center">Petugas Saksi</div>
                     </td>
-                    <td  class="font-weight-bold">
-                        <center>Data Verifikator</center>
+                    <td class="font-weight-bold">
+                        <div class="text-center">Petugas Verifikator</div>
                     </td>
-                    <td  class="font-weight-bold">
-                        <center>Data Admin Hukum</center>
+                    <td class="font-weight-bold">
+                        <div class="text-center">Petugas Validasi Kecurangan</div>
                     </td>
                 </tr>
                 <tr>
-                    <td>   {{$user->name}}</td>
-                 
-                    <td>   {{ $verifikator->name }}</td>
-                 
-                    <td>       {{ $hukum->name }}</td>
-             
+                    <td> {{$user->name}}</td>
+                    <td> {{ $verifikator->name }}</td>
+                    <td> {{ $hukum->name }}</td>
                 </tr>
 
                 <tr>
                     <td> {{$user->no_hp}}</td>
-                   
-                    <td>    {{ $verifikator->no_hp}}</td>
-                
-                    <td>   {{ $hukum->no_hp }}</td>
-                 
+                    <td> {{ $verifikator->no_hp}}</td>
+                    <td> {{ $hukum->no_hp }}</td>
                 </tr>
             </table>
             <table class="table table-bordered">
-                
-            <tr>
-                                    <td>Tanggal Dokumen</td>
-                                    <td>{{ $qrcode->created_at }}</td>
-                                </tr>
+                <tr>
+                    <td>Tanggal Dokumen</td>
+                    <td>{{ $qrcode->created_at }}</td>
+                </tr>
             </table>
             <table class="table">
-                
+
                 <tr>
-                    <td class="font-weight-bold text-center bg-dark text-light">
+                    <td class="font-weight-bold text-center text-danger fw-bolder">
                         Daftar Kecurangan
                     </td>
                 </tr>
@@ -169,25 +170,25 @@
                     <td>{{ $item->text }} </td>
                 </tr>
                 @endforeach
-                   <tr>
-                    <td class="font-weight-bold text-center bg-dark text-light">
-                     Rekomendasi Tindakan
+                <tr>
+                    <td class="font-weight-bold text-center text-danger fw-bolder border-0">
+                        Rekomendasi Tindakan
                     </td>
                 </tr>
-                   <tbody id="appendDataSolution">
-                              
-                    </tbody>  
-                    
-                    <script>
-                     
-                            
+                <tbody id="appendDataSolution">
 
-                    </script>  
+                </tbody>
+
+                <script>
+
+
+
+                </script>
             </table>
         </center>
     </div>
 
-    <div style="width:100%;height:100%;page-break-before: auto;page-break-after: auto;page-break-inside: avoid;">
+    <div style="width:100%;height:100%;">
         <table style="table-layout: fixed;" class="table text-center">
             <thead>
                 <tr>
@@ -204,8 +205,8 @@
                 <tr>
                     <td>
                         @foreach ($foto_kecurangan as $foto)
-                        <img style="width: 100%; height: auto" class="d-block w-100" alt="" src="{{url('')}}/storage/{{ $foto->url }}"
-                            data-bs-holder-rendered="true">
+                        <img style="width: 70%; height: auto" class="d-block w-100" alt=""
+                            src="{{url('')}}/storage/{{ $foto->url }}" data-bs-holder-rendered="true">
                         @endforeach
                     </td>
                 </tr>
@@ -239,15 +240,26 @@
             </tbody>
         </table>
     </div>
-      
- @foreach ($foto_kecurangan as $foto)
-                        <img style="width:100%;page-break-before: always;page-break-after: always;page-break-inside: avoid;"class="d-block" alt="" src="{{url('')}}/storage/{{ $foto->url }}"
-                            data-bs-holder-rendered="true">
-                        @endforeach
-                        
-                        
+
+
+    <?php
+    $a= 1;
+    
+    ?>
+    @foreach ($foto_kecurangan as $foto)
+    <?php
+    $a++;
+
+    
+    ?>
+    <img style="width:100%;" class="d-block page-break"
+        alt="" src="{{url('')}}/storage/{{ $foto->url }}" data-bs-holder-rendered="true">
+
+    @endforeach
+
+
     <div class="page-content-wrapper"
-        style="width:100%;height:100%;page-break-before: auto;page-break-after: auto;page-break-inside: avoid;">
+        style="width:100%;height:100%;">
         <div class="row mt-2">
             <div class="container">
                 <div class="col-lg-12">
@@ -376,18 +388,19 @@
             </div>
         </div>
     </div>
-     <div class="page-content-wrapper"
-        style="width:100%;height:100%;page-break-before: always;page-break-after: always;page-break-inside: avoid;">
-           <h1 class="display-3"style="margin: auto;width: 100%;padding: 10px;text-align:center"> Lampiran C1</h1>
-           </div>
-    <img style="width:90%;height:90%;page-break-before: auto;page-break-after: auto;page-break-inside: avoid;" alt="" class="d-block"src="{{url('')}}/storage/{{ $saksi->c1_images }}"
-                            data-bs-holder-rendered="true">
-    
-      
+    <div class="page-content-wrapper page-break"
+        style="width:100%;height:100%;">
+        <h1 class="display-3" style="margin: auto;width: 100%;padding: 10px;text-align:center"> Lampiran C1</h1>
+    </div>
+    <img style="width:90%;height:90%;" alt=""
+        class="d-block" src="{{url('')}}/storage/{{ $saksi->c1_images }}" data-bs-holder-rendered="true">
 
-    <div  class="divFooter">{{ $qrcode->nomor_berkas }} <br /> <small class="text-danger"> Dokumen ini telah dihasilkan dari rekapitung.id dengan nomor berkas : {{ $qrcode->nomor_berkas }}
-Untuk Paslon Muhammad - Saraswati. Hasil cetak dokumen ini  dapat diverifikasi berdasarkan kode
-barcode di rekapitung.id </small> </div>
+
+
+    <div class="divFooter">{{ $qrcode->nomor_berkas }} <br /> <small class="text-danger"> Dokumen ini telah dihasilkan
+            dari rekapitung.id dengan nomor berkas : {{ $qrcode->nomor_berkas }}
+            Untuk Paslon Muhammad - Saraswati. Hasil cetak dokumen ini dapat diverifikasi berdasarkan kode
+            barcode di rekapitung.id </small> </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
@@ -399,37 +412,37 @@ barcode di rekapitung.id </small> </div>
         integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous">
     </script>
     <script>
-setTimeout(function(){
-        let uniqueData =  [@foreach ($list_kecurangan as $item) '{{$item->solution}} | {{$item->kode}}', @endforeach];
-                    
-    uniqueArray = uniqueData.filter(function(item, pos) {
-        return uniqueData.indexOf(item) == pos;
-    });
-    uniqueArray.forEach(function (item,index){
-        $('#appendDataSolution').append(`
+        setTimeout(function () {
+            let uniqueData = [@foreach($list_kecurangan as $item)
+                '{{$item->solution}} | {{$item->kode}}', @endforeach
+            ];
+
+            uniqueArray = uniqueData.filter(function (item, pos) {
+                return uniqueData.indexOf(item) == pos;
+            });
+            uniqueArray.forEach(function (item, index) {
+                $('#appendDataSolution').append(`
         <tr>
             <td>
                 ${item}    
             </td>
         </tr>
         `)
-    });
-},200)
+            });
+        }, 200)
 
 
 
-    setTimeout(function(){
-                                  
-        window.print();
-        window.onafterprint = back;
-        function back() {
-          window.close()
-      }
+        setTimeout(function () {
 
-    },400)
-     
-     
-        
+            window.print();
+            window.onafterprint = back;
+
+            function back() {
+                window.close()
+            }
+
+        }, 400)
 
     </script>
 </body>

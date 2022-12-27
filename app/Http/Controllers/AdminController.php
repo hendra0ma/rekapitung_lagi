@@ -1011,16 +1011,14 @@ class AdminController extends Controller
             ->where('print',1)
             ->select('saksi.*', 'saksi.created_at as date', 'tps.*', 'users.*')
             ->get();
-            $data['title'] = "";
-             $data['title2'] = "";
+            $data['title']  ='Election Fraud Data Print (EFDP)';
+            $data['title2']  = 'Election Fraud Data Print';
       $data['print'] = QrCode::where('print',1)->get();
        return view('administrator.fraudDataprint', $data);
     }
     public function FraudDataReport()
     {
         $data['index_tsm']    = ModelsListkecurangan::get();
-
-
        $data['config'] = Config::first();
         $data['qrcode'] = QrCode::join('surat_pernyataan','surat_pernyataan.qrcode_hukum_id','=','qrcode_hukum.id')->paginate(15);
         

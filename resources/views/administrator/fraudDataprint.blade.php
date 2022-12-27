@@ -45,7 +45,7 @@
     </div>
 </div>
 
-<h4 class="fs-4 mt-5 fw-bold">{{$title}} 
+<h4 class="fs-4 mt-2 fw-bold">{{$title}} 
      <div>Dilindungi Paten Rekapitung</div>
  </h4>
 <hr style="border: 1px solid;">
