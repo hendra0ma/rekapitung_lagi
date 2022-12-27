@@ -466,7 +466,7 @@
                 </div>
             </div>
             
-            <h3 class="fw-bold">Checking Record</h3>
+            <h3 class="fw-bold">Overtime Record</h3>
             <hr style="border: 1px solid;">
             <div class="row">
                 <div class="col">
@@ -485,7 +485,7 @@
                                         <div class="col fs-5 fw-bold">{{$checking_teregistrasi}}</div>
                                     </div>
                                     <div class="row">
-                                        <div class="col text-muted" style="font-size: 13px;">Checking Terdaftar</div>
+                                        <div class="col text-muted" style="font-size: 13px;">Overtime Terdaftar</div>
                                     </div>
                                 </div>
                             </div>
@@ -508,7 +508,7 @@
                                         <div class="col fs-5 fw-bold">{{$checking_teregistrasi}}</div>
                                     </div>
                                     <div class="row">
-                                        <div class="col text-muted" style="font-size: 13px;">Checking Registrasi</div>
+                                        <div class="col text-muted" style="font-size: 13px;">Overtime Registrasi</div>
                                     </div>
                                 </div>
                             </div>
@@ -531,7 +531,7 @@
                                         <div class="col fs-5 fw-bold">{{$checking_terblokir}}</div>
                                     </div>
                                     <div class="row">
-                                        <div class="col text-muted" style="font-size: 13px;">Checking Ilegal</div>
+                                        <div class="col text-muted" style="font-size: 13px;">Overtime Ilegal</div>
                                     </div>
                                 </div>
                             </div>
@@ -554,7 +554,7 @@
                                         <div class="col fs-5 fw-bold">{{$checking_terblokir}}</div>
                                     </div>
                                     <div class="row">
-                                        <div class="col text-muted" style="font-size: 13px;">Checking Terblokir</div>
+                                        <div class="col text-muted" style="font-size: 13px;">Overtime Terblokir</div>
                                     </div>
                                 </div>
                             </div>
@@ -563,7 +563,7 @@
                 </div>
             </div>
             
-            <h3 class="fw-bold">Hunter Record</h3>
+            <h3 class="fw-bold">Voulunteer Record</h3>
             <hr style="border: 1px solid;">
             <div class="row">
                 <div class="col">
@@ -582,7 +582,7 @@
                                         <div class="col fs-5 fw-bold">{{$hunter_teregistrasi}}</div>
                                     </div>
                                     <div class="row">
-                                        <div class="col text-muted" style="font-size: 13px;">Hunter Terdaftar</div>
+                                        <div class="col text-muted" style="font-size: 13px;">Voulunteer Terdaftar</div>
                                     </div>
                                 </div>
                             </div>
@@ -605,7 +605,7 @@
                                         <div class="col fs-5 fw-bold">{{$hunter_teregistrasi}}</div>
                                     </div>
                                     <div class="row">
-                                        <div class="col text-muted" style="font-size: 13px;">Hunter Registrasi</div>
+                                        <div class="col text-muted" style="font-size: 13px;">Voulunteer Registrasi</div>
                                     </div>
                                 </div>
                             </div>
@@ -628,7 +628,7 @@
                                         <div class="col fs-5 fw-bold">{{$hunter_terblokir}}</div>
                                     </div>
                                     <div class="row">
-                                        <div class="col text-muted" style="font-size: 13px;">Hunter Ilegal</div>
+                                        <div class="col text-muted" style="font-size: 13px;">Voulunteer Ilegal</div>
                                     </div>
                                 </div>
                             </div>
@@ -651,7 +651,7 @@
                                         <div class="col fs-5 fw-bold">{{$hunter_terblokir}}</div>
                                     </div>
                                     <div class="row">
-                                        <div class="col text-muted" style="font-size: 13px;">Hunter Terblokir</div>
+                                        <div class="col text-muted" style="font-size: 13px;">Voulunteer Terblokir</div>
                                     </div>
                                 </div>
                             </div>
@@ -660,7 +660,7 @@
                 </div>
             </div>
             
-            <h3 class="fw-bold">Hukum Record</h3>
+            <h3 class="fw-bold">Fraud Validation Record</h3>
             <hr style="border: 1px solid;">
             <div class="row">
                 <div class="col">
@@ -679,7 +679,7 @@
                                         <div class="col fs-5 fw-bold">{{$hukum_teregistrasi}}</div>
                                     </div>
                                     <div class="row">
-                                        <div class="col text-muted" style="font-size: 13px;">Hukum Terdaftar</div>
+                                        <div class="col text-muted" style="font-size: 13px;">Fraud Validation Terdaftar</div>
                                     </div>
                                 </div>
                             </div>
@@ -702,7 +702,7 @@
                                         <div class="col fs-5 fw-bold">{{$hukum_teregistrasi}}</div>
                                     </div>
                                     <div class="row">
-                                        <div class="col text-muted" style="font-size: 13px;">Hukum Registrasi</div>
+                                        <div class="col text-muted" style="font-size: 13px;">Fraud Validation Registrasi</div>
                                     </div>
                                 </div>
                             </div>
@@ -725,7 +725,7 @@
                                         <div class="col fs-5 fw-bold">{{$hukum_terblokir}}</div>
                                     </div>
                                     <div class="row">
-                                        <div class="col text-muted" style="font-size: 13px;">Hukum Ilegal</div>
+                                        <div class="col text-muted" style="font-size: 13px;">Fraud Validation Ilegal</div>
                                     </div>
                                 </div>
                             </div>
@@ -748,7 +748,7 @@
                                         <div class="col fs-5 fw-bold">{{$hukum_terblokir}}</div>
                                     </div>
                                     <div class="row">
-                                        <div class="col text-muted" style="font-size: 13px;">Hukum Terblokir</div>
+                                        <div class="col text-muted" style="font-size: 13px;">Fraud Validation Terblokir</div>
                                     </div>
                                 </div>
                             </div>
@@ -757,7 +757,7 @@
                 </div>
             </div>
             
-            <h3 class="fw-bold">Huver Record</h3>
+            <h3 class="fw-bold">Otentifikasi Record</h3>
             <hr style="border: 1px solid;">
             <div class="row">
                 <div class="col">
@@ -776,7 +776,7 @@
                                         <div class="col fs-5 fw-bold">{{$huver_teregistrasi}}</div>
                                     </div>
                                     <div class="row">
-                                        <div class="col text-muted" style="font-size: 13px;">Huver Terdaftar</div>
+                                        <div class="col text-muted" style="font-size: 13px;">Otentifikasi Terdaftar</div>
                                     </div>
                                 </div>
                             </div>
@@ -799,7 +799,7 @@
                                         <div class="col fs-5 fw-bold">{{$huver_teregistrasi}}</div>
                                     </div>
                                     <div class="row">
-                                        <div class="col text-muted" style="font-size: 13px;">Huver Registrasi</div>
+                                        <div class="col text-muted" style="font-size: 13px;">Otentifikasi Registrasi</div>
                                     </div>
                                 </div>
                             </div>
@@ -822,7 +822,7 @@
                                         <div class="col fs-5 fw-bold">{{$huver_terblokir}}</div>
                                     </div>
                                     <div class="row">
-                                        <div class="col text-muted" style="font-size: 13px;">Huver Ilegal</div>
+                                        <div class="col text-muted" style="font-size: 13px;">Otentifikasi Ilegal</div>
                                     </div>
                                 </div>
                             </div>
@@ -845,7 +845,7 @@
                                         <div class="col fs-5 fw-bold">{{$huver_terblokir}}</div>
                                     </div>
                                     <div class="row">
-                                        <div class="col text-muted" style="font-size: 13px;">Huver Terblokir</div>
+                                        <div class="col text-muted" style="font-size: 13px;">Otentifikasi Terblokir</div>
                                     </div>
                                 </div>
                             </div>
@@ -919,6 +919,12 @@
 							</div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md">
+                    <a href="{{url('/')}}/administrator/r-data-record" class="btn btn-primary w-100">Lihat Log Histori</a>
                 </div>
             </div>
 
