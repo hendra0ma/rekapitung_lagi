@@ -10,11 +10,11 @@
             </h1>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">R Data Recorder
+                <li class="breadcrumb-item active" aria-current="page">Data Tracking
                     <!-- Kota -->
                 </li>
             </ol>
-            <h4 class="fs-4 mt-2 fw-bold">R Data Recorder</h4>
+            <h4 class="fs-4 mt-2 fw-bold">Data Tracking</h4>
         </div>
         <div class="col-lg-8 mt-2">
             <div class="row">
@@ -78,7 +78,7 @@
 
     <div class="row">
         <div class="col-md-8">
-            <h3 class="fw-bold">Saksi Record</h3>
+            <h3 class="fw-bold">Saksi Tracking</h3>
             <hr style="border: 1px solid;">
             <div class="row">
                 <div class="col">
@@ -175,7 +175,7 @@
                 </div>
             </div>
             
-            <h3 class="fw-bold">Verifikator Record</h3>
+            <h3 class="fw-bold">Verifikator Tracking</h3>
             <hr style="border: 1px solid;">
             <div class="row">
                 <div class="col">
@@ -272,7 +272,7 @@
                 </div>
             </div>
             
-            <h3 class="fw-bold">Auditor Record</h3>
+            <h3 class="fw-bold">Auditor Tracking</h3>
             <hr style="border: 1px solid;">
             <div class="row">
                 <div class="col">
@@ -369,7 +369,7 @@
                 </div>
             </div>
             
-            <h3 class="fw-bold">Validator Record</h3>
+            <h3 class="fw-bold">Validator Tracking</h3>
             <hr style="border: 1px solid;">
             <div class="row">
                 <div class="col">
@@ -466,7 +466,7 @@
                 </div>
             </div>
             
-            <h3 class="fw-bold">Overtime Record</h3>
+            <h3 class="fw-bold">Overtime Tracking</h3>
             <hr style="border: 1px solid;">
             <div class="row">
                 <div class="col">
@@ -563,7 +563,7 @@
                 </div>
             </div>
             
-            <h3 class="fw-bold">Voulunteer Record</h3>
+            <h3 class="fw-bold">Voulunteer Tracking</h3>
             <hr style="border: 1px solid;">
             <div class="row">
                 <div class="col">
@@ -660,7 +660,7 @@
                 </div>
             </div>
             
-            <h3 class="fw-bold">Fraud Validation Record</h3>
+            <h3 class="fw-bold">Fraud Validation Tracking</h3>
             <hr style="border: 1px solid;">
             <div class="row">
                 <div class="col">
@@ -757,7 +757,7 @@
                 </div>
             </div>
             
-            <h3 class="fw-bold">Otentifikasi Record</h3>
+            <h3 class="fw-bold">Otentifikasi Tracking</h3>
             <hr style="border: 1px solid;">
             <div class="row">
                 <div class="col">
@@ -924,7 +924,7 @@
 
             <div class="row">
                 <div class="col-md">
-                    <a href="{{url('/')}}/administrator/r-data-record" class="btn btn-primary w-100">Lihat Log Histori</a>
+                    <a href="{{url('/')}}/administrator/r-data Tracking" class="btn btn-primary w-100">Lihat Log Histori</a>
                 </div>
             </div>
 

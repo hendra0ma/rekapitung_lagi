@@ -41,6 +41,13 @@
                 position: fixed;
                 bottom: 0;
             }
+            .stamp {
+                position: fixed;
+                bottom: 0px;
+                top: 75%;
+                left: 75%;
+                
+            }
         }
 
         @media print {
@@ -60,6 +67,8 @@
 </head>
 
 <body>
+
+<img src="{{asset('')}}assets/stamp.png"class="img-flluid stamp"style="width:150px;height:auto" alt="">
 
     <div class="asdf"
         style="position: relative;width:100%;height:100%;">
@@ -145,7 +154,6 @@
                     <td> {{ $verifikator->name }}</td>
                     <td> {{ $hukum->name }}</td>
                 </tr>
-
                 <tr>
                     <td> {{$user->no_hp}}</td>
                     <td> {{ $verifikator->no_hp}}</td>
@@ -161,7 +169,7 @@
             <table class="table">
 
                 <tr>
-                    <td class="font-weight-bold text-center text-danger fw-bolder">
+                    <td class="font-weight-bold text-danger fw-bolder">
                         Daftar Kecurangan
                     </td>
                 </tr>
@@ -171,7 +179,7 @@
                 </tr>
                 @endforeach
                 <tr>
-                    <td class="font-weight-bold text-center text-danger fw-bolder border-0">
+                    <td class="font-weight-bold text-danger fw-bolder border-0">
                         Rekomendasi Tindakan
                     </td>
                 </tr>
@@ -242,16 +250,8 @@
     </div>
 
 
-    <?php
-    $a= 1;
-    
-    ?>
     @foreach ($foto_kecurangan as $foto)
-    <?php
-    $a++;
-
-    
-    ?>
+  
     <img style="width:100%;" class="d-block page-break"
         alt="" src="{{url('')}}/storage/{{ $foto->url }}" data-bs-holder-rendered="true">
 

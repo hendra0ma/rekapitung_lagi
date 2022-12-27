@@ -68,7 +68,7 @@
     </div>
 </div>
 
-<h4 class="fs-4 mt-5 fw-bold">Election TSM Indicator <div>Paten 3 (Election Witness Fraud Tagging)</div>
+<h4 class="fs-4 mt-5 fw-bold">Election TSM Indicator <div>Dilindungi Paten Rekapitung</div>
 </h4>
 <hr style="border: 1px solid">
 
