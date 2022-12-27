@@ -353,12 +353,28 @@ $tps = 2963;
                     </ul>
                 </li>
 
-                <hr>
+                <li>
+                    <h3>Demontrasi</h3>
+                </li>
+                <li class="slide">
+                    <a class="side-menu__item" data-bs-toggle="slide" href="#"><i
+                            class="side-menu__icon mdi mdi-file-account"></i><span class="side-menu__label">Input Saksi</span><i
+                            class="angle fa fa-angle-right"></i></a>
+                    <ul class="slide-menu">
+                        <li><a href="/administrator/tentang" class="slide-item">Upload C1</a></li>
+                        <li><a href="/administrator/pusat_bantuan" class="slide-item">Laporan Kecurangan</a></li>
+                    </ul>
+                </li>
                 <li>
                     <a class="side-menu__item" href="#">
                         <i class="side-menu__icon mdi mdi-settings"></i><span class="side-menu__label">Data Setup</span></a>
                 </li>
+                <li>
+                    <a class="side-menu__item" href="#">
+                        <i class="side-menu__icon mdi mdi-flash"></i><span class="side-menu__label">Super Administrator</span></a>
+                </li>
 
+                <hr>
                 <li>
                     <!-- <a class="side-menu__item" href="#"><i class="side-menu__icon mdi mdi-logout"></i><span class="side-menu__label">Logout</span></a> -->
                     <form action="{{ route('logout') }}" method="post">
