@@ -268,14 +268,14 @@ $tps = 2963;
                 <li>
                     <a class="side-menu__item modal-action" href="#modalCommander" data-bs-toggle="modal"
                         data-jenis="setting" data-izin="multi_admin" data-title="Multi Admin"
-                        data-deskripsi="Anda membutuhkan izin commander untuk mengakses halaman ini.">
+                        data-deskripsi="Mode Multi Administrator adalah fitur dimana Administrator dapat login di beberapa device pada saat bersamaan.">
                         <i class="side-menu__icon mdi mdi-account-multiple-outline"></i><span
                             class="side-menu__label">Mode Multi Admin</span></a>
                 </li>
                 <li>
                     <a class="side-menu__item modal-action" href="#modalCommander" data-bs-toggle="modal"
                         data-jenis="setting" data-izin="otonom" data-title="Mode Otonom"
-                        data-deskripsi="Anda membutuhkan izin commander untuk mengakses halaman ini.">
+                        data-deskripsi="Mode Otonom adalah sistem rekapitung yang berjalan tanpa admin dan hanya menampilkan perolehan suara yang dikirim oleh saksi.">
                         <i class="side-menu__icon fa fa-magic"></i><span class="side-menu__label">Mode Otonom</span></a>
                 </li>
                 <li class="slide">
@@ -285,31 +285,31 @@ $tps = 2963;
                     <ul class="slide-menu">
                         <li><a href="#modalCommander" data-bs-toggle="modal" data-jenis="redirect"
                                 data-izin="{{url('')}}/administrator/patroli_mode" data-title="Patroli Mode"
-                                data-deskripsi="Anda membutuhkan izin commander untuk mengakses halaman ini." class="slide-item modal-action">Patroli Mode</a></li>
+                                data-deskripsi="Patroli Mode adalah sistem untuk melihat aktifitas admin yang sedang bertugas maupung yang selesai bertugas." class="slide-item modal-action">Patroli Mode</a></li>
                         <li><a href="#modalCommander" data-bs-toggle="modal" data-jenis="redirect"
                                 data-izin="{{url('')}}/administrator/patroli_mode/tracking/maps"
-                                data-title="Lacak Admin" data-deskripsi="Anda membutuhkan izin commander untuk mengakses halaman ini."
+                                data-title="Lacak Admin" data-deskripsi="Lacak Admin adalah sistem untuk melacak posisi admin berdasarkan demografi wilayah pemilihan."
                                 class="slide-item modal-action" class="slide-item">Lacak Admin</a></li>
                     </ul>
                 </li>
                 <li>
                     <a class="side-menu__item modal-action" href="#modalCommander" data-bs-toggle="modal"
                         data-jenis="setting" data-izin="lockdown" data-title="Mode Lockdown"
-                        data-deskripsi="Anda membutuhkan izin commander untuk mengakses halaman ini.">
+                        data-deskripsi="Mode Lockdown adalah penutupan sementara seluruh admin. Status lockdown terjadi biasanya karena ada serangan hacker dan atau proses perhitungan yang telah dinyatakan selesai.">
                         <i class="side-menu__icon mdi mdi-lock"></i>
                         <span class="side-menu__label">Mode Lockdown</span></a>
                 </li>
                 <li>
                     <a class="side-menu__item modal-action" href="#modalCommander" data-bs-toggle="modal"
                         data-jenis="setting" data-izin="show_terverifikasi" data-title="Mode Verifikasi Publik"
-                        data-deskripsi="Anda membutuhkan izin commander untuk mengakses halaman ini.">
+                        data-deskripsi="Mode Verifikasi adalah publikasi data terverifikasi untuk dilihat pada publik. Hasil suara terverifikasi bisa lebih rendah, lebih tinggi ataupun sama dengan suara masuk.">
                         <i class="side-menu__icon mdi mdi-account-check"></i><span class="side-menu__label">Mode
                             Verifikasi</span></a>
                 </li>
                 <li>
                     <a class="side-menu__item modal-action" href="#modalCommander" data-bs-toggle="modal"
                         data-jenis="setting" data-izin="show_public" data-title="Mode C1 Publik"
-                        data-deskripsi="Anda membutuhkan izin commander untuk mengakses halaman ini.">
+                        data-deskripsi="Mode Publikasi C1 adalah mode untuk menampilkan lampiran C1 kepada publik atau masyarakat melalui Rekapitung.id"">
                         <i class="side-menu__icon mdi mdi-image"></i><span class="side-menu__label">Mode Publikasi C1</span></a>
                 </li>
                 <li>
@@ -321,7 +321,7 @@ $tps = 2963;
                 <li>
                     <a class="side-menu__item modal-action" href="#modalCommander" data-bs-toggle="modal"
                         data-jenis="setting" data-izin="master_data_tps" data-title="Mode Data TPS"
-                        data-deskripsi="Anda membutuhkan izin commander untuk mengakses halaman ini.">
+                        data-deskripsi="Mode Data C1 adalah mode untuk menampilkan Data rekapitung berdasarkan klasifikasinya, seperti : Rekam C1, TPS terverifikasi, TPS teraudit dan sebagainya">
                         <i class="side-menu__icon mdi mdi-file"></i><span class="side-menu__label">Mode Data C1</span></a>
                 </li>
           
