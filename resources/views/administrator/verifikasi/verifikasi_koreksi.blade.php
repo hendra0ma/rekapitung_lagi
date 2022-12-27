@@ -116,10 +116,12 @@ use App\Models\Koreksi;
 
 <div class="modal fade" id="disetujuimodal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="modal-title">&nbsp;</div>
+        <div class="modal-header bg-primary text-white">
+            <div class="modal-title mx-auto">
+                <h4 class="mb-0 fw-bold">Otentifikasi Koreksi</h4>
             </div>
+        </div>
+        <div class="modal-content">
             <div class="container" id="container-koreksi">
             
             <div class="modal-footer">

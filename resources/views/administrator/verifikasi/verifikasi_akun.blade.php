@@ -116,10 +116,12 @@ use App\Models\TPS;
 <!-- CONTAINER END -->
 <div class="modal fade" id="cekmodalakun" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="modal-title">Verifikasi Admin</div>
+        <div class="modal-header bg-primary text-white">
+            <div class="modal-title mx-auto">
+                <h4 class="mb-0 fw-bold">Otentifikasi Admin</h4>
             </div>
+        </div>
+        <div class="modal-content">
             <div class="container">
                 <div id="container-akun"></div>
             </div>
