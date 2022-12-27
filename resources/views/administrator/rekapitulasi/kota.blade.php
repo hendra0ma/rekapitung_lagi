@@ -18,7 +18,7 @@ use App\Models\Rekapitulator;
                 <!-- Kota -->
             </li>
         </ol>
-        <h4 class="fs-4 mt-2 fw-bold"> Komparasi Data Perhitungan (ERC)</h4>
+        <h4 class="fs-4 mt-2 fw-bold"> Komparasi Data Perhitungan</h4>
         
     </div>
     <div class="col-lg-2">
@@ -48,9 +48,12 @@ use App\Models\Rekapitulator;
 </div>
 
 <h4 class="fs-4 mt-2 fw-bold">
-Election Results Comparison Tingkat Kabupaten / Kota
+Election Results Comparison (ERC)
 </h4>
 <hr style="border: 1px solid">
+<h4 class="fs-4 mt-2 fw-bold">
+Tingkat Kabupaten / Kota
+</h4>
 
 <div class="row mt-5">
 

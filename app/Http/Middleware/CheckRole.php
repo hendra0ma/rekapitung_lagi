@@ -29,9 +29,6 @@ class CheckRole
         if($config->lockdown == "yes" && $role_id !=1){
              return redirect()->route('config.lockdown');
         }
-      
-    
-
         if ($role == 'administrator' && $role_id != 1 && $role_id != 25 && $role_id !=  26) {
             abort(403);
         }
