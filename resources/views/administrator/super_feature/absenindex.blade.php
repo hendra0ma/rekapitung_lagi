@@ -137,8 +137,8 @@ text/x-generic absensi.blade.php ( HTML document, ASCII text, with CRLF line ter
             <div class="card-header">
                 <h5 class="card-title">Info</h5>
             </div>
-            <div class="card-body">
-                Saksi Terdaftar adalah data saksi yang telah di input sebelumnya oleh administrator Rekapitung kedalam database sistem. Data saksi diperoleh dari timses kandidat sebelum pemilu berlangsung sehingga ketika saksi tersebut mendaftar menjadi saksi Rekapitung.
+            <div class="card-body" style="text-align: justify">
+                Saksi Terdaftar adalah data saksi yang telah di input sebelumnya oleh administrator Rekapitung kedalam database sistem. Data saksi diperoleh dari timses kandidat sebelum pemilu berlangsung sehingga ketika saksi tersebut mendaftar menjadi saksi Rekapitung maka pendaftaran tersebut akan diproses secara otomatis oleh sistem dengan hasil terverifikasi, pending, atau ditolak.
             </div>
         </div>
     </div>
