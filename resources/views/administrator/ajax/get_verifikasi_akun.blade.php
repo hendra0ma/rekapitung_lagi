@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 <div class="container">
     <div class="row">
         <div class="col-9 mt-2">
@@ -112,7 +113,7 @@
     </div>
     <div class="row mt-5 mb-5">
         <div class="col-md-6">
-            <button class="btn bg-success text-light w-100"><i class="fa fa-whatsapp"></i>
+            <button class="btn bg-success text-light w-100"><i class="fa-brands fa-whatsapp"></i>
                 Whatsapp</button>
         </div>
         <div class="col-md-6">
