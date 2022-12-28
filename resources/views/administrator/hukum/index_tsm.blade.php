@@ -14,50 +14,6 @@
         </ol>
         <h4 class="fs-4 mt-2 fw-bold">Indikator Data TSM (ETSMI)</h4>
     </div>
-    <!-- <div class="col-lg-8 mt-2">
-        <div class="row">
-            <div class="col-lg-3 justify-content-end">
-                <div class="card">
-                    <div class="card-header bg-secondary">
-                        <div class="card-title text-white">Data Masuk</div>
-                    </div>
-                    <div class="card-body">
-                        <p class="">{{ count($data_masuk) }}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card">
-                    <div class="card-header bg-success">
-                        <div class="card-title text-white">Data Terverifikasi</div>
-                    </div>
-                    <div class="card-body">
-                        <p class="">{{ count($terverifikasi) }}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card">
-                    <div class="card-header bg-primary">
-                        <div class="card-title text-white">Data Ditolak</div>
-                    </div>
-                    <div class="card-body">
-                        <p class="">{{ count($ditolak) }}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card">
-                    <div class="card-header bg-info">
-                        <div class="card-title text-white">Data Ditolak</div>
-                    </div>
-                    <div class="card-body">
-                        <p class="">{{ count($ditolak) }}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
     <div class="col-lg-8">
         <div class="row justify-content-end">
             <div class="col-md-2">
@@ -78,9 +34,9 @@
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header bg-danger">
                         <center>
-                            <h4 class="mx-auto fw-bold">
+                            <h4 class="mx-auto fw-bold mb-0 text-white">
                                 PELANGGARAN ADMINISTRASI PEMILU
                             </h4>
                         </center>
@@ -140,9 +96,9 @@
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header bg-danger">
                         <center>
-                            <h4 class="mx-auto fw-bold">
+                            <h4 class="mx-auto fw-bold text-white mb-0">
                                 PELANGGARAN TINDAK PIDANA
                             </h4>
                         </center>
@@ -202,9 +158,9 @@
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header bg-danger">
                         <center>
-                            <h4 class="mx-auto fw-bold">
+                            <h4 class="mx-auto fw-bold text-white mb-0">
                                 PELANGGARAN KODE ETIK
                             </h4>
                         </center>
