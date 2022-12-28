@@ -73,10 +73,10 @@
 <hr style="border: 1px solid">
 
 <!-- PAGE-HEADER END -->
-<div class="row mt-5">
-    <div class="col-lg-6">
+<div class="row mx-auto mt-5 container">
+    <div class="col-lg-12">
         <div class="row justify-content-center">
-            <div class="col-lg-12 ">
+            <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
                         <center>
@@ -91,7 +91,7 @@
                             <div id="chart-pie"></div>
                         </center>
                         <table
-                            class="table table-bordered text-nowrap border-bottom dataTable no-footer table-striped table-hover"
+                            class="table table-bordered text-nowrap border-bottom dataTable no-footer table-striped table-hover w-100"
                             id="basic-datatable" role="grid" aria-describedby="basic-datatable_info">
                             <thead class="bg-primary">
                                 <tr>
@@ -136,7 +136,7 @@
         </div>
 
     </div>
-    <div class="col-lg-6">
+    <div class="col-lg-12">
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="card">
