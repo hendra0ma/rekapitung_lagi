@@ -46,7 +46,7 @@ $solution = \App\Models\SolutionFraud::get();
         </h2>
     </div>
     <div class="col-md-12">
-        <h2 class="fw-bold text-center mx-auto"> Pilkada Kota Tangerang Selatan Tahun 2020</h2>
+        <h2 class="fw-bold text-center mx-auto"> Pilpres Tahun 2024 {{$kota->name}}</h2>
     </div>
 </div>
 
@@ -66,16 +66,16 @@ $solution = \App\Models\SolutionFraud::get();
 <hr>
 
 <!-- PAGE-HEADER END -->
-<div class="row mt-3 collapse multi-collapse show chevron-logic" id="collapse1">
+<div class="row mt-3 collapse multi-collapse show chevron-logic mx-auto container" id="collapse1">
 
     <h2 class="fw-bold">Index TSM Pemilu</h2>
     <div class="col-lg-12">
         <div class="row justify-content-center">
             <div class="col-lg-12 ">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header bg-danger">
                         <center>
-                            <h4 class="mx-auto">
+                            <h4 class="mx-auto text-white mb-0 fw-bold">
                                 PELANGGARAN ADMINISTRASI PEMILU
                             </h4>
                         </center>
@@ -135,9 +135,9 @@ $solution = \App\Models\SolutionFraud::get();
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header bg-danger">
                         <center>
-                            <h4 class="mx-auto">
+                            <h4 class="mx-auto text-white mb-0 fw-bold">
                                 PELANGGARAN TINDAK PIDANA
                             </h4>
                         </center>
@@ -197,9 +197,9 @@ $solution = \App\Models\SolutionFraud::get();
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header bg-danger">
                         <center>
-                            <h4 class="mx-auto">
+                            <h4 class="mx-auto text-white mb-0 fw-bold">
                                 PELANGGARAN KODE ETIK
                             </h4>
                         </center>

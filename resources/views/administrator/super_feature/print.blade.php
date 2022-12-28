@@ -87,7 +87,7 @@
         <div class="card-body">
             <div class="text-center">
                 <h1>
-                    ANALISA REALISASI DPT KPU PILKADA {{$kota->name}}
+                    ANALISA REALISASI DPT KPU PILPRES {{$kota->name}}
                 </h1>
             </div>
           <table class="table table-bordered table-hover">

@@ -29,7 +29,7 @@
             style="width: 100px;" alt="Avatar" />
            </center>
            <b><center>Hasil Analisa Realisasi DPT KPU</center>
-            <center>Pilkada Tanggerang Selatan 2020</center></b>
+            <center>Pilpres 2024 {{$kota->name}}</center></b>
           <table class="table table-bordered table-hover mt-2">
               <thead class="bg-primary text-white">
                   <tr>
@@ -60,18 +60,18 @@
                         </td>
                       <td>
                         @if ($pengguna_hak == 0)
-                            Belum Terisi
+                            <span class="badge" style="background-color: rgba(0, 0, 0, 0.25)">Belum Terisi</span>
                         @else
                             @if (floor($persen) >= 1 && floor($persen) <= 50)
-                                Rendah
+                                <span class="badge bg-warning">Rendah</span>
                             @elseif (floor($persen) > 50 && floor($persen) <= 70)
-                                Normal
+                                <span class="badge bg-success">Normal</span>
                             @elseif (floor($persen) > 70 && floor($persen) <= 80)
-                                Tinggi
+                                <span class="badge bg-secondary">Tinggi</span>
                             @elseif (floor($persen) > 80 && floor($persen) <= 90)
-                                Indikasi Kecurangan
+                                <span class="badge bg-danger">Indikasi Kecurangan</span>
                             @elseif (floor($persen) > 90 && floor($persen) <= 100)
-                                Manipulasi
+                                <span class="badge bg-dark">Manipulasi</span>
                             @endif
                         @endif
                            
@@ -81,6 +81,27 @@
               </tbody>
           </table>
           <a href="{{url('/')}}/administrator/analisa_dpt_kpu/print" class="btn btn-xl btn-primary">Print</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Keterangan Kode</div>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered w-100">
+                       <tr>
+                          <td><b class="text-warning">1% - 50%</b> <br> Rendah</td>
+                          <td><b class="text-success">51% - 70%</b> <br> Normal</td>
+                          <td><b class="text-secondary">71% - 80%</b> <br> Tinggi</td>
+                          <td><b class="text-danger">81% - 90%</b> <br> Indikasi Kecurangan</td>
+                          <td><b class="text-dark">91% - 100%</b> <br> Manipulasi</td>
+                        </tr>
+                       
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
   </div>

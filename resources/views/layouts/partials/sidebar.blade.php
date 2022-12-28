@@ -313,8 +313,8 @@ $tps = 2963;
                         <i class="side-menu__icon mdi mdi-image"></i><span class="side-menu__label">Mode Publikasi C1</span></a>
                 </li>
                 <li>
-                    <a class="side-menu__item" href="/v2l_security/{{encrypt(29)}}?title=Mode Data Recorder"
-                    data-deskripsi="Anda membutuhkan izin commander untuk mengakses halaman ini.">
+                    <a class="side-menu__item modal-action" href="#modalCommander" data-bs-toggle="modal" data-jenis="redirect" 
+                        data-izin="{{url('')}}/administrator/r-data" data-title="Data Recorder" data-deskripsi="Anda membutuhkan izin commander untuk mengakses halaman ini.">
                         <i class="side-menu__icon mdi mdi-record"></i><span class="side-menu__label">Mode Data
                             Recorder</span></a>
                 </li>
@@ -371,7 +371,7 @@ $tps = 2963;
                 </li>
                 <li>
                     <a class="side-menu__item" href="#">
-                        <i class="side-menu__icon mdi mdi-flash"></i><span class="side-menu__label">Developer</span></a>
+                        <i class="side-menu__icon mdi mdi-flash"></i><span class="side-menu__label">Mode Developer</span></a>
                 </li>
 
                 <hr>

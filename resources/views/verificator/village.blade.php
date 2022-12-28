@@ -328,7 +328,7 @@ setTimeout(function() {
         $('body').removeClass('timer-alert');
         swal({
             title: "Pengajuan Koreksi",
-            text: "Pengajuan koreksi adalah status dimana verifikator mendapati hasil input saksi dengan C1 berbeda sehingga verifikator dapat melakukan pengajuan koreksi kepada Human Verification untuk disetujui.",
+            text: "Pengajuan koreksi adalah status dimana verifikator mendapati hasil input saksi dengan C1 berbeda sehingga verifikator dapat melakukan pengajuan koreksi kepada Otentifikasi Koreksi untuk disetujui.",
             type: "warning",
             confirmButtonText: 'Ok',
         });
@@ -352,7 +352,7 @@ setTimeout(function() {
         $('body').removeClass('timer-alert');
         swal({
             title: "Koreksi Ditolak",
-            text: "Koreksi Ditolak adalah status dimana pengajuan koreksi verifikator telah di tolak oleh Human Verification.",
+            text: "Koreksi Ditolak adalah status dimana pengajuan koreksi verifikator telah di tolak oleh Otentifikasi Koreksi.",
             type: "warning",
             confirmButtonText: 'Ok',
         });

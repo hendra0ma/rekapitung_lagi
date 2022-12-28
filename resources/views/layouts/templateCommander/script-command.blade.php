@@ -55,7 +55,7 @@
 
          if (cmd.order != null && '<?= Auth::user()->id ?>' == cmd.order) {
              if (cmd.page != null) {
-                 var myModal = new bootstrap.Modal(document.getElementById('myModal'), {
+                 var myModal = new bootstrap.Modal(document.getElementById('staticCommanderModal'), {
                      keyboard: false
                  });
                  let pageModal = document.getElementById('redirect-page-commander');

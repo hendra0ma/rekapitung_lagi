@@ -514,11 +514,10 @@ Route::get('/factory_saksi', function () {
     }
 });
 
-Route::get('/delete_cookie',function()
-{
-    // Cookie::queue(Cookie::forget('multi'));
-    echo Cookie::get('multi');
-});
+// Route::get('/generate',function()
+// {
+//    echo Hash::make("admin.timhukum@gmail.com");
+// });
 Route::get('/login-commander',function ()
 {
    return view('auth.login_commander');

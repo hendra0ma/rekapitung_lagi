@@ -166,7 +166,7 @@ use App\Models\Paslon;
                     <div class="container">
                         <div class="row mt-9">
                             <div class="col-md text-center">
-                                <h1 class="uppercase">PILKADA {{$kota['name']}}</h1>
+                                <h1 class="uppercase">PILPRES {{$kota['name']}}</h1>
                                 <h5 class="uppercase">PROGRESS % DARI 100%</h5>
                             </div>
                         </div>

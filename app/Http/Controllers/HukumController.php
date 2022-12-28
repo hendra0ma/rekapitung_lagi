@@ -197,7 +197,7 @@ class HukumController extends Controller
         $bulan = date('m');
         $tahun = date('y');
         $tps = Tps::where('id', Crypt::decrypt($id))->first();
-        $no_berkas = Crypt::decrypt($id) . "/BK"  . "/PILKADA/" . $bulan . "/" . $tahun . "";
+        $no_berkas = Crypt::decrypt($id) . "/BK"  . "/PILPRES/" . $bulan . "/" . $tahun . "";
         $save = Qrcode::where('tps_id',Crypt::decrypt($id))->update([
             'token'  => $crypt,
             'nomor_berkas' => $no_berkas,

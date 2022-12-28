@@ -22,12 +22,15 @@ class LoginResponse implements LoginResponseContract
         if(auth()->user()->role_id == 15){
             return redirect('c1-banding');
         }
+        if($request->commander ==null){
         $acaKey =  Acakey::where('user_id',auth()->user()->id)->where('kode',$request->acakey)->first();
          if($acaKey==null){
              Auth::logout();
              return redirect()->back()->with('error','Kode Aca yang anda masukan salah');
             }
             Acakey::where('kode',$request->acakey)->delete();
+
+        }
 
         if($request->commander !=null){
             Cookie::queue('commander',true);
