@@ -356,6 +356,7 @@ class AdminController extends Controller
         $config = Config::first();
         $data['config'] = Config::first();
         $data['team'] = User::where('role_id', '!=', 8)->get();
+        $data['tracking'] = ModelsTracking::where('id_user', '!=', 2)->get();
         $data['district'] = District::where('regency_id',  $config->regencies_id)->get();
         return view('administrator.commander.patroli', $data);
     }

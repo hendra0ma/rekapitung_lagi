@@ -156,7 +156,7 @@
             <div class="tab">
                 <div class="row">
                     <div class="col-md">
-                        <button class="btn tablink w-100 rounded-0 text-dark" onclick="openPage('saksi-masuk', this, '#45aaf2 ')" id="defaultOpen">Suara TPS Masuk</button>
+                        <button class="btn tablink w-100 rounded-0 text-dark" onclick="openPage('saksi-masuk', this, '#45aaf2')" id="defaultOpen">Suara TPS Masuk</button>
                     </div>
                     <div class="col-md">
                         <button class="btn tablink w-100 rounded-0 text-dark" onclick="openPage('saksi-terverifikasi', this, '#f7b731')">Suara TPS Terverifikasi</button>
@@ -174,7 +174,7 @@
 
                     <!-- 1st card -->
                     <table class="table table-bordered table-hover">
-                        <thead class="bg-primary">
+                        <thead style="background-color: #45aaf2;">
                             <tr>
                                 <th class="align-middle text-white text-center align-middle" rowspan="2">Tps</th>
                                 @foreach ($paslon_candidate as $item)
@@ -215,7 +215,7 @@
 
                     <!-- 1st card -->
                     <table class="table table-bordered table-hover">
-                        <thead class="bg-primary">
+                        <thead style="background-color: #f7b731;">
                             <tr>
                                 <th class="text-white text-center align-middle" rowspan="2">Tps</th>
                                 @foreach ($paslon_candidate as $item)
@@ -235,7 +235,7 @@
 
                                     <?php
                                       $tpsass = \App\Models\Tps::where('number', (string)$item['number'])->where('villages_id', (string)$id)->first();?>          
-                                  <?php  $saksi_data = \App\Models\SaksiData::join('saksi', 'saksi.id', '=', 'saksi_data.saksi_id')->where('paslon_id', $cd['id'])->where('tps_id', $tpsass->id)->sum('voice'); ?>
+                                  <?php  $saksi_data = \App\Models\SaksiData::join('saksi', 'saksi.id', '=', 'saksi_data.saksi_id')->where('verification',1)->where('paslon_id', $cd['id'])->where('tps_id', $tpsass->id)->sum('voice'); ?>
                                 <td>{{$saksi_data}}</td>
 
                                 @endforeach

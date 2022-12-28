@@ -50,6 +50,7 @@
 <div class="modal fade" id="modaltpsQuick" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content" id="container-tps-quick">
+     
         </div>
     </div>
 </div>
@@ -100,7 +101,7 @@
         let id = $(this).data('id');
         $.ajax({
             url: '{{url("/")}}/ajax/get_tps_quick',
-            type: "GET",_
+            type: "GET",
             data: {
                 id
             },

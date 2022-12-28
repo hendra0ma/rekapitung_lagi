@@ -84,6 +84,62 @@
         <script src="../../assets/plugins/gallery/lg-zoom.js"></script>
         <script src="../../assets/plugins/gallery/lg-hash.js"></script>
         <script src="../../assets/plugins/gallery/lg-share.js"></script>
+
+
+        <script>
+    var cities = L.layerGroup();
+    
+
+   @foreach($tracking as $track)
+    <?php $user = App\Models\User::where('id', (string)$track->id_user)->first(); ?>
+    @if($user == NULL)
+      L.marker([{{$track['latitude']}},{{$track['longitude']}}]).bindPopup(' Tidak Terdeteksi ').addTo(cities);
+    @else
+       var text<?= $user['id'] ?> = '<div class="row"><div class="col-4"><img src="' + '<?php if($user["profile_photo_path"] == NULL){ echo "https://ui-avatars.com/api/?name=' + '".$user["name"]."' +'&color=7F9CF5&background=EBF4FF"; }else{ echo url("/storage/profile-photos/".$user["profile_photo_path"]); } ?>' + '" class="'+ 'img-fluid' + '"  width="150px" height="auto" /></div>   <div class="col-8"><table>' + '<tr><td>Nama</td><td>:</td><td>' + '<?= $user["name"] ?>' + '</td></tr>' + '<tr><td>Email</td><td>:</td><td>' + '<?= $user["email"]?>' + '</td></tr>' + '<tr><td>Nomor</td><td>:</td><td>' + '<?= $user["no_hp"]?>' + '</td></tr>' + '<tr><td>Last Seen</td><td>:</td><td>' + '    {{ \Carbon\Carbon::parse($user["last_seen"])->diffForHumans() }}' + '</td></tr>' + '</table><a href="{{url('/')}}/administrator/patroli_mode/tracking/detail/<?= encrypt($user["id"])?>">Detail Tracking</a>  </div> </div>';
+    L.marker([{{ $track['latitude']}}, {{ $track['longitude']}}]).bindPopup(text<?= $user['id'] ?>).addTo(cities);   
+    @endif
+  
+    @endforeach
+
+    var mbAttr = '',
+        mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
+    var grayscale = L.tileLayer(mbUrl, {
+            maxZoom: 20,
+            id: 'mapbox/satellite-v9',
+            tileSize: 512,
+            zoomOffset: -1,
+
+        }),
+        streets = L.tileLayer(mbUrl, {
+            maxZoom: 20,
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1,
+            attribution: mbAttr
+        });
+    var map = L.map('mapid', {
+        center: [-6.289576896901706, 106.71141255004683],
+        zoom: 10,
+        layers: [streets, cities]
+    });
+    fetch("<?= url('/geojson/tangsel.json');?>").then(response => response.json())
+        .then(json => {
+            console.log(json.features)
+            L.geoJSON(json.features[7]).addTo(map);
+        });
+    let i = 0;
+    var baseLayers = {
+        "Track": streets,
+        "Satelit": grayscale,
+    };
+
+    var overlays = {
+        "Cities": cities
+    };
+
+    L.control.layers(baseLayers, overlays).addTo(map);
+    L.Control.geocoder().addTo(map);
+</script>
         <script>
             $('a.kecamatanModal').on('click', function () {
                 let id = $(this).data('id');
