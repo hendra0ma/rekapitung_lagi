@@ -34,6 +34,9 @@
             div.divFooter {
                 display: none;
             }
+            body {
+                display: none;
+            }
         }
 
         @media print {

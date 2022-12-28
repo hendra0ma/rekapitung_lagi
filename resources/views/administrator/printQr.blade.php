@@ -19,6 +19,28 @@
             page-break-after: auto;
             page-break-inside: avoid;
         }
+        
+        @media screen {
+            div.divFooter {
+                display: none;
+            }
+            body {
+                display: none;
+            }
+        }
+        
+        @media print {
+            div.divFooter {
+                position: fixed;
+                bottom: 0;
+            }
+            .stamp {
+                position: relative;
+               margin-top: 40px;
+               margin-left: 75%;
+                
+            }
+        }
     </style>
 </head>
 
@@ -43,23 +65,25 @@
         </div>
         <hr>
 
-        <div class="row justify-content-center" style="align-items:center;margin-top:75px">
-            <div class="col-6">
-                <center>
-                    
+        <div class="row justify-content-center border border-dark border-3" style="align-items:center;margin-top:75px">
+            <div class="col-6 text-center mt-2 mb-2">
                 <img src="{{url('')}}/storage/{{$config->regencies_logo}}" alt="" class="img-fluid" style="height: 150px;">
-                </center>
             </div>
 
-            <div class="col-6">
-                <h3>
-                    {{$kota->name }}<br>
+            <div class="col-6 mt-2 mb-2">
+                <h3 class="text-right">
+                    {{$kota->name }}
                 </h3>
             </div>
+        </div>
+        <div class="row">
+
             <div class="col-12">
+                
+    <img src="{{asset('')}}assets/stamp.png"class="img-flluid stamp"style="width:150px;height:auto" alt="">
                 <center>
                     <h3 class="fixed-bottom text-uppercase">
-                        Pilkada {{$kota->name }}
+                     PILLPRES 2024
                     </h3>
                 </center>
             </div>
