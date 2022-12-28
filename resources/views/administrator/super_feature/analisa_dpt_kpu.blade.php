@@ -39,11 +39,13 @@
                       <td class="text-white text-center align-middle">Total Pengguna Hak Pilih</td>
                       <td class="text-white text-center align-middle">Selisih</td>
                       <td class="text-white text-center align-middle">GAP</td>
+                      <td class="text-white text-center align-middle">Indikasi</td>
                   </tr>
               </thead>
               <tbody>
                   @foreach ($kecamatan as $item)
                   <?php $pengguna_hak = App\Models\SaksiData::where('district_id',$item['id'])->sum('voice'); ?>
+     
                   <?php $persen = ($item['dpt'] - $pengguna_hak) / $item['dpt'] * 100; ?>
                   <tr>
                       <td>{{$item['name']}}</td>
@@ -54,7 +56,26 @@
                           0%
                           @else
                           {{ floor($persen) }}%
-                          @endif</td>
+                          @endif
+                        </td>
+                      <td>
+                        @if ($pengguna_hak == 0)
+                            Belum Terisi
+                        @else
+                            @if (floor($persen) >= 1 && floor($persen) <= 50)
+                                Rendah
+                            @elseif (floor($persen) > 50 && floor($persen) <= 70)
+                                Normal
+                            @elseif (floor($persen) > 70 && floor($persen) <= 80)
+                                Tinggi
+                            @elseif (floor($persen) > 80 && floor($persen) <= 90)
+                                Indikasi Kecurangan
+                            @elseif (floor($persen) > 90 && floor($persen) <= 100)
+                                Manipulasi
+                            @endif
+                        @endif
+                           
+                      </td>
                   </tr>
                   @endforeach
               </tbody>
