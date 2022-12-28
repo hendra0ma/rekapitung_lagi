@@ -371,7 +371,7 @@ $tps = 2963;
                 </li>
                 <li>
                     <a class="side-menu__item" href="#">
-                        <i class="side-menu__icon mdi mdi-flash"></i><span class="side-menu__label">Developer</span></a>
+                        <i class="side-menu__icon mdi mdi-flash"></i><span class="side-menu__label">Mode Developer</span></a>
                 </li>
 
                 <hr>
