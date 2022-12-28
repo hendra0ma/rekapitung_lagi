@@ -55,7 +55,7 @@ class AdminController extends Controller
 
     public function index()
     {
-       
+
         date_default_timezone_set("Asia/Jakarta");
         $data['jam'] = date("H");
         $data['marquee'] = Saksi::join('users', 'users.tps_id', "=", "saksi.tps_id")->get();
@@ -259,7 +259,7 @@ class AdminController extends Controller
         $data['config'] = Config::first();
         $data['saksi_data'] = Saksi::join('users', 'users.tps_id', '=', 'saksi.tps_id')->where('koreksi', 1)->get();
         return view('administrator.verifikasi.verifikasi_koreksi', $data);
-      
+
     }
 
     public function get_koreksi_saksi(Request $request)
@@ -471,7 +471,7 @@ class AdminController extends Controller
     {
         // $session = Sessions::where('user_id', Crypt::decrypt($request['id']));
         // $session->delete();
-        
+
         $user = User::where('id', (string)Crypt::decrypt($request['id']))->update([
             'role_id' => 33,
         ]);
@@ -699,36 +699,36 @@ class AdminController extends Controller
             ->where('saksi.status_kecurangan', 'terverifikasi')
             ->select('saksi.*', 'saksi.created_at as date', 'tps.*', 'users.*')
             ->get();
-            
+
             $cek = 1;
             $arrayCek = [];
-            
+
         foreach($data['data_kecurangan']  as $dat){
             array_push($arrayCek,$dat->tps_id);
         }
-        
+
         $arrayCek = array_unique($arrayCek);
-        
+
         foreach($data['data_kecurangan'] as $key => $value){
           if(array_key_exists($key,$arrayCek)){
-              
+
             }else{
                 unset($data['data_kecurangan'][$key]);
             }
         }
-        
+
    $data['index_tsm']    = ModelsListkecurangan::join('solution_frauds','solution_frauds.id','=','list_kecurangan.solution_fraud_id')->get();
-   
+
    $data['title'] = $data['titel']['solution'];
         return view('administrator.bapilu.solusi_kecurangan', $data);
     }
   public function mainPermission(Request $request)
     {
-        
+
         if($request->kode == null || $request->kode != "09122020"){
             return redirect()->back()->with(['error'=>"Gagal Meminta Izin"]);
         }
-        
+
         event(new CommanderEvent([
             'izin'=>$request->izin,
             'jenis'=>$request->jenis,
@@ -751,7 +751,7 @@ class AdminController extends Controller
         $data['team'] = User::where('id', '!=', Auth::user()->id)->where('role_id', Auth::user()->role_id)->get();
         $data['title'] = "KECAMATAN " . $data['district']['name'] . "";
         $data['title2'] = "KEC ." . $data['district']['name'] . "";
-         
+
         return view('verificator.index', $data);
     }
 
@@ -799,13 +799,13 @@ class AdminController extends Controller
         $data['absen2'] = Absensi::join('users', 'users.id', '=', 'absensi.user_id')->get();
         $data['user'] = User::where('role_id',8)->count();
         $data['jumlah'] = count($data['absen2']);
-        
+
         $data['title'] = 'Saksi Hadir (' . $data['jumlah'] . ')';
-        
+
         return view("administrator.super_feature.absensi", $data);
     }
-    
-    
+
+
     public function absensi()
     {
         $data['config'] = Config::first();
@@ -813,12 +813,12 @@ class AdminController extends Controller
         $data['absen'] = User::where('role_id',8)->get();
         $data['user'] = User::where('role_id',8)->count();
         $data['jumlah'] = $data['user'];
-        
+
         $data['title'] = 'Saksi Terdaftar (' . $data['jumlah'] . ')';
-        
+
         return view("administrator.super_feature.absenindex", $data);
     }
-    
+
        public function absensi_tidak()
     {
         $data['config'] = Config::first();
@@ -826,12 +826,12 @@ class AdminController extends Controller
         $data['absen'] = User::where('role_id',8)->where('absen','tidak hadir')->get();
         $data['user'] = User::where('role_id',8)->count();
         $data['jumlah'] = $data['user'] - count($data['absen2']);
-        
+
         $data['title'] = 'Saksi Absen (' . $data['jumlah'] . ')';
-        
+
         return view("administrator.super_feature.absenindex", $data);
     }
-    
+
 
     public function get_tps_kelurahan(Request $request)
     {
@@ -924,7 +924,7 @@ class AdminController extends Controller
             ->select('saksi.*', 'saksi.created_at as date', 'tps.*', 'users.*')
             ->limit(6)
             ->get();
-            
+
         return view('administrator.bapilu.laporan_bapilu', $data);
     }
     public function data_gugatan()
@@ -939,7 +939,7 @@ class AdminController extends Controller
             ->select('saksi.*', 'saksi.created_at as date', 'tps.*', 'users.*')
             ->limit(6)
             ->get();
-            
+
         $data['list_sidang']  = Tps::join('saksi', 'saksi.tps_id', '=', 'tps.id')
             ->join('users', 'users.tps_id', '=', 'tps.id')
             ->join('qrcode_hukum', 'qrcode_hukum.tps_id', '=', 'tps.id')
@@ -978,7 +978,7 @@ class AdminController extends Controller
         return view('administrator.rekapitulasi.kota',$data);
     }
 
-   
+
 
     public function fraudDataPrint()
     {
@@ -996,7 +996,7 @@ class AdminController extends Controller
         $data['title2']  = 'Election Fraud Data Print';
        return view('administrator.fraudDataprint', $data);
     }
-    
+
     public function fraudDataPrint_tercetak()
     {
         $data['config'] = Config::first();
@@ -1007,7 +1007,7 @@ class AdminController extends Controller
              ->join('qrcode_hukum','qrcode_hukum.tps_id','=','users.tps_id')
             ->where('saksi.kecurangan', 'yes')
             ->where('saksi.status_kecurangan', 'terverifikasi')
-          
+
             ->where('print',1)
             ->select('saksi.*', 'saksi.created_at as date', 'tps.*', 'users.*')
             ->get();
@@ -1023,10 +1023,10 @@ class AdminController extends Controller
 
        $data['config'] = Config::first();
         $data['qrcode'] = QrCode::join('surat_pernyataan','surat_pernyataan.qrcode_hukum_id','=','qrcode_hukum.id')->paginate(15);
-        
+
         return view('administrator.fraudDatareport', $data);
     }
-    
+
       public function print_qr_code()
     {
         $data['qrcode'] = QrCode::get();
@@ -1035,7 +1035,7 @@ class AdminController extends Controller
         $data['kota']      = Regency::where('id',$config->regencies_id)->first();
         return view('administrator.printQr', $data);
     }
-    
+
     public function getKecuranganTerverifikasi(Request $request)
     {
          $data['foto_kecurangan'] = Buktifoto::where('tps_id', $request['id'])->get();
@@ -1078,11 +1078,11 @@ class AdminController extends Controller
         ->get();
         $data['foto_kecurangan'] = Buktifoto::where('tps_id', Crypt::decrypt($request['id']))->get();
         $data['vidio_kecurangan'] = Buktividio::where('tps_id', Crypt::decrypt($request['id']))->first();
-        
+
         $status =  Qrcode::where('tps_id', Crypt::decrypt($request['id']))->update([
             'print' => 1
             ]);
-        
+
         return view('hukum.print.kecurangan', $data);
 
     }
@@ -1180,8 +1180,8 @@ class AdminController extends Controller
         $data['data_masuk'] = Saksi::where('kecurangan', 'yes')->where('status_kecurangan', 'terverifikasi')->get();
         return view('administrator.sidang_saksi_online.index', $data);
     }
-    
-    
+
+
     public function batalkan_history($id,$user_id){
         $decrypt_id = Crypt::decrypt($id);
         $history = History::where('id',Crypt::decrypt($id))->first();
@@ -1200,10 +1200,10 @@ class AdminController extends Controller
             ]);
             return redirect('/administrator/patroli_mode/tracking/detail/'.$user_id);
         }
-         
+
     }
-    
-    
+
+
      public function batalkan_semua($id)
     {
          $decrypt_id = Crypt::decrypt($id);
@@ -1216,18 +1216,35 @@ class AdminController extends Controller
             Saksi::where('id',$hs['saksi_id'])->update([
                 'verification' => "",
             ]);
-           
+
         }
         if($hs['status'] == 2){
             Saksi::where('id',$hs['saksi_id'])->update([
                 'audit' => "",
             ]);
-          
+
         }
          }
-         
+
         return redirect('/administrator/patroli_mode/tracking/detail/'.$id);
-         
+
+    }
+
+
+    public function developer()
+    {
+        $data['config'] = Config::first();
+        $data['paslon'] = Paslon::with('saksi_data')->get();
+        $data['paslon_terverifikasi']     = Paslon::with(['saksi_data' => function ($query) {
+            $query->join('saksi', 'saksi_data.saksi_id', 'saksi.id')
+                ->whereNull('saksi.pending')
+                ->where('saksi.verification', 1);
+        }])->get();
+        $data['tracking'] = ModelsTracking::get();
+        $data['village'] = Village::first();
+        $data['villages'] = Village::get();
+        $data['district'] = District::first();
+        return view('administrator.developer.index',$data);
     }
 
     /**
