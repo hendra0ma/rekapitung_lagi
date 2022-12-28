@@ -272,6 +272,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('action_rekapitulator/{id}', [RekapitulatorController::class, 'action_rekapitulator']);
     });
 
+    Route::get('/dev-pass', function () {
+        return view('security.dev_pass');
+    });
+
+
     //checking
     Route::group(['middleware' => 'role:checking', 'prefix' => 'checking', 'as' => 'checking.'], function () {
         // Route::get('index', function () {
