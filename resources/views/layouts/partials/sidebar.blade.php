@@ -280,12 +280,11 @@ $tps = 2963;
                 </li>
                 <li class="slide">
                     <a class="side-menu__item modal-action" data-bs-toggle="slide" href="#"><i
-                            class="side-menu__icon mdi mdi-satellite-variant  "></i><span class="side-menu__label">Mode
-                            Patroli</span><i class="angle fa fa-angle-right"></i></a>
+                            class="side-menu__icon mdi mdi-satellite-variant  "></i><span class="side-menu__label">Admin Tracking</span><i class="angle fa fa-angle-right"></i></a>
                     <ul class="slide-menu">
                         <li><a href="#modalCommander" data-bs-toggle="modal" data-jenis="redirect"
-                                data-izin="{{url('')}}/administrator/patroli_mode" data-title="Patroli Mode"
-                                data-deskripsi="Patroli Mode adalah sistem untuk melihat aktifitas admin yang sedang bertugas maupung yang selesai bertugas." class="slide-item modal-action">Patroli Mode</a></li>
+                                data-izin="{{url('')}}/administrator/patroli_mode" data-title="Admin Tracking"
+                                data-deskripsi="Admin Tracking adalah sistem untuk melihat aktifitas admin yang sedang bertugas maupung yang selesai bertugas." class="slide-item modal-action">Admin Tracking</a></li>
                         <li><a href="#modalCommander" data-bs-toggle="modal" data-jenis="redirect"
                                 data-izin="{{url('')}}/administrator/patroli_mode/tracking/maps"
                                 data-title="Lacak Admin" data-deskripsi="Lacak Admin adalah sistem untuk melacak posisi admin berdasarkan demografi wilayah pemilihan."
