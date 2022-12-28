@@ -23,7 +23,6 @@
 
     <style>
       .page-break{
- 
         page-break-before: always;
         page-break-after: always;
         page-break-inside: avoid;
