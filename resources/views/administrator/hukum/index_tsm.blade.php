@@ -80,7 +80,7 @@
                 <div class="card">
                     <div class="card-header">
                         <center>
-                            <h4 class="mx-auto">
+                            <h4 class="mx-auto fw-bold">
                                 PELANGGARAN ADMINISTRASI PEMILU
                             </h4>
                         </center>
@@ -142,7 +142,7 @@
                 <div class="card">
                     <div class="card-header">
                         <center>
-                            <h4 class="mx-auto">
+                            <h4 class="mx-auto fw-bold">
                                 PELANGGARAN TINDAK PIDANA
                             </h4>
                         </center>
@@ -204,7 +204,7 @@
                 <div class="card">
                     <div class="card-header">
                         <center>
-                            <h4 class="mx-auto">
+                            <h4 class="mx-auto fw-bold">
                                 PELANGGARAN KODE ETIK
                             </h4>
                         </center>
