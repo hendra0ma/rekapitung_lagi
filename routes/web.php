@@ -219,8 +219,6 @@ Route::group(['middleware' => 'auth'], function () {
             Route::get('action/batalkan_history/{id}/{user_id}', 'batalkan_history');
             Route::get('patroli/batalkan_semua/{id}', 'batalkan_semua');
             
-            
-            
 });
          
             
