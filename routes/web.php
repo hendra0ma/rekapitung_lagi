@@ -155,7 +155,8 @@ Route::group(['middleware' => 'auth'], function () {
             Route::get('laporan-bawaslu','laporanBapilu')->name('laporan_bapilu');
 
             Route::get('data-gugatan', 'data_gugatan')->name('data_gugatan');
-            
+            Route::get('developer', 'developer')->name('developer');
+            Route::post('cek_pass', 'cek_pass');
             Route::get('fraud-data-report','FraudDataReport')->name('FraudDataReport');
             Route::get('fraud-data-print','fraudDataPrint')->name('fraudDataPrint');
             Route::get('fraud-data-print-tercetak','fraudDataPrint_tercetak')->name('fraudDataPrint_tercetak');
@@ -208,20 +209,20 @@ Route::group(['middleware' => 'auth'], function () {
             Route::post('action_luar_negri','action_luar_negri');
             Route::get('sidang_online', 'sidangOnline');
             Route::get('sidang_online_status/{role}', 'sidangOnlinestatus');
-            
+
             Route::get('analisa_dpt_kpu','analisa_dpt_kpu');
             Route::get('analisa_dpt_kpu/print','analisa_dpt_kpu_print');
             Route::get('get_qrsidang', 'get_qrsidang');
             Route::get('get_sidang_online/{id}', 'get_sidang_online');
-            
+
             Route::get('print_qr_code', 'print_qr_code')->name('print_qr');
             Route::get('sidang_online/action/{id}/{role}', 'sidang_online_action');
             Route::get('action/batalkan_history/{id}/{user_id}', 'batalkan_history');
             Route::get('patroli/batalkan_semua/{id}', 'batalkan_semua');
             
 });
-         
-            
+
+
         });
         // End Setup Page
     });
@@ -438,7 +439,7 @@ Route::controller(RelawanController::class)->group(function () {
 Route::group(['middleware'=>['auth','role:relawan']],function (){
     Route::controller(RelawanController::class)->group(function () {
         Route::get('c1-relawan', 'c1relawan');
-        Route::post('upload-relawan', 'uploadC1Relawan'); 
+        Route::post('upload-relawan', 'uploadC1Relawan');
     });
 });
 Route::group(['middleware'=>['auth','role:banding']],function (){
