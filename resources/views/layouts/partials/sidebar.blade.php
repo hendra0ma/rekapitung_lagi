@@ -361,8 +361,8 @@ $tps = 2963;
                             class="side-menu__icon mdi mdi-file-account"></i><span class="side-menu__label">Input Saksi</span><i
                             class="angle fa fa-angle-right"></i></a>
                     <ul class="slide-menu">
-                        <li><a href="/administrator/tentang" class="slide-item">Upload C1</a></li>
-                        <li><a href="/administrator/pusat_bantuan" class="slide-item">Laporan Kecurangan</a></li>
+                        <li><a href="#" class="slide-item">Upload C1</a></li>
+                        <li><a href="#" class="slide-item">Laporan Kecurangan</a></li>
                     </ul>
                 </li>
                 <li>
@@ -371,7 +371,7 @@ $tps = 2963;
                 </li>
                 <li>
                     <a class="side-menu__item" href="#">
-                        <i class="side-menu__icon mdi mdi-flash"></i><span class="side-menu__label">Super Administrator</span></a>
+                        <i class="side-menu__icon mdi mdi-flash"></i><span class="side-menu__label">Developer</span></a>
                 </li>
 
                 <hr>
