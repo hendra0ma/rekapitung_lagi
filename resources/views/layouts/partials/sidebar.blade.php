@@ -280,8 +280,7 @@ $tps = 2963;
                 </li>
                 <!-- <li class="slide">
                     <a class="side-menu__item modal-action" data-bs-toggle="slide" href="#"><i
-                            class="side-menu__icon mdi mdi-satellite-variant  "></i><span class="side-menu__label">Mode
-                            Patroli</span><i class="angle fa fa-angle-right"></i></a>
+                            class="side-menu__icon mdi mdi-satellite-variant  "></i><span class="side-menu__label">Admin Tracking</span><i class="angle fa fa-angle-right"></i></a>
                     <ul class="slide-menu">
                        
                         <li><a href="#modalCommander" data-bs-toggle="modal" data-jenis="redirect"

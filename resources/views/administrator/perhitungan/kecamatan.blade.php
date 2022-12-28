@@ -297,13 +297,4 @@
     </div>
 </div>
 
-<div class="card mg-b-20">
-    <div class="card-header">
-        <div class="card-title">Admin Tracking (KECAMATAN {{$kecamatan->name}})</div>
-    </div>
-    <div class="card-body">
-        <div class="ht-300" id="map" style="height:300px"></div>
-    </div>
-</div>
-
 @endsection
