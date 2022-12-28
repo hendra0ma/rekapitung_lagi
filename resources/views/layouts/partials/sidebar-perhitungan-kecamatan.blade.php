@@ -65,14 +65,14 @@ $tps = 2963;
                 <?php
                     $props = Province::where('id',$kota['province_id'])->first();
                     $cityProp = Regency::where('province_id',$kota['province_id'])->get();
-                
+
                 ?>
                 <li>
                     <h3>Main Count</h3>
                 </li>
 
                 <li class="slide">
-              
+
                     <a class="side-menu__item" data-bs-toggle="slide" href="#"><i
                             class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">PROVINSI {{$props->name}}</span><i
                             class="angle fa fa-angle-right"></i></a>
@@ -175,7 +175,7 @@ $tps = 2963;
                             Suara Saksi</span><i class="angle fa fa-angle-right"></i></a>
                     <ul class="slide-menu">
                         @foreach ($regency as $rg)
-                     
+
                         <li><a href="/key_kecamatan/{{encrypt($rg['id'])}}/{{encrypt(1)}}?title=Verifikasi Suara Saksi"
                                 class="slide-item">KEC. {{$rg['name']}}</a></li>
                         @endforeach
@@ -220,7 +220,7 @@ $tps = 2963;
                             class="side-menu__icon mdi mdi-google-analytics"></i><span class="side-menu__label">Indikasi Realisasi DPT</span></a>
                 </li>
 
-            
+
                 <li>
                     <h3>Fitur Utama</h3>
                 </li>
@@ -245,7 +245,7 @@ $tps = 2963;
                 <li>
                     <h3>Laporan Kecurangan</h3>
                 </li>
-                
+
                 <li>
                     <a class="side-menu__item" href="/v2l_security/{{encrypt(18)}}?title=Tim Hukum Paslon"><i
                             class="side-menu__icon mdi mdi-scale-balance"></i><span class="side-menu__label">Tim Hukum
@@ -313,8 +313,8 @@ $tps = 2963;
                         <i class="side-menu__icon mdi mdi-image"></i><span class="side-menu__label">Mode Publikasi C1</span></a>
                 </li>
                 <li>
-                    <a class="side-menu__item" href="/v2l_security/{{encrypt(29)}}?title=Mode Data Recorder"
-                    data-deskripsi="Anda membutuhkan izin commander untuk mengakses halaman ini.">
+                    <a class="side-menu__item modal-action" href="#modalCommander" data-bs-toggle="modal" data-jenis="redirect"
+                        data-izin="{{url('')}}/administrator/r-data" data-title="Data Recorder" data-deskripsi="Anda membutuhkan izin commander untuk mengakses halaman ini.">
                         <i class="side-menu__icon mdi mdi-record"></i><span class="side-menu__label">Mode Data
                             Recorder</span></a>
                 </li>
@@ -324,7 +324,7 @@ $tps = 2963;
                         data-deskripsi="Mode Data C1 adalah mode untuk menampilkan Data rekapitung berdasarkan klasifikasinya, seperti : Rekam C1, TPS terverifikasi, TPS teraudit dan sebagainya">
                         <i class="side-menu__icon mdi mdi-file"></i><span class="side-menu__label">Mode Data C1</span></a>
                 </li>
-          
+
 
                 <li>
                     <h3>Informasi DPT/TPS</h3>
@@ -370,7 +370,7 @@ $tps = 2963;
                         <i class="side-menu__icon mdi mdi-settings"></i><span class="side-menu__label">Data Setup</span></a>
                 </li>
                 <li>
-                    <a class="side-menu__item" href="#">
+                    <a class="side-menu__item" href="{{url('')}}/administrator/developer">
                         <i class="side-menu__icon mdi mdi-flash"></i><span class="side-menu__label">Mode Developer</span></a>
                 </li>
 
