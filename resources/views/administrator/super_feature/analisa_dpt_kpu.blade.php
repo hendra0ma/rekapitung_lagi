@@ -29,7 +29,7 @@
             style="width: 100px;" alt="Avatar" />
            </center>
            <b><center>Hasil Analisa Realisasi DPT KPU</center>
-            <center>Pilkada Tanggerang Selatan 2020</center></b>
+            <center>Pilpres 2024 {{$kota->name}}</center></b>
           <table class="table table-bordered table-hover mt-2">
               <thead class="bg-primary text-white">
                   <tr>

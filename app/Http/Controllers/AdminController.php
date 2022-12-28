@@ -916,6 +916,7 @@ class AdminController extends Controller
         $data['index_tsm']    = ModelsListkecurangan::join('solution_frauds','solution_frauds.id','=','list_kecurangan.solution_fraud_id')->get();
 
         $data['config'] = Config::first();
+        $data['kota'] = Regency::where('id', $data['config']->regencies_id)->first();
         $data['qrcode'] = QrCode::join('surat_pernyataan','surat_pernyataan.qrcode_hukum_id','=','qrcode_hukum.id')->get();
          $data['list_suara']  = Tps::join('saksi', 'saksi.tps_id', '=', 'tps.id')
             ->join('users', 'users.tps_id', '=', 'tps.id')
@@ -931,6 +932,7 @@ class AdminController extends Controller
     {
         $data['index_tsm']    = ModelsListkecurangan::join('solution_frauds','solution_frauds.id','=','list_kecurangan.solution_fraud_id')->get();
         $data['config'] = Config::first();
+        $data['kota'] = Regency::where('id', $data['config']->regencies_id)->first();
         $data['qrcode'] = QrCode::join('surat_pernyataan','surat_pernyataan.qrcode_hukum_id','=','qrcode_hukum.id')->limit(8)->get();
         $data['list_suara']  = Tps::join('saksi', 'saksi.tps_id', '=', 'tps.id')
             ->join('users', 'users.tps_id', '=', 'tps.id')
@@ -1094,6 +1096,7 @@ class AdminController extends Controller
     public function analisa_dpt_kpu()
     {
         $data['config'] = Config::first();
+        $data['kota']   = Regency::where('id', $data['config']->regencies_id)->first();
         $data['paslon_terverifikasi']     = Paslon::with(['saksi_data' => function ($query) {
             $query->join('saksi', 'saksi_data.saksi_id', 'saksi.id')
                 ->whereNull('saksi.pending')
@@ -1146,6 +1149,8 @@ class AdminController extends Controller
     }
      public function sidangOnline()
     {
+        $data['config'] = Config::first();
+        $data['kota']   = Regency::where('id', $data['config']->regencies_id)->first();
         $data['index_tsm']    = ModelsListkecurangan::get();
         $data['list_suara']  = Tps::join('saksi', 'saksi.tps_id', '=', 'tps.id')
             ->join('users', 'users.tps_id', '=', 'tps.id')

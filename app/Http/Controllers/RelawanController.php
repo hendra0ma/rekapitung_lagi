@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Config;
 use App\Models\District;
+use App\Models\Regency;
 use App\Models\Relawan;
 use App\Models\Tps;
 use App\Models\User;
@@ -19,6 +20,7 @@ class RelawanController extends Controller
     {
         $data['tps'] = Tps::get();
         $config =Config::first();
+        $data['kota']   = Regency::where('id', $data['config']->regencies_id)->first();
         $data['kecamatan']= District::where('regency_id',$config->regencies_id)->get();
         return view('publik.relawan',$data);
     }
@@ -26,7 +28,8 @@ class RelawanController extends Controller
     public function relawanBanding()
     {
         $data['tps'] = Tps::get();
-        $config = Config::first();
+        $config =Config::first();
+        $data['kota']   = Regency::where('id', $data['config']->regencies_id)->first();
         $data['kecamatan'] = District::where('regency_id', $config->regencies_id)->get();
         return view('publik.relawanBanding',$data);
     }

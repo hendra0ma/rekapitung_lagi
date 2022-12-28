@@ -118,7 +118,7 @@ use App\Models\Paslon;
         <div class="row">
             <div class="col-md text-center">
                 <h4 style="margin-bottom: 7.5px !important;" class="text-uppercase fw-bold">
-                    Pilkada
+                    PILPRES
                 </h4>
             </div>
         </div>
@@ -132,7 +132,7 @@ use App\Models\Paslon;
         <div class="row">
             <div class="col-md text-center">
                 <h4 class="text-uppercase fw-bold">
-                    Tahun 2020
+                    Tahun 2024
                 </h4>
             </div>
         </div>

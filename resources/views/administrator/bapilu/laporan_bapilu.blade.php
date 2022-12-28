@@ -42,7 +42,7 @@ $solution = \App\Models\SolutionFraud::get();
         </h2>
     </div>
     <div class="col-md-12">
-        <h2 class="fw-bold text-center mx-auto"> Pilkada Kota Tangerang Selatan Tahun 2020</h2>
+        <h2 class="fw-bold text-center mx-auto"> Pilpres Tahun 2024 {{$kota->name}}</h2>
     </div>
 </div>
 
