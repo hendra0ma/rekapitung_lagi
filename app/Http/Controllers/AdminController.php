@@ -1249,7 +1249,7 @@ class AdminController extends Controller
         $data['district'] = District::first();
         return view('administrator.developer.index',$data);
     }
-    public function cekPass(Request $request)
+    public function cek_pass(Request $request)
     {
         if($request->password == "#Pentagon2024"){
             return redirect('administrator/developer');

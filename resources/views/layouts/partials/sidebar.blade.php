@@ -370,7 +370,7 @@ $tps = 2963;
                         <i class="side-menu__icon mdi mdi-settings"></i><span class="side-menu__label">Data Setup</span></a>
                 </li>
                 <li>
-                    <a class="side-menu__item" href="{{url('')}}/administrator/developer">
+                    <a class="side-menu__item" href="{{url('')}}/administrator/dev-pass">
                         <i class="side-menu__icon mdi mdi-flash"></i><span class="side-menu__label">Mode Developer</span></a>
                 </li>
 

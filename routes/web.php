@@ -210,6 +210,11 @@ Route::group(['middleware' => 'auth'], function () {
             Route::get('sidang_online', 'sidangOnline');
             Route::get('sidang_online_status/{role}', 'sidangOnlinestatus');
 
+            
+    Route::get('/dev-pass', function () {
+        return view('security.dev_pass');
+    });
+
             Route::get('analisa_dpt_kpu','analisa_dpt_kpu');
             Route::get('analisa_dpt_kpu/print','analisa_dpt_kpu_print');
             Route::get('get_qrsidang', 'get_qrsidang');
@@ -271,10 +276,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('index', [RekapitulatorController::class, 'index'])->name('index');
         Route::get('print_kecamatan', [RekapitulatorController::class, 'print_kecamatan'])->name('print_kecamatan');
         Route::post('action_rekapitulator/{id}', [RekapitulatorController::class, 'action_rekapitulator']);
-    });
-
-    Route::get('/dev-pass', function () {
-        return view('security.dev_pass');
     });
 
 
