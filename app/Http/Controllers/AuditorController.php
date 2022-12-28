@@ -86,7 +86,7 @@ class AuditorController extends Controller
         $data['regency'] = Regency::where('id', (string)$config->regencies_id)->first();
         $data['village'] = Village::where('id', (string)$id)->first();
          $data['villages'] = Village::where('id', (string)$id)->get();
-         
+
         $data['district'] = District::where('id', $data['village']->district_id)->first();
         $data['jumlah_tps_teraudit']  = Tps::join('saksi', 'saksi.tps_id', '=', 'tps.id')->where('tps.villages_id', $id)->where('saksi.audit', 1)->count();
         $data['jumlah_tps_terverifikasi'] = Tps::join('saksi', 'saksi.tps_id', '=', 'tps.id')->where('tps.villages_id', $id)->where('saksi.verification', 1)->count();
@@ -105,16 +105,16 @@ class AuditorController extends Controller
             ->select('saksi.*', 'saksi.created_at as date', 'tps.*', 'users.*')
             ->where('saksi.audit', 1)
             ->paginate(10);
-            
+
          $data['list_suara_batal']  = Tps::join('saksi', 'saksi.tps_id', '=', 'tps.id')
             ->join('users', 'users.tps_id', '=', 'tps.id')
             ->where('tps.villages_id', (string)$id)
            ->where('saksi.batalkan', 1)
             ->select('saksi.*', 'saksi.created_at as date', 'tps.*', 'users.*')
             ->paginate(10);
-        
+
         return view('auditor.village', $data);
-      
+
     }
     public function getSaksiData(Request $req)
     {
