@@ -78,7 +78,7 @@ use App\Models\Paslon;
     <!-- PAGE -->
     <div class="page">
         <div class="page-main">
-            
+
             <div class="text-center">
                 <h1 class="fw-bolder display-4 pt-5 mb-0">Real Count</h1>
             </div>
@@ -90,11 +90,11 @@ use App\Models\Paslon;
                     <div class="col-2">
                         <img style="width: 75px" src="{{url('/')}}/images/logo/rekapitung_gold.png" alt="">
                     </div>
-                    
+
                     <div class="col-8">
                         <div class="fs-4 fw-bold mx-auto text-center">PILPRES 2024 / PROVINSI {{$provinsi->name}} / {{$kota->name}}</div>
                     </div>
-                    
+
                     <div class="col-2">
                         <div class="dropdown d-md-flex">
                             <a class="nav-link icon ms-auto m-0">
@@ -103,7 +103,7 @@ use App\Models\Paslon;
                         </div><!-- FULL-SCREEN -->
                     </div>
                 </div>
-                    
+
                 <div class="progress bg-white mt-3">
                     <div class="progress-bar bg-success" role="progressbar" aria-label="Example with label"
                         style="width:  9.3%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">9.3%</div>
@@ -131,9 +131,9 @@ use App\Models\Paslon;
                                         foreach ($pasln as $pas) {
                                             $jumlah += $pas->voice;
                                         }
-                                        
+
                                         $jumlah1 = number_format( $jumlah , 0 , ',' , '.' );
-                        
+
                                         $persen = substr($jumlah / $dpt * 100, 0, 3);
                                         ?>
                                         <div class="progress-bar" style="background-color:{{$ps->color}}" role="progressbar"
@@ -149,7 +149,7 @@ use App\Models\Paslon;
                         </div>
                     </div>
                     @endforeach
-                    
+
                 </div>
             </div>
            <div class="container">
@@ -193,16 +193,16 @@ use App\Models\Paslon;
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <?php
                                 $jumlah = 0;
                                 ?>
                                 @endforeach
                                 <?php $i = 1; ?>
-                                
+
                             </div>
                         </div>
-                        
+
                         @endforeach
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
@@ -216,13 +216,13 @@ use App\Models\Paslon;
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-            </div>
+             </div>
 
             <div class="row fixed-bottom" style="height: 75px; bottom: 150px; width: 1800px; left:229px">
 
                 <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner" role="listbox">
-                        
+
 
                         <div class="carousel-item  <?php if ($count++ == 1) : ?><?= 'active' ?><?php endif; ?>">
                             <div style="min-width:150px; min-height:100px; max-width:200px; max-height:100px; overflow:hidden;">
@@ -274,7 +274,7 @@ use App\Models\Paslon;
                                 </div>
                             </div>
                         </div>
-                        
+
 
                     </div>
                 </div>

@@ -97,6 +97,11 @@ $tps = 2963;
                             Count</span></a>
                 </li>
                 <li>
+                    <a class="side-menu__item" href="real_count2"><i
+                            class="side-menu__icon mdi mdi-check-circle"></i><span class="side-menu__label">Real
+                            Count 2</span></a>
+                </li>
+                <li>
                     <a class="side-menu__item" href="quick_count"><i class="side-menu__icon mdi mdi-quicktime"></i><span
                             class="side-menu__label">Quick Count</span></a>
                 </li>

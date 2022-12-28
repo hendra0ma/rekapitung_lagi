@@ -151,9 +151,9 @@ Route::group(['middleware' => 'auth'], function () {
             Route::get('r-data-record','rDataRecord');
             Route::get('r-data','rdata');
             Route::post('main-permission','mainPermission');
-               Route::get('solution/{id}','solution')->name('solution');
+            Route::get('solution/{id}','solution')->name('solution');
             Route::get('laporan-bawaslu','laporanBapilu')->name('laporan_bapilu');
-
+            Route::get('real_count2','real_count2')->name('real_count2');
             Route::get('data-gugatan', 'data_gugatan')->name('data_gugatan');
             Route::get('developer', 'developer')->name('developer');
             Route::get('fraud-data-report','FraudDataReport')->name('FraudDataReport');
