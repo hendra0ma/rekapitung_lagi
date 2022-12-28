@@ -25,16 +25,6 @@ $solution = \App\Models\SolutionFraud::get();
                 src="{{url('/')}}/images/logo/logo-bawaslu.png" alt="">
         </h4>
     </div>
-
-    <div class="col-lg-4">
-        <div class="row justify-content-end">
-            <div class="col-4">
-                <a href="{{url('')}}/administrator/print-index-tsm" target="_blank"
-                    class="btn btn-block btn-dark ml-2 mr-2 w-100"> Print &nbsp;&nbsp;<i class="fa fa-print"></i></a>
-            </div>
-
-        </div>
-    </div>
 </div>
 <div class="row mt-5">
     <div class="col-md-12">
@@ -193,6 +183,7 @@ $solution = \App\Models\SolutionFraud::get();
           </div>
       </div>
     </div>
+
     <div class="col-lg-12">
         <div class="row justify-content-center">
             <div class="col-lg-12">
@@ -256,29 +247,36 @@ $solution = \App\Models\SolutionFraud::get();
         </div>
     </div>
    
-
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">Keterangan Kode</div>
-                </div>
-                <div class="card-body">
-                    <table class="table table-bordered w-100">
-                      <?php 
-                      $kodeF = DB::table('solution_frauds')->get();
-                      ?>
-                       <tr>
-                          @foreach($kodeF as $kod)
-                         
-                          <td><b class="text-danger">{{$kod->kode}}</b> ({{$kod->solution}})</td>
-                        
-                          @endforeach
-                        </tr>
-                       
-                    </table>
-                </div>
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Keterangan Kode</div>
             </div>
+            <div class="card-body">
+                <table class="table table-bordered w-100">
+                  <?php 
+                  $kodeF = DB::table('solution_frauds')->get();
+                  ?>
+                   <tr>
+                      @foreach($kodeF as $kod)
+                     
+                      <td><b class="text-danger">{{$kod->kode}}</b> ({{$kod->solution}})</td>
+                    
+                      @endforeach
+                    </tr>
+                   
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-12">
+        <div class="row justify-content-end">
+            <div class="col-4">
+                <a href="{{url('')}}/administrator/print-index-tsm" target="_blank"
+                    class="btn btn-block btn-dark ml-2 mr-2 w-100"> Print &nbsp;&nbsp;<i class="fa fa-print"></i></a>
+            </div>
+
         </div>
     </div>
 </div>
