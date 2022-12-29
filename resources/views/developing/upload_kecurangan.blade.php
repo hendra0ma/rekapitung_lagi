@@ -47,9 +47,264 @@
     <!-- COLOR SKIN CSS -->
     <link id="theme" rel="stylesheet" type="text/css" media="all" href="{{url('/')}}/assets/colors/color1.css" />
 
+    <style>
+        .mobile-phone {
+            margin: auto;
+            margin-top: 170px;
+            padding: 10px 10px 30px;
+            width: 350px;
+            height: 650px;
+            box-shadow: 0 0 20px #000000;
+            border-radius: 30px;
+        }
+
+        .screen {
+            width: 100%;
+            height: 100%;
+            background: #f2f2f2;
+            border-radius: 30px;
+            overflow-y: auto;
+        }
+
+        .brove {
+            width: 150px;
+            height: 20px;
+            background: white;
+            position: absolute;
+            margin: 0 100px;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .speaker {
+            width: 60px;
+            height: 5px;
+            background: #d2d2d2;
+            display: block;
+            margin: auto;
+            margin-top: 5px;
+            border-radius: 20px;
+        }
+
+    </style>
 </head>
 
 <body class="">
+
+    <div class='mobile-phone'>
+        <div class='brove' style="z-index: 100"><span class='speaker'></span></div>
+        <div class='screen pt-5 px-3'>
+
+            <center>
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+                                <img src="{{url('/')}}/images/logo/rekapitung_gold.png" alt="Avatar"
+                                    class="hadow-4 mb-3" style="width: 157px;" />
+                                <h3 class="fw-bold mb-0">REKAPITUNG</h3>
+                                <h3 class="fw-bold mb-0">Selamat Datang!</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </center>
+            <hr style="border: 1px solid">
+                <h5 class="text-center fw-bold text-danger">Prosedur Laporan Kecurangan Pemilu</h5>
+            <hr style="border: 1px solid">
+            <center>
+                <h4 class="text-center fw-bold">ELECTION WITNESS FRAUD TAGGING (EWFT)</h4>
+                <h5 class="text-center fw-bold">36 Jenis Pelanggaran Pemilu</h5>
+            </center>
+            <hr>
+            <div class="container">
+                <p style="text-align: justify">Laporan Kecurangan Pemilu ini terintegrasi dengan sistem laporan kecurangan pada Bawaslu RI.
+                    Dimana seluruh laporan yang Anda buat dapat dilihat oleh Bawaslu RI Melalui akun Bawaslu pada
+                    Rekapitung.</p>
+                <p style="text-align: justify">Setiap saksi yang melaporkan kecurangan juga akan terintegrasi langsung dengan sidang online
+                    Mahkamah Konstitusi melalui sistem Rekapitung dan Anda dapat saja menjadi salah satu peserta
+                    dari sidang online Mahkamah Konstitusi tersebut. <b>Berdasarkan peraturan Mahkamah Konstitusi
+                        Republik Indonesia No.1 Tahun 2014 tentang pedoman beracara dalam perselisihan hasil
+                        pemilihan umum,</b> bukti elektronik yang Anda kirimkan adalah alat bukti yang sah di mata
+                    hukum.</p>
+                <p style="text-align: justify"><b>Berikut prosedur laporan kecurangan Rekapitung :</b></p>
+                <ol>
+                    <li>
+                        Saksi diwajibkan melakukan dokumentasi kecurangan pada TPS masing-masing jika menemukan
+                        bukti kecurangan.
+                    </li>
+                    <li>
+                        Saksi dapat mengirim foto dan video kecurangan melalui form upload di bawah.
+                    </li>
+                    <li>
+                        Saksi diwajibkan memberikan keterangan/deskripsi kecurangan yang terjadi pada kolom yang
+                        tersedia.
+                    </li>
+                    <li>
+                        Dengan mengirimkan data kecurangan TPS, nama/identitas saksi akan di rahasiakan, kecuali
+                        hanya untuk keperluan hukum dan proses persidangan.
+                    </li>
+                </ol>
+            </div>
+            <div class="row">
+                <button class="btn btn-secondary mt-3" data-bs-toggle="modal" data-bs-target="#extralargemodal">
+                    Upload Bukti Kecurangan</button>
+            </div>
+
+            <div class="modal fade" id="extralargemodal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Laporan Kecurangan</h5>
+                            <button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <form action="#" method="post" enctype="multipart/form-data">
+                            <div class="modal-body">
+                            
+                                @csrf
+                                <div class="container-fluid">
+                                    <h4 class="mt-3 header-title">Foto Kecurangan</h4>
+                                    <div class="col-lg-12 col-sm-12 mb-4 mb-lg-0">
+                                        <div class="dropify-wrapper">
+                                            <div class="dropify-message"><span class="file-icon">
+                                                    <p>Drag and drop a file here or click</p>
+                                                </span>
+                                                <p class="dropify-error">Ooops, something wrong appended.</p>
+                                            </div>
+                                            <div class="dropify-loader"></div>
+                                            <div class="dropify-errors-container">
+                                                <ul></ul>
+                                            </div><input type="file" class="dropify" data-bs-height="180" name="foto"><button
+                                                type="button" class="dropify-clear">Remove</button>
+                                            <div class="dropify-preview"><span class="dropify-render"></span>
+                                                <div class="dropify-infos">
+                                                    <div class="dropify-infos-inner">
+                                                        <p class="dropify-filename"><span class="dropify-filename-inner"></span>
+                                                        </p>
+                                                        <p class="dropify-infos-message">Drag and drop or click to replace</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>*Pilih Beberapa Foto</p>
+                                    <h4 class="mt-2 header-title">Video Kecurangan</h4>
+                                    <div class="col-lg-12 col-sm-12 mb-4 mb-lg-0">
+                                        <div class="dropify-wrapper">
+                                            <div class="dropify-message"><span class="file-icon">
+                                                    <p>Drag and drop a file here or click</p>
+                                                </span>
+                                                <p class="dropify-error">Ooops, something wrong appended.</p>
+                                            </div>
+                                            <div class="dropify-loader"></div>
+                                            <div class="dropify-errors-container">
+                                                <ul></ul>
+                                            </div><input type="file" class="dropify" data-bs-height="180"><button type="button"
+                                                class="dropify-clear">Remove</button>
+                                            <div class="dropify-preview"><span class="dropify-render"></span>
+                                                <div class="dropify-infos">
+                                                    <div class="dropify-infos-inner">
+                                                        <p class="dropify-filename"><span class="dropify-filename-inner"></span>
+                                                        </p>
+                                                        <p class="dropify-infos-message">Drag and drop or click to replace</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>*Pilih 1 Video</p>
+                                    <b>Panduan Laporan : </b>
+                                    <p>Pilih salah satu kecurangan yang paling relevan, nyata, dan disaksikan sendiri.</p>
+                                </div>
+                                <table class="table mt-5">
+                                    <thead>
+                                        <input type="hidden" name="id_relawan">
+                                        <tr>
+                                            <td class="bg-dark text-light"></td>
+                                            <th class="bg-dark text-light">
+                                                TAMBAHKAN JENIS PELANGGARAN ADMINISTRASI PEMILU (+)
+                                            </th>
+                                        </tr>
+                                        @foreach ($pelanggaran_umum as $item)
+                                        <tr>
+                                            <td><input type="checkbox" name="curang[]" value=" {{ $item['kecurangan'] }}"
+                                                    data-id="{{ $item['id'] }}" onclick="ajaxGetSolution(this)">
+                                            </td>
+                                            <td><label>{{ $item['kecurangan'] }} </label></td>
+                                        </tr>
+                                        @endforeach
+                                    </thead>
+                                    <thead>
+                                        <input type="hidden" name="id_relawan">
+                                        <tr>
+                                            <td class="bg-dark text-light"></td>
+                                            <th class="bg-dark text-light">
+                                                TAMBAHKAN JENIS PELANGGARAN TINDAK PIDANA (+)
+                                            </th>
+                                        </tr>
+                                        @foreach ($pelanggaran_petugas as $item)
+                                        <tr>
+                                            <td><input type="checkbox" name="curang[]" value=" {{ $item['kecurangan'] }}"
+                                                    data-id="{{ $item['id'] }}" onclick="ajaxGetSolution(this)">
+                                            </td>
+                                            <td><label>{{ $item['kecurangan'] }} </label></td>
+                                        </tr>
+                                        @endforeach
+                                    </thead>
+                                    <thead>
+                                        <input type="hidden" name="id_relawan">
+                                        <tr>
+                                            <td class="bg-dark text-light"></td>
+                                            <th class="bg-dark text-light">
+                                                TAMBAHKAN JENIS PELANGGARAN KODE ETIK (+)
+                                            </th>
+                                        </tr>
+                                        @foreach ($pelanggaran_etik as $item)
+                                        <tr>
+                                            <td><input type="checkbox" name="curang[]" value=" {{ $item['kecurangan'] }}"
+                                                    data-id="{{ $item['id'] }}" onclick="ajaxGetSolution(this)">
+                                            </td>
+                                            <td><label>{{ $item['kecurangan'] }} </label></td>
+                                        </tr>
+                                        @endforeach
+                                    </thead>
+                                
+                                
+                                    <tbody>
+                                        <tr class="bg-primary text-light">
+                                            <td></td>
+                                            <td>Rekomendasi Tindakan</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody id="container-rekomendasi">
+                                    
+                                    </tbody>
+                                    <tr>
+                                        <th>
+                                            <label for="LainnyaPetugas">lainnya</label>
+                                        </th>
+                                        <td>
+                                            <textarea class="form-control" name="deskripsi" id="LainnyaPetugas"
+                                                rows="3"></textarea>
+                                        </td>
+                                    </tr>
+                                
+                                    </thead>
+                                </table>
+                            
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-secondary"type="button" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                <!--<a href="{{url('')}}/upload_kecurangan_2" class="btn btn-danger">Demo</a>-->
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
     <!-- GLOBAL-LOADER -->
     <div id="global-loader">
@@ -58,7 +313,7 @@
     <!-- End GLOBAL-LOADER -->
 
     <!-- PAGE -->
-    <div class="container mt-5" id="card2">
+    {{-- <div class="container mt-5" id="card2">
         <div class="card">
             <div class="card-header text-center text-white bg-primary">
                 <h4>Form Input Kecurangan</h4>
@@ -139,163 +394,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 
 
-    <div class="modal fade" id="extralargemodal" tabindex="-1" role="dialog">
-
-        <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Laporan Kecurangan</h5>
-                    <button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <form action="#" method="post" enctype="multipart/form-data">
-                    <div class="modal-body">
-
-                        @csrf
-                        <div class="container-fluid">
-                            <h4 class="mt-3 header-title">Foto Kecurangan</h4>
-                            <div class="col-lg-12 col-sm-12 mb-4 mb-lg-0">
-                                <div class="dropify-wrapper">
-                                    <div class="dropify-message"><span class="file-icon">
-                                            <p>Drag and drop a file here or click</p>
-                                        </span>
-                                        <p class="dropify-error">Ooops, something wrong appended.</p>
-                                    </div>
-                                    <div class="dropify-loader"></div>
-                                    <div class="dropify-errors-container">
-                                        <ul></ul>
-                                    </div><input type="file" class="dropify" data-bs-height="180" name="foto"><button
-                                        type="button" class="dropify-clear">Remove</button>
-                                    <div class="dropify-preview"><span class="dropify-render"></span>
-                                        <div class="dropify-infos">
-                                            <div class="dropify-infos-inner">
-                                                <p class="dropify-filename"><span class="dropify-filename-inner"></span>
-                                                </p>
-                                                <p class="dropify-infos-message">Drag and drop or click to replace</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <p>*Pilih Beberapa Foto</p>
-                            <h4 class="mt-2 header-title">Video Kecurangan</h4>
-                            <div class="col-lg-12 col-sm-12 mb-4 mb-lg-0">
-                                <div class="dropify-wrapper">
-                                    <div class="dropify-message"><span class="file-icon">
-                                            <p>Drag and drop a file here or click</p>
-                                        </span>
-                                        <p class="dropify-error">Ooops, something wrong appended.</p>
-                                    </div>
-                                    <div class="dropify-loader"></div>
-                                    <div class="dropify-errors-container">
-                                        <ul></ul>
-                                    </div><input type="file" class="dropify" data-bs-height="180"><button type="button"
-                                        class="dropify-clear">Remove</button>
-                                    <div class="dropify-preview"><span class="dropify-render"></span>
-                                        <div class="dropify-infos">
-                                            <div class="dropify-infos-inner">
-                                                <p class="dropify-filename"><span class="dropify-filename-inner"></span>
-                                                </p>
-                                                <p class="dropify-infos-message">Drag and drop or click to replace</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <p>*Pilih 1 Video</p>
-                            <b>Panduan Laporan : </b>
-                            <p>Pilih salah satu kecurangan yang paling relevan, nyata, dan disaksikan sendiri.</p>
-                        </div>
-                        <table class="table mt-5">
-                            <thead>
-                                <input type="hidden" name="id_relawan">
-                                <tr>
-                                    <td class="bg-dark text-light"></td>
-                                    <th class="bg-dark text-light">
-                                        TAMBAHKAN JENIS PELANGGARAN ADMINISTRASI PEMILU (+)
-                                    </th>
-                                </tr>
-                                @foreach ($pelanggaran_umum as $item)
-                                <tr>
-                                    <td><input type="checkbox" name="curang[]" value=" {{ $item['kecurangan'] }}"
-                                            data-id="{{ $item['id'] }}" onclick="ajaxGetSolution(this)">
-                                    </td>
-                                    <td><label>{{ $item['kecurangan'] }} </label></td>
-                                </tr>
-                                @endforeach
-                            </thead>
-                            <thead>
-                                <input type="hidden" name="id_relawan">
-                                <tr>
-                                    <td class="bg-dark text-light"></td>
-                                    <th class="bg-dark text-light">
-                                        TAMBAHKAN JENIS PELANGGARAN TINDAK PIDANA (+)
-                                    </th>
-                                </tr>
-                                @foreach ($pelanggaran_petugas as $item)
-                                <tr>
-                                    <td><input type="checkbox" name="curang[]" value=" {{ $item['kecurangan'] }}"
-                                            data-id="{{ $item['id'] }}" onclick="ajaxGetSolution(this)">
-                                    </td>
-                                    <td><label>{{ $item['kecurangan'] }} </label></td>
-                                </tr>
-                                @endforeach
-                            </thead>
-                            <thead>
-                                <input type="hidden" name="id_relawan">
-                                <tr>
-                                    <td class="bg-dark text-light"></td>
-                                    <th class="bg-dark text-light">
-                                        TAMBAHKAN JENIS PELANGGARAN KODE ETIK (+)
-                                    </th>
-                                </tr>
-                                @foreach ($pelanggaran_etik as $item)
-                                <tr>
-                                    <td><input type="checkbox" name="curang[]" value=" {{ $item['kecurangan'] }}"
-                                            data-id="{{ $item['id'] }}" onclick="ajaxGetSolution(this)">
-                                    </td>
-                                    <td><label>{{ $item['kecurangan'] }} </label></td>
-                                </tr>
-                                @endforeach
-                            </thead>
-
-
-                            <tbody>
-                                <tr class="bg-primary text-light">
-                                    <td></td>
-                                    <td>Rekomendasi Tindakan</td>
-                                </tr>
-                            </tbody>
-                            <tbody id="container-rekomendasi">
-
-                            </tbody>
-                            <tr>
-                                <th>
-                                    <label for="LainnyaPetugas">lainnya</label>
-                                </th>
-                                <td>
-                                    <textarea class="form-control" name="deskripsi" id="LainnyaPetugas"
-                                        rows="3"></textarea>
-                                </td>
-                            </tr>
-
-                            </thead>
-                        </table>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary"type="button" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
-                        <!--<a href="{{url('')}}/upload_kecurangan_2" class="btn btn-danger">Demo</a>-->
-                </form>
-            </div>
-        </div>
-    </div>
+    
 
     </div>
 

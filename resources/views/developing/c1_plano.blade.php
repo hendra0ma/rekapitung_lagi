@@ -47,75 +47,92 @@
     <!-- COLOR SKIN CSS -->
     <link id="theme" rel="stylesheet" type="text/css" media="all" href="{{url('/')}}/assets/colors/color1.css" />
 
+    <style>
+        .mobile-phone {
+            margin: auto;
+            margin-top: 170px;
+            padding: 10px 10px 30px;
+            width: 350px;
+            height: 650px;
+            box-shadow: 0 0 20px #000000;
+            border-radius: 30px;
+        }
+
+        .screen {
+            width: 100%;
+            height: 100%;
+            background: #f2f2f2;
+            border-radius: 30px;
+            overflow-y: auto;
+        }
+
+        .brove {
+            width: 150px;
+            height: 20px;
+            background: white;
+            position: absolute;
+            margin: 0 100px;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .speaker {
+            width: 60px;
+            height: 5px;
+            background: #d2d2d2;
+            display: block;
+            margin: auto;
+            margin-top: 5px;
+            border-radius: 20px;
+        }
+
+    </style>
+
 </head>
 
 <body class="">
 
-    <!-- GLOBAL-LOADER -->
-    <div id="global-loader">
-        <img src="{{url('/')}}/assets/images/loader.svg" class="loader-img" alt="Loader">
-    </div>
-    <!-- End GLOBAL-LOADER -->
-    <div class="container mt-3" id="card2">
+    <div class='mobile-phone'>
+        <div class='brove' style="z-index: 100"><span class='speaker'></span></div>
+        <div class='screen pt-5 px-3'>
+            <!-- As a link -->
+            <nav class="navbar bg-primary py-1">
+                <b class="navbar-brand mx-auto text-white fw-bold" style="font-size: 16px">Foto dan Kirim C.Hasil-KWK</b>
+            </nav>
 
-        <div class="card">
-            <div class="card-header">
-                Form Input C1
-            </div>
-            <div class="card-body">
-                <img src="https://paslon1.pilwalkot.rekapitung.id/storage/logo/AvyU0Gcnijb87znN54ZpWxjcvTjtv66U7UHuOBJM.png" class="hadow-4 mb-3"
-  style="width: 150px;" alt="Avatar" />
-                <h4> Halo, saksi kelima</h4>
-                <div class="row mb-5">
-                    <div class="col-lg-6">
-                        <div class="input-group">
-                            <div class="input-group-text">
-                                Suara 01
-                            </div><!-- input-group-text -->
-                            <input class="form-control ui-timepicker-input" id="tpBasic" placeholder="Suara 01"
-                                type="text" autocomplete="off">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="input-group">
-                            <div class="input-group-text">
-                                Suara 02
-                            </div><!-- input-group-text -->
-                            <input class="form-control ui-timepicker-input" id="tpBasic" placeholder="Suara 02"
-                                type="text" autocomplete="off">
-                        </div>
-                    </div>
-                    <div class="col-lg-12 mt-2">
-                        <div class="input-group">
-                            <div class="input-group-text">
-                                Suara 03
-                            </div><!-- input-group-text -->
-                            <input class="form-control ui-timepicker-input" id="tpBasic" placeholder="Suara 03"
-                                type="text" autocomplete="off">
-                        </div>
+            <h1 class="text-center">
+                <img src="{{url('/')}}/assets/images/brand/logo_gold.png" class="hadow-4 mb-3 mt-3"
+                style="width: 150px;" alt="Avatar" />
+            </h1>
+            <h4> Halo, saksi kelima</h4>
+            <div class="row no-gutters">
+                <div class="col-lg-12 mt-2">
+                    <div class="input-group">
+                        <div class="input-group-text">
+                            Suara 01
+                        </div><!-- input-group-text -->
+                        <input class="form-control ui-timepicker-input" id="tpBasic" placeholder="Suara 01" type="text"
+                            autocomplete="off">
                     </div>
                 </div>
-                <div class="col-lg-12">
-                    <!--<div class="dropify-wrapper">-->
-                    <!--    <div class="dropify-message"><span class="file-icon">-->
-                    <!--            <p>Drag and drop a file here or click</p>-->
-                    <!--        </span>-->
-                    <!--        <p class="dropify-error">Ooops, something wrong appended.</p>-->
-                    <!--    </div>-->
-                    <!--    <div class="dropify-loader"></div>-->
-                    <!--    <div class="dropify-errors-container">-->
-                    <!--        <ul></ul>-->
-                    <!--    </div><input type="file" class="dropify" data-bs-height="180"><button type="button"-->
-                    <!--        class="dropify-clear">Remove</button>-->
-                    <!--    <div class="dropify-preview"><span class="dropify-render"></span>-->
-                    <!--        <div class="dropify-infos">-->
-                    <!--            <div class="dropify-infos-inner">-->
-                    <!--                <p class="dropify-filename"><span class="dropify-filename-inner"></span></p>-->
-                    <!--                <p class="dropify-infos-message">Ambil Foto C1</p>-->
-                    <!--            </div>-->
-                    <!--        </div>-->
-                    <!--    </div>-->
-                    <!--</div>-->
+                <div class="col-lg-12 mt-2">
+                    <div class="input-group">
+                        <div class="input-group-text">
+                            Suara 02
+                        </div><!-- input-group-text -->
+                        <input class="form-control ui-timepicker-input" id="tpBasic" placeholder="Suara 02" type="text"
+                            autocomplete="off">
+                    </div>
+                </div>
+                <div class="col-lg-12 mt-2">
+                    <div class="input-group">
+                        <div class="input-group-text">
+                            Suara 03
+                        </div><!-- input-group-text -->
+                        <input class="form-control ui-timepicker-input" id="tpBasic" placeholder="Suara 03" type="text"
+                            autocomplete="off">
+                    </div>
+                </div>
+                <div class="col-lg-12 mt-2">
                     <div class="card">
                         <div class="card-header">
                             <h4 class="card-title">Upload Foto C1</h4>
@@ -126,7 +143,7 @@
                                     <h1>
                                         <a type="button" data-bs-toggle="modal" data-bs-target="#modelId">
                                             <i class="mdi mdi-camera"></i>
-                                        </a> 
+                                        </a>
                                     </h1>
                                 </div>
                                 <div class="col-md-12">
@@ -136,23 +153,19 @@
                         </div>
                     </div>
                 </div>
-                <input type="submit" name="" class="btn btn-block btn-primary mt-4" value="Kirim" id="send">
             </div>
+
+            <input type="submit" name="" class="btn btn-block btn-primary" value="Kirim" id="send">
         </div>
-
-        <!-- Ojo Utek -->
-
-
     </div>
-    </div>
-    
+
     <!-- Modal -->
     <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Peringatan!</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     Fitur hanya bisa dibuka melalui hp android.
@@ -163,24 +176,27 @@
             </div>
         </div>
     </div>
-    
+
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title fw-bold" id="exampleModalLabel">Panduan Saksi</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-       Rekapitung menggunakan teknologi Optical Character Recognition (OCR) dan Optical Mark Recognition (OMR). OCR dan OMR mengubah objek tulisan angka dan tanda di gambar menjadi karakter angka. Terjemahan OCR dan OMR dikirim ke smartphone saksi via Aplikasi Rekapitung Saksi untuk kemudian diperiksa kembali oleh petugas  administrator.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Oke</button>
-     
-      </div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="exampleModalLabel">Panduan Saksi</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Rekapitung menggunakan teknologi Optical Character Recognition (OCR) dan Optical Mark Recognition
+                    (OMR). OCR dan OMR mengubah objek tulisan angka dan tanda di gambar menjadi karakter angka.
+                    Terjemahan OCR dan OMR dikirim ke smartphone saksi via Aplikasi Rekapitung Saksi untuk kemudian
+                    diperiksa kembali oleh petugas administrator.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Oke</button>
+
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
     <!-- End PAGE -->
     <!-- FILE UPLOADES JS -->
@@ -214,11 +230,12 @@
     <!-- CUSTOM JS-->
     <script src="{{url('/')}}/assets/js/custom.js"></script>
 
-<script>
-    $(document).ready(function(){
-        $("#exampleModal").modal('show');
-    });
-</script>
+    <script>
+        $(document).ready(function () {
+            $("#exampleModal").modal('show');
+        });
+
+    </script>
 
 </body>
 
