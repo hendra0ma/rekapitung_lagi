@@ -288,6 +288,26 @@ let myModal = new bootstrap.Modal(document.getElementById('modallockdown'), {
 <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
 <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
 @livewireScripts
+
+<script>
+    $('a.modaltpsQuick2').on('click', function() {
+        
+        let id = $(this).data('id');
+        $.ajax({
+            url: '{{url("/")}}/ajax/get_tps_quick2',
+            type: "GET",
+            data: {
+                id
+            },
+            success: function(response) {
+                if (response) {
+                    $('#container-tps-quick2').html(response);
+                }
+            }
+        });
+
+    });
+</script>
 <script>
 
     $('#ikon-map-full').on('click',function(){

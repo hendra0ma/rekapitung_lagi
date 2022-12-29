@@ -1311,7 +1311,7 @@ class AdminController extends Controller
         $data['kecamatan'] = District::where('regency_id', $config['regencies_id'])->get();
         $data['district'] = District::first();
         $data['marquee'] = Saksi::join('users', 'users.tps_id', "=", "saksi.tps_id")->get();
-
+        $data['district_quick'] = District::join('villages', 'villages.district_id', '=', 'districts.id')->where('regency_id', $data['config']['regencies_id'])->get();
         return view('administrator.quickcount.quick_count2',$data);
         // dd($data['paslon']);
 

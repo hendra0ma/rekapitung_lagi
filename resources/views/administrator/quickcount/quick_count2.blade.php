@@ -23,16 +23,16 @@ $tps = Tps::count();
 
     <div class="row">
         <div class="col-lg-12">
-           <center>
-            <h1 class="page-title mt-1 mb-0" style="font-size: 70px">QUICK COUNT
-            </h1>
-           </center>
+            <center>
+                <h1 class="page-title mt-1 mb-0" style="font-size: 70px">QUICK COUNT
+                </h1>
+            </center>
         </div>
 
         <div class="col-lg-12">
             <div id="marquee1" class="input-group input-group-sm mb-3">
                 <div class="input-group-prepend">
-                    <button class="btn btn-danger text-white rounded-0">Suara Masuk</button>
+                    <button class="btn btn-danger text-white rounded-0">Enumerator</button>
                 </div>
                 <div class="form-control bg-dark" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
                     <marquee id="cobamarq1">
@@ -40,7 +40,9 @@ $tps = Tps::count();
                         <?php $kecamatan2 =  District::where('id', $mq['districts'])->first(); ?>
                         <?php $kelurahan =  Village::where('id', $mq['villages'])->first(); ?>
                         <?php $tps =  Tps::where('id', $mq['tps_id'])->first(); ?>
-                        <span class="text-success">▼ </span><span class="text-white" style="font-size: 20px;">{{$mq['name']}} Kecamatan {{$kecamatan2 ['name']}}, Kelurahan  {{$kelurahan['name']}}, TPS {{$tps['number']}}</span>
+                        <span class="text-success">▼ </span><span class="text-white"
+                            style="font-size: 20px;">{{$mq['name']}} Kecamatan {{$kecamatan2 ['name']}}, Kelurahan
+                            {{$kelurahan['name']}}, TPS {{$tps['number']}}</span>
                         @endforeach
                     </marquee>
 
@@ -56,7 +58,8 @@ $tps = Tps::count();
                         <div class="col-xxl-6">
                             <div class="container" style="margin-left: 3%; margin-top: 10%;">
                                 <div class="text-center">Progress {{substr($realcount,0,5)}}% dari 100%</div>
-                                <div class="text-center mt-2 mb-2"><span class="badge bg-success">{{$total_incoming_vote}} / {{$dpt}}</span></div>
+                                <div class="text-center mt-2 mb-2"><span
+                                        class="badge bg-success">{{$total_incoming_vote}} / {{$dpt}}</span></div>
                                 <div id="chart-pie2" class="chartsh h-100 w-100"></div>
                             </div>
                         </div>
@@ -69,7 +72,8 @@ $tps = Tps::count();
                                         <div class="card-body">
                                             <div class="row me-auto">
                                                 <div class="col-4">
-                                                    <div class="counter-icon box-shadow-secondary brround candidate-name text-white " style="margin-bottom: 0; background-color: {{$pas->color}};">
+                                                    <div class="counter-icon box-shadow-secondary brround candidate-name text-white "
+                                                        style="margin-bottom: 0; background-color: {{$pas->color}};">
                                                         {{$i++}}
                                                     </div>
                                                 </div>
@@ -105,7 +109,7 @@ $tps = Tps::count();
                     @foreach ($kecamatan as $item)
                     <div class="carousel-item <?php if ($count++ == 1) : ?><?= 'active' ?><?php endif; ?>">
                         <div class="fw-bold fs-3 mb-3">
-                           KECAMATAN {{$item['name']}}
+                            KECAMATAN {{$item['name']}}
                         </div>
 
                         <div class="row">
@@ -123,14 +127,16 @@ $tps = Tps::count();
                             ?>
                             <div class="col-md">
                                 <div class="card">
-                                    <div class="card-header justify-content-center" style="background-color:{{$psl->color}}">
-                                        <h3 style="margin-bottom: 0;" class="fw-bold text-white">{{$psl->candidate}} - <br> {{$psl->deputy_candidate}}</h3>
+                                    <div class="card-header justify-content-center"
+                                        style="background-color:{{$psl->color}}">
+                                        <h3 style="margin-bottom: 0;" class="fw-bold text-white">{{$psl->candidate}} -
+                                            <br> {{$psl->deputy_candidate}}</h3>
                                     </div>
                                     <div class="card-body" style="padding: 10px;">
                                         <div class="row">
                                             <div class="col">
-                                                <img src="{{asset('storage/'. $psl['picture'])}}"
-                                                    width="125px" height="125px" style="object-fit: cover;" alt="">
+                                                <img src="{{asset('storage/'. $psl['picture'])}}" width="125px"
+                                                    height="125px" style="object-fit: cover;" alt="">
                                             </div>
                                             <div class="col text-center my-auto fs-1 fw-bold">
                                                 {{$persen}}%
@@ -166,43 +172,66 @@ $tps = Tps::count();
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="card-title">Suara TPS Masuk (
-
-                        Seluruh Kecamatan)</h5>
+                    <h5 class="card-title">Suara TPS Quick Count (Seluruh Kelurahan)</h5>
                 </div>
                 <div class="card-body">
-                    <table class="table table-bordered table-hover">
-                        <thead class="bg-primary">
-                            <tr>
-                                <th class="text-white text-center align-middle">KECAMATAN</th>
-                                @foreach ($paslon as $item)
-                                <th class="text-white text-center align-middle">{{ $item['candidate']}} - <br> {{ $item['deputy_candidate']}}</th>
-                                @endforeach
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <table class="table table-bordered text-nowrap border-bottom">
+                                    <thead class="bg-primary">
+                                        <tr>
+                                            <th class="text-white align-middle">Kecamatan</th>
+                                            <th class="text-white align-middle">Sumber Kelurahan</th>
+                                            <th class="text-white align-middle">Total TPS</th>
+                                            <th class="text-white align-middle">Quick Count</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($district_quick as $item)
+                                        <?php $count_tps = Tps::where('villages_id',(string)$item['id'])->count(); ?>
+                                        <?php $count_tps_quick = Tps::where('villages_id',(string)$item['id'])->where('quick_count', 1)->count(); ?>
+                                        <?php $kecc = District::where('id', $item['district_id'])->first(); ?>
+                                        <tr @if ( $count_tps_quick  > 0)
+                                            style="background-color: rgb(80,78, 78); color :white;" @else  @endif>
+                                            <td class="align-middle text">
+                                                {{$kecc['name']}}
+                                            </td>
+                                            <td class="align-middle">
+                                                <a href="modaltpsQuick2" class="modaltpsQuick2 @if ( $count_tps_quick  > 0)
+                                         text-white
+                                                    @else text-dark
+                                                @endif" id="Cek" data-id="{{$item['id']}}" data-bs-toggle="modal" id=""
+                                                    data-bs-target="#modaltpsQuick2">{{$item['name']}}</a>
+                                            </td>
+                                            <td class="align-middle">{{$count_tps}}</td>
+                                            <td class="align-middle">@if ( $count_tps_quick  > 0)
+                                                {{$count_tps_quick}}
+                                                @else
+                                                0
+                                                @endif</td>
+                                        </tr>
+                                        @endforeach
 
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            @foreach ($kec as $item)
-                            <tr onclick='check("{{Crypt::encrypt($item->id)}}")'>
-                                <td><a href="{{url('/')}}/administrator/perhitungan_kecamatan/{{Crypt::encrypt($item['id'])}}">{{$item['name']}}</a></td>
-                                @foreach ($paslon as $cd)
-                                <?php $saksi_dataa = SaksiData::join('saksi', 'saksi.id', '=', 'saksi_data.saksi_id')->where('paslon_id', $cd['id'])->where('saksi_data.district_id', $item['id'])->sum('voice'); ?>
-                                <td>{{$saksi_dataa}}</td>
-                                @endforeach
-                            </tr>
-                            @endforeach
-                        </tbody>
-
-                        <script>
-                            let check = function(id) {
-                                window.location = `{{url('/')}}/administrator/perhitungan_kecamatan/${id}`;
-                            }
-                        </script>
-                    </table>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+
+<div class="modal fade" id="modaltpsQuick2" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content text-white" id="container-tps-quick2">
+
+        </div>
+    </div>
+</div>
+
 @endsection
