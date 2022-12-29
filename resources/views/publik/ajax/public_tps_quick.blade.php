@@ -1,7 +1,7 @@
 <?php
 use App\Models\Paslon;
 ?>
-<div class="modal-header">
+<div class="modal-header ">
     <h5 class="modal-title">KELURAHAN {{$kelurahan['name']}}</h5>
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
@@ -9,9 +9,9 @@ use App\Models\Paslon;
     <table class="table table-bordered">
         <thead class="bg-dark text-light">
             <tr>
-                <th rowspan="2">no</th>
-                <th rowspan="2">TPS</th>
-                <th colspan="4">Suara Masuk</th>
+                <th class="text-light" rowspan="2">no</th>
+                <th class="text-light" rowspan="2">TPS</th>
+                <th class="text-light" colspan="4">Suara Masuk</th>
             </tr>
             <tr class="bg-dark text-light">
                 @foreach ($candidate as $item)

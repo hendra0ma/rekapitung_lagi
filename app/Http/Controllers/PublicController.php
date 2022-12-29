@@ -50,7 +50,7 @@ class PublicController extends Controller
             $query->join('saksi', 'saksi_data.saksi_id', 'saksi.id')
                 ->join('tps', 'tps.id', 'saksi.tps_id')
                 ->where('tps.sample', '1');
-            
+
         }])->get();
         $data['tps_selesai'] = Tps::where('setup', 'terisi')->count();
         $data['tps_belum'] = Tps::count();
@@ -91,6 +91,35 @@ class PublicController extends Controller
         $data['title'] = "Kecamatan " . $data['kecamatan_name']['name'] . "";
         return view('publik.kecamatan', $data);
     }
+
+    public function quick_kecamatan(Request $request, $id)
+    {
+        $data['config'] = Config::first();
+        $data['kota'] = Regency::find($data['config']['regencies_id']);
+        $data['marquee'] = Saksi::join('users', 'users.tps_id', "=", "saksi.tps_id")->where('district_id', Crypt::decrypt($id))->get();
+        $data['paslon']  = Paslon::with(['saksi_data' => function ($query) use ($id) {
+            $query->join('saksi', 'saksi_data.saksi_id', 'saksi.id', 'district_id')->where('saksi.district_id', decrypt($id));
+        }])->get();
+        $data['paslon_terverifikasi']     = Paslon::with(['saksi_data' => function ($query) use ($id) {
+            $query->join('saksi', 'saksi_data.saksi_id', 'saksi.id', 'district_id')->where('saksi.verification', 1)->where('saksi.district_id', decrypt($id));
+        }])->get();
+        $data['paslon_quick']     = Paslon::with(['saksi_data' => function ($query) use ($id) {
+            $query->join('saksi', 'saksi_data.saksi_id', 'saksi.id')->where('saksi.district_id', decrypt($id))
+            ->join('tps', 'tps.id', 'saksi.tps_id')
+            ->where('tps.sample', '1');
+        }])->get();
+        $data['tps_selesai_quick'] = Tps::where('setup', 'terisi')->where('sample',1)->count();
+        $data['tps_belum_quick'] = Tps::where('sample',1)->count();
+        $data['tps_selesai'] = Tps::where('setup', 'terisi')->where('district_id', Crypt::decrypt($id))->count();
+        $data['tps_belum'] = Tps::where('setup', 'belum terisi')->where('district_id', Crypt::decrypt($id))->count();
+        $data['kel'] = Village::where('district_id', Crypt::decrypt($id))->get();
+        $data['paslon_candidate'] = Paslon::get();
+        $data['kecamatan_name'] = District::where('id', Crypt::decrypt($id))->first();
+        $data['villages_quick'] = Village::where('district_id', Crypt::decrypt($id))->get();
+        $data['title'] = "Kecamatan " . $data['kecamatan_name']['name'] . "";
+        return view('publik.quick_kecamatan', $data);
+    }
+
     public function kelurahan(Request $request, $id)
     {
         $data['config'] = Config::first();
@@ -104,7 +133,7 @@ class PublicController extends Controller
         }])->get();
         $data['paslon_quick']     = Paslon::with(['saksi_data' => function ($query) use ($id) {
             $query->join('saksi', 'saksi_data.saksi_id', 'saksi.id')->where('saksi.village_id', (string)decrypt($id))
-            ->join('tps', 'tps.id', 'saksi.tps_id') 
+            ->join('tps', 'tps.id', 'saksi.tps_id')
             ->where('tps.sample', '1');
         }])->get();
         $data['tps_selesai_quick'] = Tps::where('setup', 'terisi')->where('sample',1)->count();
@@ -146,7 +175,7 @@ class PublicController extends Controller
             $data['qrcode_hukum'] = Qrcode::join('surat_pernyataan', 'surat_pernyataan.qrcode_hukum_id', '=', 'qrcode_hukum.id')
             ->join('users', 'users.tps_id', '=', 'qrcode_hukum.tps_id')->where('qrcode_hukum.id',  Crypt::decrypt($id))->first();
         }
-   
+
         $data['verifikator_id'] = User::where('id', $data['qrcode_hukum']['verifikator_id'])->first();
         $data['hukum_id'] = User::where('id', $data['qrcode_hukum']['hukum_id'])->first();
         $data['bukti_foto'] = ModelsBuktifoto::where('tps_id', $data['qrcode_hukum']['tps_id'])->get();
@@ -197,6 +226,13 @@ class PublicController extends Controller
     public function get_tps_quick(Request $request)
     {
         $data['tps'] = Tps::where('villages_id', $request['id'])->where('sample', 1)->get();
+        $data['candidate'] = Paslon::get();
+        $data['kelurahan'] = Village::where('id', ''.$request['id'])->first();
+        return view('publik.ajax.public_tps_quick', $data);
+    }
+    public function get_tps_quick2(Request $request)
+    {
+        $data['tps'] = Tps::where('villages_id', $request['id'])->where('quick_count', 1)->get();
         $data['candidate'] = Paslon::get();
         $data['kelurahan'] = Village::where('id', ''.$request['id'])->first();
         return view('publik.ajax.public_tps_quick', $data);
@@ -281,10 +317,10 @@ class PublicController extends Controller
         }
     }
       public function kicked()
-    { 
+    {
         $data['track'] = Tracking::where('id_user',Auth::user()->id)->first();
         return view('publik.ajax.kicked',$data);
     }
-    
-    
+
+
 }

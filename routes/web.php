@@ -151,9 +151,10 @@ Route::group(['middleware' => 'auth'], function () {
             Route::get('r-data-record','rDataRecord');
             Route::get('r-data','rdata');
             Route::post('main-permission','mainPermission');
-               Route::get('solution/{id}','solution')->name('solution');
+            Route::get('solution/{id}','solution')->name('solution');
             Route::get('laporan-bawaslu','laporanBapilu')->name('laporan_bapilu');
-
+            Route::get('real_count2','real_count2')->name('real_count2');
+            Route::get('quick_count2','quick_count2')->name('quick_count2');
             Route::get('data-gugatan', 'data_gugatan')->name('data_gugatan');
             Route::get('developer', 'developer')->name('developer');
             Route::post('cek_pass', 'cek_pass');
@@ -210,7 +211,7 @@ Route::group(['middleware' => 'auth'], function () {
             Route::get('sidang_online', 'sidangOnline');
             Route::get('sidang_online_status/{role}', 'sidangOnlinestatus');
 
-            
+
     Route::get('/dev-pass', function () {
         return view('security.dev_pass');
     });
@@ -224,7 +225,7 @@ Route::group(['middleware' => 'auth'], function () {
             Route::get('sidang_online/action/{id}/{role}', 'sidang_online_action');
             Route::get('action/batalkan_history/{id}/{user_id}', 'batalkan_history');
             Route::get('patroli/batalkan_semua/{id}', 'batalkan_semua');
-            
+
 });
 
 
@@ -413,9 +414,11 @@ Route::controller(PublicController::class)->group(function () {
     Route::get('scanning/{id}', 'scanning');
     Route::get('public/ajax/real_count/', 'real_count_get');
     Route::get('public/kecamatan/{id}', 'kecamatan');
+    Route::get('public/quick_kecamatan/{id}','quick_kecamatan');
     Route::get('public/kelurahan/{id}', 'kelurahan');
     Route::get('public/ajax/get_tps', 'get_tps');
     Route::get('ajax/get_tps_quick', 'get_tps_quick');
+    Route::get('ajax/get_tps_quick2', 'get_tps_quick2');
     Route::get('public/quick/index/{id}', 'quick_index');
     Route::get('public/history', 'history');
     Route::get('public/disclaimer', 'disclaimer');

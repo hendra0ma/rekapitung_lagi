@@ -194,6 +194,46 @@ let myModal = new bootstrap.Modal(document.getElementById('modallockdown'), {
         },
     });
 </script>
+
+<script>
+    /*chart-pie*/
+    var chart = c3.generate({
+        bindto: '#chart-pie2', // id of chart wrapper
+        data: {
+            columns: [
+                // each columns data
+
+                <?php foreach ($paslon as $pas) :  ?>
+                    <?php $voice = 0;  ?>
+                    <?php foreach ($pas->quicksaksidata as $pak) :  ?>
+                        <?php
+                        $voice += $pak->voice;
+                        ?>
+                    <?php endforeach  ?>['data<?= $pas->id  ?>', <?= $voice ?>],
+                <?php endforeach  ?>
+            ],
+            type: 'pie', // default type of chart
+            colors: {
+                <?php foreach ($paslon as $pas) :  ?> 'data<?= $pas->id  ?>': "<?= $pas->color ?>",
+                <?php endforeach  ?>
+            },
+            names: {
+                // name of each serie
+                <?php foreach ($paslon as $pas) :  ?> 'data<?= $pas->id  ?>': " <?= $pas->candidate ?> - <?= $pas->deputy_candidate ?>",
+                <?php endforeach  ?>
+            }
+        },
+        axis: {},
+        legend: {
+            show: true, //hide legend
+        },
+        padding: {
+            bottom: 0,
+            top: 0
+        },
+    });
+</script>
+
 <script>
     /*chart-pie*/
     var chart = c3.generate({
@@ -248,6 +288,26 @@ let myModal = new bootstrap.Modal(document.getElementById('modallockdown'), {
 <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
 <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
 @livewireScripts
+
+<script>
+    $('a.modaltpsQuick2').on('click', function() {
+        
+        let id = $(this).data('id');
+        $.ajax({
+            url: '{{url("/")}}/ajax/get_tps_quick2',
+            type: "GET",
+            data: {
+                id
+            },
+            success: function(response) {
+                if (response) {
+                    $('#container-tps-quick2').html(response);
+                }
+            }
+        });
+
+    });
+</script>
 <script>
 
     $('#ikon-map-full').on('click',function(){
@@ -290,7 +350,7 @@ let myModal = new bootstrap.Modal(document.getElementById('modallockdown'), {
         center: [-6.289576896901706, 106.71141255004683],
         zoom: 10,
         layers: [streets, cities],
-      
+
     });
 
     $('#ikon-map-full').on('click',function(){

@@ -15,4 +15,9 @@ class Paslon extends Model
    {
        return $this->hasMany(SaksiData::class);
    }
+   public function quicksaksidata()
+   {
+       return $this->hasMany(QuickSaksiData::class);
+   }
+
 }
