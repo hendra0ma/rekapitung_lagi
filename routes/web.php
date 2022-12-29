@@ -414,6 +414,7 @@ Route::controller(PublicController::class)->group(function () {
     Route::get('scanning/{id}', 'scanning');
     Route::get('public/ajax/real_count/', 'real_count_get');
     Route::get('public/kecamatan/{id}', 'kecamatan');
+    Route::get('public/quick_kecamatan/{id}','quick_kecamatan');
     Route::get('public/kelurahan/{id}', 'kelurahan');
     Route::get('public/ajax/get_tps', 'get_tps');
     Route::get('ajax/get_tps_quick', 'get_tps_quick');

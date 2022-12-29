@@ -91,6 +91,35 @@ class PublicController extends Controller
         $data['title'] = "Kecamatan " . $data['kecamatan_name']['name'] . "";
         return view('publik.kecamatan', $data);
     }
+
+    public function quick_kecamatan(Request $request, $id)
+    {
+        $data['config'] = Config::first();
+        $data['kota'] = Regency::find($data['config']['regencies_id']);
+        $data['marquee'] = Saksi::join('users', 'users.tps_id', "=", "saksi.tps_id")->where('district_id', Crypt::decrypt($id))->get();
+        $data['paslon']  = Paslon::with(['saksi_data' => function ($query) use ($id) {
+            $query->join('saksi', 'saksi_data.saksi_id', 'saksi.id', 'district_id')->where('saksi.district_id', decrypt($id));
+        }])->get();
+        $data['paslon_terverifikasi']     = Paslon::with(['saksi_data' => function ($query) use ($id) {
+            $query->join('saksi', 'saksi_data.saksi_id', 'saksi.id', 'district_id')->where('saksi.verification', 1)->where('saksi.district_id', decrypt($id));
+        }])->get();
+        $data['paslon_quick']     = Paslon::with(['saksi_data' => function ($query) use ($id) {
+            $query->join('saksi', 'saksi_data.saksi_id', 'saksi.id')->where('saksi.district_id', decrypt($id))
+            ->join('tps', 'tps.id', 'saksi.tps_id')
+            ->where('tps.sample', '1');
+        }])->get();
+        $data['tps_selesai_quick'] = Tps::where('setup', 'terisi')->where('sample',1)->count();
+        $data['tps_belum_quick'] = Tps::where('sample',1)->count();
+        $data['tps_selesai'] = Tps::where('setup', 'terisi')->where('district_id', Crypt::decrypt($id))->count();
+        $data['tps_belum'] = Tps::where('setup', 'belum terisi')->where('district_id', Crypt::decrypt($id))->count();
+        $data['kel'] = Village::where('district_id', Crypt::decrypt($id))->get();
+        $data['paslon_candidate'] = Paslon::get();
+        $data['kecamatan_name'] = District::where('id', Crypt::decrypt($id))->first();
+        $data['villages_quick'] = Village::where('district_id', Crypt::decrypt($id))->get();
+        $data['title'] = "Kecamatan " . $data['kecamatan_name']['name'] . "";
+        return view('publik.quick_kecamatan', $data);
+    }
+
     public function kelurahan(Request $request, $id)
     {
         $data['config'] = Config::first();
