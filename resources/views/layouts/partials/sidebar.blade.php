@@ -278,19 +278,22 @@ $tps = 2963;
                         data-deskripsi="Mode Otonom adalah sistem rekapitung yang berjalan tanpa admin dan hanya menampilkan perolehan suara yang dikirim oleh saksi.">
                         <i class="side-menu__icon fa fa-magic"></i><span class="side-menu__label">Mode Otonom</span></a>
                 </li>
-                <li class="slide">
+                <!-- <li class="slide">
                     <a class="side-menu__item modal-action" data-bs-toggle="slide" href="#"><i
                             class="side-menu__icon mdi mdi-satellite-variant  "></i><span class="side-menu__label">Admin Tracking</span><i class="angle fa fa-angle-right"></i></a>
                     <ul class="slide-menu">
-                        <li><a href="#modalCommander" data-bs-toggle="modal" data-jenis="redirect"
-                                data-izin="{{url('')}}/administrator/patroli_mode" data-title="Admin Tracking"
-                                data-deskripsi="Admin Tracking adalah sistem untuk melihat aktifitas admin yang sedang bertugas maupung yang selesai bertugas." class="slide-item modal-action">Admin Tracking</a></li>
+                       
                         <li><a href="#modalCommander" data-bs-toggle="modal" data-jenis="redirect"
                                 data-izin="{{url('')}}/administrator/patroli_mode/tracking/maps"
                                 data-title="Lacak Admin" data-deskripsi="Lacak Admin adalah sistem untuk melacak posisi admin berdasarkan demografi wilayah pemilihan."
                                 class="slide-item modal-action" class="slide-item">Lacak Admin</a></li>
                     </ul>
-                </li>
+                </li> -->
+
+                <li><a href="#modalCommander" data-bs-toggle="modal" data-jenis="redirect"
+                                data-izin="{{url('')}}/administrator/patroli_mode" data-title="Mode Patroli"
+                                data-deskripsi="Mode Patroli adalah sistem untuk melihat aktifitas admin yang sedang bertugas maupung yang selesai bertugas." class="side-menu__item modal-action"> <i
+                            class="side-menu__icon mdi mdi-satellite-variant  "></i><span class="side-menu__label">Mode Patroli</span></a></li>
                 <li>
                     <a class="side-menu__item modal-action" href="#modalCommander" data-bs-toggle="modal"
                         data-jenis="setting" data-izin="lockdown" data-title="Mode Lockdown"
@@ -313,9 +316,9 @@ $tps = 2963;
                 </li>
                 <li>
                     <a class="side-menu__item modal-action" href="#modalCommander" data-bs-toggle="modal" data-jenis="redirect"
-                        data-izin="{{url('')}}/administrator/r-data" data-title="Data Recorder" data-deskripsi="Anda membutuhkan izin commander untuk mengakses halaman ini.">
-                        <i class="side-menu__icon mdi mdi-record"></i><span class="side-menu__label">Mode Data
-                            Recorder</span></a>
+                        data-izin="{{url('')}}/administrator/r-data" data-title="Data Tracking" data-deskripsi="Anda membutuhkan izin commander untuk mengakses halaman ini.">
+                        <i class="side-menu__icon mdi mdi-record"></i><span class="side-menu__label">Mode
+                            Tracking</span></a>
                 </li>
                 <li>
                     <a class="side-menu__item modal-action" href="#modalCommander" data-bs-toggle="modal"
@@ -369,7 +372,7 @@ $tps = 2963;
                         <i class="side-menu__icon mdi mdi-settings"></i><span class="side-menu__label">Data Setup</span></a>
                 </li>
                 <li>
-                    <a class="side-menu__item" href="{{url('')}}/administrator/developer">
+                    <a class="side-menu__item" href="{{url('')}}/administrator/dev-pass">
                         <i class="side-menu__icon mdi mdi-flash"></i><span class="side-menu__label">Mode Developer</span></a>
                 </li>
 

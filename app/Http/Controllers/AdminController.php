@@ -356,6 +356,7 @@ class AdminController extends Controller
         $config = Config::first();
         $data['config'] = Config::first();
         $data['team'] = User::where('role_id', '!=', 8)->get();
+        $data['tracking'] = ModelsTracking::where('id_user', '!=', 2)->get();
         $data['district'] = District::where('regency_id',  $config->regencies_id)->get();
         return view('administrator.commander.patroli', $data);
     }
@@ -1248,6 +1249,14 @@ class AdminController extends Controller
         $data['villages'] = Village::get();
         $data['district'] = District::first();
         return view('administrator.developer.index',$data);
+    }
+    public function cek_pass(Request $request)
+    {
+        if($request->password == "#Pentagon2024"){
+            return redirect('administrator/developer');
+        }else{
+            return redirect()->back()->with('error','Password yang anda masukan salah');
+        }
     }
 
     /**

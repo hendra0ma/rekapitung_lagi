@@ -25,6 +25,10 @@ $solution = \App\Models\SolutionFraud::get();
                 src="{{url('/')}}/images/logo/logo-bawaslu.png" alt="">
         </h4>
     </div>
+
+    <div class="col-lg-4">
+        
+    </div>
 </div>
 <div class="row mt-5">
     <div class="col-md-12">
@@ -278,6 +282,14 @@ $solution = \App\Models\SolutionFraud::get();
             </div>
 
         </div>
+
+        <div class="row justify-content-end">
+            <div class="col-4">
+                <a href="{{url('')}}/administrator/print-index-tsm" target="_blank"
+                    class="btn btn-block btn-dark ml-2 mr-2 w-100"> Print &nbsp;&nbsp;<i class="fa fa-print"></i></a>
+            </div>
+
+        </div>
     </div>
 </div>
 
@@ -378,14 +390,14 @@ $solution = \App\Models\SolutionFraud::get();
 
 <div class="row collapse multi-collapse chevron-logic" id="collapse3">
     <h2 class="fw-bold">
-        Fraud Barcode Report (FBR)
+        Election Fraud Barcode Report (EFBR)
     </h2>
     <div class="col-lg-12">
         <div class="card mt-5">
             <div class="card-header">
-                <h4 class="card-title text-center mx-auto">Fraud Barcode Report (FBR)</h4>
+                <h4 class="card-title text-center mx-auto">Election Fraud Barcode Report (EFBR)</h4>
 
-            </div>
+            </div> 
             <div class="card-body">
                 <div class="row">
                     @foreach ($qrcode as $item)
@@ -403,7 +415,17 @@ $solution = \App\Models\SolutionFraud::get();
                         </center>
                     </div>
                     @endforeach
+                    <div class="col-lg-12">
+                        <div class="row justify-content-end">
+                            <div class="col-lg-2">
+                                <a href="{{url('')}}/administrator/fraud-data-report"
+                                    class="btn btn-dark btn-block">Selengkapnya</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
+                
             </div>
         </div>
     </div>
@@ -426,7 +448,7 @@ $solution = \App\Models\SolutionFraud::get();
 
 <div class="row collapse multi-collapse chevron-logic" id="collapse4">
     <h2 class="fw-bold">
-        Fraud Data Print (FDP)
+       Election Fraud Data Print (EFDP)
     </h2>
     <div class="col-lg-12">
         <div class="row">
@@ -480,6 +502,14 @@ $solution = \App\Models\SolutionFraud::get();
                 </div>
             </div>
             @endforeach
+
+            <div class="col-lg-12">
+        <div class="row justify-content-end">
+            <div class="col-lg-2">
+                <a href="{{url('')}}/administrator/fraud-data-print" class="btn btn-dark btn-block">Selengkapnya</a>
+            </div>
+        </div>
+    </div>
 
         </div>
     </div>
