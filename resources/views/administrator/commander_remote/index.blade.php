@@ -133,83 +133,89 @@
     </div>
 </div>
 
-<div class="container" style="margin-top: 3%;">
-    <h1 style=" margin-bottom: -20px">
-        <div class="row">
-            <div class="col"><img src="{{url('')}}/assets/images/brand/logo-1.png" style="width:50px" alt=""> <b>COMMANDER</b></div>  
-            <div class="col-8 d-none d-sm-block">
-                 <div class="card" style="margin-bottom: 0px;">
-                    <div class="card-body" style="padding: 5px; padding-bottom: 0px">
-                        <div class="row mx-auto text-center">
-                            <div class="col-3 my-auto">
-                                <a href="https://time.is/Jakarta" id="time_is_link" rel="nofollow" style="font-size:25px"></a>
-                                <span id="Jakarta_z41c" style="font-size:27px"></span> <div style="font-size:27px">WIB</div>
-                                <script src="//widget.time.is/t.js"></script>
-                                <script>
-                                time_is_widget.init({Jakarta_z41c:{}});
-                                </script>
-                            </div>
-                            <div class="col-md me-auto">
-                                <div class="row">
-                                    
-                                    <div class="col mt-2">
-                                        <div class="card" style="margin-bottom: 0px;">
-                                            <div class="card-body text-center" style="padding: 0px;">
-                                                <i class="fe fe-user"  style="font-size:22px !important"></i>
-                                            </div>
-                                            <div class="card-footer text-center" style="color: black; padding: 0px">
-                                                @if ($jam > 8 && $jam < 21)
-                                                <div class="badge bg-success" style="font-size:10px !important">Saksi : Aktif</div>
-                                                @else
-                                                <div class="badge bg-danger" style="font-size:10px !important">Saksi : Nonaktif</div>
-                                                @endif
-                                            </div>
+<div class="container mt-5">
+    <div class="row align-items-center">
+        <div class="col">
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    <img src="{{url('')}}/assets/images/brand/logo-1.png" style="width:65px" alt="">
+                </div>
+                <div class="col">
+                    <b class="fs-3">COMMANDER</b>
+                </div>
+            </div>
+        </div>  
+        <div class="col-8 d-none d-sm-block">
+             <div class="card" style="margin-bottom: 0px;">
+                <div class="card-body" style="padding: 5px; padding-bottom: 0px">
+                    <div class="row mx-auto text-center">
+                        <div class="col-3 my-auto">
+                            <a href="https://time.is/Jakarta" id="time_is_link" rel="nofollow" style="font-size:25px"></a>
+                            <span id="Jakarta_z41c" style="font-size:27px"></span> <div style="font-size:27px">WIB</div>
+                            <script src="//widget.time.is/t.js"></script>
+                            <script>
+                            time_is_widget.init({Jakarta_z41c:{}});
+                            </script>
+                        </div>
+                        <div class="col-md me-auto">
+                            <div class="row">
+                                
+                                <div class="col mt-2">
+                                    <div class="card" style="margin-bottom: 0px;">
+                                        <div class="card-body text-center" style="padding: 0px;">
+                                            <i class="fe fe-user"  style="font-size:22px !important"></i>
                                         </div>
-                                        <h5  style="font-size:13px" class="text-center mt-3">09.00 - 21.00</h5>
-                                    </div>
-                                    <div class="col mt-2">
-                                        <div class="card" style="margin-bottom: 0px;">
-                                            <div class="card-body text-center" style="padding: 0px;">
-                                                <i class="fe fe-user" style="font-size:22px !important"></i>
-                                            </div>
-                                            <div class="card-footer text-center" style="color: black; padding: 0px">
-                                                
-                                                @if ($jam > 14 && $jam < 21)
-                                                <div class="badge bg-success" style="font-size:10px !important">Relawan : aktif</div>
-                                                @else
-                                                
-                                                <div class="badge bg-danger" style="font-size:10px !important">Relawan : Nonaktif</div>
-                                                @endif
-                                            </div>
+                                        <div class="card-footer text-center" style="color: black; padding: 0px">
+                                            @if ($jam > 8 && $jam < 21)
+                                            <div class="badge bg-success" style="font-size:10px !important">Saksi : Aktif</div>
+                                            @else
+                                            <div class="badge bg-danger" style="font-size:10px !important">Saksi : Nonaktif</div>
+                                            @endif
                                         </div>
-                                        <h5  style="font-size:13px" class="text-center mt-3">14.00 - 21.00</h5>
                                     </div>
-                                    <div class="col mt-2">
-                                        <div class="card" style="margin-bottom: 0px;">
-                                            <div class="card-body text-center" style="padding: 0px;">
-                                                <i class="fe fe-user" style="font-size:22px !important"></i>
-                                            </div>
-                                            <div class="card-footer text-center" style="color: black; padding: 0px">
-                                                    @if ($jam >= 21)
-                                                    <div class="badge bg-success" style="font-size:10px !important">Hacker : Aktif</div>
-                                                    @else
-                                                    <div class="badge bg-danger" style="font-size:10px !important">Hacker : Nonaktif</div>
-                                                    @endif
-                                            </div>
-                                        </div>
-                                        <h5  style="font-size:13px" class="text-center mt-3">21.00 - dst</h5>
-                                    </div>
+                                    <h5  style="font-size:13px" class="text-center mt-3">09.00 - 21.00</h5>
                                 </div>
-                            
-                           
+                                <div class="col mt-2">
+                                    <div class="card" style="margin-bottom: 0px;">
+                                        <div class="card-body text-center" style="padding: 0px;">
+                                            <i class="fe fe-user" style="font-size:22px !important"></i>
+                                        </div>
+                                        <div class="card-footer text-center" style="color: black; padding: 0px">
+                                            
+                                            @if ($jam > 14 && $jam < 21)
+                                            <div class="badge bg-success" style="font-size:10px !important">Relawan : aktif</div>
+                                            @else
+                                            
+                                            <div class="badge bg-danger" style="font-size:10px !important">Relawan : Nonaktif</div>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <h5  style="font-size:13px" class="text-center mt-3">14.00 - 21.00</h5>
+                                </div>
+                                <div class="col mt-2">
+                                    <div class="card" style="margin-bottom: 0px;">
+                                        <div class="card-body text-center" style="padding: 0px;">
+                                            <i class="fe fe-user" style="font-size:22px !important"></i>
+                                        </div>
+                                        <div class="card-footer text-center" style="color: black; padding: 0px">
+                                                @if ($jam >= 21)
+                                                <div class="badge bg-success" style="font-size:10px !important">Hacker : Aktif</div>
+                                                @else
+                                                <div class="badge bg-danger" style="font-size:10px !important">Hacker : Nonaktif</div>
+                                                @endif
+                                        </div>
+                                    </div>
+                                    <h5  style="font-size:13px" class="text-center mt-3">21.00 - dst</h5>
+                                </div>
                             </div>
+                        
+                       
                         </div>
                     </div>
                 </div>
-            </div>  
+            </div>
         </div>  
-   
-    </h1>
+    </div>  
 
     <hr style="border: 1px solid;">
     

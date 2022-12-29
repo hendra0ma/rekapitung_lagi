@@ -1,7 +1,8 @@
     <?php
     use App\Models\Config;
     use App\Models\District;
-    
+use App\Models\Tracking;
+
     $config = Config::all()->first();
     $regency = District::where('regency_id',$config['regencies_id'])->get();
     ?>
@@ -27,50 +28,43 @@
                     </h3>
                     </a><!-- LOGO -->
                 </div>
-                <ul class="side-menu">
-                    <!-- <li class="my-2">
-                        &nbsp;
-                    </li>
-                    <li class="mt-5">
+                <ul class="side-menu mt-5">
+                <li class="mt-5">
                         <center>
-                            <img src="{{asset('storage').'/'.$config['regencies_logo']}}"
-                                style="width:120px;height:auto">
+                            <img src="{{asset('')}}assets/radar2.gif"class="img-fluid ms-3" style="width:100%;height:auto;border-radius:5px">
                         </center>
                     </li>
-                    <li>
-                        <span>
-                            <a href="http://tangsel.rekapitung.com/input/login" class="text-dark">
-                                <center>
-                                    <b>
-                                        KOTA TANGERANG SELATAN </b>
-                                </center>
-                            </a>
-                        </span>
-                    </li> -->
-                    <li class="mt-5">
-                    <center>
-                        <img src="{{asset('images/logo')}}/rekapitung_gold.png" style="width:120px;height:auto">
-                    </center>
-                </li>
+                    <div id="data-hekel"class="mt-4"style="height:500px;overflow:hidden">
 
-                    <li>
-                        <h3>Commander</h3>
-                    </li>
-                    <li>
-                    <li class="slide">
-                        <a class="side-menu__item" data-bs-toggle="slide"><i
-                                class="side-menu__icon fe fe-globe"></i><span class="side-menu__label">Patroli
-                                Mode</span><i class="angle fa fa-angle-right"></i></a>
-                        <ul class="slide-menu">
-                            <li><a href="/administrator/patroli_mode/" class="slide-item">Patroli Mode</a></li>
-                            <li><a href="/administrator/patroli_mode/tracking/maps" class="slide-item">Lacak Admin</a>
-                            </li>
+                    </div>
+                
                         </ul>
-                    </li>
+                        <?php
+                            $tracking = Tracking::join('users','tracking.id_user','=','users.id')->select('tracking.*','users.*')->get();
+                        ?>
+                        <script>
+                            const DATAIP = [<?php foreach ($tracking as $track):?>  `{{$track->ip_address}}`,`{{$track->email}}`,`{{$track->name}}`, `{{$track->longititude}},{{$track->latitude}}`, <?php endforeach ?>];
+                               
+                                let iaja = 0;
+                                setInterval(()=>{
+                                    $('#data-hekel').append(`
+                                    <li style="margin-top:-10px;">
+                                    <a class="side-menu__item" href="#">
+                                        <i class="side-menu__icon mdi mdi-settings"></i><span class="side-menu__label">
+                                        ${DATAIP[iaja]}
+                                        </span></a>
+                                    </li>
+                                    `)
+                                    $('#data-hekel').scrollTop($('#data-hekel')[0].scrollHeight)
 
-                    <li>
-                    
 
-                </ul>
+                                    if(DATAIP.length == iaja){
+                                        iaja=0;
+                                    }
+                                    iaja++
+                                },150)
+                           
+                        </script>
+    
             </aside>
             <!--/APP-SIDEBAR-->

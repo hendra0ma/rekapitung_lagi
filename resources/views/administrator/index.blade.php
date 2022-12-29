@@ -496,7 +496,7 @@ $tps = Tps::count();
     </div>
 </div>
 
-<div class="card mg-b-20">
+<div class="card mg-b-20"style="display:{{($config->otonom == 'yes')?'none':'block'}}">
     <div class="card-header">
         <div class="card-title">Admin Demography Tracking</div>
 
