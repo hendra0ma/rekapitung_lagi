@@ -152,6 +152,16 @@ $data_masuk = (int)$saksidatai / (int)$dpt * 100;
                         <div class="card overflow-hidden" style="margin-bottom: 0px;">
                             <div class="card-body">
                                 <div class="row">
+
+                                <?php $saksi_dataa =   Tps::join('saksi','saksi.tps_id','=','tps.id')
+                                    ->join('saksi_data','saksi_data.saksi_id','=','saksi.id')
+                                    ->where('saksi_data.paslon_id',$pas->id)
+                                    // ->where('tps.district_id',$item->id)
+                                    ->where('tps.sample',1)
+                                    ->sum('saksi_data.voice');
+                                    ?>
+
+
                                     <div class="col col-auto">
                                         <div class="counter-icon box-shadow-secondary brround ms-auto candidate-name text-white" style="margin-bottom: 0; background-color: {{$pas->color}};">
                                             {{$i++}}
@@ -160,15 +170,8 @@ $data_masuk = (int)$saksidatai / (int)$dpt * 100;
                                     <div class="col">
                                         <h6 class="">{{$pas->candidate}} </h6>
                                         <h6 class="">{{$pas->deputy_candidate}} </h6>
-                                        <?php
-                                        $voice = 0;
-                                        ?>
-                                        @foreach ($pas->saksi_data as $dataTps)
-                                        <?php
-                                        $voice += $dataTps->voice;
-                                        ?>
-                                        @endforeach <br>
-                                        <h3 class="mb-2 number-font">{{ $voice }} suara</h3>
+                                      
+                                        <h3 class="mb-2 number-font">{{ $saksi_dataa }} suara</h3>
                                     </div>
                                 </div>
                             </div>
@@ -215,7 +218,13 @@ $data_masuk = (int)$saksidatai / (int)$dpt * 100;
                                 <tr onclick='check("{{Crypt::encrypt($item->id)}}")'>
                                     <td class="align-middle"><a class="text-dark" href="public/kecamatan/{{Crypt::encrypt($item['id'])}}">{{$item['name']}}</a></td>
                                     @foreach ($paslon_candidate as $cd)
-                                    <?php $saksi_dataa = SaksiData::where('paslon_id', $cd['id'])->where('district_id', $item['id'])->sum('voice'); ?>
+                                    <?php $saksi_dataa =   Tps::join('saksi','saksi.tps_id','=','tps.id')
+                                    ->join('saksi_data','saksi_data.saksi_id','=','saksi.id')
+                                    ->where('saksi_data.paslon_id',$cd->id)
+                                    ->where('tps.district_id',$item->id)
+                                    ->where('tps.sample',1)
+                                    ->sum('saksi_data.voice');
+                                    ?>
                                     <td class="align-middle">{{$saksi_dataa}}</td>
                                     @endforeach
                                 </tr>
