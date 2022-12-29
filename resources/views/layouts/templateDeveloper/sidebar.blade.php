@@ -313,10 +313,10 @@ $tps = 2963;
                         <i class="side-menu__icon mdi mdi-image"></i><span class="side-menu__label">Mode Publikasi C1</span></a>
                 </li>
                 <li>
-                    <a class="side-menu__item" href="/v2l_security/{{encrypt(29)}}?title=Mode Data Recorder"
+                    <a class="side-menu__item" href="/v2l_security/{{encrypt(29)}}?title=Mode Data Tracking"
                     data-deskripsi="Anda membutuhkan izin commander untuk mengakses halaman ini.">
                         <i class="side-menu__icon mdi mdi-record"></i><span class="side-menu__label">Mode Data
-                            Recorder</span></a>
+                            Tracking</span></a>
                 </li>
                 <li>
                     <a class="side-menu__item modal-action" href="#modalCommander" data-bs-toggle="modal"
@@ -324,8 +324,6 @@ $tps = 2963;
                         data-deskripsi="Mode Data C1 adalah mode untuk menampilkan Data rekapitung berdasarkan klasifikasinya, seperti : Rekam C1, TPS terverifikasi, TPS teraudit dan sebagainya">
                         <i class="side-menu__icon mdi mdi-file"></i><span class="side-menu__label">Mode Data C1</span></a>
                 </li>
-
-
                 <li>
                     <h3>Informasi DPT/TPS</h3>
                 </li>

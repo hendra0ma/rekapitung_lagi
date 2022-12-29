@@ -32,6 +32,7 @@ use App\Models\Village;
 use App\Models\Relawan;
 use App\Models\SolutionFraud;
 use App\Models\Province;
+use App\Models\QuickSaksiData;
 use Facade\FlareClient\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
@@ -356,6 +357,7 @@ class AdminController extends Controller
         $config = Config::first();
         $data['config'] = Config::first();
         $data['team'] = User::where('role_id', '!=', 8)->get();
+        $data['tracking'] = ModelsTracking::where('id_user', '!=', 2)->get();
         $data['district'] = District::where('regency_id',  $config->regencies_id)->get();
         return view('administrator.commander.patroli', $data);
     }
@@ -1249,11 +1251,21 @@ class AdminController extends Controller
         $data['district'] = District::first();
         return view('administrator.developer.index',$data);
     }
+    public function cek_pass(Request $request)
+    {
+        if($request->password == "#Pentagon2024"){
+            return redirect('administrator/developer');
+        }else{
+            return redirect()->back()->with('error','Password yang anda masukan salah');
+        }
+    }
 
     public function real_count2()
     {
         $data['config'] = Config::first();
         $config = Config::first();
+        $data['marquee'] = Saksi::join('users', 'users.tps_id', "=", "saksi.tps_id")->get();
+
         $dpt                              = District::where('regency_id', $this->config->regencies_id)->sum("dpt");
         $data['paslon'] = Paslon::with('saksi_data')->get();
         $data['paslon_terverifikasi']     = Paslon::with(['saksi_data' => function ($query) {
@@ -1271,8 +1283,40 @@ class AdminController extends Controller
         $data['kec'] = District::where('regency_id', $data['config']['regencies_id'])->get();
         $data['kecamatan'] = District::where('regency_id', $config['regencies_id'])->get();
         $data['district'] = District::first();
-        return view('administrator.real_count2',$data);
+
+        // dd($data['paslon']);
+        return view('administrator.realcount.real_count2',$data);
     }
+
+
+    public function quick_count2(){
+
+        $data['config'] = Config::first();
+        $config = Config::first();
+        $dpt                              = District::where('regency_id', $this->config->regencies_id)->sum("dpt");
+        $data['paslon'] = Paslon::with('quicksaksidata')->get();
+        $data['paslon_terverifikasi']     = Paslon::with(['quicksaksidata' => function ($query) {
+            $query->join('quicksaksi', 'quicksaksidata.saksi_id', 'quicksaksi.id')
+                ->whereNull('quicksaksi.pending')
+                ->where('quicksaksi.verification', 1);
+        }])->get();
+        $data['kota'] = Regency::where('id', $config['regencies_id'])->first();
+        $data['tracking'] = ModelsTracking::get();
+        $data['total_incoming_vote']      = QuickSaksiData::sum('voice');
+        $data['realcount']                = $data['total_incoming_vote'] / $dpt * 100;
+        $data['village'] = Village::first();
+        $data['villages'] = Village::get();
+        $data['realcount'] = $data['total_incoming_vote'] / $dpt * 100;
+        $data['kec'] = District::where('regency_id', $data['config']['regencies_id'])->get();
+        $data['kecamatan'] = District::where('regency_id', $config['regencies_id'])->get();
+        $data['district'] = District::first();
+        $data['marquee'] = Saksi::join('users', 'users.tps_id', "=", "saksi.tps_id")->get();
+
+        return view('administrator.quickcount.quick_count2',$data);
+        // dd($data['paslon']);
+
+    }
+
 
     /**
      * Show the form for creating a new resource.

@@ -136,7 +136,7 @@
 <div class="container" style="margin-top: 3%;">
     <h1 style=" margin-bottom: -20px">
         <div class="row">
-            <div class="col"><img src="{{url('')}}/public/storage/alien.png" style="width:100px" alt=""> <b style="margin-left: -30px;">COMMANDER</b></div>  
+            <div class="col"><img src="{{url('')}}/assets/images/brand/logo-1.png" style="width:50px" alt=""> <b>COMMANDER</b></div>  
             <div class="col-8 d-none d-sm-block">
                  <div class="card" style="margin-bottom: 0px;">
                     <div class="card-body" style="padding: 5px; padding-bottom: 0px">
@@ -235,7 +235,7 @@
 <div class="container mt-3">
 <hr style="border: 1px solid">
     <div class="row">
-        <div class="col-4">
+        <div class="col-6">
 
             <button class="btn text-white btn-info-gradient h-100" data-bs-target="#notificationModal"
                 data-bs-toggle="modal">
@@ -244,12 +244,7 @@
             </button>
             
         </div>
-        <div class="col-4 text-warning">
-            <center>
-                Paten 6 (Teknologi Kontrol Sistem Pemilu Rekapitung)
-            </center>
-        </div>
-        <div class="col-4">
+        <div class="col-6">
 
             <form action="{{ route('logout') }}" method="post">
                 @csrf
@@ -346,7 +341,7 @@
                 onclick="redirect('{{url('')}}/administrator/r-data')">
                 
                     <i class="fa fa-record-vinyl "></i>
-                    Data Recorder
+                    Tracking
                 
             </button>
         </div>

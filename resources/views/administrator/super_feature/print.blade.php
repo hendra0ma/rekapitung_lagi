@@ -91,14 +91,14 @@
                 </h1>
             </div>
           <table class="table table-bordered table-hover">
-              <thead class="bg-primary text-white" style="background-color: red">
+              <thead class="bg-primary">
                   <tr>
                   <tr>
-                      <td class="text-white text-center align-middle">Kecamatan</td>
-                      <td class="text-white text-center align-middle">Total Dpt KPU</td>
-                      <td class="text-white text-center align-middle">Total Pengguna Hak Pilih</td>
-                      <td class="text-white text-center align-middle">Selisih</td>
-                      <td class="text-white text-center align-middle">GAP</td>
+                      <td class="text-center align-middle">Kecamatan</td>
+                      <td class="text-center align-middle">Total Dpt KPU</td>
+                      <td class="text-center align-middle">Total Pengguna Hak Pilih</td>
+                      <td class="text-center align-middle">Selisih</td>
+                      <td class="text-center align-middle">GAP</td>
                   </tr>
               </thead>
               <tbody>
@@ -120,6 +120,28 @@
               </tbody>
           </table>
 
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Keterangan Indikator</div>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered w-100">
+                       <tr>
+                          <td><b class="text-warning">1% - 50%</b> <br> Rendah</td>
+                          <td><b class="text-success">51% - 70%</b> <br> Normal</td>
+                          <td><b class="text-secondary">71% - 80%</b> <br> Tinggi</td>
+                          <td><b class="text-danger">81% - 90%</b> <br> Indikasi Kecurangan</td>
+                          <td><b class="text-dark">91% - 100%</b> <br> Manipulasi</td>
+                        </tr>
+                       
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
   </div>

@@ -30,15 +30,7 @@ $solution = \App\Models\SolutionFraud::get();
         </h4>
     </div>
 
-    <div class="col-lg-4">
-        <div class="row justify-content-end">
-            <div class="col-4">
-                <a href="{{url('')}}/administrator/print-index-tsm" target="_blank"
-                    class="btn btn-block btn-dark ml-2 mr-2 w-100"> Print &nbsp;&nbsp;<i class="fa fa-print"></i></a>
-            </div>
 
-        </div>
-    </div>
 </div>
 <div class="row mt-3">
     <div class="col-md-12">
@@ -51,8 +43,8 @@ $solution = \App\Models\SolutionFraud::get();
 </div>
 
 <hr>
-<h2 class="fw-bold mb-0 tugel" data-bs-toggle="collapse" href="#collapse1" role="button"
-    aria-expanded="false" aria-controls="multiCollapseExample1">
+<h2 class="fw-bold mb-0 tugel" data-bs-toggle="collapse" href="#collapse1" role="button" aria-expanded="false"
+    aria-controls="multiCollapseExample1">
     <div class="row">
         <div class="col-6">
             Data 1
@@ -256,37 +248,48 @@ $solution = \App\Models\SolutionFraud::get();
         </div>
     </div>
 
-
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">Keterangan Kode</div>
-                </div>
-                <div class="card-body">
-                    <table class="table table-bordered w-100">
-                        <?php 
-                      $kodeF = DB::table('solution_frauds')->get();
-                      ?>
-                        <tr>
-                            @foreach($kodeF as $kod)
-
-                            <td><b class="text-danger">{{$kod->kode}}</b> ({{$kod->solution}})</td>
-
-                            @endforeach
-                        </tr>
-
-                    </table>
-                </div>
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Keterangan Kode</div>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered w-100">
+                    <?php 
+                  $kodeF = DB::table('solution_frauds')->get();
+                  ?>
+                    <tr>
+                        @foreach($kodeF as $kod)
+                        <td><b class="text-danger">{{$kod->kode}}</b> ({{$kod->solution}})</td>
+                        @endforeach
+                    </tr>
+                </table>
             </div>
         </div>
+    </div>
+
+    <div class="col-lg-12">
+        <div class="row justify-content-end">
+            <div class="col-4">
+                <a href="{{url('')}}/administrator/print-index-tsm" target="_blank"
+                    class="btn btn-block btn-dark ml-2 mr-2 w-100"> Print &nbsp;&nbsp;<i class="fa fa-print"></i></a>
+            </div>
+
+        </div>
+    </div>
+    <div class="row justify-content-end">
+        <div class="col-4">
+            <a href="{{url('')}}/administrator/print-index-tsm" target="_blank"
+                class="btn btn-block btn-dark ml-2 mr-2 w-100"> Print &nbsp;&nbsp;<i class="fa fa-print"></i></a>
+        </div>
+
     </div>
 
 </div>
 
 <hr>
-<h2 class="fw-bold mb-0 tugel" data-bs-toggle="collapse" href="#collapse2" role="button"
-    aria-expanded="false" aria-controls="multiCollapseExample2">
+<h2 class="fw-bold mb-0 tugel" data-bs-toggle="collapse" href="#collapse2" role="button" aria-expanded="false"
+    aria-controls="multiCollapseExample2">
     <div class="row">
         <div class="col-6">
             Data 2
@@ -332,7 +335,8 @@ $solution = \App\Models\SolutionFraud::get();
                                         <b class="fs-4 mx-auto">{{$jmlh_kecurangan}} </b>
                                     </div>
                                     <div class="col my-auto text-end">
-                                        <a href="{{route('superadmin.solution',encrypt($solut->id))}}" class="my-auto">Lihat
+                                        <a href="{{route('superadmin.solution',encrypt($solut->id))}}"
+                                            class="my-auto">Lihat
                                             <i class="mdi mdi-eye"></i></a>
                                     </div>
                                 </div>
@@ -347,8 +351,8 @@ $solution = \App\Models\SolutionFraud::get();
 </div>
 
 <hr>
-<h2 class="fw-bold mb-0 tugel" data-bs-toggle="collapse" href="#collapse3" role="button"
-    aria-expanded="false" aria-controls="multiCollapseExample2">
+<h2 class="fw-bold mb-0 tugel" data-bs-toggle="collapse" href="#collapse3" role="button" aria-expanded="false"
+    aria-controls="multiCollapseExample2">
     <div class="row">
         <div class="col-6">
             Data 3
@@ -363,12 +367,12 @@ $solution = \App\Models\SolutionFraud::get();
 
 <div class="row collapse multi-collapse chevron-logic" id="collapse3">
     <h2 class="fw-bold">
-        Fraud Barcode Report (FBR)
+        Election Fraud Barcode Report (EFBR)
     </h2>
     <div class="col-lg-12">
         <div class="card mt-5">
             <div class="card-header">
-                <h4 class="card-title text-center mx-auto">Fraud Barcode Report (FBR)</h4>
+                <h4 class="card-title text-center mx-auto">Election Fraud Barcode Report (FBR)</h4>
 
             </div>
             <div class="card-body">
@@ -405,8 +409,8 @@ $solution = \App\Models\SolutionFraud::get();
 </div>
 
 <hr>
-<h2 class="fw-bold mb-0 tugel" data-bs-toggle="collapse" href="#collapse4" role="button"
-    aria-expanded="false" aria-controls="multiCollapseExample2">
+<h2 class="fw-bold mb-0 tugel" data-bs-toggle="collapse" href="#collapse4" role="button" aria-expanded="false"
+    aria-controls="multiCollapseExample2">
     <div class="row">
         <div class="col-6">
             Data 4
@@ -421,7 +425,7 @@ $solution = \App\Models\SolutionFraud::get();
 
 <div class="row collapse multi-collapse chevron-logic" id="collapse4">
     <h2 class="fw-bold">
-        Fraud Data Print (FDP)
+        Election Fraud Data Print (EFDP)
     </h2>
     @foreach($list_suara as $ls)
     <div class="col-lg-4">
@@ -531,8 +535,8 @@ $solution = \App\Models\SolutionFraud::get();
 
 
 <hr>
-<h2 class="fw-bold mb-0 tugel" data-bs-toggle="collapse" href="#collapse5" role="button"
-    aria-expanded="false" aria-controls="multiCollapseExample2">
+<h2 class="fw-bold mb-0 tugel" data-bs-toggle="collapse" href="#collapse5" role="button" aria-expanded="false"
+    aria-controls="multiCollapseExample2">
     <div class="row">
         <div class="col-6">
             Data 5
@@ -690,7 +694,7 @@ $solution = \App\Models\SolutionFraud::get();
             if ($(koleps).hasClass('show')) {
                 $(down).show();
                 $(right).hide();
-               
+
             } else {
                 $(down).hide();
                 $(right).show();

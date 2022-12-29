@@ -194,6 +194,46 @@ let myModal = new bootstrap.Modal(document.getElementById('modallockdown'), {
         },
     });
 </script>
+
+<script>
+    /*chart-pie*/
+    var chart = c3.generate({
+        bindto: '#chart-pie2', // id of chart wrapper
+        data: {
+            columns: [
+                // each columns data
+
+                <?php foreach ($paslon as $pas) :  ?>
+                    <?php $voice = 0;  ?>
+                    <?php foreach ($pas->quicksaksidata as $pak) :  ?>
+                        <?php
+                        $voice += $pak->voice;
+                        ?>
+                    <?php endforeach  ?>['data<?= $pas->id  ?>', <?= $voice ?>],
+                <?php endforeach  ?>
+            ],
+            type: 'pie', // default type of chart
+            colors: {
+                <?php foreach ($paslon as $pas) :  ?> 'data<?= $pas->id  ?>': "<?= $pas->color ?>",
+                <?php endforeach  ?>
+            },
+            names: {
+                // name of each serie
+                <?php foreach ($paslon as $pas) :  ?> 'data<?= $pas->id  ?>': " <?= $pas->candidate ?> - <?= $pas->deputy_candidate ?>",
+                <?php endforeach  ?>
+            }
+        },
+        axis: {},
+        legend: {
+            show: true, //hide legend
+        },
+        padding: {
+            bottom: 0,
+            top: 0
+        },
+    });
+</script>
+
 <script>
     /*chart-pie*/
     var chart = c3.generate({
@@ -290,7 +330,7 @@ let myModal = new bootstrap.Modal(document.getElementById('modallockdown'), {
         center: [-6.289576896901706, 106.71141255004683],
         zoom: 10,
         layers: [streets, cities],
-      
+
     });
 
     $('#ikon-map-full').on('click',function(){

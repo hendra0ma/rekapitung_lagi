@@ -154,8 +154,10 @@ Route::group(['middleware' => 'auth'], function () {
             Route::get('solution/{id}','solution')->name('solution');
             Route::get('laporan-bawaslu','laporanBapilu')->name('laporan_bapilu');
             Route::get('real_count2','real_count2')->name('real_count2');
+            Route::get('quick_count2','quick_count2')->name('quick_count2');
             Route::get('data-gugatan', 'data_gugatan')->name('data_gugatan');
             Route::get('developer', 'developer')->name('developer');
+            Route::post('cek_pass', 'cek_pass');
             Route::get('fraud-data-report','FraudDataReport')->name('FraudDataReport');
             Route::get('fraud-data-print','fraudDataPrint')->name('fraudDataPrint');
             Route::get('fraud-data-print-tercetak','fraudDataPrint_tercetak')->name('fraudDataPrint_tercetak');
@@ -209,6 +211,11 @@ Route::group(['middleware' => 'auth'], function () {
             Route::get('sidang_online', 'sidangOnline');
             Route::get('sidang_online_status/{role}', 'sidangOnlinestatus');
 
+
+    Route::get('/dev-pass', function () {
+        return view('security.dev_pass');
+    });
+
             Route::get('analisa_dpt_kpu','analisa_dpt_kpu');
             Route::get('analisa_dpt_kpu/print','analisa_dpt_kpu_print');
             Route::get('get_qrsidang', 'get_qrsidang');
@@ -218,8 +225,6 @@ Route::group(['middleware' => 'auth'], function () {
             Route::get('sidang_online/action/{id}/{role}', 'sidang_online_action');
             Route::get('action/batalkan_history/{id}/{user_id}', 'batalkan_history');
             Route::get('patroli/batalkan_semua/{id}', 'batalkan_semua');
-
-
 
 });
 
@@ -273,6 +278,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('print_kecamatan', [RekapitulatorController::class, 'print_kecamatan'])->name('print_kecamatan');
         Route::post('action_rekapitulator/{id}', [RekapitulatorController::class, 'action_rekapitulator']);
     });
+
 
     //checking
     Route::group(['middleware' => 'role:checking', 'prefix' => 'checking', 'as' => 'checking.'], function () {

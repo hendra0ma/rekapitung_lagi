@@ -87,7 +87,7 @@
         <div class="col">
             <div class="card">
                 <div class="card-header">
-                    <div class="card-title">Keterangan Kode</div>
+                    <div class="card-title">Keterangan Indikator</div>
                 </div>
                 <div class="card-body">
                     <table class="table table-bordered w-100">

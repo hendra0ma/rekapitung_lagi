@@ -22,14 +22,32 @@ $tps = Tps::count();
 <div class="row">
 
     <div class="row">
-        <div class="col-lg-12 my-3">
+        <div class="col-lg-12">
            <center>
-            <h1 class="page-title mt-2" style="font-size: 70px">REAL COUNT
+            <h1 class="page-title mt-1 mb-0" style="font-size: 70px">QUICK COUNT
             </h1>
            </center>
         </div>
+
         <div class="col-lg-12">
-            <div class="card">
+            <div id="marquee1" class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <button class="btn btn-danger text-white rounded-0">Suara Masuk</button>
+                </div>
+                <div class="form-control bg-dark" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                    <marquee id="cobamarq1">
+                        @foreach ($marquee as $mq)
+                        <?php $kecamatan2 =  District::where('id', $mq['districts'])->first(); ?>
+                        <?php $kelurahan =  Village::where('id', $mq['villages'])->first(); ?>
+                        <?php $tps =  Tps::where('id', $mq['tps_id'])->first(); ?>
+                        <span class="text-success">▼ </span><span class="text-white" style="font-size: 20px;">{{$mq['name']}} Kecamatan {{$kecamatan2 ['name']}}, Kelurahan  {{$kelurahan['name']}}, TPS {{$tps['number']}}</span>
+                        @endforeach
+                    </marquee>
+
+
+                </div>
+            </div>
+            <div class="card" style="margin-bottom: 1rem">
                 <div class="card-header bg-info-gradient">
                     <h3 class="card-title text-white">Suara TPS Masuk</h3>
                 </div>
@@ -39,7 +57,7 @@ $tps = Tps::count();
                             <div class="container" style="margin-left: 3%; margin-top: 10%;">
                                 <div class="text-center">Progress {{substr($realcount,0,5)}}% dari 100%</div>
                                 <div class="text-center mt-2 mb-2"><span class="badge bg-success">{{$total_incoming_vote}} / {{$dpt}}</span></div>
-                                <div id="chart-pie" class="chartsh h-100 w-100"></div>
+                                <div id="chart-pie2" class="chartsh h-100 w-100"></div>
                             </div>
                         </div>
                         <div class="col-xxl-6">
@@ -61,7 +79,7 @@ $tps = Tps::count();
                                                     <?php
                                                     $voice = 0;
                                                     ?>
-                                                    @foreach ($pas->saksi_data as $dataTps)
+                                                    @foreach ($pas->quicksaksidata as $dataTps)
                                                     <?php
                                                     $voice += $dataTps->voice;
                                                     ?>
@@ -87,7 +105,7 @@ $tps = Tps::count();
                     @foreach ($kecamatan as $item)
                     <div class="carousel-item <?php if ($count++ == 1) : ?><?= 'active' ?><?php endif; ?>">
                         <div class="fw-bold fs-3 mb-3">
-                            {{$item['name']}} (35%)
+                           KECAMATAN {{$item['name']}}
                         </div>
 
                         <div class="row">
@@ -106,7 +124,7 @@ $tps = Tps::count();
                             <div class="col-md">
                                 <div class="card">
                                     <div class="card-header justify-content-center" style="background-color:{{$psl->color}}">
-                                        <h3 style="margin-bottom: 0;" class="fw-bold text-white">{{$psl->candidate}} - {{$psl->deputy_candidate}}</h3>
+                                        <h3 style="margin-bottom: 0;" class="fw-bold text-white">{{$psl->candidate}} - <br> {{$psl->deputy_candidate}}</h3>
                                     </div>
                                     <div class="card-body" style="padding: 10px;">
                                         <div class="row">
