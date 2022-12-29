@@ -438,6 +438,19 @@
                 Dark Mode
             </center>
         </div>
+        <div class="col-md-1">
+            <div class="mid">
+
+                <label class="switch">
+                    <input type="checkbox" data-target="mode" onclick="settings('quick_count',this)"
+                    {{($config->quick_count == "no") ? "":"checked"; }}>
+                    <span class="slider round"></span>    
+                </label>
+            </div>
+            <center>
+             Quick Count
+            </center>
+        </div>
         
         <div class="col-3">
 
