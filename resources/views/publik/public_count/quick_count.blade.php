@@ -90,6 +90,17 @@ use App\Models\Paslon;
                     <div class="col-2">
                         <img style="width: 75px" src="{{url('/')}}/images/logo/rekapitung_gold.png" alt="">
                     </div>
+                    <?php
+                     $jumlahtotal = SaksiData::join('districts', 'districts.id', '=', 'saksi_data.district_id')
+                     ->join('saksi','saksi.id','=','saksi_data.saksi_id')
+                     ->join('tps','tps.id','=','saksi.tps_id')
+                     ->where('tps.sample', 1)
+                   
+                    -> sum('saksi_data.voice');
+                    // $jumlah1 = number_format( $jumlah , 0 , ',' , '.' );
+                        
+                    $persen = substr($jumlahtotal / $dpt * 100, 0, 3);
+                    ?>
                     
                     <div class="col-8">
                         <div class="fs-4 fw-bold mx-auto text-center">PILPRES 2024 / PROVINSI {{$provinsi->name}} / {{$kota->name}}</div>
@@ -106,10 +117,10 @@ use App\Models\Paslon;
                     
                 <div class="progress bg-white mt-3"style="height:25px">
                     <div class="progress-bar bg-success" role="progressbar" aria-label="Example with label"
-                        style="width:  9.3%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">9.3%</div>
+                        style="width: 20%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{$persen}}%</div>
                 </div>
 
-                <div class="row mt-3">
+                <div class="row mt-3">  
                     @foreach ($paslon as $ps)
                     <div class="col-md">
                         <div class="card">
@@ -124,20 +135,24 @@ use App\Models\Paslon;
                                         <?php
                                         $pasln = SaksiData::where('saksi_data.paslon_id', $ps->id)->where('regency_id', $config->regencies_id)->get();
                                         $jumlah = 0;
-                                        $dpt = 0;
+                                        $dptk = 0;
                                         foreach ($kecamatan as $kcmt) {
-                                            $dpt += $kcmt->dpt;
+                                            $dptk += $kcmt->dpt;
                                         }
-                                        foreach ($pasln as $pas) {
-                                            $jumlah += $pas->voice;
-                                        }
-                                        
+                                        $jumlah = SaksiData::join('districts', 'districts.id', '=', 'saksi_data.district_id')
+                                        ->join('saksi','saksi.id','=','saksi_data.saksi_id')
+                                        ->join('tps','tps.id','=','saksi.tps_id')
+                                        ->where('tps.sample', 1)
+                                        // ->where('saksi_data.district_id', $item['id'])
+                                        ->where('saksi_data.paslon_id', $ps->id)->sum('saksi_data.voice');
+                                      
+                                      
                                         $jumlah1 = number_format( $jumlah , 0 , ',' , '.' );
                         
-                                        $persen = substr($jumlah / $dpt * 100, 0, 3);
+                                        $persen = substr($jumlah / $dptk * 100, 0, 3);
                                         ?>
                                         <div class="progress-bar" style="background-color:{{$ps->color}}" role="progressbar"
-                                            aria-label="Example with label" style="width:  {{$persen}}%;" aria-valuenow="25"
+                                            aria-label="Example with label" style="width:  {{$persen}}%;"
                                             aria-valuemin="0" aria-valuemax="100">{{$jumlah1}}</div>
                                         <?php
                                         $jumlah = 0;
@@ -243,14 +258,14 @@ use App\Models\Paslon;
                                         <?php $i = 1; ?>
                                         @foreach ($paslon as $psl)
                                         <?php
-                                        $pasln = SaksiData::join('districts', 'districts.id', '=', 'saksi_data.district_id')->where('saksi_data.district_id', $item['id'])->where('saksi_data.paslon_id', $psl->id)->get();
-                                        $jumlah = 0;
-                                        foreach ($pasln as $pas) {
-                                            $jumlah += $pas->voice;
-                                        }
-
-                                        $persen = substr($jumlah / $item->dpt * 100, 0, 3);
-
+                                        $pasln = SaksiData::join('districts', 'districts.id', '=', 'saksi_data.district_id')
+                                        ->join('saksi','saksi.id','=','saksi_data.saksi_id')
+                                        ->join('tps','tps.id','=','saksi.tps_id')
+                                        ->where('tps.sample', 1)
+                                        ->where('saksi_data.district_id', $item['id'])
+                                        ->where('saksi_data.paslon_id', $psl->id)->sum('saksi_data.voice');
+                                      
+                                        $persen = substr($pasln / $item->dpt * 100, 0, 3);
                                         ?>
                                         <div class="col-md-2 position-relative" style="background-color: white; height: 75px; overflow: hidden; color: #ced4da; border-right: 1px solid">
                                             <h1 class="fw-bolder" style="position: absolute; bottom: 8px; left: 16px;">

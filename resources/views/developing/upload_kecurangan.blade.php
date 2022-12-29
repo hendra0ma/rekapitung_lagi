@@ -100,9 +100,7 @@
                     <p>Laporan Kecurangan Pemilu ini terintegrasi dengan sistem laporan kecurangan pada Bawaslu RI.
                         Dimana seluruh laporan yang Anda buat dapat dilihat oleh Bawaslu RI Melalui akun Bawaslu pada
                         Rekapitung.</p>
-                    <p>Setiap saksi yang melaporkan kecurangan juga akan terintegrasi langsung dengan sidang online
-                        Mahkamah Konstitusi melalui sistem Rekapitung dan Anda dapat saja menjadi salah satu peserta
-                        dari sidang online Mahkamah Konstitusi tersebut. <b>Berdasarkan peraturan Mahkamah Konstitusi
+                    <p><b>Berdasarkan peraturan Mahkamah Konstitusi
                             Republik Indonesia No.1 Tahun 2014 tentang pedoman beracara dalam perselisihan hasil
                             pemilihan umum,</b> bukti elektronik yang Anda kirimkan adalah alat bukti yang sah di mata
                         hukum.</p>
