@@ -14,8 +14,7 @@
 
 <div class="card mg-b-20">
     <div class="card-header">
-        <div class="card-title text-uppercase">election demography tracking  (EDT)</div>
-        <div class="ms-auto card-title text-warning">Paten 5 (Teknologi Pelacakan Rekapitung)</div>
+        <div class="card-title text-uppercase">admin demography tracking  (ADT)</div>
     </div>
     <div class="card-body">
         <div class="ht-300" id="mapid" style="height:500px"></div>
@@ -24,6 +23,9 @@
 
 
 <div class="card">
+    <div class="card-header text-uppercase">
+        admin activity tracking (AAT)
+    </div>
     <div class="card-body">
         <p class="card-text">
             <div class="table-responsive">

@@ -49,11 +49,11 @@
                     </li> -->
                     <li class="mt-5">
                     <center>
-                        <img src="{{asset('images/logo')}}/rekapitung_gold.png" style="width:120px;height:auto">
+                        <!-- <img src="{{asset('images/logo')}}/rekapitung_gold.png" style="width:120px;height:auto"> -->
                     </center>
                 </li>
 
-                    <li>
+                    <!-- <li>
                         <h3>Commander</h3>
                     </li>
                     <li>
@@ -66,7 +66,7 @@
                             <li><a href="/administrator/patroli_mode/tracking/maps" class="slide-item">Lacak Admin</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
 
                     <li>
                     

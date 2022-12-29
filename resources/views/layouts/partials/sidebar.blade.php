@@ -363,8 +363,8 @@ $tps = 2963;
                             class="side-menu__icon mdi mdi-file-account"></i><span class="side-menu__label">Input Saksi</span><i
                             class="angle fa fa-angle-right"></i></a>
                     <ul class="slide-menu">
-                        <li><a href="#" class="slide-item">Upload C1</a></li>
-                        <li><a href="#" class="slide-item">Laporan Kecurangan</a></li>
+                        <li><a href="/v2l_security/{{encrypt(16)}}?title=Input C1 Plano" class="slide-item">Upload C1</a></li>
+                        <li><a href="/v2l_security/{{encrypt(15)}}?title=Input Kecurangan" class="slide-item">Laporan Kecurangan</a></li>
                     </ul>
                 </li>
                 <li>
