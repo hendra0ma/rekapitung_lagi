@@ -29,6 +29,7 @@ class RelawanController extends Controller
     {
         $data['tps'] = Tps::get();
         $config =Config::first();
+        $data['config'] = $config;
         $data['kota']   = Regency::where('id', $data['config']->regencies_id)->first();
         $data['kecamatan'] = District::where('regency_id', $config->regencies_id)->get();
         return view('publik.relawanBanding',$data);

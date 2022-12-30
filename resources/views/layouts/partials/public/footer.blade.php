@@ -3,9 +3,11 @@
         <div class="dropup btn-group w-100">
             <button class="btn btn-danger dropdown-toggle w-100 rounded-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">Pilih Mode Perhitungan
                 <span class="caret"></span></button>
-            <ul class="dropdown-menu bg-danger w-100 rounded-0" style="">
+            <ul class="dropdown-menu bg-dark w-100 rounded-0" style="">
                 <li><a href="{{url('')}}/real_count" class="text-white">Real Count</a></li>
+                @if($config->quick_count == "yes")
                 <li><a href="{{url('')}}/quick_count" class="text-white">Quick Count</a></li>
+                @endif
                 <li><a href="{{url('')}}/map_count" class="text-white">Map Count</a></li>
             </ul>
         </div>
@@ -14,16 +16,16 @@
             <div class="row no-gutters mx-auto mt-5" style="width: 350px;">
                 <div class="col"><button type="button" class="rounded-0 btn btn-facebook"><i class="fa fa-facebook me-2"></i>Facebook</button></div>
                 <div class="col"><button type="button" class="rounded-0 btn btn-twitter"><i class="fa fa-twitter me-2"></i>Twitter</button></div>
-                <div class="col"><button type="button" class="rounded-0 btn btn-success"><i class="fa fa-whatsapp me-2"></i>Twitter</button></div>
+                <div class="col"><button type="button" class="rounded-0 btn btn-success"><i class="fa fa-whatsapp me-2"></i>Whatsapp</button></div>
             </div>
 
             <div class="row mt-5 text-white">
                 <div class="col">
                     <a class="text-white fw-bold" href="{{url('')}}/login">Login</a> |
                     <a class="text-white fw-bold" href="{{url('')}}/relawan">Relawan</a> |
-                    <a class="text-white fw-bold" href="{{url('')}}/public/history">History</a> |
+                    <!-- <a class="text-white fw-bold" href="{{url('')}}/public/history">History</a> | -->
                     <a class="text-white fw-bold" href="{{url('')}}/public/disclaimer">Disclaimer</a> |
-                    <a class="text-white fw-bold" href="{{url('')}}/public/fraud">Fraud</a> |
+                    <!-- <a class="text-white fw-bold" href="{{url('')}}/public/fraud">Fraud</a> | -->
                     <a class="text-white fw-bold" href="{{url('')}}/public/fraud">Info</a>
                 </div>
             </div>

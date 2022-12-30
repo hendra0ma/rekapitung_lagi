@@ -110,7 +110,7 @@ use App\Models\Paslon;
         <div class="row mt-5">
             <div class="col-md text-center mt-5 ">
                 <h4 class="text-uppercase fw-bold">
-                    <img style="width: 100px;" src="{{asset('storage').'/'.$config['regencies_logo']}}" alt="">
+                    <img style="width: 100px;" src="{{asset('')}}assets/images/brand/logo-2.png" alt="">
                 </h4>
             </div>
         </div>

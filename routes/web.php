@@ -416,6 +416,7 @@ Route::controller(PublicController::class)->group(function () {
     Route::get('public/kecamatan/{id}', 'kecamatan');
     Route::get('public/quick_kecamatan/{id}','quick_kecamatan');
     Route::get('public/kelurahan/{id}', 'kelurahan');
+    Route::get('public/quick_kelurahan/{id}', 'quick_kelurahan');
     Route::get('public/ajax/get_tps', 'get_tps');
     Route::get('ajax/get_tps_quick', 'get_tps_quick');
     Route::get('ajax/get_tps_quick2', 'get_tps_quick2');

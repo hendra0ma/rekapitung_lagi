@@ -128,7 +128,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="kecamatan" class="form-label">Kecamatan</label>
-                                <select name="kecamatan" id="kecamatan" onchange="ajaxKel(this.value)">
+                                <select name="kecamatan" id="kecamatan" class="form-control" onchange="ajaxKel(this.value)">
                                     @foreach($kecamatan as $kec)
                                     <option value="{{$kec->id}}">
                                         {{$kec->name}}
@@ -138,12 +138,12 @@
                             </div>
                             <div class="mb-3">
                                 <label for="kelurahan" class="form-label">Kelurahan</label>
-                                <select name="kelurahan" id="kelurahan" onchange="ajaxTps(this.value)">
+                                <select name="kelurahan" id="kelurahan" class="form-control" onchange="ajaxTps(this.value)">
                                 </select>
                             </div>
                             <div class="mb-3">
                                 <label for="TPS" class="form-label">TPS</label>
-                                <select name="tps" id="tps">
+                                <select name="tps" id="tps" class="form-control">
                                 </select>
                             </div>
 
