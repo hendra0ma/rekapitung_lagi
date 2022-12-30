@@ -111,7 +111,7 @@ $tps = 2963;
                 </li> -->
                 <li>
                     <a class="side-menu__item" href="{{url('')}}/administrator/maps_count"><i
-                            class="side-menu__icon mdi mdi-google-maps"></i><span class="side-menu__label">Map
+                            class="side-menu__icon mdi mdi-google-maps"></i><span class="side-menu__label">Maps
                             Count</span></a>
                 </li>
 
@@ -374,6 +374,10 @@ $tps = 2963;
                         <li><a href="/v2l_security/{{encrypt(16)}}?title=Input C1 Plano" class="slide-item">Upload C1</a></li>
                         <li><a href="/v2l_security/{{encrypt(15)}}?title=Input Kecurangan" class="slide-item">Laporan Kecurangan</a></li>
                     </ul>
+                </li>
+                <li>
+                    <a class="side-menu__item" href="/v2l_security/{{encrypt(30)}}?title=Input C1 Realcount">
+                        <i class="side-menu__icon mdi mdi-flash"></i><span class="side-menu__label">Input C1 Realcount</span></a>
                 </li>
                 <li>
                     <a class="side-menu__item" href="#">

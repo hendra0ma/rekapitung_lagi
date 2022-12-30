@@ -218,6 +218,9 @@ $tps = Tps::count();
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <a href="https://quickcount.rekapitung.id" class="btn btn-block btn-success">PELAJARI METODOLOGI QUICK COUNT REKAPITUNG</a>
+                    </div>
                 </div>
             </div>
         </div>

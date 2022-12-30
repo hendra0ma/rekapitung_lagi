@@ -142,7 +142,7 @@ $data_masuk = (int)$saksidatai / (int)$dpt * 100;
 
                 <div class="row mt-5">
                     <?php $i = 1; ?>
-                    @foreach ($paslon as $pas)
+                    @foreach ($paslon_quick as $pas)
                     <div class="col-lg col-md col-sm col-xl mb-3    ">
                         <div class="card overflow-hidden" style="margin-bottom: 0px;">
                             <div class="card-body">
