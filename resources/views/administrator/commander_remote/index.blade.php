@@ -464,12 +464,12 @@
             <div class="mid">
 
                 <label class="switch">
-                    <input type="checkbox" data-target="mode" onclick="settings('quick_count',this)"
-                        {{($config->quick_count == "no") ? "":"checked"; }}>
+                <input type="checkbox" data-target="mode" onclick="settings('otonom',this)"
+                        {{($config->otonom == "no") ? "":"checked"; }}>
                     <span class="slider round"></span>
                 </label>
             </div>
-            <div class="text-center" style="font-size:13px">
+            <div class="text-center" style="font-size:13px"> 
            Default
             </div>
         </div>

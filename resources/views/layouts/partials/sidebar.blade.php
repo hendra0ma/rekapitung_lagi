@@ -170,8 +170,7 @@ $tps = 2963;
                 </li>
                 <li>
                     <a class="side-menu__item" href="#" type="button" data-bs-toggle="modal" data-bs-target="#chat"><i
-                            class="side-menu__icon fa fa-cogs"></i><span class="side-menu__label">Chat Support
-                            System</span></a>
+                            class="side-menu__icon fa fa-cogs"></i><span class="side-menu__label">Bantuan Support System</span></a>
                 </li>
 
                 <li>
