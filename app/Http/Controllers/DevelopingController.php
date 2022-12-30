@@ -265,9 +265,9 @@ class DevelopingController extends Controller
             return view('developing.c1_plano');
 
         }
-        public function c1_realcount()
+        public function c1_quickcount()
         {
-            return view('developing.c1_realcount');
+            return view('developing.c1_quickcount');
 
         }
 }

@@ -96,7 +96,7 @@
         <div class='screen pt-5 px-3'>
             <!-- As a link -->
             <nav class="navbar bg-primary py-1">
-                <b class="navbar-brand mx-auto text-white fw-bold" style="font-size: 16px">Realcount</b>
+                <b class="navbar-brand mx-auto text-white fw-bold" style="font-size: 16px">Quickcount</b>
             </nav>
 
             <h1 class="text-center">

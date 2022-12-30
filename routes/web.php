@@ -463,7 +463,7 @@ Route::controller(DevelopingController::class)->group(function () {
     Route::get('upload_kecurangan','upload_kecurangan');
     Route::get('upload_kecurangan_2', 'upload_kecurangan_2');
     Route::get('upload_c1','upload_c1');
-    Route::get('input-c1-realcount','c1_realcount');
+    Route::get('input-c1-quickcount','c1_quickcount');
     Route::post('action_upload_kecurangan','action_upload_kecurangan');
     Route::get('dev/absen','absen');
 });
