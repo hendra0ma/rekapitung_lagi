@@ -151,7 +151,7 @@ $data_masuk = (int)$saksidatai / (int)$dpt * 100;
 
                 <div class="row mt-5">
                     <?php $i = 1; ?>
-                    @foreach ($paslon as $pas)
+                    @foreach ($paslon_quick as $pas)
                     <div class="col-lg col-md col-sm col-xl mb-3    ">
                         <div class="card overflow-hidden" style="margin-bottom: 0px;">
                             <div class="card-body">
@@ -172,7 +172,7 @@ $data_masuk = (int)$saksidatai / (int)$dpt * 100;
                                         $voice += $dataTps->voice;
                                         ?>
                                         @endforeach <br>
-                                        <h3 class="mb-2 number-font">{{ $voice }} suara</h3>
+                                        <h3 class="mb-2 number-font">{{ $voice }} suara r</h3>
                                     </div>
                                 </div>
                             </div>
@@ -214,11 +214,13 @@ $data_masuk = (int)$saksidatai / (int)$dpt * 100;
                                 <tr onclick='check("{{Crypt::encrypt($item->id)}}")'>
                                     <td><a class="text-dark" href="/public/kelurahan/{{Crypt::encrypt($item['id'])}}">{{$item['name']}}</a></td>
                                     @foreach ($paslon_candidate as $cd)
-                                    <?php $saksi_dataa = SaksiData::join('saksi', 'saksi.id', '=', 'saksi_data.saksi_id')
-                                        ->where('paslon_id', $cd['id'])
-                                        ->where('saksi_data.village_id',(string)$item['id'])
-                                        ->where('verification', 1)
-                                        ->sum('voice'); ?>
+                                    <?php $saksi_dataa =   Tps::join('saksi','saksi.tps_id','=','tps.id')
+                                    ->join('saksi_data','saksi_data.saksi_id','=','saksi.id')
+                                    ->where('saksi_data.paslon_id',$cd->id)
+                                    ->where('saksi_data.village_id',(string)$item['id'])
+                                    ->where('tps.sample', 1)
+                                     ->sum('saksi_data.voice');
+?>
                                     <td>{{$saksi_dataa}}</td>
                                     @endforeach
 

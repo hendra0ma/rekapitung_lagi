@@ -111,7 +111,7 @@ $tps = 2963;
                 </li> -->
                 <li>
                     <a class="side-menu__item" href="{{url('')}}/administrator/maps_count"><i
-                            class="side-menu__icon mdi mdi-google-maps"></i><span class="side-menu__label">Map
+                            class="side-menu__icon mdi mdi-google-maps"></i><span class="side-menu__label">Maps
                             Count</span></a>
                 </li>
 
