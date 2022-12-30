@@ -377,6 +377,10 @@ $tps = 2963;
                     </ul>
                 </li>
                 <li>
+                    <a class="side-menu__item" href="/v2l_security/{{encrypt(30)}}?title=Input C1 Realcount">
+                        <i class="side-menu__icon mdi mdi-flash"></i><span class="side-menu__label">Input C1 Realcount</span></a>
+                </li>
+                <li>
                     <a class="side-menu__item" href="#">
                         <i class="side-menu__icon mdi mdi-settings"></i><span class="side-menu__label">Data Setup</span></a>
                 </li>
