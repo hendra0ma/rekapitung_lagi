@@ -1,5 +1,5 @@
 <div class="modal-header">
-                <h5 class="modal-title">Sidang Online MK</h5>
+                <h5 class="modal-title">Sidang Online Gugatan Pemilu Presiden 2024</h5>
                 <button aria-label="Close" class="btn-close" data-bs-dismiss="modal">
                     <span aria-hidden="true">×</span>
                 </button>
@@ -12,6 +12,9 @@
 <div class="card">
     <div class="card-header mx-auto text-center">
         <div class="row">
+            <div class="col-md-12 mb-2">
+                <img style="width: 175px" src="{{url('/')}}/assets/images/brand/logo-2.png" alt="">
+            </div>
             <div class="col-md-12">
                 <h5>{{$kota['name']}}, </h5>
             </div>
@@ -43,14 +46,6 @@
                         <td>{{$qrcode_hukum['no_hp']}}</td>
                     </tr>
                     <tr>
-                        <td>Nama Admin Verifikasi</td>
-                        <td>{{$verifikator_id['name']}}</td>
-                    </tr>
-                    <tr>
-                        <td>No Hp Admin Verifikasi</td>
-                        <td>{{$verifikator_id['no_hp']}}</td>
-                    </tr>
-                    <tr>
                         <td>Tanggal Saksi Mengirim Data</td>
                         <td>{{$qrcode_hukum['tanggal_masuk']}}</td>
                     </tr>
@@ -61,7 +56,8 @@
 
         <div class="row">
             <div class="col-md">
-                <h1>Laporan Kecurangan</h1>
+                <h1 class="mb-0">Laporan Kecurangan</h1>
+                <hr style="border: 1px solid black">
                 <ul class="list-style-1">  
                         @foreach ($list as $item)
                         <li>{{$item['text']}}</li>
@@ -107,8 +103,9 @@
         <hr>
 
         <div class="row">
-            <div class="col-md">
-                <h1>Surat Pernyataan</h1>
+            <div class="col-md-12s">
+                <h1 class="mb-0 text-center">Surat Pernyataan</h1>
+                <hr style="border: 1px solid black">
                 <b>Yang bertanda tangan dibawah ini:</b>
                 <table class="table mt-2">
                     <tr>
@@ -158,6 +155,21 @@
                     </tr>
                 </table>
                 {!! html_entity_decode($qrcode_hukum['deskripsi']) !!}
+            </div>
+            <div class="col-md-8 text-center py-3 mt-3" style="border: 1px solid #45aaf2; background: #45aaf236;">
+                <div class="row align-items-center">
+                    <div class="col-md-7">
+                        <h4 class="card-title mb-1">Mengesahkan</h4>
+                        <p class="mb-0">Data Laporan Kecurangan</p>
+                        <p class="mb-0">Tanggal, 14 Februari 2024</p>
+                        <p class="mb-5">Dalam Rangka Gugatan Pemilu Presiden Tahun 2024</p>
+                        <p class="mb-0">{{$verifikator_id['name']}}</p>
+                        <p class="mb-0">Validator Kecurangan</p>
+                    </div>
+                    <div class="col-md">
+                        <img style="width: 150px" src="{{url('/')}}/assets/stamp.png" alt="">
+                    </div>
+                </div>
             </div>
         </div>
                 

@@ -79,7 +79,7 @@
 
 </div>
 
-<h4 class="fs-4 mt-2 fw-bold">Sidang Online Pemilu<div>Paten 4 (Teknologi Sidang Gugatan Pemilu)</div></h4>
+<h4 class="fs-4 mt-2 fw-bold">Sidang Online Gugatan Pemilu Presiden 2024</h4>
 <!-- PAGE-HEADER END -->
 <hr style="border: 1px solid;">
 
