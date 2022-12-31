@@ -38,16 +38,19 @@
             <div class="col-md">
                 <table class="table table-bordered table-hover">
                     <tr>
-                        <td>Nama Saksi</td>
+                        <td>Petugas Saksi</td>
+                        <td>Petugas Verifikator</td>
+                        <td>Petugas Validasi Kecurangan</td>
+                    </tr>
+                    <tr>
                         <td>{{$qrcode_hukum['name']}}</td>
+                        <td>{{$verifikator_id['name']}}</td>
+                        <td>{{$hukum_id['name']}}</td>
                     </tr>
                     <tr>
-                        <td>No Hp Saksi</td>
                         <td>{{$qrcode_hukum['no_hp']}}</td>
-                    </tr>
-                    <tr>
-                        <td>Tanggal Saksi Mengirim Data</td>
-                        <td>{{$qrcode_hukum['tanggal_masuk']}}</td>
+                        <td>{{$verifikator_id['no_hp']}}</td>
+                        <td>{{$hukum_id['no_hp']}}</td>
                     </tr>
                 </table>
             </div>
