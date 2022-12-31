@@ -183,6 +183,9 @@
     <script src="../../assets/plugins/tabs/tab-content.js"></script>
             </div>
             <div class="modal-footer">
+                <a href="{{url('')}}/administrator/print_sidang/{{$data_tps->id}}" target="_blank"class="btn btn-warning btn-lg text-white me-auto">
+                    Print
+                </a>
                 <a href="{{url('/')}}/administrator/sidang_online/action/{{encrypt($data_tps->id)}}/{{encrypt("Ditolak")}}" class="btn btn-danger btn-lg">
                     Tolak
                 </a>

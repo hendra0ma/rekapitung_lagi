@@ -1135,6 +1135,27 @@ class AdminController extends Controller
         $data['kota'] = Regency::where('id', $config['regencies_id'])->first();
         return view('administrator.sidang_saksi_online.modal-qr-sidang', $data);
     }
+
+    public function print_sidang($id)
+    {
+        $data['config'] = Config::first();
+        $config = $data['config'];
+        $data['qrcode_hukum'] = Qrcode::join('surat_pernyataan', 'surat_pernyataan.qrcode_hukum_id', '=', 'qrcode_hukum.id')
+            ->join('users', 'users.tps_id', '=', 'qrcode_hukum.tps_id')->where('qrcode_hukum.tps_id',$id )->first();
+    
+        $data['verifikator_id'] = User::where('id', $data['qrcode_hukum']['verifikator_id'])->first();
+        $data['hukum_id'] = User::where('id', $data['qrcode_hukum']['hukum_id'])->first();
+        $data['data_tps'] = Tps::where('id', $id)->first();
+
+        $data['bukti_foto'] = ModelsBuktifoto::where('tps_id', $data['qrcode_hukum']['tps_id'])->get();
+        $data['bukti_vidio'] = Buktividio::where('tps_id', $data['qrcode_hukum']['tps_id'])->get();
+        $data['list'] = Bukti_deskripsi_curang::where('tps_id', $data['qrcode_hukum']['tps_id'])->get();
+        $data['kelurahan'] = Village::where('id', $data['qrcode_hukum']['villages'])->first();
+        $data['kecamatan'] = District::where('id', $data['qrcode_hukum']['districts'])->first();
+        $data['kota'] = Regency::where('id', $config['regencies_id'])->first();
+
+        return view('administrator.sidang_saksi_online.print-sidang', $data);
+    }
      public function sidang_online_action($id,$role)
     {
        $saksi = Saksi::where('tps_id',(string)decrypt($id))->update([
