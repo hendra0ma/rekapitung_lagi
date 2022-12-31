@@ -277,13 +277,6 @@ $solution = \App\Models\SolutionFraud::get();
 
         </div>
     </div>
-    <div class="row justify-content-end">
-        <div class="col-4">
-            <a href="{{url('')}}/administrator/print-index-tsm" target="_blank"
-                class="btn btn-block btn-dark ml-2 mr-2 w-100"> Print &nbsp;&nbsp;<i class="fa fa-print"></i></a>
-        </div>
-
-    </div>
 
 </div>
 
