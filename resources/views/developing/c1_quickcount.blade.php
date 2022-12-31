@@ -95,15 +95,18 @@
         <div class='brove' style="z-index: 100"><span class='speaker'></span></div>
         <div class='screen pt-5 px-3'>
             <!-- As a link -->
-            <nav class="navbar bg-primary py-1">
+            <!-- <nav class="navbar bg-primary py-1">
                 <b class="navbar-brand mx-auto text-white fw-bold" style="font-size: 16px">Quickcount</b>
-            </nav>
+            </nav> -->
 
-            <h1 class="text-center">
+            <h1 class="text-center fs-5">
                 <img src="{{url('/')}}/assets/images/brand/logo_gold.png" class="hadow-4 mb-3 mt-3"
                 style="width: 150px;" alt="Avatar" />
+                 <br>  <span class="fw-bold">
+                 Quick Count
+                     </span>
             </h1>
-            <h4> Halo, saksi kelima</h4>
+            <h4> Halo Enumerator</h4>
             <div class="row no-gutters">
                 <div class="col-lg-12 mt-2">
                     <div class="input-group">
@@ -181,14 +184,15 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title fw-bold" id="exampleModalLabel">Panduan Saksi</h5>
+                    <h5 class="modal-title fw-bold" id="exampleModalLabel">Panduan Enumerator</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    Rekapitung menggunakan teknologi Optical Character Recognition (OCR) dan Optical Mark Recognition
-                    (OMR). OCR dan OMR mengubah objek tulisan angka dan tanda di gambar menjadi karakter angka.
-                    Terjemahan OCR dan OMR dikirim ke smartphone saksi via Aplikasi Rekapitung Saksi untuk kemudian
-                    diperiksa kembali oleh petugas administrator.
+                <div class="modal-body text-justify">
+                <p>
+                Metode Quick Count ini menggunakan Stratified Cluster Random Sampling. Jumlah sampel yang diambil adalah 10% dari total TPS yang tersebar merata secara proporsional di setiap kab/kota pemilihan. Desa/kelurahan di setiap Daerah Pemilihan dipilih secara acak dan proporsional. Di masing-masing desa/kelurahan terpilih, dipilih TPS secara acak. Di TPS terpilih, enumerator melakukan input data hasil perolehan suara Pilpres dan Pileg kemudian mengirimkannya ke data centre. Quick Count ini memiliki margin of error +/- 1% pada tingkat kepercayaan 99%.
+                </p>
+
+                <a href="https://quickcount.rekapitung.id"class="mt-2 fw-bold">Lebih lanjut tentang Quick Count</a>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Oke</button>

@@ -24,7 +24,7 @@
     @else
     <div class="row">
         <div class="col-lg-6 mt-1">
-            <a href="{{ route('auditor.auditData', Crypt::encrypt($paslon[0]->saksi_data[0]->saksi_id)) }}" class="btn btn-block btn-info">Audit</a>
+            <a href="{{ route('auditor.auditData', Crypt::encrypt($paslon[0]->saksi_data[0]->saksi_id)) }}" class="btn btn-block btn-info">Lolos Audit</a>
         </div>
         <div class="col-lg-6 mt-1">
             <a href="{{ route('auditor.batalkanData', Crypt::encrypt($paslon[0]->saksi_data[0]->saksi_id)) }}" class="btn btn-block btn-danger">Batalkan</a>

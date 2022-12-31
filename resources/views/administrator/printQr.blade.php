@@ -55,7 +55,7 @@
                     <h1 class="mt-2 text-danger text-uppercase" style="font-size: 40px;">bukti kecurangan rekapitung
                     </h1>
                     <h3 class="mt-1 mb-1">
-                        Fraud Barcode Report (FBR)
+                       Election Fraud Barcode Report (EFBR)
                     </h3>
 
                     <img style="width: 350px; height: auto; margin-top:75px" src="{{url('')}}/assets/images/brand/logo.png" alt="">
@@ -83,7 +83,7 @@
     <img src="{{asset('')}}assets/stamp.png"class="img-flluid stamp"style="width:150px;height:auto" alt="">
                 <center>
                     <h3 class="fixed-bottom text-uppercase">
-                     PILLPRES 2024
+                     PILPRES 2024
                     </h3>
                 </center>
             </div>

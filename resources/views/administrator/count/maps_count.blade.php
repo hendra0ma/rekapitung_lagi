@@ -26,7 +26,7 @@ use App\Models\Paslon;
     <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/brand/favicon.ico" />
 
     <!-- TITLE -->
-    <title>Map Count</title>
+    <title>Maps Count</title>
 
     <!-- BOOTSTRAP CSS -->
     <link href="../../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -109,7 +109,34 @@ use App\Models\Paslon;
     <div class="page">
         <div class="page-main">
 
-            <div class="row align-items-center flex-row-reverse bg-white">
+            <div class="row">
+                <div class="col-lg-12">
+                   <center>
+                    <h1 class="page-title mt-1 mb-1" style="font-size: 70px">MAPS COUNT
+                    </h1>
+                   </center>
+                </div>
+            </div>
+
+            <div id="marquee1" class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <button class="btn btn-danger text-white rounded-0">Suara Masuk</button>
+                </div>
+                <div class="form-control bg-dark" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                    <marquee id="cobamarq1">
+                        @foreach ($marquee as $mq)
+                        <?php $kecamatan2 =  District::where('id', $mq['districts'])->first(); ?>
+                        <?php $kelurahan =  Village::where('id', $mq['villages'])->first(); ?>
+                        <?php $tps =  Tps::where('id', $mq['tps_id'])->first(); ?>
+                        <span class="text-success">▼ </span><span class="text-white" style="font-size: 20px;">{{$mq['name']}} Kecamatan {{$kecamatan2 ['name']}}, Kelurahan  {{$kelurahan['name']}}, TPS {{$tps['number']}}</span>
+                        @endforeach
+                    </marquee>
+
+
+                </div>
+            </div>
+
+            <!-- <div class="row align-items-center flex-row-reverse bg-white">
                 <div class="col-md-12 col-sm-12 text-center">
                     <marquee class="mt-3" behavior="" direction="">Data Baru telah masuk dari Nastasha Velandra TPS 67
                         Kel.
@@ -140,28 +167,31 @@ use App\Models\Paslon;
 
             <div class="row">
                 <div class="col-md text-center">
-                    <h3 class="fw-bold pb-5">Maps Count
+                    <h3 class="fw-bold">MAPS COUNT
                         <h3 class="fw-bold">PILPRES 2024 {{$provinsi->name}}
                             <h3 class="fw-bold">{{$kota->name}}
                             </h3>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="badge bg-primary">PROGRESS : {{substr($data_masuk, 0, 3)}}% DARI 100%</div>
-                </div>
-            </div>
-
-            <div class="container mt-5">
+            <div class="container-fluid mt-5">
                 <div class="row">
                     <div class="col">
                         <div class="card">
                             <div class="card-header p-0">
-                                <a class="ms-auto nav-link icon full-screen-link nav-link-bg"
-                                    style="margin-right: 10px !important;" id="ikon-map-full">
-                                    <i class="fe fe-minimize"></i>
-                                </a>
+                                <div class="row w-100 align-items-center">
+                                    <div class="col-md-4 text-center">
+                                        
+                                    </div>
+                                    <div class="col-md-4 text-center py-3">
+                                        <div class="badge bg-primary">PROGRESS : {{substr($data_masuk, 0, 3)}}% DARI 100%</div>
+                                    </div>
+                                    <div class="col-md-4 text-end">
+                                        <a class="ms-auto icon full-screen-link nav-link-bg" style="min-width: 2rem; transition: .3s color; user-select: none; cursor: pointer; align-items: center; color: #6259ca; margin: 5px; padding: 12px; text-align: center; height: 2.5rem; font-size: 1.2rem; position: relative;" id="ikon-map-full">
+                                            <i class="fe fe-minimize"></i>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                             <div class="card-body">
                                 <div class="ht-300" id="mapid" style="height: 500px;"></div>
@@ -171,7 +201,7 @@ use App\Models\Paslon;
                 </div>
             </div>
 
-            <div class="container">
+            <div class="container-fluid">
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner text-center">
                         <?php $count = 1; ?>
@@ -277,7 +307,7 @@ use App\Models\Paslon;
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
         crossorigin=""></script>
-    <script src="https://devlama.rekapitung.id/assets/js/geojson.ajax.js"></script>
+    <script src="{{url('/')}}/assets/js/geojson.ajax.js"></script>
     <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
     <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'
         rel='stylesheet' />

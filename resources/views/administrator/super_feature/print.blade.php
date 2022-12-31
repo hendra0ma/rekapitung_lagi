@@ -15,7 +15,7 @@
 		<link rel="shortcut icon" type="image/x-icon" href="{{url('/')}}/assets/images/brand/favicon.ico" />
 
 		<!-- TITLE -->
-		<title>Zanex – Bootstrap  Admin & Dashboard Template</title>
+		<title>Rekapitung</title>
 
 		<!-- BOOTSTRAP CSS -->
 		<link href="{{url('/')}}/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />

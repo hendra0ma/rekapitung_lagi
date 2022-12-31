@@ -74,7 +74,7 @@
     <div class="row">
         
         <div class="col-md">
-            <button class="btn tablink w-100 rounded-0 c1relawan" onclick="openPage('home', this, '#fb6b25 ')"  id="defaultOpen">Teraudit</button>
+            <button class="btn tablink w-100 rounded-0 c1relawan" onclick="openPage('home', this, '#fb6b25 ')"  id="defaultOpen">Lolos Audit</button>
         </div>
         <div class="col-md">
             <button class="btn tablink w-100 rounded-0 c1saksipend" onclick="openPage('Dibatalkan', this, '#f82649 ')">Dibatalkan</button>

@@ -88,7 +88,7 @@
 
         <script>
     var cities = L.layerGroup();
-    
+    <?php   $tracking = App\Models\Tracking::where('id_user', '!=', 2)->get(); ?>
 
    @foreach($tracking as $track)
     <?php $user = App\Models\User::where('id', (string)$track->id_user)->first(); ?>
