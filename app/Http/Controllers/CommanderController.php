@@ -20,6 +20,11 @@ class CommanderController extends Controller
         $data['notif'] = NotificationCommander::get();
         return view('administrator.commander_remote.index', $data);
     }
+    public function notifDel()
+    {
+        NotificationCommander::where('id','!=',null)->delete();
+        return redirect()->back();
+    }
     public function redirect(Request $request)
     {
         $page = ($request->user_id != null) ?
@@ -101,5 +106,28 @@ class CommanderController extends Controller
 
         event(new CommanderEvent($set));
         return 'berhasil';
+    }
+    public function defaults(Request $request)
+    {
+        $cekConfig = Config::where('default', 'no')->first();
+        if ($cekConfig != null) {
+            DB::table('config')->update([
+                'default' => "yes",
+                'show_public'=>'hide',
+                'show_terverifikasi'=>'hide',
+                'lockdown'=>'no',
+                'otonom'=>'yes',
+                'multi_admin'=>'no',
+                'darkmode'=>'no',
+                'quick_count'=>'no',
+            ]);
+
+
+        } else {
+            DB::table('config')->update([
+                'default' => "no"
+            ]);
+        }
+        return response()->json(['success'=>true],200);
     }
 }

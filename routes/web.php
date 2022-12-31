@@ -145,6 +145,8 @@ Route::group(['middleware' => 'auth'], function () {
             Route::post('commander-redirect',  [CommanderController::class,'redirect']);
             Route::post('commander-scroll',  [CommanderController::class,'scroll']);
             Route::post('commander-settings', [CommanderController::class,'settings']);
+            Route::get('notif-delete', [CommanderController::class,'notifDel']);
+            Route::get('commander-defaults', [CommanderController::class,'defaults']);
         });
         Route::controller(AdminController::class)->group(function () {
             //Administrator
@@ -199,6 +201,7 @@ Route::group(['middleware' => 'auth'], function () {
             Route::get('perhitungan_kelurahan/{id}', 'perhitungan_kelurahan');
             Route::get('rekapitulator/index/{id}', 'admin_rekapitulator');
             Route::get('rekapitulator/kota', 'rekapitulator_kota');
+            Route::get('rekapitulator-kota-print', 'rekapitulator_kota_print');
             Route::get('verivikator/index/{id}', 'admin_verifikator_index');
             Route::get('auditor/index/{id}', 'admin_auditor_index');
             Route::get('absensi', 'absensi');

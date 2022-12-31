@@ -26,7 +26,7 @@ use App\Models\Rekapitulator;
             <div class="row">
                 <div class="col">
                     <!-- Authentication -->
-                    <a href="#" onclick="window.print()" class="btn btn-dark btn-icon text-white w-100">
+                    <a href="{{url('')}}/administrator/rekapitulator-kota-print"target="_blank" class="btn btn-dark btn-icon text-white w-100">
                         <span>
                             <i class="fa fa-print"></i>
                         </span> Print
@@ -41,8 +41,6 @@ use App\Models\Rekapitulator;
                     </a>
                 </div>
             </div>
-
-
         </div>
     </div>
 </div>

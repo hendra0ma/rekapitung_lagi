@@ -33,7 +33,15 @@
                         </div>
                     </div>
                     @endforeach
-
+                </div>
+                <div class="row">
+                    <div class="col-lg">
+                        <span class="text-end">
+                            <a href="{{url('')}}/administrator/notif-delete" class="btn btn-danger">
+                                Hapus
+                            </a>
+                        </span>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">
@@ -159,7 +167,6 @@
                                 time_is_widget.init({
                                     Jakarta_z41c: {}
                                 });
-
                             </script>
                         </div>
                         <div class="col-md me-auto">
@@ -229,19 +236,22 @@
 <hr style="border: 1px solid;">
 
 <div class="row">
-    <div class="col-lg-6 col-md-6">
+    <div class="col-lg col-md">
         <center class="w-100">
             <h4>Real Count</h4>
             <div id="chart-pie" class="chartsh h-100 w-100"></div>
         </center>
     </div>
 
-    <div class="col-lg-6 col-md-6">
+    @if($config->otonom == "no")
+    <div class="col-lg col-md">
         <center>
             <h4>Terverifikasi</h4>
             <div id="chart-donut" class="chartsh h-100 w-100"></div>
         </center>
     </div>
+    @else
+    @endif
 </div>
 </div>
 
@@ -370,7 +380,7 @@
             <div class="mid">
 
                 <label class="switch">
-                    <input type="checkbox" data-target="mode" onclick="settings('multi_admin',this)"
+                    <input type="checkbox" {{($config->default == "yes")?'disabled':''}} data-target="mode" onclick="settings('multi_admin',this)"
                         {{($config->multi_admin == "no") ? "":"checked"; }}>
                     <span class="slider round"></span>
                 </label>
@@ -397,7 +407,7 @@
         <div class="col-md-1">
             <div class="mid">
                 <label class="switch">
-                    <input type="checkbox" data-target="mode" onclick="settings('show_terverifikasi',this)"
+                    <input type="checkbox" {{($config->default == "yes")?'disabled':''}} data-target="mode" onclick="settings('show_terverifikasi',this)"
                         {{($config->show_terverifikasi == "hide") ? "":"checked"; }}>
                     <span class="slider round"></span>
                 </label>
@@ -410,7 +420,7 @@
         <div class="col-md-1">
             <div class="mid">
                 <label class="switch">
-                    <input type="checkbox" data-target="mode" onclick="settings('show_public',this)"
+                    <input type="checkbox" {{($config->default == "yes")?'disabled':''}} data-target="mode" onclick="settings('show_public',this)"
                         {{($config->show_public == "hide") ? "":"checked"; }}>
                     <span class="slider round"></span>
                 </label>
@@ -424,7 +434,7 @@
             <div class="mid">
 
                 <label class="switch">
-                    <input type="checkbox" data-target="mode" onclick="settings('lockdown',this)"
+                    <input type="checkbox" {{($config->default == "yes")?'disabled':''}} data-target="mode" onclick="settings('lockdown',this)"
                         {{($config->lockdown == "no") ? "":"checked"; }}>
                     <span class="slider round"></span>
                 </label>
@@ -433,12 +443,11 @@
                 Lockdown
             </div>
         </div>
-
         <div class="col-md-1">
             <div class="mid">
 
                 <label class="switch">
-                    <input type="checkbox" data-target="mode" onclick="settings('darkmode',this)"
+                    <input type="checkbox" {{($config->default == "yes")?'disabled':''}} data-target="mode" onclick="settings('darkmode',this)"
                         {{($config->darkmode == "no") ? "":"checked"; }}>
                     <span class="slider round"></span>
                 </label>
@@ -449,9 +458,8 @@
         </div>
         <div class="col-md-1">
             <div class="mid">
-
                 <label class="switch">
-                    <input type="checkbox" data-target="mode" onclick="settings('quick_count',this)"
+                    <input type="checkbox" {{($config->default == "yes")?'disabled':''}} data-target="mode" onclick="settings('quick_count',this)"
                         {{($config->quick_count == "no") ? "":"checked"; }}>
                     <span class="slider round"></span>
                 </label>
@@ -464,8 +472,8 @@
             <div class="mid">
 
                 <label class="switch">
-                <input type="checkbox" data-target="mode" onclick="settings('otonom',this)"
-                        {{($config->otonom == "no") ? "":"checked"; }}>
+                <input type="checkbox" data-target="mode" onclick="defaults(this)"
+                        {{($config->default == "no") ? "":"checked"; }}>
                     <span class="slider round"></span>
                 </label>
             </div>

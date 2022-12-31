@@ -34,7 +34,7 @@
                     },
                     type: "post",
                     success: function (res) {
-
+                        $($(this).closest('.col-lg-12')).html('')
                     }
                 });
 
@@ -53,7 +53,7 @@
                     },
                     type: "post",
                     success: function (res) {
-
+                        $($(this).closest('.col-lg-12')).html('')
                     }
                 });
             }
@@ -241,6 +241,25 @@
                     type: "post",
                     success: function(res) {
 
+                    }
+                });
+            }
+            const defaults = function(ini) {
+
+                $.ajax({
+                    url: `{{url('')}}/administrator/commander-defaults`,
+                    data: {
+                        '_token': '{{csrf_token()}}',
+             
+                        itu: ini.checked,
+                        user_id: '{{Auth::user()->id}}'
+                    },
+                    type: "get",
+                    dataType : "json",
+                    success: function(res) {
+                        
+                            window.location.reload()
+                     
                     }
                 });
             }

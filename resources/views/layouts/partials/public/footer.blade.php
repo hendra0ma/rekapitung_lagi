@@ -20,11 +20,10 @@
         <div class="card-body text-center">
             <h5 class="card-title"><img width="150px" src="../../assets/images/brand/logo.png" alt=""></h5>
             <div class="row no-gutters mx-auto mt-5" style="width: 350px;">
-                <div class="col"><button type="button" class="rounded-0 btn btn-facebook"><i class="fa fa-facebook me-2"></i>Facebook</button></div>
-                <div class="col"><button type="button" class="rounded-0 btn btn-twitter"><i class="fa fa-twitter me-2"></i>Twitter</button></div>
-                <div class="col"><button type="button" class="rounded-0 btn btn-success"><i class="fa fa-whatsapp me-2"></i>Whatsapp</button></div>
+                <div class="col"><a href="https://facebook.com/" type="button" class="rounded-0 btn btn-facebook"><i class="fa fa-facebook me-2"></i>Facebook</a></div>
+                <div class="col"><a href="https://twitter.com/" type="button" class="rounded-0 btn btn-twitter"><i class="fa fa-twitter me-2"></i>Twitter</a></div>
+                <div class="col"><a href="https://wa.me/6281235757667" type="button" class="rounded-0 btn btn-success"><i class="fa fa-whatsapp me-2"></i>Whatsapp</a></div>
             </div>
-
             <div class="row mt-5 text-white">
                 <div class="col">
                     <a class="text-white fw-bold" href="{{url('')}}/login">Login</a> |
