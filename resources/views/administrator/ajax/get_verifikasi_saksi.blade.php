@@ -228,7 +228,7 @@ $track = Tracking::where('id_user',$user['id'])->first();
         </div>
     </div>
     @else
-    as
+    
     @endif
     @endif
 

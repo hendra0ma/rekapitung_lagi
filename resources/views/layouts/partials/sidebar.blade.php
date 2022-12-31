@@ -109,11 +109,11 @@ $tps = 2963;
                     <a class="side-menu__item" href="quick_count2"><i class="side-menu__icon mdi mdi-quicktime"></i><span
                             class="side-menu__label">Quick Count 2</span></a>
                 </li> -->
-                <li>
+                <!-- <li>
                     <a class="side-menu__item" href="{{url('')}}/administrator/maps_count"><i
                             class="side-menu__icon mdi mdi-google-maps"></i><span class="side-menu__label">Maps
                             Count</span></a>
-                </li>
+                </li> -->
 
                 <li>
                     <h3>Administrator</h3>
@@ -376,8 +376,8 @@ $tps = 2963;
                     </ul>
                 </li>
                 <li>
-                    <a class="side-menu__item" href="/v2l_security/{{encrypt(30)}}?title=Input C1 Quickcount">
-                        <i class="side-menu__icon mdi mdi-flash"></i><span class="side-menu__label">Input C1 Quickcount</span></a>
+                    <a class="side-menu__item" href="/v2l_security/{{encrypt(30)}}?title=Input C1 Quick Count">
+                        <i class="side-menu__icon mdi mdi-file"></i><span class="side-menu__label">Input C1 Quick Count</span></a>
                 </li>
                 <li>
                     <a class="side-menu__item" href="#">
