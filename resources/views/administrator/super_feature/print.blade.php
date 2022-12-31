@@ -1,95 +1,99 @@
-
 <!doctype html>
-<html lang="en" dir="ltr">
-	<head>
+<html lang="en">
 
-		<!-- META DATA -->
-		<meta charset="UTF-8">
-		<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="description" content="Zanex – Bootstrap  Admin & Dashboard Template">
-		<meta name="author" content="Spruko Technologies Private Limited">
-		<meta name="keywords" content="admin, dashboard, dashboard ui, admin dashboard template, admin panel dashboard, admin panel html, admin panel html template, admin panel template, admin ui templates, administrative templates, best admin dashboard, best admin templates, bootstrap 4 admin template, bootstrap admin dashboard, bootstrap admin panel, html css admin templates, html5 admin template, premium bootstrap templates, responsive admin template, template admin bootstrap 4, themeforest html">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<!-- FAVICON -->
-		<link rel="shortcut icon" type="image/x-icon" href="{{url('/')}}/assets/images/brand/favicon.ico" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-		<!-- TITLE -->
-		<title>Rekapitung</title>
+    <title>Fraud Barcode Report</title>
+    <style>
+        .pages {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            page-break-before: auto;
+            page-break-after: auto;
+            page-break-inside: avoid;
+        }
+        
+        @media screen {
+            div.divFooter {
+                display: none;
+            }
+            body {
+                display: none;
+            }
+        }
+        
+        @media print {
+            div.divFooter {
+                position: fixed;
+                bottom: 0;
+            }
+            .stamp {
+                position: relative;
+               margin-top: 40px;
+               margin-left: 75%;
+                
+            }
+        }
+    </style>
+</head>
 
-		<!-- BOOTSTRAP CSS -->
-		<link href="{{url('/')}}/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<body>
 
-		<!-- STYLE CSS -->
-		<link href="{{url('/')}}/assets/css/style.css" rel="stylesheet"/>
-		<link href="{{url('/')}}/assets/css/dark-style.css" rel="stylesheet"/>
-		<link href="{{url('/')}}/assets/css/skin-modes.css" rel="stylesheet" />
 
-		<!-- SIDE-MENU CSS -->
-		<link href="{{url('/')}}/assets/css/sidemenu.css" rel="stylesheet" id="sidemenu-theme">
+    <div class="asdf" style="position: relative;width:100%;height:700px;page-break-before: auto;page-break-after: always;page-break-inside: avoid;">
 
-		<!--C3 CHARTS CSS -->
-		<link href="{{url('/')}}/assets/plugins/charts-c3/c3-chart.css" rel="stylesheet"/>
+        <div class="row">
+            <div class="col-12">
+                <center>
+                    <h1 class="mt-2 text-danger text-uppercase" style="font-size: 40px;">ANALISA REALISASI DPT KPU
+                    </h1>
+                    <h3 class="mt-1 mb-1">
+                       PILPRES {{$kota->name}}
+                    </h3>
 
-		<!-- P-scroll bar css-->
-		<link href="{{url('/')}}/assets/plugins/p-scroll/perfect-scrollbar.css" rel="stylesheet" />
+                    <img style="width: 350px; height: auto; margin-top:75px" src="{{url('')}}/assets/images/brand/logo.png" alt="">
 
-		<!--- FONT-ICONS CSS -->
-		<link href="{{url('/')}}/assets/css/icons.css" rel="stylesheet"/>
-
-		<!-- SIDEBAR CSS -->
-		<link href="{{url('/')}}/assets/plugins/sidebar/sidebar.css" rel="stylesheet">
-
-		<!-- FILE UPLODE CSS -->
-        <link href="{{url('/')}}/assets/plugins/fileuploads/css/fileupload.css" rel="stylesheet" type="text/css"/>
-
-		<!-- SELECT2 CSS -->
-		<link href="{{url('/')}}/assets/plugins/select2/select2.min.css" rel="stylesheet"/>
-
-		<!-- INTERNAL Fancy File Upload css -->
-		<link href="{{url('/')}}/assets/plugins/fancyuploder/fancy_fileupload.css" rel="stylesheet" />
-
-		<!--BOOTSTRAP-DATERANGEPICKER CSS-->
-		<link rel="stylesheet" href="{{url('/')}}/assets/plugins/bootstrap-daterangepicker/daterangepicker.css">
-
-		<!-- TIME PICKER CSS -->
-		<link href="{{url('/')}}/assets/plugins/time-picker/jquery.timepicker.css" rel="stylesheet"/>
-
-		<!-- INTERNAL Date Picker css -->
-		<link href="{{url('/')}}/assets/plugins/date-picker/date-picker.css" rel="stylesheet" />
-
-		<!-- INTERNAL Sumoselect css-->
-		<link rel="stylesheet" href="{{url('/')}}/assets/plugins/sumoselect/sumoselect.css">
-
-		<!-- INTERNAL Jquerytransfer css-->
-		<link rel="stylesheet" href="{{url('/')}}/assets/plugins/jQuerytransfer/jquery.transfer.css">
-		<link rel="stylesheet" href="{{url('/')}}/assets/plugins/jQuerytransfer/icon_font/icon_font.css">
-
-		<!-- INTERNAL Bootstrap DatePicker css-->
-		<link rel="stylesheet" href="{{url('/')}}/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.css">
-
-		<!-- MULTI SELECT CSS -->
-		<link rel="stylesheet" href="{{url('/')}}/assets/plugins/multipleselect/multiple-select.css">
-
-		<!--INTERNAL IntlTelInput css-->
-		<link rel="stylesheet" href="{{url('/')}}/assets/plugins/intl-tel-input-master/intlTelInput.css">
-
-		<!-- INTERNAL multi css-->
-		<link rel="stylesheet" href="{{url('/')}}/assets/plugins/multi/multi.min.css">
-
-		<!-- COLOR SKIN CSS -->
-		<link id="theme" rel="stylesheet" type="text/css" media="all" href="{{url('/')}}/assets/colors/color1.css" />
-
-	</head>
-
-  <div class="container">
-    <div class="card">
-        <div class="card-body">
-            <div class="text-center">
-                <h1>
-                    ANALISA REALISASI DPT KPU PILPRES {{$kota->name}}
-                </h1>
+                    <center>
             </div>
+        </div>
+        <hr>
+
+        <div class="row justify-content-center border border-dark border-3" style="align-items:center;margin-top:75px">
+            <div class="col-6 text-center mt-2 mb-2">
+                <img src="{{url('')}}/storage/{{$config->regencies_logo}}" alt="" class="img-fluid" style="height: 150px;">
+            </div>
+
+            <div class="col-6 mt-2 mb-2">
+                <h3 class="text-right">
+                    {{$kota->name }}
+                </h3>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-12">
+                
+    <img src="{{asset('')}}assets/stamp.png"class="img-flluid stamp"style="width:150px;height:auto" alt="">
+                <center>
+                    <h3 class="fixed-bottom text-uppercase">
+                     PILPRES 2024
+                    </h3>
+                </center>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="card">
+        <div class="card-body">
           <table class="table table-bordered table-hover">
               <thead class="bg-primary">
                   <tr>
@@ -144,96 +148,24 @@
             </div>
         </div>
     </div>
-  </div>
-	<!-- JQUERY JS -->
-    <script src="{{url('/')}}/assets/js/jquery.min.js"></script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script>
+        // setTimeout(function() {
+        window.print();
+        window.onafterprint = back;
 
-    setTimeout(function(){
+        function back() {
+            window.close()
+        }
 
-                                  window.print();
-                                  window.onafterprint = back;
-                                  function back() {
-                                    window.close()
-                                }
 
-                              },400)
+
+        // },300)
     </script>
-    <!-- BOOTSTRAP JS -->
-    <script src="{{url('/')}}/assets/plugins/bootstrap/js/popper.min.js"></script>
-    <script src="{{url('/')}}/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- INPUT MASK JS-->
-    <script src="{{url('/')}}/assets/plugins/input-mask/jquery.mask.min.js"></script>
-
-    <!-- SIDE-MENU JS-->
-    <script src="{{url('/')}}/assets/plugins/sidemenu/sidemenu.js"></script>
-
-    <!-- SIDEBAR JS -->
-    <script src="{{url('/')}}/assets/plugins/sidebar/sidebar.js"></script>
-
-    <!-- Perfect SCROLLBAR JS-->
-    <script src="{{url('/')}}/assets/plugins/p-scroll/perfect-scrollbar.js"></script>
-    <script src="{{url('/')}}/assets/plugins/p-scroll/pscroll.js"></script>
-    <script src="{{url('/')}}/assets/plugins/p-scroll/pscroll-1.js"></script>
-
-    <!-- FILE UPLOADES JS -->
-    <script src="{{url('/')}}/assets/plugins/fileuploads/js/fileupload.js"></script>
-    <script src="{{url('/')}}/assets/plugins/fileuploads/js/file-upload.js"></script>
-
-    <!-- INTERNAL Bootstrap-Datepicker js-->
-    <script src="{{url('/')}}/assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
-
-    <!-- INTERNAL File-Uploads Js-->
-    <script src="{{url('/')}}/assets/plugins/fancyuploder/jquery.ui.widget.js"></script>
-    <script src="{{url('/')}}/assets/plugins/fancyuploder/jquery.fileupload.js"></script>
-    <script src="{{url('/')}}/assets/plugins/fancyuploder/jquery.iframe-transport.js"></script>
-    <script src="{{url('/')}}/assets/plugins/fancyuploder/jquery.fancy-fileupload.js"></script>
-    <script src="{{url('/')}}/assets/plugins/fancyuploder/fancy-uploader.js"></script>
-
-    <!-- SELECT2 JS -->
-    <script src="{{url('/')}}/assets/plugins/select2/select2.full.min.js"></script>
-
-    <!-- BOOTSTRAP-DATERANGEPICKER JS -->
-    <script src="{{url('/')}}/assets/plugins/bootstrap-daterangepicker/moment.min.js"></script>
-    <script src="{{url('/')}}/assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
-
-    <!-- INTERNAL Bootstrap-Datepicker js-->
-    <script src="{{url('/')}}/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.js"></script>
-
-    <!-- INTERNAL Sumoselect js-->
-    <script src="{{url('/')}}/assets/plugins/sumoselect/jquery.sumoselect.js"></script>
-
-    <!-- TIMEPICKER JS -->
-    <script src="{{url('/')}}/assets/plugins/time-picker/jquery.timepicker.js"></script>
-    <script src="{{url('/')}}/assets/plugins/time-picker/toggles.min.js"></script>
-
-    <!-- INTERNAL intlTelInput js-->
-    <script src="{{url('/')}}/assets/plugins/intl-tel-input-master/intlTelInput.js"></script>
-    <script src="{{url('/')}}/assets/plugins/intl-tel-input-master/country-select.js"></script>
-    <script src="{{url('/')}}/assets/plugins/intl-tel-input-master/utils.js"></script>
-
-    <!-- INTERNAL jquery transfer js-->
-    <script src="{{url('/')}}/assets/plugins/jQuerytransfer/jquery.transfer.js"></script>
-
-    <!-- INTERNAL multi js-->
-    <script src="{{url('/')}}/assets/plugins/multi/multi.min.js"></script>
-
-    <!-- DATEPICKER JS -->
-    <script src="{{url('/')}}/assets/plugins/date-picker/date-picker.js"></script>
-    <script src="{{url('/')}}/assets/plugins/date-picker/jquery-ui.js"></script>
-    <script src="{{url('/')}}/assets/plugins/input-mask/jquery.maskedinput.js"></script>
-
-    <!-- MULTI SELECT JS-->
-    <script src="{{url('/')}}/assets/plugins/multipleselect/multiple-select.js"></script>
-    <script src="{{url('/')}}/assets/plugins/multipleselect/multi-select.js"></script>
-
-    <!-- FORMELEMENTS JS -->
-    <script src="{{url('/')}}/assets/js/formelementadvnced.js"></script>
-    <script src="{{url('/')}}/assets/js/form-elements.js"></script>
-
-    <!-- CUSTOM JS -->
-    <script src="{{url('/')}}/assets/js/custom.js"></script>
-
 </body>
+
 </html>
