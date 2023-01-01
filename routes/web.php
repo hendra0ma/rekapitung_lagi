@@ -222,6 +222,7 @@ Route::group(['middleware' => 'auth'], function () {
             Route::get('analisa_dpt_kpu','analisa_dpt_kpu');
             Route::get('analisa_dpt_kpu/print','analisa_dpt_kpu_print');
             Route::get('get_qrsidang', 'get_qrsidang');
+            Route::get('print_sidang/{id}', 'print_sidang');
             Route::get('get_sidang_online/{id}', 'get_sidang_online');
 
             Route::get('print_qr_code', 'print_qr_code')->name('print_qr');
