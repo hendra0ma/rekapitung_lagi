@@ -67,7 +67,8 @@
                         @endforeach
                     </ul>
                     
-                    
+                    <h1 class="mt-5 mb-0">Bukti Foto dan Video</h1>
+                    <hr style="border: 1px solid black">
                     <div id="carouselFotoKecurangan" class="carousel slide mt-2 mb-2" data-bs-ride="carousel">
                   <div class="carousel-inner">
                       <?php $i = 1; ?>

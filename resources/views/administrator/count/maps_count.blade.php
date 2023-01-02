@@ -109,12 +109,18 @@ use App\Models\Paslon;
     <div class="page">
         <div class="page-main">
 
-            <div class="row">
-                <div class="col-lg-12">
-                   <center>
-                    <h1 class="page-title mt-1 mb-1" style="font-size: 70px">MAPS COUNT
-                    </h1>
-                   </center>
+            <div class="row align-items-center px-5">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8">
+                    <center>
+                        <h1 class="page-title mt-1 mb-1" style="font-size: 70px">MAPS COUNT
+                        </h1>
+                    </center>
+                </div>
+                <div class="col-md-2 text-end">
+                    <a class="nav-link ms-auto m-0" style="display: block;">
+                        <i class="fe fe-minimize fullscreen-button fs-5"></i>
+                    </a>
                 </div>
             </div>
 

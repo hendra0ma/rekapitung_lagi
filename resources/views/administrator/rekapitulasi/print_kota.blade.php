@@ -20,7 +20,18 @@
                 display: none;
             }
         }
-        
+        @media print {
+            div.divFooter {
+                position: fixed;
+                bottom: 0;
+            }
+            .stamp {
+            position: fixed;
+               top: 70%;
+               bottom: 75%;
+               left: 80%;
+            }
+        }
     </style>
 </head>
 
@@ -35,7 +46,7 @@ use App\Models\Rekapitulator;
 
     <div class="row mt-3" id="pdf">
         <div class="col-lg-10">
-
+        <img src="{{asset('')}}assets/stamp.png"class="img-flluid stamp"style="width:150px;height:auto" alt="">
         </div>
     </div>
 
@@ -48,7 +59,10 @@ use App\Models\Rekapitulator;
                 </h2>
                 <img style="width: 350px; height: auto; margin-top:75px"
                     src="{{asset('')}}images/logo/rekapitung_gold.png" alt="">
-</center>
+                    <h3 class="fs-2 text-uppercase mt-3">
+                        pilpres 2024 {{$kotas->name}}
+                    </h3>
+            </center>
         </div>
     </div>
     <div style="break-after: page;"></div>
@@ -66,19 +80,18 @@ use App\Models\Rekapitulator;
             </h5>
         </div>
     </div>
-
     <table class="table table-bordered table-hover">
         <thead class="bg-primary">
             <tr>
-                <th class="text-center text-white align-middle">
+                <th class="text-center text-dark fw-bold">
                     Kecamatan
                 </th>
-                <th class="text-center text-white align-middle">
+                <th class="text-center text-dark fw-bold">
                     Suara Masuk (%)
                 </th>
 
                 @foreach ($paslon as $item)
-                <th class="text-center text-white align-middle">
+                <th class="text-center text-dark fw-bold">
                     {{ $item['candidate']}} - <br>
                     {{ $item['deputy_candidate']}}
                 </th>
@@ -145,14 +158,14 @@ use App\Models\Rekapitulator;
     <table class="table table-bordered table-hover">
         <thead class="bg-primary">
             <tr>
-                <th class="text-center text-white align-middle">
+                <th class="text-center text-dark fw-bold">
                     Kelurahan
                 </th>
-                <th class="text-center text-white align-middle">
+                <th class="text-center text-dark fw-bold">
                     Suara Masuk (%)
                 </th>
                 @foreach ($paslon as $suar)
-                <th class="text-center text-white align-middle">
+                <th class="text-center text-dark fw-bold">
                     {{$suar['candidate']}} - <br>
                     {{$suar['deputy_candidate']}}
                 </th>
