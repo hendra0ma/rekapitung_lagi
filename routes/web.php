@@ -474,6 +474,7 @@ Route::controller(DevelopingController::class)->group(function () {
     Route::get('dev/absen','absen');
 
     Route::get('dev/test_geo','test_geo');
+    
 
 
 });
