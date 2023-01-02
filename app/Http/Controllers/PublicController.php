@@ -196,6 +196,12 @@ class PublicController extends Controller
     }
     public function scanning(Request $request, $id)
     {
+
+      
+        if($request->password == null || $request->password != "123"){
+            return redirect()->back()->with('error','password yang anda masukan salah');
+        }
+
         $data['config'] = Config::first();
         $config = $data['config'];
         $data['qrcode_hukum'] = Qrcode::join('surat_pernyataan', 'surat_pernyataan.qrcode_hukum_id', '=', 'qrcode_hukum.id')
@@ -352,6 +358,11 @@ class PublicController extends Controller
         $data['track'] = Tracking::where('id_user',Auth::user()->id)->first();
         return view('publik.ajax.kicked',$data);
     }
-
-
+    public function scanSecure($id)
+    {
+        $data['title'] = "ini";
+        $data['nomor_berkas'] = $id;
+    
+        return view('auth.scan_secure',$data);
+    }
 }

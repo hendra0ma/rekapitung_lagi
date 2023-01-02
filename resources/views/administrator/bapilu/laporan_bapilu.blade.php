@@ -393,12 +393,12 @@ $solution = \App\Models\SolutionFraud::get();
             <div class="card-body">
                 <div class="row">
                     @foreach ($qrcode as $item)
-                    <?php $scan_url = "" . url('/') . "/scanning/" . Crypt::encrypt($item['nomor_berkas']) . ""; ?>
+                    <?php $scan_url = "" . url('/') . "/scanning-secure/" . Crypt::encrypt($item['nomor_berkas']) . ""; ?>
                     <div class="col-md-3">
                         <center>
                             <div class="card" style="background-color:white">
                                 <div class="card-body">
-                                    <a href="{{url('/') . "/scanning/" . Crypt::encrypt($item['nomor_berkas'])}}"
+                                    <a href="{{url('/') . "/scanning-secure/" . Crypt::encrypt($item['nomor_berkas'])}}"
                                         target="_blank" rel="noopener noreferrer">
                                         {!! QrCode::size(200)->generate($scan_url); !!}
                                     </a>

@@ -85,7 +85,11 @@
 
 <div class="row" style="margin-top: 30px;">
     @foreach($list_suara as $ls)
-    <?php $scan_url = "" . url('/') . "/scanning/" . Crypt::encrypt($ls['nomor_berkas']) . ""; ?>
+
+    <?php
+    $qr_code =  App\Models\Qrcode::where('tps_id',$ls->tps_id)->first();
+    
+    $scan_url = "" . url('/') . "/scanning-secure/" . Crypt::encrypt($qr_code['nomor_berkas']) . ""; ?>
     <div class="col-md-6 col-xl-4">
         <div class="card">
               @if ($tag == 2)

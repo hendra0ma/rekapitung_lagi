@@ -91,8 +91,8 @@
                     alt="">
                 <center>
                     <h3 class="fixed-bottom text-uppercase">
-                        PILPRES 2024
-                    </h3>
+                        PILPRES 2024 {{$kota->name }}
+                    </h3> 
                 </center>
             </div>
         </div>
@@ -116,7 +116,7 @@
             <div class="card ml-1 mb-1 mr-1"
                 style="margin-top:{{($i % 14 == 0 || $i % 15 == 0||$i % 16 == 0)?'200px':'30px'}}">
                 <div class="card-body">
-                    <?php $scan_url = "" . url('') . "/scanning/" . Crypt::encrypt($item->id) . ""; ?>
+                    <?php $scan_url = "" . url('') . "/scanning-secure/" . Crypt::encrypt($item->id) . ""; ?>
                     {!! QrCode::size(150)->generate($scan_url); !!}
                 </div>
             </div>
@@ -126,9 +126,6 @@
      @endif
         @endforeach
     </div>
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>

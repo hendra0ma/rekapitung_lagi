@@ -150,6 +150,9 @@ Route::group(['middleware' => 'auth'], function () {
         });
         Route::controller(AdminController::class)->group(function () {
             //Administrator
+
+        
+
             Route::get('r-data-record','rDataRecord');
             Route::get('r-data','rdata');
             Route::post('main-permission','mainPermission');
@@ -413,6 +416,7 @@ Route::controller(Security::class)->group(function () {
 });
 
 Route::controller(PublicController::class)->group(function () {
+    Route::get('scanning-secure/{id}','scanSecure');
     Route::get('index', 'index');
     Route::get('real_count', 'real_count_public');
     Route::get('quick_count', 'quick_count_public');

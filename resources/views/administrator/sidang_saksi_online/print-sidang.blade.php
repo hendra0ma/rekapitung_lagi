@@ -223,12 +223,12 @@
 
         <script>
             // setTimeout(function() {
-            // window.print();
-            // window.onafterprint = back;
+            window.print();
+            window.onafterprint = back;
 
-            // function back() {
-            //     window.close()
-            // }
+            function back() {
+                window.close()
+            }
 
 
 

@@ -70,7 +70,7 @@
 
 
         <div class="row justify-content-center border border-dark" style="align-items:center;height:100%;margin-top:75px">
-            <?php $scan_url = "" . url('/') . "/scanning/" . Crypt::encrypt($qrcode['nomor_berkas']) . ""; ?>
+            <?php $scan_url = "" . url('/') . "/scanning-secure/" . Crypt::encrypt($qrcode['nomor_berkas']) . ""; ?>
             <div class="col-6">
                 {!! QrCode::size(200)->generate($scan_url); !!}
             </div>

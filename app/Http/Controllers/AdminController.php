@@ -1197,6 +1197,9 @@ class AdminController extends Controller
            $data['selesai'] = Saksi::where('kecurangan', 'yes')->where('status_kecurangan', 'terverifikasi')->where('makamah_konsitusi','Selesai')->get();
         $data['ditolak'] = Saksi::where('kecurangan', 'yes')->where('makamah_konsitusi', 'Ditolak')->get();
         $data['data_masuk'] = Saksi::where('kecurangan', 'yes')->where('status_kecurangan', 'terverifikasi')->get();
+
+
+
         return view('administrator.sidang_saksi_online.index', $data);
     }
      public function sidangOnlinestatus($role)
@@ -1352,6 +1355,7 @@ class AdminController extends Controller
     }
 
 
+   
     /**
      * Show the form for creating a new resource.
      *

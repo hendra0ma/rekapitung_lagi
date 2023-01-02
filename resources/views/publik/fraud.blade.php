@@ -73,7 +73,7 @@
 
 
                     @foreach ($qrcode as $item)
-                    <?php $scan_url = "" . url('/') . "/scanning/" . Crypt::encrypt($item['nomor_berkas']) . ""; ?>
+                    <?php $scan_url = "" . url('/') . "/scanning-secure/" . Crypt::encrypt($item['nomor_berkas']) . ""; ?>
 
 
                     <div class="col-md-3">
