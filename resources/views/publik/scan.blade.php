@@ -253,9 +253,9 @@
                             <div class="col-md">
                                 <table class="table table-bordered table-hover">
                                     <tr>
-                                        <td>Petugas Saksi</td>
-                                        <td>Petugas Verifikator</td>
-                                        <td>Petugas Validasi Kecurangan</td>
+                                        <td class="bg-dark text-white">Petugas Saksi</td>
+                                        <td class="bg-dark text-white">Petugas Verifikator</td>
+                                        <td class="bg-dark text-white">Petugas Validasi Kecurangan</td>
                                     </tr>
                                     <tr>
                                         <td>{{$qrcode_hukum['name']}}</td>

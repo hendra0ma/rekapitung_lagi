@@ -352,7 +352,7 @@ $tps = 2963;
                     <h3>Bantuan</h3>
                 </li>
                 <li>
-                    <a class="side-menu__item" href="help.rekapitung.id">
+                    <a class="side-menu__item" href="https://help.rekapitung.id">
                         <i class="side-menu__icon fa fa-question"></i><span class="side-menu__label">Bantuan</span></a>
                 </li>
 
