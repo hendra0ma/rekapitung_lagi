@@ -113,7 +113,7 @@
               @endif
           				
             <div class="card-header bg-primary">
-                <div class="card-title text-white">LAPORAN SAKSI</div>
+                <div class="card-title text-white">Saksi Pelapor : {{$ls['name']}}</div>
             </div>
             <div class="card-body">
                 <div class="row">
