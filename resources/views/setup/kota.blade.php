@@ -5,11 +5,9 @@
     <div class="row mt-5 text-white">
         <div class="col-lg-12">
             <div class="row justify-content-center">
-                <h1>Pilih Provinsi & Kota Sesuai Tugas Anda</h1>
+                <h1>Pilih Provinsi & Kota Sesuai Wilayah Pemilihan Anda</h1>
                 <div class="container">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti ducimus impedit quidem,
-                    cupiditate, error odio aliquid eius aliquam et a odit quia adipisci sunt obcaecati! Mollitia amet
-                    voluptatibus unde qui?
+              
 
                     <form action="setup_logo" method="post">
                         @csrf

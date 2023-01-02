@@ -63,7 +63,7 @@
             <!-- CONTAINER CLOSED -->
         </div>
     </div>
-    <section class="bg-light" style="height: 10px;">
+    <section class="bg-light" style="height: 2px;">
         <div class="container">
             <img style="display: block; margin-left: auto; margin-right: auto;"
                 src="{{asset('/')}}assets/acakey_new.png" width="150px" class="pt-5 mb-5">

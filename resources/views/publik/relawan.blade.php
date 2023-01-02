@@ -15,7 +15,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/brand/favicon.ico" />
 
     <!-- TITLE -->
-    <title>Zanex – Bootstrap Admin & Dashboard Template</title>
+    <title>Relawan</title>
 
     <!-- BOOTSTRAP CSS -->
     <link href="../../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -89,72 +89,108 @@
 
             <div class="col-lg-10 mt-5">
                 <div class="card">
-                    <h4 class="mt-5 text-center">
-                        <img class="card-img-top" style="width: 100px;" src="https://paslon1.tangsel.pilwalkot.rekapitung.id/ui/images/Lambang_Kota_Tangerang_Selatan_svg1.png" alt="">
-                    </h4>
-                    <h4 class="card-title text-center">PILPRES TAHUN 2024 <br> {{$kota->name}}</h4>
-                    <div class="card-body">
-                        <h4 class="card-title text-center">Formulir Pendaftaran Relawan</h4>
-                        <form action="{{url('')}}/daftar-relawan" method="post">
-                            @csrf
-                            <x-jet-validation-errors class="mb-4" />
-                            <div class="mb-3">
-                                <label for="nama" class="form-label">Nama</label>
-                                <input type="text" class="form-control" name="nama" id="nama" value="{{old('nama')}}" aria-describedby="nama" placeholder="Masukkan Nama">
+                <h4 class="mt-5 text-center">
+                                <img class="card-img-top" style="width: 150px;" src="{{asset('assets/images/brand/logo_gold.png')}}" alt="">
+                            </h4>
+                            <h4 class="card-title text-center">PILPRES TAHUN 2024 <br> {{$kota->name}}</h4>
+                    <div class="row justify-content-center">
+                        <div class="col-md-11">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Formulir Pendaftaran Relawan</h4>
+                                <hr>
+                                <form action="{{url('')}}/daftar-relawan" method="post">
+                                    @csrf
+                                    <x-jet-validation-errors class="mb-4" />
+                                    <div class="mb-3">
+                                        <label for="nama" class="form-label">Nama</label>
+                                        <input type="text" class="form-control" name="nama" id="nama" value="{{old('nama')}}" aria-describedby="nama" placeholder="Masukkan Nama">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" name="email" id="email" value="{{old('email')}}" aria-describedby="email" placeholder="Masukkan Email">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="alamat" class="form-label">Alamat</label>
+                                        <input type="text" class="form-control" name="alamat" id="alamat" value="{{old('alamat')}}" aria-describedby="alamat" placeholder="Masukkan Alamat">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="no_ktp" class="form-label">No KTP</label>
+                                        <input type="number" class="form-control" name="no_ktp" id="no_ktp" value="{{old('no_ktp')}}" aria-describedby="no_ktp" placeholder="Masukkan No KTP">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="no_hp" class="form-label">No Hp</label>
+                                        <input type="number" class="form-control" name="no_hp" id="no_hp" value="{{old('no_hp')}}" aria-describedby="no_hp" placeholder="Masukkan No Hp">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label">Password</label>
+                                        <input type="password" class="form-control" name="password" id="password" aria-describedby="password" placeholder="Masukkan Password">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="repassword" class="form-label">Ulangi Password</label>
+                                        <input type="password" class="form-control" name="repassword" id="repassword" aria-describedby="repassword" placeholder="Masukkan Ulangi Password">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="kecamatan" class="form-label">Kecamatan</label>
+                                        <select class="form-control" name="kecamatan" id="kecamatan" onchange="ajaxKel(this.value)">
+                                            @foreach($kecamatan as $kec)
+                                            <option value="{{$kec->id}}">
+                                                {{$kec->name}}
+                                            </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="kelurahan" class="form-label">Kelurahan</label>
+                                        <select class="form-control" name="kelurahan" id="kelurahan" onchange="ajaxTps(this.value)">
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="TPS" class="form-label">TPS</label>
+                                        <select class="form-control" name="tps" id="tps">
+                                        </select>
+                                    </div>
+        
+                                    <button type="submit" class="btn btn-primary">Kirim</button>
+                                </form>
                             </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" name="email" id="email" value="{{old('email')}}" aria-describedby="email" placeholder="Masukkan Email">
-                            </div>
-                            <div class="mb-3">
-                                <label for="alamat" class="form-label">Alamat</label>
-                                <input type="text" class="form-control" name="alamat" id="alamat" value="{{old('alamat')}}" aria-describedby="alamat" placeholder="Masukkan Alamat">
-                            </div>
-                            <div class="mb-3">
-                                <label for="no_ktp" class="form-label">No KTP</label>
-                                <input type="number" class="form-control" name="no_ktp" id="no_ktp" value="{{old('no_ktp')}}" aria-describedby="no_ktp" placeholder="Masukkan No KTP">
-                            </div>
-                            <div class="mb-3">
-                                <label for="no_hp" class="form-label">No Hp</label>
-                                <input type="number" class="form-control" name="no_hp" id="no_hp" value="{{old('no_hp')}}" aria-describedby="no_hp" placeholder="Masukkan No Hp">
-                            </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" name="password" id="password" aria-describedby="password" placeholder="Masukkan Password">
-                            </div>
-                            <div class="mb-3">
-                                <label for="repassword" class="form-label">Ulangi Password</label>
-                                <input type="password" class="form-control" name="repassword" id="repassword" aria-describedby="repassword" placeholder="Masukkan Ulangi Password">
-                            </div>
-                            <div class="mb-3">
-                                <label for="kecamatan" class="form-label">Kecamatan</label>
-                                <select class="form-control" name="kecamatan" id="kecamatan" onchange="ajaxKel(this.value)">
-                                    @foreach($kecamatan as $kec)
-                                    <option value="{{$kec->id}}">
-                                        {{$kec->name}}
-                                    </option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="kelurahan" class="form-label">Kelurahan</label>
-                                <select class="form-control" name="kelurahan" id="kelurahan" onchange="ajaxTps(this.value)">
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="TPS" class="form-label">TPS</label>
-                                <select class="form-control" name="tps" id="tps">
-                                </select>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary">Kirim</button>
-                        </form>
+                        </div>
                     </div>
+
+                </div>
+                <div class="card bg-primary rounded-0">
+      
+        <div class="card-body text-center">
+            <h5 class="card-title"><img width="150px" src="../../assets/images/brand/logo.png" alt=""></h5>
+            <div class="row no-gutters mx-auto mt-5" style="width: 350px;">
+                <div class="col"><a href="https://facebook.com/" type="button" class="rounded-0 btn btn-facebook"><i class="fa fa-facebook me-2"></i>Facebook</a></div>
+                <div class="col"><a href="https://twitter.com/" type="button" class="rounded-0 btn btn-twitter"><i class="fa fa-twitter me-2"></i>Twitter</a></div>
+                <div class="col"><a href="https://wa.me/6281235757667" type="button" class="rounded-0 btn btn-success"><i class="fa fa-whatsapp me-2"></i>Whatsapp</a></div>
+            </div>
+            <div class="row mt-5 text-white">
+                <div class="col">
+                    <a class="text-white fw-bold" href="{{url('')}}/login">Login</a> |
+                    <a class="text-white fw-bold" href="{{url('')}}/relawan">Relawan</a> |
+                    <!-- <a class="text-white fw-bold" href="{{url('')}}/public/history">History</a> | -->
+                    <a class="text-white fw-bold" href="https://disclaimer.rekapitung.id">Disclaimer</a> |
+                    <!-- <a class="text-white fw-bold" href="{{url('')}}/public/fraud">Fraud</a> | -->
+                    <a class="text-white fw-bold" href="https://Info.rekapitung.id">Info</a>
                 </div>
             </div>
+
+            <div class="row mt-5 text-white">
+                <div class="col">
+                    <b>© PT. Mahadaya Swara Teknologi <br> All Rights Reserved 2022</b>
+                </div>
+            </div>
+
+        </div>
+    </div>
+            </div>
+
         </div>
 
     </div>
+
 
 
     <!-- JQUERY JS -->

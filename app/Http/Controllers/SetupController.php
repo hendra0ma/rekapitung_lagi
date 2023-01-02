@@ -16,6 +16,16 @@ use Illuminate\Support\Facades\DB;
 
 class SetupController extends Controller
 {
+
+    public function __construct()
+    {
+        $config = Config::all()->first();
+
+        if ($config['setup'] == "no") {
+            redirect('index');
+        }
+    }
+
     public function setup_kota()
     {
         $config = Config::all()->first();
@@ -23,7 +33,7 @@ class SetupController extends Controller
             $province = Province::all();
             return view('setup.kota', ['province' => $province]);
         } else {
-            return redirect('setup_logo_paslon');
+            return redirect('setup_paslon');
         }
     }
     public function setup_logo(Request $request)
@@ -45,7 +55,7 @@ class SetupController extends Controller
         );
 
         if ($setup) {
-            return view('setup.logo');
+            return redirect('setup_paslon');
         } else {
             abort(403, 'ENC-2938291.');
         }
@@ -203,7 +213,10 @@ class SetupController extends Controller
         // DB::table('tps')->update([
         //           'sample' => null,
         //     ]);
-        return response()->json(['message'=>"berhasil generate"],200);
+        // Config::where('id',1)->update([
+        //     'setup' => 'no',
+        // ]);
+        return redirect('setup_done');
     }
 
     public function setup_done()

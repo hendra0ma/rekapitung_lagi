@@ -79,7 +79,13 @@ Route::get('/geojson', function () {
 
 
 Route::get('/setup', function () {
-    return view('setup.dashboard');
+    $config = Config::all()->first();
+    if ($config['setup'] == "yes") {
+        return view('setup.dashboard');
+    } else {
+        return redirect('index'); 
+    }
+   
 });
 
 

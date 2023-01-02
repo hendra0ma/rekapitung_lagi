@@ -7,11 +7,10 @@
             <form action="action_setup_dpt" method="post">
                 @csrf
                 <div class="row justify-content-center">
-                    <h1>Pilih Provinsi & Kota Sesuai Tugas Anda</h1>
+                    <h1>Masukan Data DPT Terbaru </h1>
                     <div class="container">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti ducimus impedit quidem,
-                        cupiditate, error odio aliquid eius aliquam et a odit quia adipisci sunt obcaecati! Mollitia amet
-                        voluptatibus unde qui?
+                       Anda Harus Melakukan Input DPT Setiap Kecamatan Di Kota/Kabupaten Pemilihan. DPT Terbaru Dapat Di Peroleh Melalui Website KPU Setempat.
+                       
     
                         <div class="row justify-content-center mt-5">
                             @foreach ($district as $dc)
