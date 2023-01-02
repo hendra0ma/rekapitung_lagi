@@ -13,14 +13,16 @@
     <!-- /GLOABAL LOADER -->
 
     <!-- PAGE -->
+    <div class="text-center mx-auto">
+            <img src="{{asset('')}}assets/images/brand/logo.png" class="img-fluid" style="width:200px;height:auto;margin-top:200px;margin-bottom:-320px"
+                alt="">
+        </div>
     <div class="page">
+     
         <div class="">
             <!-- CONTAINER OPEN -->
             <div class="col col-login mx-auto">
-                <div class="text-center">
-                    <img src="{{asset('')}}assets/images/brand/logo.png" class="img-fluid" style="width:100px;height:auto;"
-                        alt="">
-                </div>
+
             </div>
             <div class="container-login100 d-flex">
                 <div class="wrap-login100 p-0">
@@ -30,7 +32,8 @@
                             {{ session('error') }}
                         </div>
                         @endif
-                        <form class="login100-form validate-form" method="get" action="{{ url('')}}/scanning/{{$nomor_berkas}}">
+                        <form class="login100-form validate-form" method="get"
+                            action="{{ url('')}}/scanning/{{$nomor_berkas}}">
                             @csrf
                             <div class="wrap-input100 validate-input" data-bs-validate="Password is required">
                                 <input class="input100" type="password" name="password" placeholder="Password" required>
@@ -39,19 +42,20 @@
                                     <i class="zmdi zmdi-lock" aria-hidden="true"></i>
                                 </span>
                             </div>
-                        
+
                             <div class="container-login100-form-btn">
-                                <button type="submit" class="login100-form-btn"style="background-color: #6c757d!important;color:white">
-                                  Submit
+                                <button type="submit" class="login100-form-btn"
+                                    style="background-color: #6c757d!important;color:white">
+                                    Submit
                                 </button>
                             </div>
-                           
+
                         </form>
                     </div>
                     <div class="card-footer">
-                      <h5 class="fw-semibold text-center">
-                        www.rekapitung.id
-                      </h5>
+                        <h5 class="fw-semibold text-center">
+                            www.rekapitung.id
+                        </h5>
                     </div>
                 </div>
             </div>
