@@ -70,6 +70,9 @@
                        <li class="slide">
                            <a class="side-menu__item" data-bs-toggle="slide" href="{{url('/')}}/administrator/sidang_online_status/{{encrypt("Tidak Menjawab")}}"><i class="side-menu__icon fe fe-home"></i><span class="side-menu__label">Sidang Tidak Menjawab</span></a>
                        </li>
+                       <li class="slide">
+                           <a class="side-menu__item" data-bs-toggle="slide" href="{{url('/')}}/administrator/sidang_online_all"><i class="side-menu__icon fe fe-home"></i><span class="side-menu__label">Data Semua Kecurangan</span></a>
+                       </li>
  <hr>
                 <li>
                     <!-- <a class="side-menu__item" href="#"><i class="side-menu__icon mdi mdi-logout"></i><span class="side-menu__label">Logout</span></a> -->

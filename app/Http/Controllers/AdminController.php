@@ -1200,6 +1200,34 @@ class AdminController extends Controller
         $data['data_masuk'] = Saksi::where('kecurangan', 'yes')->where('status_kecurangan', 'terverifikasi')->get();
         return view('administrator.sidang_saksi_online.index', $data);
     }
+
+     public function sidangOnlineAll()
+    {
+        $data['config'] = Config::first();
+        $data['kota']   = Regency::where('id', $data['config']->regencies_id)->first();
+        $data['index_tsm']    = ModelsListkecurangan::get();
+        $data['list_suara']  = Tps::join('saksi', 'saksi.tps_id', '=', 'tps.id')
+            ->join('users', 'users.tps_id', '=', 'tps.id')
+            ->where('saksi.kecurangan', 'yes')
+            ->where('saksi.status_kecurangan', 'terverifikasi')
+            ->select('saksi.*', 'saksi.created_at as date', 'tps.*', 'users.*')
+            ->get();
+        $data['tag'] = 1;
+        $data['terverifikasi'] = Saksi::where('kecurangan', 'yes')->where('status_kecurangan', 'terverifikasi')->get();
+          $data['tidak_menjawab'] = Saksi::where('kecurangan', 'yes')->where('status_kecurangan', 'terverifikasi')->where('makamah_konsitusi','Tidak Menjawab')->get();
+           $data['selesai'] = Saksi::where('kecurangan', 'yes')->where('status_kecurangan', 'terverifikasi')->where('makamah_konsitusi','Selesai')->get();
+        $data['ditolak'] = Saksi::where('kecurangan', 'yes')->where('makamah_konsitusi', 'Ditolak')->get();
+        $data['data_masuk'] = Saksi::where('kecurangan', 'yes')->where('status_kecurangan', 'terverifikasi')->get();
+        $data['_data_masuk_'] = Tps::join('saksi', 'saksi.tps_id', '=', 'tps.id')
+            ->join('users', 'users.tps_id', '=', 'tps.id')
+            ->where('saksi.kecurangan', 'yes')
+            ->where('saksi.status_kecurangan', 'terverifikasi')
+            ->whereNull('saksi.makamah_konsitusi')
+            ->select('saksi.*', 'saksi.created_at as date', 'tps.*', 'users.*')
+            ->count();
+        return view('administrator.sidang_saksi_online.all-data', $data);
+    }
+
      public function sidangOnlinestatus($role)
     {
         $data['config'] = Config::first();

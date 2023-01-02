@@ -40,7 +40,7 @@
                         <div class="card-title text-white">Total Kecurangan Masuk</div>
                     </div>
                     <div class="card-body">
-                        <p class="">{{ count($list_suara) }}</p>
+                        <p class="">{{ $_data_masuk_ }}</p>
                     </div>
                 </div>
             </div>
