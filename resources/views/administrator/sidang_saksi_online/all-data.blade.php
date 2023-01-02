@@ -77,7 +77,7 @@
             <div class="col-lg justify-content-end">
                 <div class="card">
                     <div class="card-header bg-info">
-                        <div class="card-title text-white">Total Kecurangan Masuk</div>
+                        <div class="card-title text-white">Total Semua Kecurangan</div>
                     </div>
                     <div class="card-body">
                         <p class="">{{ count($data_masuk) }}</p>

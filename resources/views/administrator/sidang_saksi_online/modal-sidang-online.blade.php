@@ -10,7 +10,8 @@
             <img style="width: 100px;" src="{{url('/')}}/images/logo/rekapitung_gold.png" class="img-fluid" alt=""> 
         </div>
         <div class="col">
-            <h1 class="fw-bold mb-0">Sidang Online Gugatan Pemilu Presiden 2024</h1>
+            <h1 class="fw-bold mb-0">Sidang MK Gugatan Pemilu Presiden 2024</h1><br>
+            Online
         </div>
     </div>
 </div>
