@@ -304,10 +304,8 @@ use App\Models\Paslon;
     <!-- CUSTOM JS-->
     <script src="../../assets/js/custom.js"></script>
 
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin=""></script>
-    <script src="{{url('/')}}/assets/js/geojson.ajax.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <script src="{{url('/')}}/js/geojson.ajax.js"></script>
     <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
     <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'
         rel='stylesheet' />
@@ -344,11 +342,11 @@ use App\Models\Paslon;
             var out = [];
             if (f.properties) {
                 out.push("Kecamatan " + f.properties['WADMKC']);
-                l.bindPopup(out.join("<br />"));
+                l.bindPopup(out.join(""));
             }
         }
 
-        var jsonTest = new L.GeoJSON.AJAX(["{{url('/')}}/assets/tangsel1.geojson"], {
+        var jsonTest = new L.GeoJSON.AJAX(["{{url('/')}}/assets/tangsel.geojson"], {
             style: function (feature) {
                 kec = feature.properties['WADMKC'];
                 return {
