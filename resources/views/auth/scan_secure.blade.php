@@ -13,13 +13,14 @@
     <!-- /GLOABAL LOADER -->
 
     <!-- PAGE -->
-    <div class="text-center mx-auto">
-            <img src="{{asset('')}}assets/images/brand/logo.png" class="img-fluid" style="width:200px;height:auto;margin-top:200px;margin-bottom:-320px"
-                alt="">
-        </div>
-    <div class="page">
+    <div class="page" style="min-height: 80vh;">
+        
      
         <div class="">
+            <div class="text-center mx-auto mb-5">
+                <img src="{{asset('')}}assets/images/brand/logo.png" class="img-fluid" style="width:200px;height:auto;"
+                    alt="">
+            </div>
             <!-- CONTAINER OPEN -->
             <div class="col col-login mx-auto">
 
@@ -65,7 +66,7 @@
     <section class="bg-light" style="height: 10px;">
         <div class="container">
             <img style="display: block; margin-left: auto; margin-right: auto;"
-                src="{{asset('/')}}assets/images/acakey_new.png" width="250px" class="pt-5 mb-5">
+                src="{{asset('/')}}assets/acakey_new.png" width="150px" class="pt-5 mb-5">
             <div class="text-center pb-5" style="font-size: 13px;">
                 © PT.Mahadaya Swara Teknologi <br />
                 All Right Reserved 2021
