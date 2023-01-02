@@ -1210,6 +1210,8 @@ class AdminController extends Controller
             ->select('saksi.*', 'saksi.created_at as date', 'tps.*', 'users.*')
             ->get();
         $data['tag'] = 2;
+        $data['config'] = Config::first();
+        $data['kota']   = Regency::where('id', $data['config']->regencies_id)->first();
         $data['tidak_menjawab'] = Saksi::where('kecurangan', 'yes')->where('status_kecurangan', 'terverifikasi')->where('makamah_konsitusi','Tidak Menjawab')->get();
         $data['selesai'] = Saksi::where('kecurangan', 'yes')->where('status_kecurangan', 'terverifikasi')->where('makamah_konsitusi','Selesai')->get();
         $data['ditolak'] = Saksi::where('kecurangan', 'yes')->where('makamah_konsitusi', 'Ditolak')->get();
