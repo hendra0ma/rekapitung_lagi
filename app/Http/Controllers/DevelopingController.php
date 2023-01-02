@@ -92,6 +92,11 @@ class DevelopingController extends Controller
 
 
     }
+
+    public function test_geo()
+    {
+        return view('developing.test_geo');
+    }
      public function saksi_update()
      {
         for ($x = 1526; $x <= 1581; $x++) {

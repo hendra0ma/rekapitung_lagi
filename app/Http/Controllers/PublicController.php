@@ -323,6 +323,7 @@ class PublicController extends Controller
     {
         $data['config'] = Config::first();
         $config = $data['config'];
+        $data['marquee'] = Saksi::join('users', 'users.tps_id', "=", "saksi.tps_id")->get();
         $data['kota'] = Regency::where('id', $config['regencies_id'])->first();
         $data['provinsi'] = Province::where('id', $data['kota']['province_id'])->first();
         $data['paslon'] = Paslon::get();
@@ -331,7 +332,7 @@ class PublicController extends Controller
             $data['total' . $ps['id'] . ''] = SaksiData::where('paslon_id', $ps['id'])->sum('voice');
         }
 
-        return view('publik.public_count.map_count', $data);
+        return view('administrator.count.maps_count', $data);
     }
      public function get_tps_kelurahan(Request $request)
     {
