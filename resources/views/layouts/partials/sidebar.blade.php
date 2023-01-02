@@ -351,16 +351,9 @@ $tps = 2963;
                 <li>
                     <h3>Bantuan</h3>
                 </li>
-                <li class="slide">
-                    <a class="side-menu__item" data-bs-toggle="slide" href="#"><i
-                            class="side-menu__icon fa fa-question"></i><span class="side-menu__label">Bantuan</span><i
-                            class="angle fa fa-angle-right"></i></a>
-                    <ul class="slide-menu">
-                        <li><a href="/administrator/tentang" class="slide-item">Tentang Rekapitung</a></li>
-                        <li><a href="/administrator/pusat_bantuan" class="slide-item">Pusat Bantuan</a></li>
-                        <li><a href="/administrator/laporan" class="slide-item">Laporkan Masalah</a></li>
-                        <li><a href="/administrator/tutorial" class="slide-item">Tutorial</a></li>
-                    </ul>
+                <li>
+                    <a class="side-menu__item" href="help.rekapitung.id">
+                        <i class="side-menu__icon fa fa-question"></i><span class="side-menu__label">Bantuan</span></a>
                 </li>
 
                 <li>

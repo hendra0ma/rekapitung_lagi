@@ -69,7 +69,8 @@
         <div class="col-12">
             <table class="table">
                 <tr>
-                    <td>Status</td>
+                    <td style="width: 130px">Status</td>
+                    <td style="width: 52px">:</td>
                     @if ($user['is_active'] == 2)
                     <td>Belum Terverifikasi</td>
                     @else
@@ -78,14 +79,17 @@
                 </tr>
                 <tr>
                     <td>Email</td>
+                    <td>:</td>
                     <td>{{ $user['email'] }}</td>
                 </tr>
                 <tr>
                     <td>No.Hp</td>
+                    <td>:</td>
                     <td>{{ $user['no_hp'] }}</td>
                 </tr>
                 <tr>
                     <td>Alamat</td>
+                    <td>:</td>
                     <td>{{ $user['address'] }}</td>
                 </tr>
             </table>
@@ -100,7 +104,8 @@
         <div class="col-12">
             <table class="table">
                 <tr>
-                    <td>Kecamatan</td>
+                    <td style="width: 130px">Kecamatan</td>
+                    <td style="width: 52px">:</td>
                     <td>{{$district['name'] }}</td>
                 </tr>
             </table>

@@ -74,7 +74,8 @@ $track = Tracking::where('id_user',$user['id'])->first();
         <div class="col-12">
             <table class="table">
                 <tr>
-                    <td>Status</td>
+                    <td style="width: 130px">Status</td>
+                    <td style="width: 52px">:</td>
                     @if ($user['is_active'] == 2)
                     <td>Belum Terverifikasi</td>
                     @else
@@ -87,14 +88,17 @@ $track = Tracking::where('id_user',$user['id'])->first();
                 </tr>
                 <tr>
                     <td>Email</td>
+                    <td>:</td>
                     <td>{{ $user['email'] }}</td>
                 </tr>
                 <tr>
                     <td>No.Hp</td>
+                    <td>:</td>
                     <td>{{ $user['no_hp'] }}</td>
                 </tr>
                 <tr>
                     <td>Alamat</td>
+                    <td>:</td>
                     <td>{{ $user['address'] }}</td>
                 </tr>
             </table>
@@ -110,16 +114,32 @@ $track = Tracking::where('id_user',$user['id'])->first();
         <div class="col-12">
             <table class="table">
                 <tr>
-                    <td>Kecamatan</td>
+                    <td style="width: 130px">Kecamatan</td>
+                    <td style="width: 52px">:</td>
                     <td>{{$district['name'] }}</td>
                 </tr>
                 <tr>
                     <td>Kelurahan</td>
+                    <td>:</td>
                     <td>{{$village['name'] }}</td>
                 </tr>
                 <tr>
                     <td>TPS</td>
+                    <td>:</td>
                     <td>{{ $tps['number'] }}</td>
+                </tr>
+                <tr>
+                    <td>Foto Lokasi</td>
+                    <td colspan="2">:</td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        @if ($tps['foto_lokasi'] != null)
+                            <img style="width: 100%" src="{{ $tps['foto_lokasi'] }}" alt="">
+                        @else
+                            <img style="width: 100%" src="https://t-2.tstatic.net/default-2.jpg" alt="">
+                        @endif
+                    </td>
                 </tr>
             </table>
         </div>
@@ -134,15 +154,18 @@ $track = Tracking::where('id_user',$user['id'])->first();
         <div class="col-12">
             <table class="table">
                 <tr>
-                    <td>Lontitude</td>
+                    <td style="width: 130px">Lontitude</td>
+                    <td style="width: 52px">:</td>
                     <td>Tidak Terdeteksi</td>
                 </tr>
                 <tr>
                     <td>Latitude</td>
+                    <td>:</td>
                     <td>Tidak Terdeteksi</td>
                 </tr>
                 <tr>
                     <td>Ip Address</td>
+                    <td>:</td>
                     <td>Tidak Terdeteksi</td>
                 </tr>
             </table>
@@ -153,15 +176,18 @@ $track = Tracking::where('id_user',$user['id'])->first();
         <div class="col-12">
             <table class="table">
                 <tr>
-                    <td>Lontitude</td>
+                    <td style="width: 130px">Lontitude</td>
+                    <td style="width: 52px">:</td>
                     <td>{{$track['longitude'] }}</td>
                 </tr>
                 <tr>
                     <td>Latitude</td>
+                    <td>:</td>
                     <td>{{$track['latitude'] }}</td>
                 </tr>
                 <tr>
                     <td>Ip Address</td>
+                    <td>:</td>
                     <td>{{ $track['ip_address'] }}</td>
                 </tr>
             </table>
