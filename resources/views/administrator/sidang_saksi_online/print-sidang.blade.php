@@ -71,9 +71,9 @@
                 <div class="col-md">
                     <table class="table table-bordered table-hover">
                         <tr>
-                            <td>Petugas Saksi</td>
-                            <td>Petugas Verifikator</td>
-                            <td>Petugas Validasi Kecurangan</td>
+                            <td class="fw-bold">Petugas Saksi</td>
+                            <td class="fw-bold">Petugas Verifikator</td>
+                            <td class="fw-bold">Petugas Validasi Kecurangan</td>
                         </tr>
                         <tr>
                             <td>{{$qrcode_hukum['name']}}</td>
@@ -100,7 +100,8 @@
                         @endforeach
                     </ul>
 
-
+                    <h1 class="mt-5 mb-0">Bukti Foto dan Video</h1>
+                    <hr style="border: 1px solid black">
                     <div id="carouselFotoKecurangan" class="carousel slide mt-2 mb-2" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <?php $i = 1; ?>
