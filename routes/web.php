@@ -149,7 +149,7 @@ Route::group(['middleware' => 'auth'], function () {
             Route::get('commander-defaults', [CommanderController::class,'defaults']);
         });
         Route::controller(AdminController::class)->group(function () {
-            //Administrator
+            //Administratorw
             Route::get('r-data-record','rDataRecord');
             Route::get('r-data','rdata');
             Route::post('main-permission','mainPermission');
@@ -475,7 +475,7 @@ Route::controller(DevelopingController::class)->group(function () {
     Route::get('dev/absen','absen');
 
     Route::get('dev/test_geo','test_geo');
-    
+
 
 
 });
