@@ -155,10 +155,7 @@ Route::group(['middleware' => 'auth'], function () {
             Route::get('commander-defaults', [CommanderController::class,'defaults']);
         });
         Route::controller(AdminController::class)->group(function () {
-            //Administrator
-
-        
-
+            //Administratorw
             Route::get('r-data-record','rDataRecord');
             Route::get('r-data','rdata');
             Route::post('main-permission','mainPermission');
@@ -221,6 +218,7 @@ Route::group(['middleware' => 'auth'], function () {
             Route::post('action_luar_negri','actionfde_luar_negri');
             Route::post('action_luar_negri','action_luar_negri');
             Route::get('sidang_online', 'sidangOnline');
+            Route::get('sidang_online_all', 'sidangOnlineAll');
             Route::get('sidang_online_status/{role}', 'sidangOnlinestatus');
 
 
@@ -484,7 +482,7 @@ Route::controller(DevelopingController::class)->group(function () {
     Route::get('dev/absen','absen');
 
     Route::get('dev/test_geo','test_geo');
-    
+
 
 
 });

@@ -40,7 +40,7 @@
                         <div class="card-title text-white">Total Kecurangan Masuk</div>
                     </div>
                     <div class="card-body">
-                        <p class="">{{ count($list_suara) }}</p>
+                        <p class="">{{ $_data_masuk_ }}</p>
                     </div>
                 </div>
             </div>
@@ -95,11 +95,7 @@
 
 <div class="row" style="margin-top: 30px;">
     @foreach($list_suara as $ls)
-
-    <?php
-    $qr_code =  App\Models\Qrcode::where('tps_id',$ls->tps_id)->first();
-    
-    $scan_url = "" . url('/') . "/scanning-secure/" . Crypt::encrypt($qr_code['nomor_berkas']) . ""; ?>
+    <?php $scan_url = "" . url('/') . "/scanning/" . Crypt::encrypt($ls['nomor_berkas']) . ""; ?>
     <div class="col-md-6 col-xl-4">
         <div class="card">
               @if ($tag == 2)
