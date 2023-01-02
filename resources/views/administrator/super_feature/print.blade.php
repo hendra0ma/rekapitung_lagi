@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>Fraud Barcode Report</title>
+    <title>Analisa DPT KPU</title>
     <style>
         .pages {
             position: relative;
@@ -35,27 +35,24 @@
                 bottom: 0;
             }
             .stamp {
-                position: relative;
-               margin-top: 40px;
-               margin-left: 75%;
-                
+            position: fixed;
+               top: 70%;
+               bottom: 75%;
+               left: 75%;
             }
         }
     </style>
 </head>
-
 <body>
-
-
-    <div class="asdf" style="position: relative;width:100%;height:700px;page-break-before: auto;page-break-after: always;page-break-inside: avoid;">
+    <div class="asdf" style="position: relative;width:100%;height:700px;page-break-before: always;page-break-after: always;page-break-inside: avoid;">
 
         <div class="row">
             <div class="col-12">
                 <center>
                     <h1 class="mt-2 text-danger text-uppercase" style="font-size: 40px;">ANALISA REALISASI DPT KPU
                     </h1>
-                    <h3 class="mt-1 mb-1">
-                       PILPRES {{$kota->name}}
+                    <h3 class="mt-1 mb-1 fs-2">
+                        Pemilu Presiden
                     </h3>
 
                     <img style="width: 350px; height: auto; margin-top:75px" src="{{url('')}}/assets/images/brand/logo.png" alt="">
@@ -80,7 +77,7 @@
 
             <div class="col-12">
                 
-    <img src="{{asset('')}}assets/stamp.png"class="img-flluid stamp"style="width:150px;height:auto" alt="">
+              <img src="{{asset('')}}assets/stamp.png"class="img-flluid stamp"style="width:150px;height:auto" alt="">
                 <center>
                     <h3 class="fixed-bottom text-uppercase">
                      PILPRES 2024
@@ -92,17 +89,26 @@
     </div>
 
     <div class="row">
+        <div class="col-lg-12 text-center">
+        <h1 class="mt-2 text-danger text-uppercase fs-2">ANALISA REALISASI DPT KPU
+                    </h1>
+                    <h3 class="mt-1 mb-1 fs-3">
+                       PILPRES {{$kota->name}}
+                    </h3>
+
+        </div>
         <div class="card">
         <div class="card-body">
           <table class="table table-bordered table-hover">
               <thead class="bg-primary">
                   <tr>
                   <tr>
-                      <td class="text-center align-middle">Kecamatan</td>
-                      <td class="text-center align-middle">Total Dpt KPU</td>
-                      <td class="text-center align-middle">Total Pengguna Hak Pilih</td>
-                      <td class="text-center align-middle">Selisih</td>
-                      <td class="text-center align-middle">GAP</td>
+                      <td class="text-center align-middle fw-bold">Kecamatan</td>
+                      <td class="text-center align-middle fw-bold">Total DPT KPU</td>
+                      <td class="text-center align-middle fw-bold">Total Pengguna <br> Hak Pilih</td>
+                      <td class="text-center align-middle fw-bold">Selisih</td>
+                      <td class="text-center align-middle fw-bold">GAP</td>
+                      <td class="text-center align-middle fw-bold">Indikasi</td>
                   </tr>
               </thead>
               <tbody>
@@ -119,6 +125,23 @@
                           @else
                           {{ floor($persen) }}%
                           @endif</td>
+                          <td>
+                        @if ($pengguna_hak == 0)
+                            <span class="text" style="background-color: rgba(0, 0, 0, 0.25)">Belum Terisi</span>
+                        @else
+                            @if (floor($persen) >= 1 && floor($persen) <= 50)
+                                <span class="text-warning">Rendah</span>
+                            @elseif (floor($persen) > 50 && floor($persen) <= 70)
+                                <span class="text-success">Normal</span>
+                            @elseif (floor($persen) > 70 && floor($persen) <= 80)
+                                <span class="text-secondary">Tinggi</span>
+                            @elseif (floor($persen) > 80 && floor($persen) <= 90)
+                                <span class="text-danger">Indikasi Kecurangan</span>
+                            @elseif (floor($persen) > 90 && floor($persen) <= 100)
+                                <span class="text-dark">Manipulasi</span>
+                            @endif
+                        @endif
+                      </td>
                   </tr>
                   @endforeach
               </tbody>
@@ -131,7 +154,7 @@
         <div class="col">
             <div class="card">
                 <div class="card-header">
-                    <div class="card-title">Keterangan Indikator</div>
+                    <div class="card-title fs-5 fw-bold">Keterangan Indikator</div>
                 </div>
                 <div class="card-body">
                     <table class="table table-bordered w-100">

@@ -17,7 +17,7 @@
         </ol>
 
     </div>
-    <h3 class="page-title mt-2">Hasil Analisa Realisasi DPT KPU Tingkat Kabupaten / Kota</h2>
+    <h3 class="page-title mt-2">Hasil Analisa Realisasi DPT KPU Tingkat Kabupaten / Kota</h3>
 </div>
 
 <hr style="border: 1px solid; margin-top: 50px">
@@ -74,13 +74,12 @@
                                 <span class="badge bg-dark">Manipulasi</span>
                             @endif
                         @endif
-                           
                       </td>
                   </tr>
                   @endforeach
               </tbody>
           </table>
-          <a href="{{url('/')}}/administrator/analisa_dpt_kpu/print" class="btn btn-xl btn-primary">Print</a>
+          <a href="{{url('/')}}/administrator/analisa_dpt_kpu/print" class="btn btn-xl btn-dark"> <span class="mdi mdi-printer"></span>  Print</a>
         </div>
     </div>
     <div class="row">

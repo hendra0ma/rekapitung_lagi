@@ -985,7 +985,8 @@ class AdminController extends Controller
     public function rekapitulator_kota_print()
     {
         $data['config'] = Config::first();
-        $rekapitulator = ModelsRekapitulator::where('regency_id', $data['config']['regencies_id'])->get();
+        // $rekapitulator = ModelsRekapitulator::where('regency_id', $data['config']['regencies_id'])->get();
+        $data['kotas'] = Regency::where('id', $data['config']['regencies_id'])->first();
         $data['paslon'] = Paslon::get();
         $data['kecamatan'] = District::where('regency_id', $data['config']['regencies_id'])->get();
         return view('administrator.rekapitulasi.print_kota',$data);
