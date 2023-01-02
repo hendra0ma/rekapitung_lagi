@@ -230,6 +230,8 @@ Route::group(['middleware' => 'auth'], function () {
             Route::get('action/batalkan_history/{id}/{user_id}', 'batalkan_history');
             Route::get('patroli/batalkan_semua/{id}', 'batalkan_semua');
 
+
+
 });
 
 
@@ -470,6 +472,10 @@ Route::controller(DevelopingController::class)->group(function () {
     Route::get('input-c1-quickcount','c1_quickcount');
     Route::post('action_upload_kecurangan','action_upload_kecurangan');
     Route::get('dev/absen','absen');
+
+    Route::get('dev/test_geo','test_geo');
+
+
 });
 
 

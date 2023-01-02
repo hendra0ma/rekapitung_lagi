@@ -56,7 +56,8 @@ $tps = Tps::count();
                 <div class="card-body">
                     <div class="row">
                         <div class="col-xxl-6">
-                            <div class="container" style="margin-left: 3%; margin-top: 10%;">
+                            <div class="container" style="margin-left: 3%; margin-top: 2.5%;">
+                                <div class="text-center fs-2 mb-3 fw-bold">SUARA MASUK</div>
                                 <div class="text-center">Progress {{substr($realcount,0,5)}}% dari 100%</div>
                                 <div class="text-center mt-2 mb-2"><span
                                         class="badge bg-success">{{$total_incoming_vote}} / {{$dpt}}</span></div>

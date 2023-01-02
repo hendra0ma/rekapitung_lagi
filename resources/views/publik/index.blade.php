@@ -24,9 +24,14 @@ $data_masuk = (int)$saksidatai / (int)$dpt * 100;
             <div class="card-body">
                 <!-- nav options -->
                 <div class="row">
-                    <div class="col-md">
+                    <div class="col-12">
+                        <p class="text-center fs-1 fw-bold mb-0">
+                            SUARA MASUK
+                        </p>
+                    </div>
+                    <div class="col-12">
                         <p class="text-center">
-                        <div class="badge bg-primary">PROGRESS : {{substr($data_masuk, 0, 3)}}% DARI 100%</div>
+                            <div class="badge bg-primary">PROGRESS : {{substr($data_masuk, 0, 3)}}% DARI 100%</div>
                         </p>
                     </div>
                 </div>
@@ -73,11 +78,14 @@ $data_masuk = (int)$saksidatai / (int)$dpt * 100;
                     <div class="col-md-12 mt-3">
                         <h5 class="text-uppercase">
                             <div class="row fw-bold">
-                                <div class="col-md-12">
+                                <div class="col-md-12 mt-1 mb-1">
                                     HITUNG SUARA
                                 </div>
-                                <div class="col-md-12">
-                                    PEMILIHAN PRESIDEN DAN WAKIL PRESIDEN {{$kota['name']}}
+                                <div class="col-md-12 mt-1 mb-1">
+                                    PEMILIHAN PRESIDEN DAN WAKIL PRESIDEN
+                                </div>
+                                <div class="col-md-12 mt-1 mb-1">
+                                    {{$kota['name']}}
                                 </div>
                             </div>
                            
@@ -131,7 +139,12 @@ $data_masuk = (int)$saksidatai / (int)$dpt * 100;
             <div class="card-body">
                 <!-- nav options -->
                 <div class="row">
-                    <div class="col-md">
+                    <div class="col-12">
+                        <p class="text-center fs-1 fw-bold mb-0">
+                            HASIL QUICK COUNT
+                        </p>
+                    </div>
+                    <div class="col-12">
                         <p class="text-center">
                         <div class="badge bg-primary">RANDOM : {{substr($tps_selesai_quick / $tps_belum_quick * 100, 0, 4)}}% (10%) DARI 100%</div>
                         </p>
@@ -184,11 +197,14 @@ $data_masuk = (int)$saksidatai / (int)$dpt * 100;
                     <div class="col-md-12 mt-3">
                         <h5 class="text-uppercase">
                             <div class="row fw-bold">
-                                <div class="col-md-12">
+                                <div class="col-md-12 mt-1 mb-1">
                                     HITUNG SUARA
                                 </div>
-                                <div class="col-md-12">
-                                    PEMILIHAN PRESIDEN DAN WAKIL PRESIDEN {{$kota['name']}}
+                                <div class="col-md-12 mt-1 mb-1">
+                                    PEMILIHAN PRESIDEN DAN WAKIL PRESIDEN
+                                </div>
+                                <div class="col-md-12 mt-1 mb-1">
+                                    {{$kota['name']}}
                                 </div>
                             </div>
                         </h5>
@@ -297,6 +313,13 @@ $data_masuk = (int)$saksidatai / (int)$dpt * 100;
             <div class="card-body">
                 <!-- nav options -->
 
+                <div class="row">
+                    <div class="col-12">
+                        <p class="text-center fs-1 fw-bold mb-0">
+                            SUARA TERVERIFIKASI
+                        </p>
+                    </div>
+                </div>
 
                 <div class="row mt-5">
                     <div class="col-md-12">
@@ -339,11 +362,14 @@ $data_masuk = (int)$saksidatai / (int)$dpt * 100;
                     <div class="col-md-12 mt-3">
                         <h5 class="text-uppercase">
                             <div class="row fw-bold">
-                                <div class="col-md-12">
+                                <div class="col-md-12 mt-1 mb-1">
                                     HITUNG SUARA
                                 </div>
-                                <div class="col-md-12">
-                                    PEMILIHAN PRESIDEN DAN WAKIL PRESIDEN {{$kota['name']}}
+                                <div class="col-md-12 mt-1 mb-1">
+                                    PEMILIHAN PRESIDEN DAN WAKIL PRESIDEN
+                                </div>
+                                <div class="col-md-12 mt-1 mb-1">
+                                    {{$kota['name']}}
                                 </div>
                             </div>
                         </h5>
