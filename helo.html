@@ -1,4 +1,52 @@
-<script>
-    var nama = "hendra";
-    console.log("nama anda " + nama);
-</script>
+<tbody>
+    <!-- @foreach ($kec as $item)
+    <tr onclick='check("{{Crypt::encrypt($item->id)}}")'>
+        <td>{{$item['name']}}</td>
+        @foreach ($paslon as $cd)
+        <?php $saksi_dataa = SaksiData::join('saksi', 'saksi.id', '=', 'saksi_data.saksi_id')->where('paslon_id', $cd['id'])->where('saksi_data.district_id', $item['id'])->sum('voice'); ?>
+        <td>{{$saksi_dataa}}</td>
+        @endforeach
+    </tr>
+    @endforeach -->
+    <tr onclick="window.open(`https://kab-serang.pilpres.banten.rekapitung.id/`)">
+        <td>Kab. Pandeglang</td>
+        <td>580</td>
+        <td>550</td>
+    </tr>
+
+    <tr onclick="window.open(`https://kab-serang.pilpres.banten.rekapitung.id/`)">
+        <td>Kab. Lebak</td>
+        <td>650</td>
+        <td>550</td>
+    </tr>
+    <tr onclick="window.open(`https://kab-serang.pilpres.banten.rekapitung.id/`)">
+        <td>Kab. Tangerang</td>
+        <td>790</td>
+        <td>520</td>
+    </tr>
+    <tr onclick="window.open(`https://kab-serang.pilpres.banten.rekapitung.id/`)">
+        <td>Kab. Serang</td>
+        <td>670</td>
+        <td>504</td>
+    </tr>
+    <tr onclick="window.open(`https://kab-serang.pilpres.banten.rekapitung.id/`)">
+        <td>Kota Tangerang</td>
+        <td>780</td>
+        <td>520</td>
+    </tr>
+    <tr onclick="window.open(`https://kab-serang.pilpres.banten.rekapitung.id/`)">
+        <td>Kota Cilegon</td>
+        <td>720</td>
+        <td>470</td>
+    </tr>
+    <tr onclick="window.open(`https://kab-serang.pilpres.banten.rekapitung.id/`)">
+        <td>Kota Serang</td>
+        <td>560</td>
+        <td>450</td>
+    </tr>
+    <tr onclick="window.open(`https://kab-serang.pilpres.banten.rekapitung.id/`)">
+        <td>Kota Tangerang Selatan</td>
+        <td>780</td>
+        <td>481</td>
+    </tr>
+</tbody>

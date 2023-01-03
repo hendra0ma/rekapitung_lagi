@@ -57,7 +57,15 @@ use function GuzzleHttp\Promise\all;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/ceksetup',function ()
+{
+   $config = Config::first();
+   return view('publik.belum-setup');
+    if($config->setup == 'yes'){
+    }else{
+        return redirect(url('/'));
+    }
+});
 Route::get('/', function () {
     $config = Config::all()->first();
     if ($config['setup'] == "yes") {
@@ -551,3 +559,5 @@ Route::get('/login-commander',function ()
 {
    return view('auth.login_commander');
 });
+
+
