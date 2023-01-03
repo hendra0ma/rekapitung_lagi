@@ -101,7 +101,7 @@
     <img src="{{asset('assets/images/brand/logo-1.png')}}" style="width:200px;height:auto; display: block;
             position: fixed;
             top: 250px;
-            left: 480px;">
+            left: 87vh;">
     <a href="#" class="glitch text-white"style="font-size:60px !important" data-glitch="Website Belum Di Set Up">Website Belum Di Set Up</a>
                   
     </div>
