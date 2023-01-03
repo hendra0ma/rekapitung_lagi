@@ -85,8 +85,9 @@ class AdminController extends Controller
             }
         }
         $data['saksi_masuk'] = Saksi::count();
-        $data['tps_masuk'] = Tps::where('district_id',3674040)->count();
-        $data['total_tps']   = 2963;
+        
+        $data['tps_masuk'] = Tps::where('setup','belum terisi')->count();
+        $data['total_tps']   =  Tps::where('setup','terisi')->count();;
         $data['tps_kosong']  =  $data['total_tps'] - $data['tps_masuk'];
 
 
