@@ -20,14 +20,15 @@
                                         {{ $dc['name']}} </div>
                                     <div class="card-body">
                                         <div class="row text-dark">
-                                            <small>Jumlah DPT Kecamatan {{ $dc['name']}} </small>
+                                            <small>Jumlah DPT & TPS Kecamatan {{ $dc['name']}} </small>
                                             <div class="input-group mt-3">
     
                                                 @if ($dc['dpt'] == NULL)
-                                                <input class="form-control"  type="text" required name="{{$dc['id']}}" value="" placeholder="Total DPT" aria-label="Recipient's " aria-describedby="my-addon">
+                                                <input class="form-control"  type="text" require name="{{$dc['id']}}" value="" placeholder="Total DPT" aria-label="Recipient's " aria-describedby="my-addon">
 
                                                 @else
                                                 <input class="form-control"  type="text" required name="{{$dc['id']}}" readonly value="{{$dc['dpt']}}" placeholder="Total DPT" aria-label="Recipient's " aria-describedby="my-addon">
+                                                <input class="form-control"  type="text" required name="{{$dc['id']}}" value="" placeholder="Total TPS" aria-label="Recipient's " aria-describedby="my-addon">
 
                                                
                                                 @endif
