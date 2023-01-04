@@ -57,11 +57,26 @@ use function GuzzleHttp\Promise\all;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+
+
+Route::get('/kontol',function ()
+{
+    $config = App\Models\Config::first();
+    $kotas =App\Models\Regency::where('province_id',$config->provinces_id)->get();
+
+   foreach($kotas as $kot){
+    dump($kot->id,$kot->name );
+   }
+});
+
+
 Route::get('/ceksetup',function ()
 {
    $config = Config::first();
-   return view('publik.belum-setup');
-    if($config->setup == 'yes'){
+   if($config->setup == 'yes'){
+        return view('publik.belum-setup');
     }else{
         return redirect(url('/'));
     }

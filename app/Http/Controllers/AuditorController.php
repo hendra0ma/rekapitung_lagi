@@ -16,10 +16,15 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Crypt;
 use App\Events\NotifEvent;
+
 class AuditorController extends Controller
 {
     public function index()
     {
+
+
+
+
         $data['district']  = District::where('id', Auth::user()->districts)->first();
         $district = $data['district'];
         $data['villages'] = Village::where('district_id', $district->id)->get();
