@@ -60,8 +60,8 @@ use function GuzzleHttp\Promise\all;
 Route::get('/ceksetup',function ()
 {
    $config = Config::first();
-   return view('publik.belum-setup');
-    if($config->setup == 'yes'){
+   if($config->setup == 'yes'){
+        return view('publik.belum-setup');
     }else{
         return redirect(url('/'));
     }
