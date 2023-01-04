@@ -250,7 +250,7 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md">
+                            <div class="col-md table-responsive">
                                 <table class="table table-bordered table-hover">
                                     <tr>
                                         <td class="bg-dark text-white">Petugas Saksi</td>
@@ -376,7 +376,7 @@
                                 </table>
                                 {!! html_entity_decode($qrcode_hukum['deskripsi']) !!}
                             </div>
-                            <div class="col-md-8 text-center py-3 mt-3" style="border: 1px solid #45aaf2; background: #45aaf236;">
+                            <div class="col-md-8 text-center py-3 mt-3" style="border: 1px solid #45aaf2;">
                                 <div class="row align-items-center">
                                     <div class="col-md-7">
                                         <h4 class="card-title mb-1">Mengesahkan</h4>
