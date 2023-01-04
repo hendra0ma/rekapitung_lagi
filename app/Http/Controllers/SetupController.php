@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Config;
 use App\Models\District;
+use App\Models\DptModel;
 use App\Models\Paslon;
 use App\Models\Province;
 use App\Models\Regency;
@@ -124,9 +125,10 @@ class SetupController extends Controller
     {     
         $course = Config::find(1)->regencies;
         $courses = Regency::find($course['id'])->districts;
-        return view('setup.dpt',[
-            'district' => $courses,
-        ]);
+        // return view('setup.dpt',[
+        //     'district' => $courses,
+        // ]);
+        return redirect('setup_tps');
     }
 
     public function action_setup_dpt(Request $request)
@@ -155,6 +157,12 @@ class SetupController extends Controller
         $config   = Config::find(1)->with('regencies')->get();
         $frcfg    = $config[0]->regencies;
         $regency  = District::where('regency_id',$frcfg['id'])->where('status','no')->first();
+        $regency_count  = District::where('regency_id',$frcfg['id'])->get();
+        $regency_sisa  = District::where('regency_id',$frcfg['id'])->where('status','solve')->get();
+
+        $jumlah = count($regency_sisa) + 1;
+
+
         if ($regency == NULL) {
             return redirect('selesai_tps');
         }else{
@@ -162,6 +170,8 @@ class SetupController extends Controller
             return view('setup.tps',[
                 'kecamatan' => $regency,
                 'kelurahan' => $village,
+                'count_kecamatan' => $regency_count,
+                'sisa_count' =>  $jumlah,
             ]);
         }
     }
@@ -177,6 +187,7 @@ class SetupController extends Controller
             $villages_update = Village::where('id',$vg['id'])->update(
                 [
                     'tps' => $input[$vg['id']],
+                    
                 ]
                 );
             for ($x = 1; $x <=  $input[$vg['id']]; $x++) {
@@ -186,12 +197,24 @@ class SetupController extends Controller
                $tps->number      = $x;
                $tps->save();
             }
+
+            DptModel::create([
+                'districts_id' =>  $id,
+                'villages_id' => $vg['id'],
+                'count'       =>  $input['dpt-'.$vg['id'].'']
+            ]);
         }
+
+        $dpt = DptModel::where('districts_id',$id)->sum('count');
         $district_update = District::where('id',$id)->update(
             [
                 'status' => 'solve',
+                'dpt'    =>  $dpt,
+               
             ]
         );
+
+        
        
         return redirect('setup_tps');
      
