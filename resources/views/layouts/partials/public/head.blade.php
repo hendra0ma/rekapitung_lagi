@@ -118,7 +118,7 @@ use App\Models\Paslon;
         <div class="row">
             <div class="col-md text-center">
                 <h4 style="margin-bottom: 7.5px !important;" class="text-uppercase fw-bold">
-                    PILPRES
+                    {{$config['jenis_pemilu']}}
                 </h4>
             </div>
         </div>
@@ -132,14 +132,14 @@ use App\Models\Paslon;
         <div class="row">
             <div class="col-md text-center">
                 <h4 class="text-uppercase fw-bold">
-                    Tahun 2024
+                    Tahun  {{$config['tahun']}}
                 </h4>
             </div>
         </div>
         <div class="row">
             <div class="col-md text-center">
                 <h6 class="text-uppercase fw-bold">
-                    {{$title}}
+                    {{$title}}  
                     </h4>
             </div>
         </div>
@@ -214,8 +214,9 @@ use App\Models\Paslon;
                 <div class="container">
                     <ul class="nav nav-tabs mb-3 shadow-sm" id="pills-tab" role="tablist">
                         <li class="nav-item col" style="padding-right: 0; padding-left: 0;"> <button style="height: 24px;" class="btn nav-link active w-100 rounded-0 hoper border" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">RealCount</button> </li>
+                        <li class="nav-item col" style="padding-right: 0; padding-left: 0;"> <button style="height: 24px;" class="btn nav-link w-100 rounded-0 hoper border" id="pills-home-tab" data-toggle="pill" href="#pills-home-enum" role="tab" aria-controls="pills-home-enum" aria-selected="true">Enumerator Quick Count</button> </li>
                         @if($config->quick_count == "yes")
-                        <li class="nav-item col" style="padding-right: 0; padding-left: 0;"> <button style="height: 24px;" class="btn nav-link w-100 rounded-0 border" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Quick Count</button> </li>
+                        <li class="nav-item col" style="padding-right: 0; padding-left: 0;"> <button style="height: 24px;" class="btn nav-link w-100 rounded-0 border" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Sistem Quick Count</button> </li>
                         @endif
                         @if($config->show_terverifikasi == "show")
                         <li class="nav-item col" style="padding-right: 0; padding-left: 0;"> <button style="height: 24px;" class="btn nav-link w-100 rounded-0 border" id="pills-terverifikasi-tab" data-toggle="pill" href="#pills-terverifikasi" role="tab" aria-controls="pills-terverifikasi" aria-selected="false">Terverifikasi</button> </li>

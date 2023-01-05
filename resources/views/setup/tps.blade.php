@@ -98,7 +98,7 @@
                             @endforeach
                      
                         
-                            <button type="submit" class="btn btn-outline-primary my-5">Lanjutkan</button> 
+                            <button type="submit" class="btn bg-pri text-white my-5">Lanjutkan</button> 
                         </div>  
                          
                       </form>

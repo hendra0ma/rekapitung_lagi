@@ -165,7 +165,7 @@
                     <div class="container">
                         <div class="row mt-9">
                             <div class="col-md text-center">
-                                <h1 class="uppercase">PILPRES 2024 {{$kota->name}}</h1>
+                                <h1 class="uppercase"> {{$config['jenis_pemilu']}}  {{$config['tahun']}} {{$kota->name}}</h1>
                                 <h5 class="uppercase">PROGRESS % DARI 100%</h5>
                             </div>
                         </div>

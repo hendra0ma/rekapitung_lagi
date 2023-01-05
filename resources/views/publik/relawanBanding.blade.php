@@ -92,7 +92,7 @@
                     <h4 class="mt-5 text-center">
                         <img class="card-img-top" style="width: 100px;" src="https://paslon1.tangsel.pilwalkot.rekapitung.id/ui/images/Lambang_Kota_Tangerang_Selatan_svg1.png" alt="">
                     </h4>
-                    <h4 class="card-title text-center">PILPRES TAHUN 2024 <br> {{$kota->name}}</h4>
+                    <h4 class="card-title text-center"> {{$config['jenis_pemilu']}} TAHUN  {{$config['tahun']}} <br> {{$kota->name}}</h4>
                     <div class="card-body">
                         <h4 class="card-title text-center">Formulir Pendaftaran C1 Banding</h4>
                         <form action="{{url('')}}/daftar-banding" method="post">

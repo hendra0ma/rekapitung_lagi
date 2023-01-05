@@ -27,7 +27,7 @@ $title = '';
                 <a class="header-brand1" href="{{url('')}}/administrator/index">
                 <h3 class="text-dark">
                         <b>
-                            PILPRES 2024
+                            {{$config['jenis_pemilu']}}  {{$config['tahun']}}
                         </b>
                     </h3>
                 </a><!-- LOGO -->

@@ -92,7 +92,7 @@
                 <h4 class="mt-5 text-center">
                                 <img class="card-img-top" style="width: 150px;" src="{{asset('assets/images/brand/logo_gold.png')}}" alt="">
                             </h4>
-                            <h4 class="card-title text-center">PILPRES TAHUN 2024 <br> {{$kota->name}}</h4>
+                            <h4 class="card-title text-center"> {{$config['jenis_pemilu']}} TAHUN  {{$config['tahun']}} <br> {{$kota->name}}</h4>
                     <div class="row justify-content-center">
                         <div class="col-md-11">
                             <div class="card-body">
