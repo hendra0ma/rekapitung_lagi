@@ -273,7 +273,6 @@ class DevelopingController extends Controller
         public function c1_quickcount()
         {
             return view('developing.c1_quickcount');
-
         }
-        
+
 }

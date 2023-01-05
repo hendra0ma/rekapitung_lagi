@@ -582,10 +582,3 @@ Route::get('/login-commander',function ()
 {
    return view('auth.login_commander');
 });
-
-
-
-
-
-
-
