@@ -20,6 +20,7 @@ use App\Models\History;
 use App\Models\Listkecurangan;
 use App\Models\Tracking;
 use App\Models\Province;
+use App\Models\QuickSaksiData;
 use BuktiDeskirpsiCurang;
 use BuktiFoto;
 use Illuminate\Http\Request;
@@ -31,6 +32,12 @@ class PublicController extends Controller
     // {
     //     // return view('publik.index');
     // }
+    public $config;
+    public function __construct()
+    {
+        $this->config = Config::first();
+    }
+    
     public function getsolution(Request $request)
     {
         $data = Listkecurangan::join('solution_frauds', 'solution_frauds.id', '=', 'list_kecurangan.solution_fraud_id')->where('list_kecurangan.id', $request->id_list)->first();
@@ -40,6 +47,8 @@ class PublicController extends Controller
     {
 
         $data['config'] = Config::first();
+        $config = Config::first();
+        $dpt = District::where('regency_id', $this->config->regencies_id)->sum("dpt");
         $data['kota'] = Regency::find($data['config']['regencies_id']);
         $data['marquee'] = Saksi::join('users', 'users.tps_id', "=", "saksi.tps_id")->get();
         $data['paslon'] = Paslon::with('saksi_data')->get();
@@ -52,6 +61,19 @@ class PublicController extends Controller
                 ->where('tps.sample', '1');
 
         }])->get();
+
+
+        $data['kecamatan'] = District::where('regency_id', $config['regencies_id'])->get();
+        $data['paslon_quick'] = Paslon::with('quicksaksidata')->get();
+        $data['paslon_terverifikasi_quick']     = Paslon::with(['quicksaksidata' => function ($query) {
+            $query->join('quicksaksi', 'quicksaksidata.saksi_id', 'quicksaksi.id')
+                ->whereNull('quicksaksi.pending')
+                ->where('quicksaksi.verification', 1);
+        }])->get();
+        $data['total_incoming_vote_quick']      = QuickSaksiData::sum('voice');
+        $data['realcount']  = $data['total_incoming_vote_quick'] / $dpt * 100;
+
+        
         $data['tps_selesai'] = Tps::where('setup', 'terisi')->count();
         $data['tps_belum'] = Tps::count();
         $data['tps_selesai_quick'] = Tps::where('setup', 'terisi')->where('sample',1)->count();

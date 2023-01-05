@@ -143,11 +143,11 @@ class SetupController extends Controller
                     'dpt' => $input[$cs['id']],  
                 ]
             );
-            if ($setup) {
-                echo 'ok';
-            }else{
-                echo 'gagal';
-            }
+            // if ($setup) {
+            //     echo 'ok';
+            // }else{
+            //     echo 'gagal';
+            // }
         }
         return redirect('setup_tps');
     }

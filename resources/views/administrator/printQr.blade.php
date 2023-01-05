@@ -91,7 +91,7 @@
                     alt="">
                 <center>
                     <h3 class="fixed-bottom text-uppercase">
-                        PILPRES 2024 {{$kota->name }}
+                        {{$config['jenis_pemilu']}}  {{$config['tahun']}} {{$kota->name }}
                     </h3> 
                 </center>
             </div>

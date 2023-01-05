@@ -61,14 +61,24 @@ $tps = Tps::count();
 
 <div class="row mt-3">
     <div class="col-lg-3 col-md-6 break-point-1">
-        <h1 class="page-title fs-3 mt-2">DASHBOARD REKAPITUNG
-        </h1>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{$kota['name']}}
-                <!-- Kota -->
-            </li>
-        </ol>
+    <div class="row g-0">
+        <div class="col-md-4">
+        
+            <img src="{{asset('assets/images/brand/logo_gold.png')}}"class="img-fluid">
+        </div>
+        <div class="col-md-8">
+            
+                    <h1 class="page-title fs-3 mt-2">DASHBOARD REKAPITUNG
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{$kota['name']}}
+                            <!-- Kota -->
+                        </li>
+                    </ol>
+        </div>
+    </div>
+
     
         @if($config->multi_admin == "yes")
         <?php

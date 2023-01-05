@@ -20,7 +20,7 @@
 							<div class="text-center mb-4">
 								<img src="{{url('/')}}/assets/images/brand/logo-2.png" alt="lockscreen image" style="width: 75px" class="mb-2">
 								<h4 class="fw-bold "style="line-height: 1.3">
-                                PILPRES 2024 <br>    
+                                    {{$config['jenis_pemilu']}}  {{$config['tahun']}} <br>    
                                 {{ $judul }}</h4>
 							</div>
                             @if ($message = Session::get('success'))

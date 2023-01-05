@@ -16,6 +16,7 @@ use App\Http\Controllers\DevelopingController;
 use App\Models\Config;
 use App\Models\District;
 use App\Models\Province;
+use App\Models\ProvinceDomain;
 use App\Models\Regency;
 use App\Models\Tps;
 use App\Models\User;
@@ -42,6 +43,7 @@ use App\Http\Controllers\EmailController;
 use App\Http\Controllers\HunterController;
 use App\Http\Controllers\Payrole;
 use App\Models\MultiAdministrator;
+use App\Models\RegenciesDomain;
 use App\Models\Tracking;
 use Illuminate\Support\Facades\Cookie;
 
@@ -57,6 +59,21 @@ use function GuzzleHttp\Promise\all;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+
+
+Route::get('/kontol',function ()
+{
+    $config = App\Models\Config::first();
+    $kotas =App\Models\Regency::where('province_id',$config->provinces_id)->get();
+
+   foreach($kotas as $kot){
+    dump($kot->id,$kot->name );
+   }
+});
+
+
 Route::get('/ceksetup',function ()
 {
    $config = Config::first();
@@ -528,6 +545,12 @@ Route::get('/factory_user', function () {
         $user->save();
     }
 });
+
+
+
+
+
+
 Route::get('/factory_saksi', function () {
     $faker = Faker\Factory::create();
     $tps = Tps::where('villages_id', 3674040006)->get();
@@ -559,5 +582,10 @@ Route::get('/login-commander',function ()
 {
    return view('auth.login_commander');
 });
+
+
+
+
+
 
 

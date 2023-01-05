@@ -1368,10 +1368,11 @@ class AdminController extends Controller
                 ->whereNull('quicksaksi.pending')
                 ->where('quicksaksi.verification', 1);
         }])->get();
+        $data['total_incoming_vote']      = QuickSaksiData::sum('voice');
         $data['kota'] = Regency::where('id', $config['regencies_id'])->first();
         $data['tracking'] = ModelsTracking::get();
-        $data['total_incoming_vote']      = QuickSaksiData::sum('voice');
-        $data['realcount']                = $data['total_incoming_vote'] / $dpt * 100;
+
+        $data['realcount']  = $data['total_incoming_vote'] / $dpt * 100;
         $data['village'] = Village::first();
         $data['villages'] = Village::get();
         $data['realcount'] = $data['total_incoming_vote'] / $dpt * 100;

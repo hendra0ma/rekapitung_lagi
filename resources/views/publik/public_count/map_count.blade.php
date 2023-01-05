@@ -134,7 +134,7 @@ use App\Models\Paslon;
             <div class="row">
                 <div class="col-md text-center">
                     <h3 class="fw-bold pb-5">Maps Count
-                    <h3 class="fw-bold">PILPRES 2024 {{$provinsi->name}}
+                    <h3 class="fw-bold"> {{$config['jenis_pemilu']}}  {{$config['tahun']}} {{$provinsi->name}}
                     <h3 class="fw-bold">{{$kota->name}}
                     </h3>
                 </div>
