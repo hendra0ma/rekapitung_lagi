@@ -83,9 +83,9 @@ class PublicController extends Controller
             }
         }
         return response()->json($data,200);
-}
+    }
 
-public function getFraud(Request $request)
+    public function getFraud(Request $request)
     {
         $count_kecurangan  =\App\Models\Tps::join('saksi', 'saksi.tps_id', '=', 'tps.id')
         ->join('users', 'users.tps_id', '=', 'tps.id')
@@ -96,5 +96,34 @@ public function getFraud(Request $request)
         return response()->json([
             'fraud_total' => $count_kecurangan
         ],200);
+    }
+
+    public function getTPS(Request $request)
+    {
+        $count_tps = TPS::count();
+
+        return response()->json([
+            'count_tps' => $count_tps
+        ], 200);
+    }
+
+    public function getTPSMasuk(Request $request)
+    {
+        $count_tps_masuk = TPS::where('setup','terisi')->count();
+
+        return response()->json([
+            'count_tps_masuk' => $count_tps_masuk
+        ], 200);
+    }
+
+    public function getTPSKosong(Request $request)
+    {
+        $data['tps_masuk'] = Tps::where('setup','terisi')->count();
+        $data['total_tps']   =  Tps::where('setup','belum terisi')->count();;
+        $count_tps_kosong = $data['total_tps'] - $data['tps_masuk'];
+
+        return response()->json([
+            'count_tps_kosong' => $count_tps_kosong
+        ], 200);
     }
 }
