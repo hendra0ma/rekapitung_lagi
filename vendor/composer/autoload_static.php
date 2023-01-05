@@ -739,6 +739,7 @@ class ComposerStaticInit3a702ad69964ebc116e279d49146f69b
         'App\\Models\\Country' => __DIR__ . '/../..' . '/app/Models/Country.php',
         'App\\Models\\Databukti' => __DIR__ . '/../..' . '/app/Models/Databukti.php',
         'App\\Models\\District' => __DIR__ . '/../..' . '/app/Models/District.php',
+        'App\\Models\\DptModel' => __DIR__ . '/../..' . '/app/Models/DptModel.php',
         'App\\Models\\History' => __DIR__ . '/../..' . '/app/Models/History.php',
         'App\\Models\\Koreksi' => __DIR__ . '/../..' . '/app/Models/Koreksi.php',
         'App\\Models\\Link' => __DIR__ . '/../..' . '/app/Models/Link.php',

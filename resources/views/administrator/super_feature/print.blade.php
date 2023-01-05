@@ -52,7 +52,7 @@
                     <h1 class="mt-2 text-danger text-uppercase" style="font-size: 40px;">ANALISA REALISASI DPT KPU
                     </h1>
                     <h3 class="mt-1 mb-1 fs-2">
-                        Pemilu Presiden
+                        {{$config['jenis_pemilu']}}  
                     </h3>
 
                     <img style="width: 350px; height: auto; margin-top:75px" src="{{url('')}}/assets/images/brand/logo.png" alt="">
@@ -80,7 +80,7 @@
               <img src="{{asset('')}}assets/stamp.png"class="img-flluid stamp"style="width:150px;height:auto" alt="">
                 <center>
                     <h3 class="fixed-bottom text-uppercase">
-                     PILPRES 2024
+                        {{$config['jenis_pemilu']}}  {{$config['tahun']}}
                     </h3>
                 </center>
             </div>

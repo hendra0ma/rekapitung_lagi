@@ -103,6 +103,7 @@ return array(
     'App\\Models\\Country' => $baseDir . '/app/Models/Country.php',
     'App\\Models\\Databukti' => $baseDir . '/app/Models/Databukti.php',
     'App\\Models\\District' => $baseDir . '/app/Models/District.php',
+    'App\\Models\\DptModel' => $baseDir . '/app/Models/DptModel.php',
     'App\\Models\\History' => $baseDir . '/app/Models/History.php',
     'App\\Models\\Koreksi' => $baseDir . '/app/Models/Koreksi.php',
     'App\\Models\\Link' => $baseDir . '/app/Models/Link.php',
