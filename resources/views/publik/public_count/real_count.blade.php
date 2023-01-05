@@ -92,7 +92,7 @@ use App\Models\Paslon;
                     </div>
 
                     <div class="col-8">
-                        <div class="fs-4 fw-bold mx-auto text-center">PILPRES 2024 / PROVINSI {{$provinsi->name}} / {{$kota->name}}</div>
+                        <div class="fs-4 fw-bold mx-auto text-center"> {{$config['jenis_pemilu']}}  {{$config['tahun']}} / PROVINSI {{$provinsi->name}} / {{$kota->name}}</div>
                     </div>
 
                     <div class="col-2">

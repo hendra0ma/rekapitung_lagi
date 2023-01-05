@@ -60,7 +60,7 @@ use App\Models\Rekapitulator;
                 <img style="width: 350px; height: auto; margin-top:75px"
                     src="{{asset('')}}images/logo/rekapitung_gold.png" alt="">
                     <h3 class="fs-2 text-uppercase mt-3">
-                        pilpres 2024 {{$kotas->name}}
+                        {{$config['jenis_pemilu']}}  {{$config['tahun']}} {{$kotas->name}}
                     </h3>
             </center>
         </div>
