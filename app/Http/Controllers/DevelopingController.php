@@ -275,4 +275,5 @@ class DevelopingController extends Controller
             return view('developing.c1_quickcount');
 
         }
+        
 }

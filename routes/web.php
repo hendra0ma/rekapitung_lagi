@@ -16,6 +16,7 @@ use App\Http\Controllers\DevelopingController;
 use App\Models\Config;
 use App\Models\District;
 use App\Models\Province;
+use App\Models\ProvinceDomain;
 use App\Models\Regency;
 use App\Models\Tps;
 use App\Models\User;
@@ -42,6 +43,7 @@ use App\Http\Controllers\EmailController;
 use App\Http\Controllers\HunterController;
 use App\Http\Controllers\Payrole;
 use App\Models\MultiAdministrator;
+use App\Models\RegenciesDomain;
 use App\Models\Tracking;
 use Illuminate\Support\Facades\Cookie;
 
@@ -543,6 +545,12 @@ Route::get('/factory_user', function () {
         $user->save();
     }
 });
+
+
+
+
+
+
 Route::get('/factory_saksi', function () {
     $faker = Faker\Factory::create();
     $tps = Tps::where('villages_id', 3674040006)->get();
@@ -574,5 +582,10 @@ Route::get('/login-commander',function ()
 {
    return view('auth.login_commander');
 });
+
+
+
+
+
 
 
