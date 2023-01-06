@@ -102,8 +102,16 @@ $tps = 2963;
                             Count 2</span></a>
                 </li> -->
                 <li>
-                    <a class="side-menu__item" href="{{url('')}}/administrator/quick_count2"><i class="side-menu__icon mdi mdi-quicktime"></i><span
-                            class="side-menu__label">Quick Count</span></a>
+                    {{-- <a class="side-menu__item" href="{{url('')}}/administrator/quick_count2"><i class="side-menu__icon mdi mdi-quicktime"></i><span
+                            class="side-menu__label">Quick Count</span></a> --}}
+
+                            <a class="side-menu__item" data-bs-toggle="slide" href="#"><i class="side-menu__icon mdi mdi-quicktime"></i><span class="side-menu__label">Quick Count</span><i
+                                class="angle fa fa-angle-right"></i></a>
+                        <ul class="slide-menu">
+                            <li><a href="{{url('/')}}/administrator/quick_count2" class="slide-item fw-bolder text-danger">Quick Count By Enumerator</a></li>
+                            <li><a href="{{url('/')}}/administrator/quick_count" class="slide-item">Quick Count By System</a></li>
+                            
+                        </ul>
                 </li>
                 <!-- <li>
                     <a class="side-menu__item" href="quick_count2"><i class="side-menu__icon mdi mdi-quicktime"></i><span

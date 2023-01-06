@@ -360,6 +360,8 @@ class AdminController extends Controller
         $data['config'] = Config::first();
         $data['team'] = User::where('role_id', '!=', 8)->get();
         $data['district'] = District::where('regency_id',  $config->regencies_id)->get();
+
+
         return view('administrator.commander.patroli', $data);
     }
 
@@ -437,11 +439,15 @@ class AdminController extends Controller
     {
         $data['user'] = User::find($request['id'])->history()->get();
         $data['config'] = Config::first();
+        $data['profiles'] = User::where('id',$request['id'])->get();
+
         if (count($data['user']) == 0) {
             return view('administrator.ajax.result_eror');
         } else {
             return view('administrator.ajax.get_history_user', $data);
         }
+
+
     }
 
     public function action_verifikasi(Request $request, $id)

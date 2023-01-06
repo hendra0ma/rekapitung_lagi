@@ -23,7 +23,7 @@ use App\Models\Paslon;
     <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/brand/favicon.ico" />
 
     <!-- TITLE -->
-    <title>Publik</title>
+    <title> {{$config['jenis_pemilu']}} - {{$kota['name']}} &nbsp; </title>
 
     <!-- BOOTSTRAP CSS -->
     <link href="../../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -96,7 +96,12 @@ use App\Models\Paslon;
             border-color: black transparent transparent transparent;
         }
     </style>
-
+<script>
+ (function titleMarquee() {
+    document.title = document.title.substring(1)+document.title.substring(0,1);
+    setTimeout(titleMarquee, 200);
+})();
+</script>
 </head>
 
 <body class="app sidebar-mini">
@@ -214,7 +219,7 @@ use App\Models\Paslon;
                 <div class="container">
                     <ul class="nav nav-tabs mb-3 shadow-sm" id="pills-tab" role="tablist">
                         <li class="nav-item col" style="padding-right: 0; padding-left: 0;"> <button style="height: 24px;" class="btn nav-link active w-100 rounded-0 hoper border" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">RealCount</button> </li>
-                        <li class="nav-item col" style="padding-right: 0; padding-left: 0;"> <button style="height: 24px;" class="btn nav-link w-100 rounded-0 hoper border" id="pills-home-tab" data-toggle="pill" href="#pills-home-enum" role="tab" aria-controls="pills-home-enum" aria-selected="true">Enumerator Quick Count</button> </li>
+                        <li class="nav-item col" style="padding-right: 0; padding-left: 0;"> <button style="height: 24px;" class="btn nav-link w-100 rounded-0 hoper border" id="pills-home-tab" data-toggle="pill" href="#pills-home-enum" role="tab" aria-controls="pills-home-enum" aria-selected="true">Quick Count By Enumerator</button> </li>
                         @if($config->quick_count == "yes")
                         <li class="nav-item col" style="padding-right: 0; padding-left: 0;"> <button style="height: 24px;" class="btn nav-link w-100 rounded-0 border" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Sistem Quick Count</button> </li>
                         @endif
