@@ -135,7 +135,6 @@ class DevelopingController extends Controller
                 'longitude' => '106.8634106',
                 'latitude' => '-6.5619046',
                 'status' => 'sudah absen',
-                
             ]);
             User::where('id',$us['id'])->update([
                 'absen' => 'hadir',
@@ -154,14 +153,14 @@ class DevelopingController extends Controller
          $data['kelurahan'] = Village::where('id',$villagee)->first();
 
     $data['list_solution'] = Bukti_deskripsi_curang::join('list_kecurangan', 'list_kecurangan.id', '=', 'bukti_deskripsi_curang.list_kecurangan_id')
-    ->join('solution_frauds', 'solution_frauds.id', '=', 'list_kecurangan.solution_fraud_id')
-    ->where('bukti_deskripsi_curang.tps_id', $request['id'])
-    ->select('solution_frauds.*', 'bukti_deskripsi_curang.*', 'list_kecurangan.*', 'list_kecurangan.id as id_list')
-    ->get();
-    $data['pelanggaran_umum']    = Listkecurangan::where('jenis', 0)->get();
-    $data['pelanggaran_petugas'] = Listkecurangan::where('jenis', 1)->get();
-    $data['pelanggaran_etik'] = Listkecurangan::where('jenis', 2)->get();
- $villagee = 3674040006;
+         ->join('solution_frauds', 'solution_frauds.id', '=', 'list_kecurangan.solution_fraud_id')
+         ->where('bukti_deskripsi_curang.tps_id', $request['id'])
+         ->select('solution_frauds.*', 'bukti_deskripsi_curang.*', 'list_kecurangan.*', 'list_kecurangan.id as id_list')
+         ->get();
+         $data['pelanggaran_umum']    = Listkecurangan::where('jenis', 0)->get();
+         $data['pelanggaran_petugas'] = Listkecurangan::where('jenis', 1)->get();
+         $data['pelanggaran_etik'] = Listkecurangan::where('jenis', 2)->get();
+         $villagee = 3674040006;
          $data['tps'] = Tps::where('villages_id',(string)$villagee)->get();
          return view('developing.upload_kecurangan',$data);
 
@@ -179,13 +178,10 @@ class DevelopingController extends Controller
      }
      public function action_upload_kecurangan(Request $request)
      {
-         
-         
             Validator::make($request->all(), [
             'curang.*' => ['required'],
             'tps'=>['required'],
             'foto' => ['required'],
-          
         ])->validate();
          
          $tps = Tps::where('id', $request['tps'])->first();

@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Config;
 use App\Models\Link;
 use App\Models\District;
 use App\Models\Security as ModelsSecurity;
@@ -16,19 +18,23 @@ class Security extends Controller
     public function key_kecamatan(Request $req, $id,$role)
     {
         $user = Auth::user()->id;
+        $data['config'] = Config::first();
         $cek_password = ModelsSecurity::where('user_id', $user)->where('security', decrypt($role))->first();
         $kecamatan = District::where('id', decrypt($id))->first();
         if ($cek_password == NULL) {
             return view('administrator.security.generate_key_kecamatan', [
                 'kecamatan' => $kecamatan,
                 'role' => $role,
-                'judul'=>$req->title
+                'judul'=>$req->title,
+                'config' =>  Config::first(),
             ]);
         } else {
             return view('administrator.security.key_kecamatan', [
                 'kecamatan' => $kecamatan,
                 'role' => $role,
+                'config' =>  Config::first(),
                 'judul'=>$req->title
+                
             ]);
         }
     }
@@ -72,11 +78,14 @@ class Security extends Controller
         if ($cek_password == NULL) {
             return view('administrator.security.generate_key_kelurahan', [
                 'kelurahan' => $kelurahan,
+                'config' =>  Config::first(),
                 'judul'=>$req->title
+                
             ]);
         } else {
             return view('administrator.security.key_kelurahan', [
                 'kelurahan' => $kelurahan,
+                'config' =>  Config::first(),
                 'judul'=>$req->titl
             ]);
         }
@@ -119,11 +128,13 @@ class Security extends Controller
         if ($cek_password == NULL) {
             return view('administrator.security.generate_key_v2l', [
                 'role' => $role,
+                'config' =>  Config::first(),
                 'judul'=>$req->title
             ]);
         } else {
             return view('administrator.security.key_v2l', [
                 'role' => $role,
+                'config' =>  Config::first(),
                 'judul'=>$req->title
             ]);
         }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Config;
 use App\Models\Security;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -26,6 +27,7 @@ class   SecurityController extends Controller
     public function index($id)
     {
         $data['village_id'] = Crypt::decrypt($id);
+        $data['config'] = Config::first();
         $checkUser = User::where('role_id', Auth::user()->role_id)->get();
         $id = Crypt::decrypt($id);
         if (Cache::get('some_user' . $id . Auth::user()->role_id . Auth::user()->id) != null) {
@@ -56,7 +58,7 @@ class   SecurityController extends Controller
     public function create($id)
     {
         $data['village_id'] = $id;
-
+        $data['config'] = Config::first();
         $cek = ModelsSecurity::where('district_id', Crypt::decrypt($id))->where('security', 2)->where('user_id', Auth::user()->id)->count();
 
         if ($cek > 0) return redirect()->route('security.login', $id);
@@ -74,7 +76,7 @@ class   SecurityController extends Controller
         Validator::make($request->all(), [
             'password' =>  ['required', 'string', 'confirmed'],
         ])->validate();
-
+        $data['config'] = Config::first();
         $user = Auth::user()->id;
         $security_code = new ModelsSecurity;
         $security_code->district_id  = Crypt::decrypt($id);
@@ -88,7 +90,7 @@ class   SecurityController extends Controller
     {
         $userid = Auth::user()->id;
         $user = ModelsSecurity::where('user_id', $userid)->first();
-
+        $data['config'] = Config::first();
         if (Hash::check($request->password, $user->password)) {
             Session::put('login_session', Auth::user()->id);
             if (Auth::user()->role_id == 2 || Auth::user()->role_id == 1) {
@@ -104,6 +106,7 @@ class   SecurityController extends Controller
     public function logoutKelurahan($id)
     {
         $id = Crypt::decrypt($id);
+        $data['config'] = Config::first();
         Session::forget('user_exist' . $id);
         Cache::forget('some_user' . $id . Auth::user()->role_id . Auth::user()->id);
         Session::forget('login_session');
