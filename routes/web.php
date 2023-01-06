@@ -565,6 +565,7 @@ Route::get('/factory_saksi', function () {
 // {
 //    echo Hash::make("admin.timhukum@gmail.com");
 // });
-Route::get('/login-commander', function () {
-    return view('auth.login_commander');
+Route::get('/login-commander',function ()
+{
+   return view('auth.login_commander');
 });
