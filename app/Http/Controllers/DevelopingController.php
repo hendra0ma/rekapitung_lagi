@@ -15,6 +15,10 @@ use App\Models\Bukticatatan;
 use App\Models\Bukti_deskripsi_curang;
 use App\Models\Buktifoto;
 use App\Models\Buktividio;
+use App\Models\Config;
+use App\Models\District;
+use App\Models\Province;
+use App\Models\Regency;
 use Illuminate\Support\Facades\Validator;
 
 class DevelopingController extends Controller
@@ -30,7 +34,17 @@ class DevelopingController extends Controller
 
      public function action_saksi(Request $request)
      {
-        $villagee = 3674040006;
+         
+    
+
+
+        $config =  Config::find(1);
+
+        $prov = Province::where('id',$config['provinces_id'])->first();
+        $reg = Regency::where('province_id',$prov->id)->first();
+        $dis = District::where('regency_id',$reg['id'])->first();
+        $villages = Village::where('district_id',$dis['id'])->first();
+        $villagee =   $villages->id;
         $images = $request->file('c1_plano')->store('c1_plano');
         $tps = Tps::where('villages_id',$villagee)->where('number',$request['tps'])->first();
         $userrss = User::where('email',$request['email'])->first();
@@ -47,7 +61,7 @@ class DevelopingController extends Controller
         $saksi->c1_images = $images;
         $saksi->verification = "";
         $saksi->audit = "";
-        $saksi->district_id = 3674040;
+        $saksi->district_id = $dis;
         $saksi->village_id =  $villagee;
         $saksi->tps_id = $tps['id'];
         $saksi->regency_id = 3674;
@@ -60,9 +74,9 @@ class DevelopingController extends Controller
             SaksiData::create([
                  'user_id' =>  $userrss['id'],
                  'paslon_id' =>  $i,
-                 'district_id' => 3674040,
+                 'district_id' => $dis,
                  'village_id' =>  $villagee,
-                 'regency_id' => 3674,
+                 'regency_id' => $reg,
                  'voice' =>  (int)$request->suara[$i],
                  'saksi_id' => $ide,
             ]);
