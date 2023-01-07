@@ -19,6 +19,7 @@ use App\Models\Config;
 use App\Models\District;
 use App\Models\Province;
 use App\Models\Regency;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class DevelopingController extends Controller
@@ -44,8 +45,9 @@ class DevelopingController extends Controller
         $reg = Regency::where('province_id',$prov->id)->first();
         $dis = District::where('regency_id',$reg['id'])->first();
         $villages = Village::where('district_id',$dis['id'])->first();
-        $villagee =   $villages->id;
+        $villagee =   Auth::user()->villages;
         $images = $request->file('c1_plano')->store('c1_plano');
+
         $tps = Tps::where('villages_id',$villagee)->where('number',$request['tps'])->first();
         $userrss = User::where('email',$request['email'])->first();
         $tps2 = Tps::where('id',$tps['id'])->update(
@@ -62,6 +64,7 @@ class DevelopingController extends Controller
         $saksi->verification = "";
         $saksi->audit = "";
         $saksi->district_id = $dis;
+        $saksi->batalkan = 0;
         $saksi->village_id =  $villagee;
         $saksi->tps_id = $tps['id'];
         $saksi->regency_id = 3674;
@@ -273,7 +276,7 @@ class DevelopingController extends Controller
         }
         public function upload_c1()
         {
-            $villagee = 3674040006;
+            $villagee = Auth::user()->villages;
             $data['dev'] = User::join('tps','tps.id','=','users.tps_id')->where('villages',$villagee)->where('setup','belum terisi')->first();
             $data['kelurahan'] = Village::where('id',$villagee)->first();
             $data['paslon'] = Paslon::get();

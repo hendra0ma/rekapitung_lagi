@@ -105,10 +105,10 @@
                 style="width: 150px;" alt="Avatar" />
             </h1>
             <h4> Halo, saksi kelima</h4>
-            <form action="action_saksi" method="post" enctype="multipart/form-data">
+            <form action="dev/action_saksi" method="post" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="tps" value="{{$dev['number']}}" id="">
-        <input type="hidden" name="email" value="{{$dev['email']}}" id="">
+            <input type="hidden" name="email" value="{{$dev['email']}}" id="">
         
         <div class="row no-gutters">
             <div class="col-lg-12 mt-2">
