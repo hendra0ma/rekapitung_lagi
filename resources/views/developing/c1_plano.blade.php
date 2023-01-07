@@ -155,7 +155,7 @@
                 </div>
             </div>
 
-            <input type="submit" name="" class="btn btn-block btn-primary" value="Kirim" id="send">
+            <input type="submit" name="" class="btn btn-block btn-primary" value="Kirim" id="send"> 
         </div>
     </div>
 
