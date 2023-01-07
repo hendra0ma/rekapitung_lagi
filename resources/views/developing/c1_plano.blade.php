@@ -104,34 +104,21 @@
                 style="width: 150px;" alt="Avatar" />
             </h1>
             <h4> Halo, saksi kelima</h4>
-            <div class="row no-gutters">
-                <div class="col-lg-12 mt-2">
-                    <div class="input-group">
-                        <div class="input-group-text">
-                            Suara 01
-                        </div><!-- input-group-text -->
-                        <input class="form-control ui-timepicker-input" id="tpBasic" placeholder="Suara 01" type="text"
-                            autocomplete="off">
-                    </div>
-                </div>
-                <div class="col-lg-12 mt-2">
-                    <div class="input-group">
-                        <div class="input-group-text">
-                            Suara 02
-                        </div><!-- input-group-text -->
-                        <input class="form-control ui-timepicker-input" id="tpBasic" placeholder="Suara 02" type="text"
-                            autocomplete="off">
-                    </div>
-                </div>
-                <div class="col-lg-12 mt-2">
-                    <div class="input-group">
-                        <div class="input-group-text">
-                            Suara 03
-                        </div><!-- input-group-text -->
-                        <input class="form-control ui-timepicker-input" id="tpBasic" placeholder="Suara 03" type="text"
-                            autocomplete="off">
-                    </div>
-                </div>
+            <form action="action_saksi" method="post" enctype="multipart/form-data">
+            @csrf
+            <input type="hidden" name="tps" value="{{$dev['number']}}" id="">
+        <input type="hidden" name="email" value="{{$dev['email']}}" id="">
+        
+        <div class="row no-gutters">
+            <div class="col-lg-12 mt-2">
+                @foreach ($paslon as $item)
+                Suara 0{{$item['id']}} - {{ $item['candidate']}}
+              
+                        <input type="number" class="form-control" id="suara[]" name="suara[]" required placeholder="Suara Paslon">
+              
+                  
+              
+                @endforeach
                 <div class="col-lg-12 mt-2">
                     <div class="card">
                         <div class="card-header">
@@ -141,13 +128,13 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <h1>
-                                        <a type="button" data-bs-toggle="modal" data-bs-target="#modelId">
+                                        <a type="button">
                                             <i class="mdi mdi-camera"></i>
                                         </a>
                                     </h1>
                                 </div>
                                 <div class="col-md-12">
-                                    <a type="button" data-bs-toggle="modal" data-bs-target="#modelId">Ambil Foto</a>
+                                <input type="file" name="c1_plano" required id="c1_plano">
                                 </div>
                             </div>
                         </div>

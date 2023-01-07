@@ -30,10 +30,6 @@ class DevelopingController extends Controller
 
      public function action_saksi(Request $request)
      {
-         
-    
-
-
         $villagee = 3674040006;
         $images = $request->file('c1_plano')->store('c1_plano');
         $tps = Tps::where('villages_id',$villagee)->where('number',$request['tps'])->first();
@@ -263,7 +259,11 @@ class DevelopingController extends Controller
         }
         public function upload_c1()
         {
-            return view('developing.c1_plano');
+            $villagee = 3674040006;
+            $data['dev'] = User::join('tps','tps.id','=','users.tps_id')->where('villages',$villagee)->where('setup','belum terisi')->first();
+            $data['kelurahan'] = Village::where('id',$villagee)->first();
+            $data['paslon'] = Paslon::get();
+            return view('developing.c1_plano',$data);
 
         }
         public function c1_quickcount()
