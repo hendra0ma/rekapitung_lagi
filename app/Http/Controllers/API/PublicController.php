@@ -77,6 +77,7 @@ class PublicController extends Controller
                 $data[$i] = [
                     'candidate'=> $pas->candidate,
                     'deputy_candidate'=> $pas->deputy_candidate,
+                    'color'=> $pas->color,
                     'voice'=>$voice,
                 ];
                 $i++;

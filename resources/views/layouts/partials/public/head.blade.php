@@ -23,7 +23,7 @@ use App\Models\Paslon;
     <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/brand/favicon.ico" />
 
     <!-- TITLE -->
-    <title> {{$config['jenis_pemilu']}} - {{$kota['name']}} &nbsp; </title>
+    <title> &nbsp; {{$config['jenis_pemilu']}} &nbsp; - &nbsp; {{$kota['name']}} &nbsp; </title>
 
     <!-- BOOTSTRAP CSS -->
     <link href="../../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -97,8 +97,10 @@ use App\Models\Paslon;
         }
     </style>
 <script>
- (function titleMarquee() {
-    document.title = document.title.substring(1)+document.title.substring(0,1);
+var documentTitle = document.title + " - ";
+
+(function titleMarquee() {
+    document.title = documentTitle = documentTitle.substring(1) + documentTitle.substring(0,1);
     setTimeout(titleMarquee, 200);
 })();
 </script>
