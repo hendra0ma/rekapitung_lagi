@@ -46,6 +46,8 @@ use App\Models\MultiAdministrator;
 use App\Models\RegenciesDomain;
 use App\Models\Tracking;
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 use function GuzzleHttp\Promise\all;
 
@@ -497,10 +499,6 @@ Route::controller(DevelopingController::class)->group(function () {
     Route::post('action_upload_kecurangan', 'action_upload_kecurangan');
     Route::get('dev/absen', 'absen');
     Route::get('dev/test_title', 'test_title');
-
-
-
-    
     Route::get('dev/test_geo', 'test_geo');
 });
 
@@ -571,4 +569,12 @@ Route::get('/factory_saksi', function () {
 Route::get('/login-commander',function ()
 {
    return view('auth.login_commander');
+});
+Route::get('/logout-saksi',function ()
+{
+    Session::flush();
+        
+    Auth::logout();
+
+    return redirect('login');
 });
