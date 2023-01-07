@@ -136,7 +136,7 @@ $data_masuk = (int)$saksidatai / (int)$dpt * 100;
 
 
 
-    <div class="tab-pane fade show active" id="pills-home-enum" role="tabpanel" aria-labelledby="pills-home-tab">
+    <div class="tab-pane fade show" id="pills-home-enum" role="tabpanel" aria-labelledby="pills-home-tab">
         <div class="card">
             <div class="card-body">
                 <div class="row">
