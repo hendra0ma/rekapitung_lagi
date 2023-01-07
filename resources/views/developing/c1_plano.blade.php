@@ -91,6 +91,7 @@
 
 <body class="">
 
+<table border="1px solid">
     <div class='mobile-phone'>
         <div class='brove' style="z-index: 100"><span class='speaker'></span></div>
         <div class='screen pt-5 px-3'>
