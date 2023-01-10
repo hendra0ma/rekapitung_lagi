@@ -341,7 +341,7 @@ use App\Models\Paslon;
             @endforeach
 
             $.ajax({
-                url: 'public/ajax/real_count',
+                url: 'publik/ajax/real_count',
                 type: 'GET',
                 async: true,
                 dataType: 'json',

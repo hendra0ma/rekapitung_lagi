@@ -102,7 +102,7 @@ $data_masuk = (int)$saksidatai / (int)$dpt * 100;
                                 @foreach ($kel as $item)
                                 <tr onclick='check("{{Crypt::encrypt($item->id)}}")'>
                                     <td class="text-middle"><a class="text-dark"
-                                            href="/public/kelurahan/{{Crypt::encrypt($item['id'])}}">{{$item['name']}}</a>
+                                            href="/publik/kelurahan/{{Crypt::encrypt($item['id'])}}">{{$item['name']}}</a>
                                     </td>
                                     <?php $si_item = $item['id']; ?>
                                     @foreach ($paslon_candidate as $cd)
@@ -121,7 +121,7 @@ $data_masuk = (int)$saksidatai / (int)$dpt * 100;
                             </tbody>
                             <script>
                                 let check = function (id) {
-                                    window.location = `{{url('')}}/public/kelurahan/${id}`;
+                                    window.location = `{{url('')}}/publik/kelurahan/${id}`;
                                 }
 
                             </script>
@@ -222,7 +222,7 @@ $data_masuk = (int)$saksidatai / (int)$dpt * 100;
 
                                 <tr onclick='check("{{Crypt::encrypt($item->id)}}")'>
                                     <td><a class="text-dark"
-                                            href="/public/quick_kelurahan/{{Crypt::encrypt($item['id'])}}">{{$item['name']}}</a>
+                                            href="/publik/quick_kelurahan/{{Crypt::encrypt($item['id'])}}">{{$item['name']}}</a>
                                     </td>
                                     @foreach ($paslon_candidate as $cd)
 
@@ -244,7 +244,7 @@ $data_masuk = (int)$saksidatai / (int)$dpt * 100;
 
                             <script>
                                 let check = function (id) {
-                                    window.location = `public/quick_kelurahan/${id}`;
+                                    window.location = `publik/quick_kelurahan/${id}`;
                                 }
 
                             </script>
@@ -336,7 +336,7 @@ $data_masuk = (int)$saksidatai / (int)$dpt * 100;
 
                                 <tr onclick='check("{{Crypt::encrypt($item->id)}}")'>
                                     <td><a class="text-dark"
-                                            href="/public/kelurahan/{{Crypt::encrypt($item['id'])}}">{{$item['name']}}</a>
+                                            href="/publik/kelurahan/{{Crypt::encrypt($item['id'])}}">{{$item['name']}}</a>
                                     </td>
                                     @foreach ($paslon_candidate as $cd)
                                     <?php $saksi_dataa = SaksiData::join('saksi', 'saksi.id', '=', 'saksi_data.saksi_id')
@@ -354,7 +354,7 @@ $data_masuk = (int)$saksidatai / (int)$dpt * 100;
 
                             <script>
                                 let check = function (id) {
-                                    window.location = `public/kelurahan/${id}`;
+                                    window.location = `publik/kelurahan/${id}`;
                                 }
 
                             </script>

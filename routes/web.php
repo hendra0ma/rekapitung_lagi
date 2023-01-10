@@ -442,21 +442,21 @@ Route::controller(PublicController::class)->group(function () {
     Route::get('quick_count', 'quick_count_public');
     Route::get('map_count', 'map_count_public');
     Route::get('scanning/{id}', 'scanning');
-    Route::get('public/ajax/real_count/', 'real_count_get');
-    Route::get('public/kecamatan/{id}', 'kecamatan');
-    Route::get('public/quick_kecamatan/{id}', 'quick_kecamatan');
-    Route::get('public/kelurahan/{id}', 'kelurahan');
-    Route::get('public/quick_kelurahan/{id}', 'quick_kelurahan');
-    Route::get('public/ajax/get_tps', 'get_tps');
+    Route::get('publik/ajax/real_count/', 'real_count_get');
+    Route::get('publik/kecamatan/{id}', 'kecamatan');
+    Route::get('publik/quick_kecamatan/{id}', 'quick_kecamatan');
+    Route::get('publik/kelurahan/{id}', 'kelurahan');
+    Route::get('publik/quick_kelurahan/{id}', 'quick_kelurahan');
+    Route::get('publik/ajax/get_tps', 'get_tps');
     Route::get('ajax/get_tps_quick', 'get_tps_quick');
     Route::get('ajax/get_tps_quick2', 'get_tps_quick2');
-    Route::get('public/quick/index/{id}', 'quick_index');
-    Route::get('public/history', 'history');
-    Route::get('public/disclaimer', 'disclaimer');
-    Route::get('public/fraud', 'fraud');
+    Route::get('publik/quick/index/{id}', 'quick_index');
+    Route::get('publik/history', 'history');
+    Route::get('publik/disclaimer', 'disclaimer');
+    Route::get('publik/fraud', 'fraud');
     Route::get('backend_file', 'backend_file');
     Route::get('getsolution', 'getsolution');
-    Route::get('public/ajax/get_tps_kelurahan', 'get_tps_kelurahan');
+    Route::get('publik/ajax/get_tps_kelurahan', 'get_tps_kelurahan');
     Route::get('kicked', 'kicked');
     // Route::get('/relawan','index');
 });
@@ -543,26 +543,35 @@ Route::get('/factory_user', function () {
 
 Route::get('/factory_saksi', function () {
     $faker = Faker\Factory::create();
+    $config = Config::first();
     $tps = Tps::where('villages_id', 3674040006)->get();
     $count = count($tps);
+    $i = 1;
     foreach ($tps as $key) {
+       
         $user = new User;
         $user->nik = $faker->creditCardNumber;
         $user->name = $faker->name;
-        $user->email = $faker->email;
+        $user->email = "adminSaksi".$i."@gmail.com";
         $user->role_id = 8;
         $user->no_hp = $faker->phoneNumber;
         $user->password = Hash::make('admin');
         $user->is_active = 1;
         $user->address  = $faker->address;
-        $user->districts = 3674040;
+        $user->districts = (int) $config->regencies_id."010";
         $user->villages = 3674040006;
         $user->save();
         Tps::where('id', $key['id'])->update([
             'user_id' => $user->id,
         ]);
+        $i++;
     }
 });
+
+
+
+
+
 
 // Route::get('/generate',function()
 // {

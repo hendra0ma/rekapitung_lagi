@@ -28,9 +28,9 @@
                 <div class="col">
                     <a class="text-white fw-bold" href="{{url('')}}/login">Login</a> |
                     <a class="text-white fw-bold" href="{{url('')}}/relawan">Relawan</a> |
-                    <!-- <a class="text-white fw-bold" href="{{url('')}}/public/history">History</a> | -->
+                    <!-- <a class="text-white fw-bold" href="{{url('')}}/publik/history">History</a> | -->
                     <a class="text-white fw-bold" href="https://disclaimer.rekapitung.id">Disclaimer</a> |
-                    <!-- <a class="text-white fw-bold" href="{{url('')}}/public/fraud">Fraud</a> | -->
+                    <!-- <a class="text-white fw-bold" href="{{url('')}}/publik/fraud">Fraud</a> | -->
                     <a class="text-white fw-bold" href="https://Info.rekapitung.id">Info</a>
                 </div>
             </div>
@@ -313,7 +313,7 @@
     $('tr.modal-id').on('click', function() {
         let id = $(this).data('id');
         $.ajax({
-            url: '{{url("")}}/public/ajax/get_tps',
+            url: '{{url("")}}/publik/ajax/get_tps',
             type: "GET",
             data: {
                 id
