@@ -63,8 +63,8 @@ class DevelopingController extends Controller
         $saksi->c1_images = $images;
         $saksi->verification = "";
         $saksi->audit = "";
-        $saksi->district_id = $dis;
-        $saksi->batalkan = 0;
+        $saksi->district_id = $dis->id;
+        $saksi->batalkan = "0";
         $saksi->village_id =  $villagee;
         $saksi->tps_id = $tps['id'];
         $saksi->regency_id = 3674;
@@ -77,14 +77,14 @@ class DevelopingController extends Controller
             SaksiData::create([
                  'user_id' =>  $userrss['id'],
                  'paslon_id' =>  $i,
-                 'district_id' => $dis,
+                 'district_id' => $dis->id,
                  'village_id' =>  $villagee,
-                 'regency_id' => $reg,
+                 'regency_id' => $reg->id,
                  'voice' =>  (int)$request->suara[$i],
                  'saksi_id' => $ide,
             ]);
         }
-        return redirect('dev/index');
+        return redirect('upload_c1');
         
      }
 
@@ -280,6 +280,12 @@ class DevelopingController extends Controller
             $data['dev'] = User::join('tps','tps.id','=','users.tps_id')->where('villages',$villagee)->where('setup','belum terisi')->first();
             $data['kelurahan'] = Village::where('id',$villagee)->first();
             $data['paslon'] = Paslon::get();
+            if( $data['dev'] == null){
+
+                return view('developing.c1_selesai',$data);
+            }else{
+
+            }
             return view('developing.c1_plano',$data);
 
         }
