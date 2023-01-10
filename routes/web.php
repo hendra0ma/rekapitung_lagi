@@ -542,11 +542,13 @@ Route::get('/factory_user', function () {
 Route::get('/factory_saksi', function () {
     $faker = Faker\Factory::create();
     $config = Config::first();
-    $tps = Tps::where('villages_id', 3674040006)->get();
+    $dis_id =  (int) $config->regencies_id."020";
+    $vill_id = (int) $dis_id."002";
+    $tps = Tps::where('villages_id',   $vill_id)->where('setup','belum terisi')->limit(3)->get();
     $count = count($tps);
     $i = 1;
+    
     foreach ($tps as $key) {
-       
         $user = new User;
         $user->nik = $faker->creditCardNumber;
         $user->name = $faker->name;
@@ -556,14 +558,19 @@ Route::get('/factory_saksi', function () {
         $user->password = Hash::make('admin');
         $user->is_active = 1;
         $user->address  = $faker->address;
-        $user->districts = (int) $config->regencies_id."010";
-        $user->villages = 3674040006;
+        $user->districts =   $dis_id;
+        $user->villages =   $vill_id;
+        $user->cek =   0;
         $user->save();
         Tps::where('id', $key['id'])->update([
             'user_id' => $user->id,
         ]);
         $i++;
     }
+
+   $get_data = User::where('email','LIKE','%adminSaksi%')->get();
+   dd($get_data);
+
 });
 
 
