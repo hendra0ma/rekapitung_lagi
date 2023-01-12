@@ -31,7 +31,7 @@ Route::post('/login', [App\Http\Controllers\API\AuthController::class, 'login'])
 //API Route for public
 
     Route::get('regencies_prov_id',[PublicController::class,'getRegenciesByProvinceId']);
-Route::group(['prefix'=>'public'],function (){
+Route::group(['prefix'=>'public'],function (){ 
     Route::get('regencies',[PublicController::class,'getRegencies']);
     Route::get('get-district',[PublicController::class,'getDistrictByRegencyId']);
     Route::get('get-village',[PublicController::class,'getVillageByDistrictId']);

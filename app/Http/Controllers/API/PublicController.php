@@ -43,47 +43,40 @@ class PublicController extends Controller
            if(count($village) == null) return response()->json(['message'=>"Data NULL"],204);
         return response()->json($village,200);
     }   
-    public function getSuara(Request $request)
+   public function getSuara(Request $request)
     {
         $config = Config::first();
         
         if($request->jenis != "terverifikasi"){
-            $paslon = Paslon::with('saksi_data')->get();
+         $paslon = Paslon::with(['saksi_data' => function($query) {
+                $query->select(['paslon_id','voice']);
+                }])->get();
             $i = 0;
             foreach ($paslon as $pas) {
-                $voice = 0;
-                foreach ($pas->saksi_data as $dataTps) {
-                    $voice += $dataTps->voice;
-                }
+               
                 $data[$i] = [
                     'candidate'=> $pas->candidate,
                     'deputy_candidate'=> $pas->deputy_candidate,
                     'color'=> $pas->color,
-                    'voice'=>$voice,
+                    'voice'=>$pas->saksi_data->sum('voice'),
                 ];
                 $i++;
             }
         }else{
-            $i = 0;
-
-            $paslonterverifikasi     = Paslon::with(['saksi_data' => function ($query) {
+            $data = [];
+            $paslonterverifikasi = Paslon::with(['saksi_data' => function ($query) {
                 $query->join('saksi', 'saksi_data.saksi_id', 'saksi.id')
                     ->whereNull('saksi.pending')
                     ->where('saksi.verification', 1);
             }])->get();
-
+            
             foreach ($paslonterverifikasi as $pas) {
-                $voice = 0;
-                foreach ($pas->saksi_data as $dataTps) {
-                    $voice += $dataTps->voice;
-                }
-                $data[$i] = [
+                $data[] = [
                     'candidate'=> $pas->candidate,
                     'deputy_candidate'=> $pas->deputy_candidate,
                     'color'=> $pas->color,
-                    'voice'=>$voice,
+                    'voice'=>$pas->saksi_data->sum('voice'),
                 ];
-                $i++;
             }
         }
         return response()->json($data,200);
@@ -91,11 +84,10 @@ class PublicController extends Controller
 
     public function getFraud(Request $request)
     {
-        $count_kecurangan  =\App\Models\Tps::join('saksi', 'saksi.tps_id', '=', 'tps.id')
-        ->join('users', 'users.tps_id', '=', 'tps.id')
+       $count_kecurangan  =\App\Models\Tps::join('saksi', 'saksi.tps_id', '=', 'tps.id')
         ->where('saksi.kecurangan', 'yes')
         ->where('saksi.status_kecurangan', 'belum terverifikasi')
-        ->select('saksi.*', 'saksi.created_at as date', 'tps.*', 'users.*')
+        ->select('tps.id','saksi.kecurangan','saksi.status_kecurangan')
         ->count();   
         return response()->json([
             'fraud_total' => $count_kecurangan
@@ -104,11 +96,9 @@ class PublicController extends Controller
 
     public function getTPS(Request $request)
     {
-        $count_tps = TPS::count();
+      $count_tps = TPS::count();
 
-        return response()->json([
-            'count_tps' => $count_tps
-        ], 200);
+         return response()->json(compact('count_tps'), 200);
     }
 
     public function getTPSMasuk(Request $request)

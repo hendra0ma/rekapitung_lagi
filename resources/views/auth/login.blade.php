@@ -155,13 +155,13 @@
         } else {
             $(this).attr("disabled", true);
             $(this).html(`
-    <lord-icon
-      src="https://cdn.lordicon.com/ymrqtsej.json"
-      trigger="loop"
-      colors="primary:#121331"
-      style="width:40px;height:40px">
-    </lord-icon>  Sedang Meminta Kode
-    `);
+            <lord-icon
+            src="https://cdn.lordicon.com/ymrqtsej.json"
+            trigger="loop"
+            colors="primary:#121331"
+            style="width:40px;height:40px">
+            </lord-icon>  Sedang Meminta Kode
+            `);
             let Containertime = $("p.containerTime");
 
             $.ajax({
