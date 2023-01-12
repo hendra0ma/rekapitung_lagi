@@ -46,13 +46,9 @@ class PublicController extends Controller
     public function getSuara(Request $request)
     {
         $config = Config::first();
-        $paslon                   = Paslon::with('saksi_data')->get();
-        $paslonterverifikasi     = Paslon::with(['saksi_data' => function ($query) {
-            $query->join('saksi', 'saksi_data.saksi_id', 'saksi.id')
-                ->whereNull('saksi.pending')
-                ->where('saksi.verification', 1);
-        }])->get();
+        
         if($request->jenis != "terverifikasi"){
+            $paslon = Paslon::with('saksi_data')->get();
             $i = 0;
             foreach ($paslon as $pas) {
                 $voice = 0;
@@ -69,6 +65,13 @@ class PublicController extends Controller
             }
         }else{
             $i = 0;
+
+            $paslonterverifikasi     = Paslon::with(['saksi_data' => function ($query) {
+                $query->join('saksi', 'saksi_data.saksi_id', 'saksi.id')
+                    ->whereNull('saksi.pending')
+                    ->where('saksi.verification', 1);
+            }])->get();
+
             foreach ($paslonterverifikasi as $pas) {
                 $voice = 0;
                 foreach ($pas->saksi_data as $dataTps) {
