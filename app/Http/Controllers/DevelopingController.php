@@ -283,8 +283,6 @@ class DevelopingController extends Controller
             if( $data['dev'] == null){
 
                 return view('developing.c1_selesai',$data);
-            }else{
-
             }
             return view('developing.c1_plano',$data);
 
