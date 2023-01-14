@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Config;
 use App\Models\District;
-use App\Models\DptModel;
 use App\Models\Paslon;
 use App\Models\Province;
 use App\Models\Regency;
@@ -17,16 +16,6 @@ use Illuminate\Support\Facades\DB;
 
 class SetupController extends Controller
 {
-
-    public function __construct()
-    {
-        $config = Config::all()->first();
-
-        if ($config['setup'] == "no") {
-            redirect('index');
-        }
-    }
-
     public function setup_kota()
     {
         $config = Config::all()->first();
@@ -34,7 +23,7 @@ class SetupController extends Controller
             $province = Province::all();
             return view('setup.kota', ['province' => $province]);
         } else {
-            return redirect('setup_paslon');
+            return redirect('setup_logo_paslon');
         }
     }
     public function setup_logo(Request $request)
@@ -56,7 +45,7 @@ class SetupController extends Controller
         );
 
         if ($setup) {
-            return redirect('setup_paslon');
+            return view('setup.logo');
         } else {
             abort(403, 'ENC-2938291.');
         }
@@ -125,10 +114,9 @@ class SetupController extends Controller
     {     
         $course = Config::find(1)->regencies;
         $courses = Regency::find($course['id'])->districts;
-        // return view('setup.dpt',[
-        //     'district' => $courses,
-        // ]);
-        return redirect('setup_tps');
+        return view('setup.dpt',[
+            'district' => $courses,
+        ]);
     }
 
     public function action_setup_dpt(Request $request)
@@ -143,11 +131,11 @@ class SetupController extends Controller
                     'dpt' => $input[$cs['id']],  
                 ]
             );
-            // if ($setup) {
-            //     echo 'ok';
-            // }else{
-            //     echo 'gagal';
-            // }
+            if ($setup) {
+                echo 'ok';
+            }else{
+                echo 'gagal';
+            }
         }
         return redirect('setup_tps');
     }
@@ -157,12 +145,6 @@ class SetupController extends Controller
         $config   = Config::find(1)->with('regencies')->get();
         $frcfg    = $config[0]->regencies;
         $regency  = District::where('regency_id',$frcfg['id'])->where('status','no')->first();
-        $regency_count  = District::where('regency_id',$frcfg['id'])->get();
-        $regency_sisa  = District::where('regency_id',$frcfg['id'])->where('status','solve')->get();
-
-        $jumlah = count($regency_sisa) + 1;
-
-
         if ($regency == NULL) {
             return redirect('selesai_tps');
         }else{
@@ -170,8 +152,6 @@ class SetupController extends Controller
             return view('setup.tps',[
                 'kecamatan' => $regency,
                 'kelurahan' => $village,
-                'count_kecamatan' => $regency_count,
-                'sisa_count' =>  $jumlah,
             ]);
         }
     }
@@ -187,34 +167,21 @@ class SetupController extends Controller
             $villages_update = Village::where('id',$vg['id'])->update(
                 [
                     'tps' => $input[$vg['id']],
-                    
                 ]
                 );
             for ($x = 1; $x <=  $input[$vg['id']]; $x++) {
                $tps = new Tps;
                $tps->district_id = $id;
-               $tps->villages_id = $vg['id'];
+               $tps->villages_id = (string)$vg['id'];
                $tps->number      = $x;
                $tps->save();
             }
-
-            DptModel::create([
-                'districts_id' =>  $id,
-                'villages_id' => $vg['id'],
-                'count'       =>  $input['dpt-'.$vg['id'].'']
-            ]);
         }
-
-        $dpt = DptModel::where('districts_id',$id)->sum('count');
         $district_update = District::where('id',$id)->update(
             [
                 'status' => 'solve',
-                'dpt'    =>  $dpt,
-               
             ]
         );
-
-        
        
         return redirect('setup_tps');
      
@@ -236,10 +203,7 @@ class SetupController extends Controller
         // DB::table('tps')->update([
         //           'sample' => null,
         //     ]);
-        // Config::where('id',1)->update([
-        //     'setup' => 'no',
-        // ]);
-        return redirect('setup_done');
+        return response()->json(['message'=>"berhasil generate"],200);
     }
 
     public function setup_done()
