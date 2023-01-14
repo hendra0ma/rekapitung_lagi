@@ -545,6 +545,10 @@ Route::get('/factory_saksi', function () {
     $dis_id =  (int) $config->regencies_id."020";
     $villages = Village::where('district_id',$dis_id)->first();
     $tps = Tps::where('villages_id',   $villages->id)->where('setup','belum terisi')->limit(3)->get();
+
+
+    dd($tps);
+
     $i = 1;
     
     foreach ($tps as $key) {
