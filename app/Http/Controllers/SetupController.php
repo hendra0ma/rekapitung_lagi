@@ -197,6 +197,8 @@ class SetupController extends Controller
                $tps->save();
             }
 
+            dd($vg['id']);
+
             DptModel::create([
                 'districts_id' =>  $id,
                 'villages_id' => $vg['id'],
