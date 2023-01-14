@@ -543,9 +543,8 @@ Route::get('/factory_saksi', function () {
     $faker = Faker\Factory::create();
     $config = Config::first();
     $dis_id =  (int) $config->regencies_id."020";
-    $vill_id = (int) $dis_id."002";
-    $tps = Tps::where('villages_id',   $vill_id)->where('setup','belum terisi')->limit(3)->get();
-    $count = count($tps);
+    $villages = Village::where('district_id',$dis_id)->first();
+    $tps = Tps::where('villages_id',   $villages->id)->where('setup','belum terisi')->limit(3)->get();
     $i = 1;
     
     foreach ($tps as $key) {
@@ -559,7 +558,7 @@ Route::get('/factory_saksi', function () {
         $user->is_active = 1;
         $user->address  = $faker->address;
         $user->districts =   $dis_id;
-        $user->villages =   $vill_id;
+        $user->villages =   $villages->id;
         $user->cek =   0;
         $user->save();
         Tps::where('id', $key['id'])->update([

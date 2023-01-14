@@ -35,10 +35,6 @@ class DevelopingController extends Controller
 
      public function action_saksi(Request $request)
      {
-         
-    
-
-
         $config =  Config::find(1);
 
         $prov = Province::where('id',$config['provinces_id'])->first();
