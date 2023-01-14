@@ -547,7 +547,7 @@ Route::get('/factory_saksi', function () {
     $tps = Tps::where('villages_id',   $villages->id)->where('setup','belum terisi')->limit(3)->get();
 
 
-    dd($tps);
+    dd($villages);
 
     $i = 1;
     
