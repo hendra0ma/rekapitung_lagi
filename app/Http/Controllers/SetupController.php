@@ -174,6 +174,8 @@ class SetupController extends Controller
                $tps->district_id = $id;
                $tps->villages_id = (string)$vg['id'];
                $tps->number      = $x;
+
+               
                $tps->save();
             }
         }
