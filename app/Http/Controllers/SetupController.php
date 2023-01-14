@@ -85,7 +85,6 @@ class SetupController extends Controller
         );
         return redirect('setup_paslon');
     }
-
     public function setup_paslon()
     {
         $config = Paslon::all();
@@ -193,7 +192,7 @@ class SetupController extends Controller
             for ($x = 1; $x <=  $input[$vg['id']]; $x++) {
                $tps = new Tps;
                $tps->district_id = $id;
-               $tps->villages_id = $vg['id'];
+               $tps->villages_id = (string) $vg['id'];
                $tps->number      = $x;
                $tps->save();
             }
