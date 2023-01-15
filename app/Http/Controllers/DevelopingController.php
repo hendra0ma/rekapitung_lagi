@@ -44,9 +44,10 @@ class DevelopingController extends Controller
         $villagee =   Auth::user()->villages;
         $images = $request->file('c1_plano')->store('c1_plano');
 
-        $tps = Tps::where('villages_id',$villagee)->where('number',$request['tps'])->first();
+        $tps = Tps::where('id',Auth::user()->tps_id)->first();
+    
         $userrss = User::where('email',$request['email'])->first();
-        $tps2 = Tps::where('id',$tps['id'])->update(
+        Tps::where('id',$tps['id'])->update(
           [
             'user_id' =>  $userrss['id'],
             'setup' => 'terisi',
@@ -273,14 +274,14 @@ class DevelopingController extends Controller
         public function upload_c1()
         {
             $villagee = Auth::user()->villages;
-            $data['dev'] = User::join('tps','tps.id','=','users.tps_id')->where('villages',$villagee)->where('setup','belum terisi')->first();
+            $data['dev'] = User::join('tps','tps.id','=','users.tps_id')->first();
             $data['kelurahan'] = Village::where('id',$villagee)->first();
             $data['paslon'] = Paslon::get();
-            if( $data['dev'] == null){
-
-                return view('developing.c1_selesai',$data);
+            $cekSaksi = Saksi::where('tps_id',Auth::user()->tps_id)->count('id');
+            if( $cekSaksi == null){
+                return view('developing.c1_plano',$data);
             }
-            return view('developing.c1_plano',$data);
+            return view('developing.c1_selesai',$data);
 
         }
         public function c1_quickcount()

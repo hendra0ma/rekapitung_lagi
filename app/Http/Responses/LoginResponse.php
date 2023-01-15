@@ -11,6 +11,7 @@ class LoginResponse implements LoginResponseContract
 {
     public function toResponse($request)
     {
+        // dd(Auth::user());
         if(auth()->user()->role_id == 14){
             return redirect('c1-relawan');
         }

@@ -556,6 +556,7 @@ Route::get('/factory_saksi', function () {
         $user->no_hp = $faker->phoneNumber;
         $user->password = Hash::make('admin');
         $user->is_active = 1;
+        $user->tps_id = $key->id;
         $user->address  = $faker->address;
         $user->districts =   $dis_id;
         $user->villages =   $key->villages_id;
@@ -572,6 +573,25 @@ Route::get('/factory_saksi', function () {
 
 });
 
+Route::get('/updatus',function ()
+{
+    $user = User::where('email','like','%adminSaksi%')->get();
+    $config = Config::first();
+    $tps = Tps::where('villages_id','LIKE','%'.(int) $config->regencies_id.'%')->where('setup','belum terisi')->limit(3)->get();
+    $i = 0;
+    foreach($user as $us){
+        User::where('id',$us->id)->update([
+            'tps_id'=>$tps[$i]->id
+        ]);
+        $i++;
+    }
+        $admin = User::join('tps','tps.id','=','users.tps_id')
+        ->where('tps.setup','belum terisi')
+        ->where('users.email','like','%adminSaksi%')
+        ->get();
+        dd($admin);
+
+});
 
 
 
