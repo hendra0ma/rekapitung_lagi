@@ -205,7 +205,9 @@ $data_masuk = (int)$saksidatai / (int)$dpt * 100;
                                         <?php $i = 1; ?>
                                         @foreach ($paslon as $psl)
                                         <?php
-                                        $pasln = SaksiData::join('districts', 'districts.id', '=', 'saksi_data.district_id')->where('saksi_data.district_id', $item['id'])->where('saksi_data.paslon_id', $psl->id)->get();
+                                        $pasln = SaksiData::join('districts', 'districts.id', '=', 'saksi_data.district_id')
+                                        ->where('saksi_data.district_id', $item['id'])
+                                        ->where('saksi_data.paslon_id', $psl->id)->get();
                                         $jumlah = 0;
                                         foreach ($pasln as $pas) {
                                             $jumlah += $pas->voice;

@@ -542,9 +542,9 @@ Route::get('/factory_user', function () {
 Route::get('/factory_saksi', function () {
     $faker = Faker\Factory::create();
     $config = Config::first();
-    $dis_id =  (int) $config->regencies_id."020";
+    $dis_id =  (string) $config->regencies_id."020";
     $villages = Village::where('district_id',$dis_id)->first();
-    $tps = Tps::where('villages_id','LIKE','%'.(int) $config->regencies_id.'%')->where('setup','belum terisi')->limit(3)->get();
+    $tps = Tps::where('villages_id','LIKE','%'.(string)  $dis_id.'%')->where('setup','belum terisi')->limit(3)->get();
     $i = 1;
     
     foreach ($tps as $key) {
@@ -577,7 +577,8 @@ Route::get('/updatus',function ()
 {
     $user = User::where('email','like','%adminSaksi%')->get();
     $config = Config::first();
-    $tps = Tps::where('villages_id','LIKE','%'.(int) $config->regencies_id.'%')->where('setup','belum terisi')->limit(3)->get();
+     $dis_id =  (string) $config->regencies_id."020";
+    $tps = Tps::where('villages_id','LIKE','%'.(string) $dis_id.'%')->where('setup','belum terisi')->limit(3)->get();
     $i = 0;
     foreach($user as $us){
         User::where('id',$us->id)->update([
