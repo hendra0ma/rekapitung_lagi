@@ -60,7 +60,7 @@ class DevelopingController extends Controller
         $saksi->c1_images = $images;
         $saksi->verification = "";
         $saksi->audit = "";
-        $saksi->district_id = $dis->id;
+        $saksi->district_id = Auth::user()->districts;
         $saksi->batalkan = "0";
         $saksi->village_id =  $villagee;
         $saksi->tps_id = $tps['id'];
@@ -74,7 +74,7 @@ class DevelopingController extends Controller
             SaksiData::create([
                  'user_id' =>  $userrss['id'],
                  'paslon_id' =>  $i,
-                 'district_id' => $dis->id,
+                 'district_id' =>Auth::user()->districts,
                  'village_id' =>  $villagee,
                  'regency_id' => $reg->id,
                  'voice' =>  (int)$request->suara[$i],

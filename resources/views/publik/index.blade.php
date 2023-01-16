@@ -584,7 +584,10 @@ $data_masuk = (int)$saksidatai / (int)$dpt * 100;
                                 <tr onclick='check("{{Crypt::encrypt($item->id)}}")'>
                                     <td><a class="text-dark" href="publik/kecamatan/{{Crypt::encrypt($item['id'])}}">{{$item['name']}}</a></td>
                                     @foreach ($paslon_candidate as $cd)
-                                    <?php $saksi_dataa = SaksiData::join('saksi', 'saksi.id', '=', 'saksi_data.saksi_id')->where('paslon_id', $cd['id'])->where('saksi_data.district_id', $item['id'])->where('verification', 1)->sum('voice'); ?>
+                                    <?php $saksi_dataa = SaksiData::join('saksi', 'saksi.id', '=', 'saksi_data.saksi_id')
+                                    ->where('paslon_id', $cd['id'])
+                                    ->where('saksi_data.district_id', $item['id'])
+                                    ->where('verification', 1)->sum('voice'); ?>
                                     <td>{{$saksi_dataa}}</td>
                                     @endforeach
                                 </tr>
