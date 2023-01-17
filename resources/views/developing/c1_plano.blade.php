@@ -109,6 +109,12 @@
             @csrf
             <input type="hidden" name="tps" value="{{$dev['number']}}" id="">
             <input type="hidden" name="email" value="{{$dev['email']}}" id="">
+
+            	@if ($message = Session::get('error'))
+				<div class="alert alert-danger alert-block">
+					<strong>{{ $message }}</strong>
+				</div>
+				@endif
         
         <div class="row no-gutters">
             <div class="col-lg-12 mt-2">
