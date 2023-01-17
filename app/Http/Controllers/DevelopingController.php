@@ -43,7 +43,18 @@ class DevelopingController extends Controller
         $villages = Village::where('district_id',$dis['id'])->first();
         $villagee =   Auth::user()->villages;
         $images = $request->file('c1_plano')->store('c1_plano');
-
+        $paslon = Paslon::get();
+        $count = count($paslon);
+        $error = false;
+        foreach ($request->suara as $suara) {
+            if((int)$suara >= 100){
+                $error = true;
+                break;
+            }
+        }
+        if($error){
+            return redirect()->back()->with('error','data tidak boleh lebih dari 100');
+        }
         $tps = Tps::where('id',Auth::user()->tps_id)->first();
     
         $userrss = User::where('email',$request['email'])->first();
@@ -68,8 +79,7 @@ class DevelopingController extends Controller
         $saksi->overlimit = 0;
         $saksi->save();
         $ide = $saksi->id;
-        $paslon = Paslon::get();
-        $count = count($paslon);
+ 
         for ($i = 0; $i < $count ; $i++) {
             SaksiData::create([
                  'user_id' =>  $userrss['id'],
