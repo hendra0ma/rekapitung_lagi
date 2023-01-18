@@ -110,11 +110,12 @@
             <input type="hidden" name="tps" value="{{$dev['number']}}" id="">
             <input type="hidden" name="email" value="{{$dev['email']}}" id="">
 
-            	@if ($message = Session::get('error'))
-				<div class="alert alert-danger alert-block">
-					<strong>{{ $message }}</strong>
-				</div>
-				@endif
+          @if(session()->has('error'))
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                   {{ session()->get('error') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
         
         <div class="row no-gutters">
             <div class="col-lg-12 mt-2">

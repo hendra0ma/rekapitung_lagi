@@ -46,15 +46,17 @@ class DevelopingController extends Controller
         $paslon = Paslon::get();
         $count = count($paslon);
         $error = false;
+        $jumlah = 0;
         foreach ($request->suara as $suara) {
-            if((int)$suara >= 100){
-                $error = true;
-                break;
-            }
+            $jumlah += $suara;
+        }
+        if((int)$jumlah >= 300){
+            $error = true;
         }
         if($error){
             return redirect()->back()->with('error','data tidak boleh lebih dari 100');
         }
+        
         $tps = Tps::where('id',Auth::user()->tps_id)->first();
     
         $userrss = User::where('email',$request['email'])->first();
