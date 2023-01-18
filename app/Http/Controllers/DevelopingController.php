@@ -54,9 +54,9 @@ class DevelopingController extends Controller
             $error = true;
         }
         if($error){
-            return redirect()->back()->with('error','data tidak boleh lebih dari 100');
+            return redirect()->back()->with('error','data tidak boleh lebih dari 300');
         }
-        
+
         $tps = Tps::where('id',Auth::user()->tps_id)->first();
     
         $userrss = User::where('email',$request['email'])->first();
