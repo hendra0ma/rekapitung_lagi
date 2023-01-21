@@ -28,7 +28,7 @@ class CheckToken
 
     protected function isValidToken($token)
     {
-        if(Hash::check($token,'$2y$10$a7gJVa9N7JpsQHPIqUWDYOUc0Ar2OkdaEBHajG3IWQP/N8SDTD4iS')){
+        if(Hash::check($token,'$2y$10$k67QO17znNcdY5a98FliVuXXT.yLc46byJLf03w/Jwzzai0Q5LTua')){
             return true;
         }
         return false;

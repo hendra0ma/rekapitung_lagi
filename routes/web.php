@@ -596,7 +596,7 @@ Route::get('/updatus',function ()
 
 // Route::get('/generate-token-api',function ()
 // {
-//     return Hash::make('123789');
+//     return Hash::make('Bearer 123789');
 // });
 
 
