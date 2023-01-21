@@ -67,6 +67,7 @@ class Kernel extends HttpKernel
         'role' => \App\Http\Middleware\CheckRole::class,
         'districtCheck' => \App\Http\Middleware\DistrictCheck::class,
         'apirole' => \App\Http\Middleware\CheckRoleApi::class,
-        'commander'=>\App\Http\Middleware\CommanderMiddleware::class
+        'commander'=>\App\Http\Middleware\CommanderMiddleware::class,
+        'check-token'=>\App\Http\Middleware\CheckToken::class
     ];
 }
