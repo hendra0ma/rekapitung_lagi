@@ -35,11 +35,14 @@ Route::group(['prefix'=>'public'],function (){
     Route::get('regencies',[PublicController::class,'getRegencies']);
     Route::get('get-district',[PublicController::class,'getDistrictByRegencyId']);
     Route::get('get-village',[PublicController::class,'getVillageByDistrictId']);
-    Route::get('get-voice',[PublicController::class,'getSuara']);
     Route::get('get-fraud',[PublicController::class,'getFraud']);
-    Route::get('get-tps',[PublicController::class,'getTPS']);
-    Route::get('get-tps-masuk',[PublicController::class,'getTPSMasuk']);
-    Route::get('get-tps-kosong',[PublicController::class,'getTPSKosong']);
+    Route::middleware(['CheckToken'])->group(function ()
+    {
+        Route::get('get-voice',[PublicController::class,'getSuara']);
+        Route::get('get-tps',[PublicController::class,'getTPS']);
+        Route::get('get-tps-masuk',[PublicController::class,'getTPSMasuk']);
+        Route::get('get-tps-kosong',[PublicController::class,'getTPSKosong']);
+    });
 });
 
 //Protecting Routes
