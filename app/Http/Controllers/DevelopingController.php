@@ -50,7 +50,7 @@ class DevelopingController extends Controller
         foreach ($request->suara as $suara) {
             $jumlah += $suara;
         }
-        if((int)$jumlah >= 300){
+        if((int)$jumlah > 300){
             $error = true;
         }
         if($error){
