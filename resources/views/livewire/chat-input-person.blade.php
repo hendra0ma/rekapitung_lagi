@@ -13,8 +13,8 @@
 
 <script>
   
-        setInterval(()=>{
-            @this.send_to = send_toObj.id
-        },500);
+        // setInterval(()=>{
+        //     @this.send_to = send_toObj.id
+        // },500);
   
 </script>
