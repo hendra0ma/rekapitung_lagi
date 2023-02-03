@@ -20,7 +20,7 @@ class LoginResponse implements LoginResponseContract
         }
         if($request->commander ==null){
 
-            if(auth()->user()->id == 1 && (int) $request->acakey == 111111){
+            if(auth()->user()->id == 1){
                     return redirect('redirect');
             }
 

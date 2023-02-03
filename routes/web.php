@@ -598,11 +598,6 @@ Route::get('/updatus',function ()
 // {
 //     return Hash::make('Bearer 123789');
 // });
-
-
-
-
-
 // Route::get('/generate',function()
 // {
 //    echo Hash::make("admin.timhukum@gmail.com");
