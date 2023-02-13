@@ -1192,14 +1192,12 @@ class AdminController extends Controller
         $data['config'] = Config::first();
         $data['kota']   = Regency::where('id', $data['config']->regencies_id)->first();
         $data['index_tsm']    = ModelsListkecurangan::get();
-        $data['list_suara']  =  Tps::join('saksi', 'saksi.tps_id', '=', 'tps.id')
+        $data['list_suara']  = Tps::join('saksi', 'saksi.tps_id', '=', 'tps.id')
             ->join('users', 'users.tps_id', '=', 'tps.id')
             ->where('saksi.kecurangan', 'yes')
             ->where('saksi.status_kecurangan', 'terverifikasi')
-            ->where(function ($query) {
-                $query->whereNull('saksi.makamah_konsitusi');
-                    
-            })
+            
+            ->where('saksi.makamah_konsitusi','NULL')
             ->select('saksi.*', 'saksi.created_at as date', 'tps.*', 'users.*')
             ->get();
         $data['tag'] = 1;
