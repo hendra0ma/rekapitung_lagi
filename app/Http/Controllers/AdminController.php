@@ -1194,7 +1194,7 @@ class AdminController extends Controller
         $data['index_tsm']    = ModelsListkecurangan::get();
         $data['list_suara']  = Tps::join('saksi', 'saksi.tps_id', '=', 'tps.id')
             ->join('users', 'users.tps_id', '=', 'tps.id')
-            ->whereNull('saksi.makamah_konsitusi')
+            ->whereNull("makamah_konsitusi")
             ->where('saksi.kecurangan', 'yes')
             ->where('saksi.status_kecurangan', 'terverifikasi')
             ->select('saksi.*', 'saksi.created_at as date', 'tps.*', 'users.*')
