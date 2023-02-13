@@ -65,7 +65,7 @@
                             <div class="card">
                                 <div class="card-body text-center">
                                     <p class="card-text">
-                                        <img src="{{asset('storage/')}}/profile-photos/{{$people['profile_photo_path']}}" alt="" class="img-circle rounded" style="width: 150px; height: 150px; object-fit: cover;">
+                                        <img src="{{asset('storage/')}}/profile-photos/{{Auth::user()->profile_photo_path}}" alt="" class="img-circle rounded" style="width: 150px; height: 150px; object-fit: cover;">
                                     <h4>{{Auth::user()->name}}</h4>
                                     <p class="pt-3 text-start"><i class="fa fa-envelope mr-2"></i> {{Auth::user()->email}}</p>
                                     <p class="text-start"><i class="fa fa-phone mr-2"></i> {{Auth::user()->no_hp}}</p>
