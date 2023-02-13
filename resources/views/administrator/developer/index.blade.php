@@ -1,4 +1,4 @@
-@extends('layouts.mainlayoutDeveloper');
+@extends('layouts.mainLayoutDeveloper');
 
 @section('content')
 <div class="row mt-3">

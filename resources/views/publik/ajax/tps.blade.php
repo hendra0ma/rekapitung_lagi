@@ -9,7 +9,7 @@
         <!--    <button type="button" class="btn btn-block btn-secondary">Unduh Salinan</button>-->
         <!--</div>-->
         <div class="col-lg-12">
-            <button type="button" class="btn btn-block btn-primary" data-bs-toggle="modal" data-bs-target="#banding-c1">BandingC1</button>
+            <button type="button" class="btn btn-block btn-primary" data-bs-toggle="modal" data-bs-target="#banding-c1">Banding C1</button>
         </div>
     </div>
     @endif
