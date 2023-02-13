@@ -1205,7 +1205,7 @@ class AdminController extends Controller
         $data['selesai'] = Saksi::where('kecurangan', 'yes')->where('status_kecurangan', 'terverifikasi')->where('makamah_konsitusi','Selesai')->get();
         $data['ditolak'] = Saksi::where('kecurangan', 'yes')->where('makamah_konsitusi', 'Ditolak')->get();
         $data['data_masuk'] = Saksi::where('kecurangan', 'yes')->where('status_kecurangan', 'terverifikasi')->get();
-        dd($data['list_suara']);
+        
         return view('administrator.sidang_saksi_online.index', $data);
     }
 
