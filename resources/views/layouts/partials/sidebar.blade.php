@@ -339,7 +339,7 @@ $tps = 2963;
                 <li>
                     <a class="side-menu__item modal-action" href="#modalCommander" data-bs-toggle="modal"
                         data-jenis="setting" data-izin="master_data_tps" data-title="Mode Data TPS"
-                        data-deskripsi="Mode Data C1 adalah mode untuk menampilkan Data rekapitung berdasarkan klasifikasinya, seperti : Rekam C1, TPS terverifikasi, TPS teraudit dan sebagainya">
+                        data-deskripsi="Mode Data C1 adalah mode untuk menampilkan Data rekam Rekam C1">
                         <i class="side-menu__icon mdi mdi-file"></i><span class="side-menu__label">Mode Data C1</span></a>
                 </li>
 
