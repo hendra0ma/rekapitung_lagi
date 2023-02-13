@@ -1197,7 +1197,6 @@ class AdminController extends Controller
             ->whereNull('saksi.makamah_konsitusi')
             ->where('saksi.kecurangan', 'yes')
             ->where('saksi.status_kecurangan', 'terverifikasi')
-            
             ->select('saksi.*', 'saksi.created_at as date', 'tps.*', 'users.*')
             ->get();
         $data['tag'] = 1;
