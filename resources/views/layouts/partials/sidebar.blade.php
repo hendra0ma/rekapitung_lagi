@@ -380,10 +380,10 @@ $tps = 2963;
                     <a class="side-menu__item" href="/v2l_security/{{encrypt(30)}}?title=Input C1 Quick Count">
                         <i class="side-menu__icon mdi mdi-file"></i><span class="side-menu__label">Input C1 Quick Count</span></a>
                 </li>
-                <li>
+                <!-- <li>
                     <a class="side-menu__item" href="#">
                         <i class="side-menu__icon mdi mdi-settings"></i><span class="side-menu__label">Data Setup</span></a>
-                </li>
+                </li> -->
                 <li>
                     <a class="side-menu__item" href="{{url('')}}/administrator/dev-pass">
                         <i class="side-menu__icon mdi mdi-flash"></i><span class="side-menu__label">Mode Developer</span></a>
