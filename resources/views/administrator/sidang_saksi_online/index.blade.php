@@ -103,25 +103,25 @@
     <div class="col-md-6 col-xl-4">
         <div class="card">
               @if ($tag == 2)
-                   @if ($ls->makamah_konsitusi == "Ditolak")
-    <div class="ribbone">
-												 <div class="ribbon"><span>{{ $ls->makamah_konsitusi }}</span></div>
-											</div>
-											@elseif ($ls->makamah_konsitusi == "Panggil")
-											 <div class="ribbone">
-												 <div class="ribbon"><span>{{ $ls->makamah_konsitusi }}</span></div>
-											</div>
-												@elseif ($ls->makamah_konsitusi == "Tidak Menjawab")
-											 <div class="ribbone">
-												 <div class="ribbon"><span>{{ $ls->makamah_konsitusi }}</span></div>
-											</div>
-												@elseif ($ls->makamah_konsitusi == "Selesai")
-											 <div class="ribbone">
-												 <div class="ribbon"><span>{{ $ls->makamah_konsitusi }}</span></div>
-											</div>
-        @else
+                                @if ($ls->makamah_konsitusi == "Ditolak")
+                                    <div class="ribbone">
+                                            <div class="ribbon"><span>{{ $ls->makamah_konsitusi }}</span></div>
+                                        </div>
+                                        @elseif ($ls->makamah_konsitusi == "Panggil")
+                                        <div class="ribbone">
+                                            <div class="ribbon"><span>{{ $ls->makamah_konsitusi }}</span></div>
+                                        </div>
+                                            @elseif ($ls->makamah_konsitusi == "Tidak Menjawab")
+                                        <div class="ribbone">
+                                            <div class="ribbon"><span>{{ $ls->makamah_konsitusi }}</span></div>
+                                        </div>
+                                            @elseif ($ls->makamah_konsitusi == "Selesai")
+                                        <div class="ribbone">
+                                            <div class="ribbon"><span>{{ $ls->makamah_konsitusi }}</span></div>
+                                        </div>
+                                        @else
 
-        @endif
+                        @endif
         
 							
               @endif
