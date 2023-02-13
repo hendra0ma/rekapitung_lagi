@@ -163,9 +163,9 @@ class VerificatorController extends Controller
         $saksi = Saksi::where('id', $id)->first();
         $tps = Tps::where('id', $saksi['tps_id'])->first();
         $kecamatan = District::where('id', $saksi['district_id'])->first();
-        $kelurahan = Village::where('id', $saksi['village_id'])->first();
+        // $kelurahan = Village::where('id', $saksi['village_id'])->first();
         $pesan = "" . Auth::user()->name . " Memverifikasi Tps " . $tps['number'] . " Kecamatan " . $kecamatan['name'] . " Kelurahan " . $kecamatan['name'] . "  ";
-        $history = History::create([
+        History::create([
             'user_id' => Auth::user()->id,
             'action' => $pesan,
             'saksi_id' => $saksi['id'],
