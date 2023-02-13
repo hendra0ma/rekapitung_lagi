@@ -618,14 +618,14 @@ Route::get('/logout-saksi',function ()
 
 
 
-Route::get('/update-kecurangan',function ()
-{
-    $bukti_kec = DB::table('bukti_deskripsi_curang')->get();
-    foreach($bukti_kec as $kk){
-        DB::table('saksi')->where('tps_id',$kk->tps_id)->update([
-            'kecurangan'=>"yes",
-            'status_kecurangan'=>"belum terverifikasi",
-        ]);
-    }
-    return "berhasil";
-});
+// Route::get('/update-kecurangan',function ()
+// {
+//     $bukti_kec = DB::table('bukti_deskripsi_curang')->get();
+//     foreach($bukti_kec as $kk){
+//         DB::table('saksi')->where('tps_id',$kk->tps_id)->update([
+//             'kecurangan'=>"yes",
+//             'status_kecurangan'=>"belum terverifikasi",
+//         ]);
+//     }
+//     return "berhasil";
+// });
