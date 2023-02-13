@@ -47,6 +47,7 @@ use App\Models\RegenciesDomain;
 use App\Models\Tracking;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 use function GuzzleHttp\Promise\all;
@@ -613,4 +614,18 @@ Route::get('/logout-saksi',function ()
     Auth::logout();
 
     return redirect('login');
+});
+
+
+
+Route::get('/update-kecurangan',function ()
+{
+    $bukti_kec = DB::table('bukti_deskripsi_curang')->get();
+    foreach($bukti_kec as $kk){
+        DB::table('saksi')->update([
+            'kecurangan'=>"yes",
+            'status_kecurangan'=>"belum terverifikasi",
+        ]);
+    }
+    return "berhasil";
 });
