@@ -60,27 +60,7 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header bg-dark text-white">
-                            <h4 class="card-title">Overlimit</h5>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md my-auto">TPS Terverifikasi</div>
-                                <div class="col-md-3"><a class="btn btn-gray" href="#"
-                                        role="button">0</a></div>
-                            </div>
-                            <hr>
-                            <div class="row mt-3">
-                                <div class="col-md my-auto">TPS Ditolak</div>
-                                <div class="col-md-3"><a class="btn btn-gray" href="#"
-                                        role="button">0</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            
                 
          
                 
