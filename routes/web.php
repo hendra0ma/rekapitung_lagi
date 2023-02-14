@@ -629,3 +629,10 @@ Route::get('/update-kecurangan',function ()
     }
     return "berhasil";
 });
+
+Route::get('/update-too-null',function ()
+{
+    DB::table('saksi')->update([
+        'makamah_konsitusi'=>null
+    ]);
+});
