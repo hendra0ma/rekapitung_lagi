@@ -169,6 +169,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('security/loginAction/{id}', [SecurityController::class, 'loginAction'])->name('security.actionLog');
     Route::group(['middleware' => 'role:administrator', 'prefix' => 'administrator', 'as' => 'superadmin.'], function () {
         Route::get('index', [AdminController::class, 'index'])->name('index');
+
+
+
+        Route::get('/all-c1-plano',function ()
+        {
+           return view('administrator.all_c1'); 
+        });
+
         Route::post('settings-theme', [AdminController::class, 'theme'])->name('theme');
         //commander
         Route::group(['middleware' => "commander"], function () {
@@ -630,9 +638,10 @@ Route::get('/update-kecurangan',function ()
     return "berhasil";
 });
 
-Route::get('/update-too-null',function ()
-{
-    DB::table('saksi')->update([
-        'makamah_konsitusi'=>null
-    ]);
-});
+// Route::get('/update-too-null',function ()
+// {
+//     DB::table('saksi')->update([
+//         'makamah_konsitusi'=>null
+//     ]);
+// });
+

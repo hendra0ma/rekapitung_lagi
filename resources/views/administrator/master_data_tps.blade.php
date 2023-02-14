@@ -37,7 +37,7 @@
                             <div class="row mt-3">
                                 <div class="col-md my-auto">Foto C1 Plano</div>
                                   <?php $saksi = App\Models\Saksi::count(); ?>
-                                <div class="col-md-3"><a class="btn btn-gray" href="#"
+                                <div class="col-md-3"><a class="btn btn-gray" href="{{url('')}}/all-c1-plano"
                                         role="button">{{$saksi}}</a></div>
                             </div>
                         </div>
