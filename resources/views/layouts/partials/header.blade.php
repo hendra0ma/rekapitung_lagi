@@ -113,7 +113,7 @@
                 <div class="dropdown d-none d-md-flex profile-1">
                     <a href="#" data-bs-toggle="dropdown" class="nav-link pe-2 leading-none d-flex">
                         <span>
-                            <img src="{{ Auth::user()->profile_photo_url }}" alt="profile-user"
+                            <img src="{{ asset('') }}storage/forma4.jpg" alt="profile-user"
                                 class="avatar  profile-user brround cover-image">
                         </span>
                     </a>
@@ -272,7 +272,7 @@ $allUser = App\Models\User::where('id',"!=",Auth::user()->id)->where('role_id','
             <div class="dropdown d-md-flex profile-1">
                 <a href="#" data-bs-toggle="dropdown" class="nav-link pe-2 leading-none d-flex">
                     <span>
-                        <img src="{{ Auth::user()->profile_photo_url }}" alt="profile-user"
+                        <img src="{{ asset('') }}storage/forma4.jpg" alt="profile-user"
                             class="avatar  profile-user brround cover-image">
                     </span>
                 </a>

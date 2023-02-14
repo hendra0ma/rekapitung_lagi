@@ -35,7 +35,7 @@ use App\Models\Rekapitulator;
                         <h3> {{$data_kota->name}}, KECAMATAN {{$data_kec->name}}.</h3>
         
                         <img style="width: 350px; height: auto; margin-top:75px"
-                            src="https://paslon1.tangsel.pilwalkot.rekapitung.id/images/logo/rekapitung_gold.png" alt="">
+                            src="{{url('')}}/images/logo/rekapitung_gold.png" alt="">
         
                     <center>
                 </div>
