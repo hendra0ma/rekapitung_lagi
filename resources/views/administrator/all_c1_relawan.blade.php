@@ -18,7 +18,7 @@
                     Semua Foto C1 Relawan
                 </h2>
            
-            <livewire:all-c1-plano />
+            <livewire:all-c1-relawan />
         </div>
 
         @livewireScripts
