@@ -176,8 +176,8 @@ $tps = 2963;
                         <div class="row w-100 justify-content-end  align-items-center">
                             <div class="col-md">
                                 <!--<h5 class="modal-title text-white my-auto" id="modalCommanderLabel"></h5>-->
-                                <span><img src="{{url('')}}/public/storage/alien.png" style="width:100px" alt=""> <b
-                                        class="text-white fs-3" style="margin-left: -20px;">COMMANDER CODE</b></span>
+                                <span><b
+                                        class="text-white fs-3 p-2">COMMANDER CODE</b></span>
                             </div>
                         </div>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
