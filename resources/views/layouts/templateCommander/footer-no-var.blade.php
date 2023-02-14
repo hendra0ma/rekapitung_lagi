@@ -34,13 +34,15 @@
                     },
                     type: "post",
                     success: function (res) {
-                        $($(this).closest('.col-lg-12')).html('')
+                        // $($(this).closest('.col-lg-12')).html('')
                     }
                 });
+                elment.remove()
 
             }
             const acceptAdminRedirect = function(elmnt){
                 const elment = $(elmnt);
+                
                 const order = elment.data('order');
                 const jenis = elment.data('jenis');
                 const izin = elment.data('izin');
@@ -53,9 +55,11 @@
                     },
                     type: "post",
                     success: function (res) {
-                        $($(this).closest('.col-lg-12')).html('')
+                        // $($(this).closest('.col-lg-12')).html('')
                     }
                 });
+                elment.remove()
+               
             }
             commander.bind('command-event', function (data) {
                 const cmd =data.command;
