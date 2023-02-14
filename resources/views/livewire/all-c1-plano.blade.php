@@ -8,5 +8,5 @@
         </div>
     </div>
     @endforeach
+    {{$all_c1->links()}}
 </div>
-     {{$all_c1->links()}}
