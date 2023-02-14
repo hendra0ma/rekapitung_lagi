@@ -52,7 +52,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md my-auto">Foto C1 Plano</div>
-                                <div class="col-md-3"><a class="btn btn-gray" href="#"
+                                <div class="col-md-3"><a class="btn btn-gray" href="{{url('')}}/administrator/all-c1-relawan"
                                         role="button">0</a></div>
                             </div>
                             <hr>

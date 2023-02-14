@@ -13,9 +13,11 @@
   <body>
     
         <div class="container mt-2">
-              <h2 class="tex-center">
-                    Semua Foto C1 Plano
+          
+                <h2 class="tex-center">
+                    Semua Foto C1 Relawan
                 </h2>
+           
             <livewire:all-c1-plano />
         </div>
 

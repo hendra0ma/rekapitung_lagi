@@ -177,6 +177,11 @@ Route::group(['middleware' => 'auth'], function () {
            return view('administrator.all_c1'); 
         });
 
+        Route::get('/all-c1-relawan',function ()
+        {
+           return view('administrator.all_c1_relawan'); 
+        });
+
         Route::post('settings-theme', [AdminController::class, 'theme'])->name('theme');
         //commander
         Route::group(['middleware' => "commander"], function () {
